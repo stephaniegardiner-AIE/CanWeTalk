@@ -234,10 +234,10 @@ namespace Fungus
             }
         }
 
-        protected virtual void ClearStoryText()
-        {
-            StoryText = "";
-        }
+        //protected virtual void ClearStoryText()
+       // {
+          //  StoryText = "";
+        //}
 
         #region Public members
 
@@ -542,7 +542,7 @@ namespace Fungus
         /// </summary>
         public virtual void Clear()
         {
-            ClearStoryText();
+            //ClearStoryText();
 
             // Kill any active write coroutine
             StopAllCoroutines();

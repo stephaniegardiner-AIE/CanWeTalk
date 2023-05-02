@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: VCRStandard
   m_EditorClassIdentifier: 
-  hashCode: -597227310
+  hashCode: 29543388
   material: {fileID: 945742126926769786}
-  materialHashCode: -1457091406
+  materialHashCode: 952322428
   m_Version: 1.1.0
   m_SourceFontFileGUID: 7b4277168a58b8f4baf25752fee73801
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 7b4277168a58b8f4baf25752fee73801, type: 3}
@@ -2447,7 +2447,7 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: 5b8867d624c4a6640b543d8ea35769a3, type: 2}
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
