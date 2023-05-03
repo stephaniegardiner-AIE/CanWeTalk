@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Scene", menuName = "Dialog/Scene")]
 public class Dialog : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public new string name;
+    public string dialog;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string Character;
+
 }
