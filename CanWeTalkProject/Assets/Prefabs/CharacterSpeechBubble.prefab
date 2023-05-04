@@ -234,9 +234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a477b081acfa7e46887d145455765bd, type: 2}
   m_sharedMaterial: {fileID: 945742126926769786, guid: 2a477b081acfa7e46887d145455765bd, type: 2}
