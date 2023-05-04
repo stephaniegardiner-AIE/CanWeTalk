@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d685774c63c7f4aa1a2a2267c8644f, type: 3}
-  m_Name: D 1
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S1L 8
   m_EditorClassIdentifier: 
-  decisionName: 
+  character: 2
+  dialog: "These are divorce papers, I\u2019ve already signed them so all you have
+    to do is-"

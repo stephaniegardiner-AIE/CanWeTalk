@@ -8,4 +8,8 @@ public class LineBlock : ScriptableObject
     //public
 
     public Line[] sceneComponents;
+
+    public DecisionBlock endDecisionBlock;
+
+    public ActivityBlock endActivityBlock;
 }
