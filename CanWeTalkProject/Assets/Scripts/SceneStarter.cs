@@ -16,7 +16,8 @@ public class SceneStarter : MonoBehaviour
     public float lineNumber;
     public TextMeshProUGUI currentTextToWrite;
 
-
+    public List<GameObject> currentVisibleLines;
+    //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,23 +36,24 @@ public class SceneStarter : MonoBehaviour
         speechbubble.transform.SetParent(content.transform, false);
         speechbubble.name = "SpeechBubble" + lineNumber.ToString();
         speechbubble.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
-
+        currentVisibleLines.Add(speechbubble);
 
         dialogText = GameObject.Find("CharacterDialogText");
 
+        dialogText.GetComponent<TextMeshProUGUI>().text = lineNumber.ToString();
         //dialogText.GetComponent<TextMeshProUGUI>().text = startLineBlock.sceneComponents[0].dialog;
 
         lineNumber++;
 
-        EndCheck();
+        // EndCheck();
 
-
+        content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, speechbubble.GetComponent<RectTransform>().sizeDelta.y*currentVisibleLines.Count);
 
 
     }
 
     //[SerializeField] TextMeshProUGUI _textMeshPro;
-
+    [Header("Type Writer Effect")]
     public string[] stringArray;
 
     [SerializeField] float timeBtwnChars;
@@ -100,5 +102,7 @@ public class SceneStarter : MonoBehaviour
     void OnNext()
     {
         Debug.Log("Next!!!");
+        LineRunner();
+
     } 
 }
