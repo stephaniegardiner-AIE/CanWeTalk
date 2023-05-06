@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class SceneStarter : MonoBehaviour
 {
@@ -95,4 +96,9 @@ public class SceneStarter : MonoBehaviour
 
         }
     }
+
+    void OnNext()
+    {
+        Debug.Log("Next!!!");
+    } 
 }
