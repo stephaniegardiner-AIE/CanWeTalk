@@ -2352,16 +2352,20 @@ MonoBehaviour:
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
   content: {fileID: 473292766}
+  contentHeight: 0
   xPositionSpeechBubble: 0
   yPositionSpeechBubble: 200
   dialogText: {fileID: 0}
   lineNumber: 0
   decisionNumber: 0
   currentTextToWrite: {fileID: 0}
-  currentVisibleLines: []
-  stringArray: []
-  timeBtwnChars: 10
-  timeBtwnWords: 10
+  currentVisibleSpeech: []
+  descriptionColor: {r: 0, g: 0, b: 0, a: 0}
+  youColor: {r: 0, g: 0.6901961, b: 0.94117653, a: 1}
+  wifeColor: {r: 1, g: 0.43137258, b: 0.003921569, a: 1}
+  boyColor: {r: 0, g: 0, b: 0, a: 0}
+  girlColor: {r: 0, g: 0, b: 0, a: 0}
+  dogColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0

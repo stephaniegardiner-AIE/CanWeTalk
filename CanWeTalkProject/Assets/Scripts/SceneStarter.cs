@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using JetBrains.Annotations;
 
 public class SceneStarter : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class SceneStarter : MonoBehaviour
     public TextMeshProUGUI currentTextToWrite;
 
     public List<GameObject> currentVisibleSpeech;
+
+    [Header("Character Colors")]
+    public Color descriptionColor;
+    public Color youColor;
+    public Color wifeColor;
+    public Color boyColor;
+    public Color girlColor;
+    public Color dogColor;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +61,8 @@ public class SceneStarter : MonoBehaviour
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
 
+            CheckCharacterFormat(line);
+
             dialogText = line.GetComponent<Transform>().Find("CharacterDialogText");
 
             //sets the text
@@ -62,6 +74,8 @@ public class SceneStarter : MonoBehaviour
             // EndCheck();
 
             ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
+
+            
 
            
         }       
@@ -101,6 +115,25 @@ public class SceneStarter : MonoBehaviour
         //GameObject decision = Instan.Length;
 
        
+    }
+
+    public void CheckCharacterFormat(GameObject speech)
+    {
+        TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
+        GameObject speechBackground = speech.GetComponent<Transform>().Find("CharacterSpeechBubbleBackground").gameObject;
+        
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
+        {
+            speechBackground.GetComponent<Image>().color = descriptionColor;
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
+        {
+            speechBackground.GetComponent<Image>().color = youColor;
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
+        {
+            speechBackground.GetComponent<Image>().color = wifeColor;
+        }
     }
 
    /*  //[SerializeField] TextMeshProUGUI _textMeshPro;
