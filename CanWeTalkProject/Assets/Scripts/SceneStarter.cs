@@ -7,13 +7,13 @@ using UnityEngine.InputSystem;
 
 public class SceneStarter : MonoBehaviour
 {
-    public LineBlock startLineBlock;
+    public LineBlock currentLineBlock;
     public GameObject characterSpeechBubble;
     public GameObject content;
     public float xPositionSpeechBubble;
     public float yPositionSpeechBubble;
-    public GameObject dialogText;
-    public float lineNumber;
+    public Transform dialogText;
+    public int lineNumber;
     public TextMeshProUGUI currentTextToWrite;
 
     public List<GameObject> currentVisibleLines;
@@ -38,10 +38,12 @@ public class SceneStarter : MonoBehaviour
         speechbubble.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
         currentVisibleLines.Add(speechbubble);
 
-        dialogText = GameObject.Find("CharacterDialogText");
+        dialogText = speechbubble.GetComponent<Transform>().Find("CharacterDialogText");
 
-        dialogText.GetComponent<TextMeshProUGUI>().text = lineNumber.ToString();
+        dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.sceneComponents[lineNumber].dialog; 
         //dialogText.GetComponent<TextMeshProUGUI>().text = startLineBlock.sceneComponents[0].dialog;
+
+        
 
         lineNumber++;
 
@@ -61,7 +63,7 @@ public class SceneStarter : MonoBehaviour
 
     int i = 0;
 
-    public void EndCheck()
+  /*  public void EndCheck()
     {
         Debug.Log("???");
         if (i <= stringArray.Length - 1)
@@ -71,7 +73,7 @@ public class SceneStarter : MonoBehaviour
 
         Debug.Log("Working");
         }
-    }
+    } */
 
     private IEnumerator TextVisible()
     {
