@@ -953,7 +953,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672111095
 GameObject:
@@ -1005,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbf240ac6442144f90a023c1b64d868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
 --- !u!114 &672111098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,7 +1222,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &759200859
 GameObject:
@@ -1575,7 +1576,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985493724
 GameObject:
@@ -2348,6 +2349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLineBlock: {fileID: 11400000, guid: 4cce2490ba3684c468a6db97d46bb848, type: 2}
+  currentScene: {fileID: 0}
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
@@ -2359,6 +2361,7 @@ MonoBehaviour:
   lineNumber: 0
   decisionNumber: 0
   currentTextToWrite: {fileID: 0}
+  previousLines: 0
   currentVisibleSpeech: []
   descriptionColor: {r: 0, g: 0, b: 0, a: 0}
   youColor: {r: 0, g: 0.6901961, b: 0.94117653, a: 1}
@@ -2379,7 +2382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1258858590
 MonoBehaviour:
@@ -3269,7 +3272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 2952593950578881951, guid: 448c58f554278b142a4ea622b5cbc88c, type: 3}
 --- !u!4 &1648131902
 Transform:
   m_ObjectHideFlags: 1
@@ -3283,7 +3286,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724351979
 GameObject:
@@ -3384,7 +3387,7 @@ RectTransform:
   - {fileID: 1925744257}
   - {fileID: 692238023}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3894,6 +3897,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoSelectFirstButton: 0
+  cachedButtons: []
+  cachedSlider: {fileID: 0}
+  nextOptionIndex: 0
 --- !u!114 &1931198656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3982,7 +3988,7 @@ RectTransform:
   - {fileID: 672111096}
   - {fileID: 1447299363}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

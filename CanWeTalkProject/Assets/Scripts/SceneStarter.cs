@@ -5,10 +5,13 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class SceneStarter : MonoBehaviour
 {
     public LineBlock currentLineBlock;
+    public Scene currentScene;
+
     [Header("Scene Objects")]
     public GameObject linePrefab;
     public GameObject decisionBlockPrefab;
@@ -21,6 +24,8 @@ public class SceneStarter : MonoBehaviour
     public int lineNumber;
     public int decisionNumber;
     public TextMeshProUGUI currentTextToWrite;
+
+    public int previousLines;
 
     public List<GameObject> currentVisibleSpeech;
 
@@ -56,12 +61,14 @@ public class SceneStarter : MonoBehaviour
         else
         {
             GameObject line = Instantiate(linePrefab) as GameObject;
+            CheckCharacterFormat(line);
+
             line.transform.SetParent(content.transform, false);
             line.name = "SpeechBubble" + lineNumber.ToString();
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
 
-            CheckCharacterFormat(line);
+            
 
             dialogText = line.GetComponent<Transform>().Find("CharacterDialogText");
 
@@ -109,6 +116,10 @@ public class SceneStarter : MonoBehaviour
             decision.transform.SetParent(decisionBlock.transform.Find("DecisionButtons"), false);
             //decision.name = "Decision"
             decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentLineBlock.endDecisionBlock.decisions[i].decisionName;
+            decision.GetComponent<ButtonClicked>().decisionNumber = i;
+
+            //decision.GetComponent<Button>().OnPointerClick(ButtonClicked);
+
         }
 
         //for (int i = 0; i < )
@@ -117,6 +128,7 @@ public class SceneStarter : MonoBehaviour
        
     }
 
+    //Formats Speech bubbles
     public void CheckCharacterFormat(GameObject speech)
     {
         TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
@@ -134,6 +146,19 @@ public class SceneStarter : MonoBehaviour
         {
             speechBackground.GetComponent<Image>().color = wifeColor;
         }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
+        {
+            speechBackground.GetComponent<Image>().color = boyColor;
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
+        {
+            speechBackground.GetComponent<Image>().color = girlColor;
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
+        {
+            speechBackground.GetComponent<Image>().color = dogColor;
+        } 
+
     }
 
    /*  //[SerializeField] TextMeshProUGUI _textMeshPro;
@@ -195,4 +220,10 @@ public class SceneStarter : MonoBehaviour
         content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, contentHeight + heightToAdd);
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
+
+    public void ButtonClicked()
+    {
+
+    }
+
 }
