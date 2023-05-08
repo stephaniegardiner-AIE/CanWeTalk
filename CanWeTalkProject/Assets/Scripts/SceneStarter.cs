@@ -94,7 +94,7 @@ public class SceneStarter : MonoBehaviour
             GameObject decision = Instantiate(decisionPrefab) as GameObject;
             decision.transform.SetParent(decisionBlock.transform.Find("DecisionButtons"), false);
             //decision.name = "Decision"
-
+            decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentLineBlock.endDecisionBlock.decisions[i].decisionName;
         }
 
         //for (int i = 0; i < )
