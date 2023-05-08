@@ -8,4 +8,6 @@ public class Decision : ScriptableObject
     public string decisionName;
 
     public LineBlock followingLineBlock;
+
+    
 }

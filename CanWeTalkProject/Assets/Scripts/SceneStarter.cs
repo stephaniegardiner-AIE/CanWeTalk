@@ -221,9 +221,5 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
-    public void ButtonClicked()
-    {
-
-    }
 
 }
