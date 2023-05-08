@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
   m_Name: LB 0
   m_EditorClassIdentifier: 
-  sceneComponents:
+  lines:
   - {fileID: 11400000, guid: 83a68a637e62a1346aca6959304e19f9, type: 2}
   - {fileID: 11400000, guid: ac277260d3f42bc4a876fe53cd27f888, type: 2}
   - {fileID: 11400000, guid: 4c4f95a1c8803d541a46fe7e29a334c6, type: 2}

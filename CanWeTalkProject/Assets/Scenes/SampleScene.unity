@@ -2348,12 +2348,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLineBlock: {fileID: 11400000, guid: 4cce2490ba3684c468a6db97d46bb848, type: 2}
-  characterSpeechBubble: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
+  linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
+  decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
+  decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
   content: {fileID: 473292766}
   xPositionSpeechBubble: 0
   yPositionSpeechBubble: 200
   dialogText: {fileID: 0}
   lineNumber: 0
+  decisionNumber: 0
   currentTextToWrite: {fileID: 0}
   currentVisibleLines: []
   stringArray: []

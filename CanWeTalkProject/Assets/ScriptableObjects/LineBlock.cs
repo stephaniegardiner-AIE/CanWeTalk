@@ -7,7 +7,7 @@ public class LineBlock : ScriptableObject
 {
     //public
 
-    public Line[] sceneComponents;
+    public Line[] lines;
 
     public DecisionBlock endDecisionBlock;
 
