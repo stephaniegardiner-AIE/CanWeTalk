@@ -11,6 +11,7 @@ public class SceneStarter : MonoBehaviour
 {
     public LineBlock currentLineBlock;
     public Scene currentScene;
+    public bool decision = false;
 
     [Header("Scene Objects")]
     public GameObject linePrefab;
@@ -122,6 +123,7 @@ public class SceneStarter : MonoBehaviour
 
         }
 
+        decision = true; 
         //for (int i = 0; i < )
         //GameObject decision = Instan.Length;
 
@@ -211,7 +213,11 @@ public class SceneStarter : MonoBehaviour
     void OnNext()
     {
         Debug.Log("NextLine");
-        LineRunner();
+        if (!decision)
+        {
+            LineRunner();
+        }
+        
 
     } 
 
