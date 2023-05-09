@@ -1147,6 +1147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLineBlock: {fileID: 11400000, guid: 4cce2490ba3684c468a6db97d46bb848, type: 2}
   currentScene: {fileID: 0}
+  decision: 0
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
@@ -1166,6 +1167,10 @@ MonoBehaviour:
   boyColor: {r: 0, g: 0, b: 0, a: 0}
   girlColor: {r: 0, g: 0, b: 0, a: 0}
   dogColor: {r: 0, g: 0, b: 0, a: 0}
+  youAttitude: 100
+  wifeAttitude: 50
+  kidsAdditude: 100
+  dogAttitude: 100
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0

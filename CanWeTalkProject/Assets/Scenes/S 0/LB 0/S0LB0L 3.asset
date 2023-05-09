@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S1L 2
+  m_Name: S0LB0L 3
   m_EditorClassIdentifier: 
-  character: 1
-  dialog: "Sure, what\u2019s going on?"
+  character: 2
+  dialog: "I\u2019ve been thinking about this for a long time and I think it\u2019s
+    going to be best for both of us."
+  attitudeArrayLength: 0
+  attitudeArray: []

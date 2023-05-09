@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d685774c63c7f4aa1a2a2267c8644f, type: 3}
-  m_Name: D 0
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S0LB0L 11
   m_EditorClassIdentifier: 
-  decisionName: I respect your decision.
-  followingLineBlock: {fileID: 11400000, guid: c4eac6f564aa99f44b0ede0749da91a4, type: 2}
+  character: 1
+  dialog: "You can\u2019t be serious. Is this really what you want?"

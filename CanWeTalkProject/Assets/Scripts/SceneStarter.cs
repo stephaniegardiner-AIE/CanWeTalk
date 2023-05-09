@@ -38,6 +38,12 @@ public class SceneStarter : MonoBehaviour
     public Color girlColor;
     public Color dogColor;
 
+    [Header("Character Attitudes")]
+    public float youAttitude;
+    public float wifeAttitude;
+    public float kidsAdditude;
+    public float dogAttitude;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()

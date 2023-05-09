@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d425a94ff0a941c48b7f1e1c782a89bd, type: 3}
-  m_Name: Activity
+  m_Script: {fileID: 11500000, guid: d5e94afdb8793ec4c89edc01075df0bd, type: 3}
+  m_Name: S0LB0AC 0
   m_EditorClassIdentifier: 
-  activityName: 
-  attitudeChange: 0
+  attitudeChangeEffects: 0
+  attitudeChangeAmount: -50
