@@ -39,10 +39,10 @@ public class SceneStarter : MonoBehaviour
     public Color dogColor;
 
     [Header("Character Attitudes")]
-    public float youAttitude;
-    public float wifeAttitude;
-    public float kidsAdditude;
-    public float dogAttitude;
+    public float youAttitudeLevel;
+    public float wifeAttitudeLevel;
+    public float kidsAdditudeLevel;
+    public float dogAttitudeLevel;
 
     [Header("Attitude Bar")]
     public Image youAttitudeBar;
@@ -245,14 +245,20 @@ public class SceneStarter : MonoBehaviour
     //figures out what the attitude array is trying to tell us
     public void UpdateAttitudes(Line line)
     {
-       /* for(int i = 0; i < line.attitudeArray.Length; i++)
-            
+
+        for (int i = 0; i < line.attitudeArray.Length; i++)
+
         {
-            //you attitude
-          /*  if (line.attitudeArray[i].attitudeChangeEffects == 0)
+            Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
+            if (line.attitudeArray[i].attitudeChangeEffects == "youAttitude")
             {
                 ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
             }
+
+
+        }
+        //you attitude
+          /* 
             if (line.attitudeArray[i].attitudeChangeEffects == 1)
             {
                 ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
