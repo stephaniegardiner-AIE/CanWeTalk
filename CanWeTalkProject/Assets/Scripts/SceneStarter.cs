@@ -44,6 +44,12 @@ public class SceneStarter : MonoBehaviour
     public float kidsAdditude;
     public float dogAttitude;
 
+    [Header("Attitude Bar")]
+    public Image youAttitudeBar;
+    public Image wifeAttitudeBar;
+    public Image kidsAttitudeBar;
+    public Image dogAttitudeBar;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -53,18 +59,16 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    //runs the next line
     public void LineRunner()
     {
+        //if it's run out of lines, figure out the next thing to do
         if (lineNumber > currentLineBlock.lines.Length - 1)
         {
             FigureNext();
         }
+        //if the lines aren't run out, run the next line
         else
         {
             GameObject line = Instantiate(linePrefab) as GameObject;
@@ -81,20 +85,26 @@ public class SceneStarter : MonoBehaviour
 
             //sets the text
             dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
-            //dialogText.GetComponent<TextMeshProUGUI>().text = startLineBlock.sceneComponents[0].dialog;
+          
+            //if the line has an attitude change, now make sure that happens!!!
+            if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
+            {
+                UpdateAttitudes(currentLineBlock.lines[lineNumber]);
+            }
 
-            lineNumber++;
+                lineNumber++;
 
             // EndCheck();
 
             ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
 
             
-
+            
            
         }       
     }
 
+    //figures out what to run next after a line block is finished
     public void FigureNext()
     {
         Debug.Log("LineBlockComplete");
@@ -107,8 +117,10 @@ public class SceneStarter : MonoBehaviour
         }
     }
 
+    //creates a decision block when called
     public void DecisionRunner()
     {
+        //instantiates the decision speech block
         GameObject decisionBlock = Instantiate(decisionBlockPrefab) as GameObject;
         decisionBlock.transform.SetParent(content.transform, false);
         decisionBlock.name = "Decision" + decisionNumber.ToString();
@@ -117,23 +129,19 @@ public class SceneStarter : MonoBehaviour
 
         ResizeContent(decisionBlock.GetComponent<RectTransform>().sizeDelta.y);
 
+        //makes a decision button appear for each decision in list
         for (int i = 0; i < currentLineBlock.endDecisionBlock.decisions.Length; i++)
         {
             GameObject decision = Instantiate(decisionPrefab) as GameObject;
             decision.transform.SetParent(decisionBlock.transform.Find("DecisionButtons"), false);
-            //decision.name = "Decision"
             decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentLineBlock.endDecisionBlock.decisions[i].decisionName;
             decision.GetComponent<ButtonClicked>().decisionNumber = i;
 
-            //decision.GetComponent<Button>().OnPointerClick(ButtonClicked);
-
         }
 
+        //activates the decision state
         decision = true; 
-        //for (int i = 0; i < )
-        //GameObject decision = Instan.Length;
-
-       
+      
     }
 
     //Formats Speech bubbles
@@ -227,11 +235,36 @@ public class SceneStarter : MonoBehaviour
 
     } 
 
+    //resises the viewscreen content box to properly fit all the speech bubbles
     public void ResizeContent(float heightToAdd)
     {
         content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, contentHeight + heightToAdd);
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
+    //figures out what the attitude array is trying to tell us
+    public void UpdateAttitudes(Line line)
+    {
+       /* for(int i = 0; i < line.attitudeArray.Length; i++)
+            
+        {
+            //you attitude
+          /*  if (line.attitudeArray[i].attitudeChangeEffects == 0)
+            {
+                ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+            }
+            if (line.attitudeArray[i].attitudeChangeEffects == 1)
+            {
+                ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+            }
+        } */
+    }
+
+    public void ChangeAttitude(float character, float changeAmount, Image attitudeBar)
+    {
+        character += changeAmount;
+
+        attitudeBar.fillAmount = character / 100;
+    }
 
 }

@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 0
   dialog: "I\u2019m watching TV when WifeName walks into the room."
+  attitudeArrayLength: 3
+  attitudeArray:
+  - attitudeChangeEffects: 0
+    attitudeChangeAmount: -50
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: -10
+  - attitudeChangeEffects: 1
+    attitudeChangeAmount: 20
