@@ -41,7 +41,7 @@ public class SceneStarter : MonoBehaviour
     [Header("Character Attitudes")]
     public float youAttitudeLevel;
     public float wifeAttitudeLevel;
-    public float kidsAdditudeLevel;
+    public float kidsAttitudeLevel;
     public float dogAttitudeLevel;
 
     [Header("Attitude Bar")]
@@ -249,11 +249,44 @@ public class SceneStarter : MonoBehaviour
         for (int i = 0; i < line.attitudeArray.Length; i++)
 
         {
-            Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
-            if (line.attitudeArray[i].attitudeChangeEffects == "youAttitude")
+           Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
+
+            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "youAttitude")
             {
-                ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+                //ChangeAttitude(youAttitudeLevel, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+
+                youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                youAttitudeBar.fillAmount = youAttitudeLevel / 100;
+
             }
+
+            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "wifeAttitude")
+            {
+                //ChangeAttitude(youAttitudeLevel, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+
+                wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                wifeAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
+
+            }
+
+            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "kidsAttitude")
+            {
+                //ChangeAttitude(youAttitudeLevel, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+
+                kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                kidsAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
+
+            }
+
+            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "dogAttitude")
+            {
+                //ChangeAttitude(youAttitudeLevel, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
+
+                dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
+
+            }
+
 
 
         }

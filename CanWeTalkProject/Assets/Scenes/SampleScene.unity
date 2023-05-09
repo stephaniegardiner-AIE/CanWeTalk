@@ -1502,14 +1502,14 @@ MonoBehaviour:
   boyColor: {r: 0, g: 0, b: 0, a: 0}
   girlColor: {r: 0, g: 0, b: 0, a: 0}
   dogColor: {r: 0, g: 0, b: 0, a: 0}
-  youAttitude: 100
-  wifeAttitude: 50
-  kidsAdditude: 100
-  dogAttitude: 100
-  youAttitudeBar: {fileID: 0}
-  wifeAttitudeBar: {fileID: 0}
-  kidsAttitudeBar: {fileID: 0}
-  dogAttitudeBar: {fileID: 0}
+  youAttitudeLevel: 100
+  wifeAttitudeLevel: 50
+  kidsAttitudeLevel: 100
+  dogAttitudeLevel: 100
+  youAttitudeBar: {fileID: 1845271955}
+  wifeAttitudeBar: {fileID: 571555462}
+  kidsAttitudeBar: {fileID: 652330352}
+  dogAttitudeBar: {fileID: 47755618}
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0
