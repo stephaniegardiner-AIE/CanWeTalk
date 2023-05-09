@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S0LB 2
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 1b3cc84d8b4f9744fa00fb4aee06f3d2, type: 2}
+  - {fileID: 11400000, guid: 8b259aebfc3372e4bbcf7d1349fa7af0, type: 2}
+  - {fileID: 11400000, guid: 7f8986a61cf4a4b4bb885016b51c7a08, type: 2}
+  - {fileID: 11400000, guid: e545fa39dfa5504418c7382a18605b00, type: 2}
+  - {fileID: 11400000, guid: 6c0b5a1648dcbcc43a4407673595d548, type: 2}
+  - {fileID: 11400000, guid: e36f55c2358faa844acae192c07d45c0, type: 2}
+  - {fileID: 11400000, guid: b0681d522d7aaad46bcf3d2a1d01b656, type: 2}
+  - {fileID: 11400000, guid: 30687bd6481c689479e7364c74b7ac24, type: 2}
+  - {fileID: 11400000, guid: 73f57b03ec2d81947aa1c0a9c930105c, type: 2}
+  endDecisionBlock: {fileID: 11400000, guid: 12559f55ee09aaa45a93e86999f5691d, type: 2}
+  endActivityBlock: {fileID: 0}

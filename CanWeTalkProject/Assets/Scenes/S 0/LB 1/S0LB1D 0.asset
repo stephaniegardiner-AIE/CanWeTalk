@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S0LB1L 5
+  m_Script: {fileID: 11500000, guid: 24d685774c63c7f4aa1a2a2267c8644f, type: 3}
+  m_Name: S0LB1D 0
   m_EditorClassIdentifier: 
-  character: 1
-  dialog: We should at least tell them. They deserve to know that things are going
-    to change.
+  decisionName: "Of course, I\u2019ll tell them."
+  followingLineBlock: {fileID: 0}

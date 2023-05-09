@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB1L 2
   m_EditorClassIdentifier: 
-  character: 1
-  dialog: "\u2026 Okay. I\u2019ll sign the papers."
+  character: 0
+  dialog: The look on her face tells me she really is sorry. Not that it helps much.

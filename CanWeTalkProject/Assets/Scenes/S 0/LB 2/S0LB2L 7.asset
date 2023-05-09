@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
-  m_Name: S0LB 2
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S0LB2L 7
   m_EditorClassIdentifier: 
-  lines: []
-  endDecisionBlock: {fileID: 0}
-  endActivityBlock: {fileID: 0}
+  character: 0
+  dialog: "I\u2019m so stunned I can\u2019t even respond."
