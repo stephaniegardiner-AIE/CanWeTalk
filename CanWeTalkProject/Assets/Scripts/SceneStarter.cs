@@ -55,6 +55,7 @@ public class SceneStarter : MonoBehaviour
     void Start()
     {
         LineRunner();
+        SetAttitude();
 
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
@@ -304,6 +305,14 @@ public class SceneStarter : MonoBehaviour
         character += changeAmount;
 
         attitudeBar.fillAmount = character / 100;
+    }
+
+    public void SetAttitude()
+    {
+        youAttitudeBar.fillAmount = youAttitudeLevel / 100;
+        wifeAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
+        kidsAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
+        dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
     }
 
 }
