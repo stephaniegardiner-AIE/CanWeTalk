@@ -50,6 +50,10 @@ public class SceneStarter : MonoBehaviour
     public Image kidsAttitudeBar;
     public Image dogAttitudeBar;
 
+    [Header("Attitude Bar Lerping")]
+    public float attitudeLerpDuration;
+    private float _valueToLerp;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -246,7 +250,7 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
-    //figures out what the attitude array is trying to tell us
+    //figures out what the attitude array is trying to tell us and then causes fill amount change for teh appropriate attidue bar before changing the the final attitude level
     public void UpdateAttitudes(Line line)
     {
 
@@ -259,48 +263,35 @@ public class SceneStarter : MonoBehaviour
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "youAttitude")
             {
 
+                StartCoroutine(AttitudeLerp(youAttitudeLevel, youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar));
                 youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                youAttitudeBar.fillAmount = youAttitudeLevel / 100;
 
             }
 
             //change wife attitude
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "wifeAttitude")
             {
-
+                StartCoroutine(AttitudeLerp(wifeAttitudeLevel, wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, wifeAttitudeBar));
                 wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                wifeAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
 
             }
 
             //change kids attitude
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "kidsAttitude")
             {
-
+                StartCoroutine(AttitudeLerp(kidsAttitudeLevel, kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, kidsAttitudeBar));
                 kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                kidsAttitudeBar.fillAmount = kidsAttitudeLevel / 100;
 
             }
 
             //change dog attitude
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "dogAttitude")
             {
-
+                StartCoroutine(AttitudeLerp(dogAttitudeLevel, dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, dogAttitudeBar));
                 dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
 
             }
-
-
-
         }
-        //you attitude
-          /* 
-            if (line.attitudeArray[i].attitudeChangeEffects == 1)
-            {
-                ChangeAttitude(youAttitude, line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar);
-            }
-        } */
     }
 
     public void ChangeAttitude(float character, float changeAmount, Image attitudeBar)
@@ -316,6 +307,19 @@ public class SceneStarter : MonoBehaviour
         wifeAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
         kidsAttitudeBar.fillAmount = kidsAttitudeLevel / 100;
         dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
+    }
+
+    IEnumerator AttitudeLerp(float startValue, float endValue, Image attitudeBar)
+    {
+        float timeElapsed = 0;
+        while (timeElapsed < attitudeLerpDuration)
+        {
+            _valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / attitudeLerpDuration);
+            timeElapsed += Time.deltaTime;
+            attitudeBar.fillAmount = _valueToLerp / 100;
+            yield return null;
+        }
+        _valueToLerp = endValue;
     }
 
 }

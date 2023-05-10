@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
+  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1510,6 +1510,7 @@ MonoBehaviour:
   wifeAttitudeBar: {fileID: 571555462}
   kidsAttitudeBar: {fileID: 652330352}
   dogAttitudeBar: {fileID: 47755618}
+  attitudeLerpDuration: 1
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0
@@ -1638,7 +1639,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 11
   m_OnValueChanged:
