@@ -54,6 +54,9 @@ public class SceneStarter : MonoBehaviour
     public float attitudeLerpDuration;
     private float _valueToLerp;
 
+    [Header("TypeWriter")]
+    public float characterTime;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -90,7 +93,13 @@ public class SceneStarter : MonoBehaviour
 
             //sets the text
             dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
-          
+
+            TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
+
+            //StartCoroutine(TypeWriter(dialogText.GetComponent<TextMeshProUGUI>()));
+
+           
+
             //if the line has an attitude change, now make sure that happens!!!
             if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
             {
@@ -181,53 +190,6 @@ public class SceneStarter : MonoBehaviour
         } 
 
     }
-
-   /*  //[SerializeField] TextMeshProUGUI _textMeshPro;
-    [Header("Type Writer Effect")]
-    public string[] stringArray;
-
-    [SerializeField] float timeBtwnChars;
-    [SerializeField] float timeBtwnWords; */
-
-  /*  int i = 0; */
-
-  /*  public void EndCheck()
-    {
-        Debug.Log("???");
-        if (i <= stringArray.Length - 1)
-        {
-        startLineBlock.sceneComponents[0].dialog = stringArray[i];
-            StartCoroutine(TextVisible());
-
-        Debug.Log("Working");
-        }
-    } */
-
-    /* private IEnumerator TextVisible()
-    {
-        dialogText.GetComponent<TextMeshProUGUI>().ForceMeshUpdate();
-        int totalVisibleCharacters = dialogText.GetComponent<TextMeshProUGUI>().textInfo.characterCount;
-        int counter = 0;
-
-        while (true)
-        {
-            int visibleCount = totalVisibleCharacters + 1;
-            dialogText.GetComponent<TextMeshProUGUI>().maxVisibleCharacters = visibleCount;
-
-            if (visibleCount >= totalVisibleCharacters)
-            {
-                i += 1;
-                Invoke("EndCheck", timeBtwnWords);
-                Debug.Log("Ahhhh");
-                break;
-            }
-
-            counter += 1;
-            yield return new WaitForSeconds(timeBtwnChars);
-
-
-        }
-    } */
 
     //when the player presses space!
     void OnNext()
@@ -320,6 +282,27 @@ public class SceneStarter : MonoBehaviour
             yield return null;
         }
         _valueToLerp = endValue;
+    }
+
+    public void TypeWriter(TextMeshProUGUI text)
+    {
+        text.maxVisibleCharacters = 0;
+        text.ForceMeshUpdate();
+        StartCoroutine(TextVisible(text));
+    }
+
+    private IEnumerator TextVisible(TextMeshProUGUI text)
+    {
+        text.ForceMeshUpdate();
+
+        while (text.textInfo.characterCount >= text.maxVisibleCharacters)
+        {
+            text.maxVisibleCharacters++;
+            Debug.Log(text.maxVisibleCharacters);
+            yield return new WaitForSeconds(characterTime);
+        }
+
+        text.maxVisibleCharacters = text.textInfo.characterCount;
     }
 
 }

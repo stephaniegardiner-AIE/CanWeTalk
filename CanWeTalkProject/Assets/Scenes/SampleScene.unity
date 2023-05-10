@@ -1511,6 +1511,7 @@ MonoBehaviour:
   kidsAttitudeBar: {fileID: 652330352}
   dogAttitudeBar: {fileID: 47755618}
   attitudeLerpDuration: 1
+  characterTime: 0
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0
