@@ -57,6 +57,8 @@ public class Line : ScriptableObject
 
             attitudeArray[i] = tmp;
         }
+
+        
     }
 
 }

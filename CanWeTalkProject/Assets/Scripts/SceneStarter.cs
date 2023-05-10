@@ -57,6 +57,12 @@ public class SceneStarter : MonoBehaviour
     [Header("TypeWriter")]
     public float characterTime;
 
+    [Header("CharacterNames")]
+    public string wifeName;
+    public string youName;
+    public string girlName;
+    public string boyName;
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -87,7 +93,12 @@ public class SceneStarter : MonoBehaviour
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
 
+            NameCheck();
+
             
+            //dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName);
+
+            //Debug.Log(currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName));
 
             dialogText = line.GetComponent<Transform>().Find("CharacterDialogText");
 
@@ -116,6 +127,12 @@ public class SceneStarter : MonoBehaviour
             
            
         }       
+    }
+
+    public void NameCheck()
+    {
+        currentLineBlock.lines[lineNumber].dialog = currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName);
+        currentLineBlock.lines[lineNumber].dialog = currentLineBlock.lines[lineNumber].dialog.Replace("KidBoyName", boyName);
     }
 
     //figures out what to run next after a line block is finished
