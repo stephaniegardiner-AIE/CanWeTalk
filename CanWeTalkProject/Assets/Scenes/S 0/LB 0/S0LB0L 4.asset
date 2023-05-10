@@ -15,3 +15,5 @@ MonoBehaviour:
   character: 0
   dialog: WifeName takes a step forward and places a few papers on the table next
     to me.
+  attitudeArrayLength: 0
+  attitudeArray: []
