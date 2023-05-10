@@ -298,7 +298,6 @@ public class SceneStarter : MonoBehaviour
         while (text.textInfo.characterCount >= text.maxVisibleCharacters)
         {
             text.maxVisibleCharacters++;
-            Debug.Log(text.maxVisibleCharacters);
             yield return new WaitForSeconds(characterTime);
         }
 
