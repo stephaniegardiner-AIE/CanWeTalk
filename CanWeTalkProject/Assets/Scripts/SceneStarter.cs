@@ -93,7 +93,7 @@ public class SceneStarter : MonoBehaviour
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
 
-            NameCheck();
+           
 
             
             //dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName);
@@ -104,6 +104,8 @@ public class SceneStarter : MonoBehaviour
 
             //sets the text
             dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
+
+            NameCheck();
 
             TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
 
@@ -131,8 +133,9 @@ public class SceneStarter : MonoBehaviour
 
     public void NameCheck()
     {
-        currentLineBlock.lines[lineNumber].dialog = currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName);
-        currentLineBlock.lines[lineNumber].dialog = currentLineBlock.lines[lineNumber].dialog.Replace("KidBoyName", boyName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
     }
 
     //figures out what to run next after a line block is finished

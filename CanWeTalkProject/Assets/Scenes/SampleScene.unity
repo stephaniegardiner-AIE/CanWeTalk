@@ -1512,10 +1512,10 @@ MonoBehaviour:
   dogAttitudeBar: {fileID: 47755618}
   attitudeLerpDuration: 1
   characterTime: 0.02
-  wifeName: ahhhhhhhhhhhh
-  youName: 
-  girlName: 
-  boyName: 
+  wifeName: Lorainne
+  youName: Brad
+  girlName: Susie
+  boyName: Tommy
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0
