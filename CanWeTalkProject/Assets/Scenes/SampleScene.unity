@@ -1491,6 +1491,7 @@ MonoBehaviour:
   xPositionSpeechBubble: 0
   yPositionSpeechBubble: 200
   dialogText: {fileID: 0}
+  dialogLinePadding: 5
   lineNumber: 0
   decisionNumber: 0
   currentTextToWrite: {fileID: 0}

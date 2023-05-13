@@ -22,6 +22,8 @@ public class SceneStarter : MonoBehaviour
     public float xPositionSpeechBubble;
     public float yPositionSpeechBubble;
     public Transform dialogText;
+    public Transform dialogBackground;
+    public float dialogLinePadding;
     public int lineNumber;
     public int decisionNumber;
     public TextMeshProUGUI currentTextToWrite;
@@ -100,7 +102,9 @@ public class SceneStarter : MonoBehaviour
 
             //Debug.Log(currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName));
 
-            dialogText = line.GetComponent<Transform>().Find("CharacterDialogText");
+            
+            dialogBackground = line.GetComponent<Transform>().Find("CharacterDialogBackground");
+            dialogText = dialogBackground.Find("CharacterDialogText");
 
             //sets the text
             dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
@@ -126,13 +130,26 @@ public class SceneStarter : MonoBehaviour
             ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
 
 
+            float dialogTextSizeDeltaWidth = dialogText.GetComponent<RectTransform>().sizeDelta.x;
+            float dialogFontSize = dialogText.GetComponent<TextMeshProUGUI>().fontSize;
+            float dialogLineCount = dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount;
+            //float dialogLineSpacing = dialogText.GetComponent<TextMeshProUGUI>().lineHeight;
 
+            //Debug.Log(dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
 
-            Debug.Log(dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+            dialogText.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextSizeDeltaWidth + (dialogLinePadding * 2), 
+                (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2));
 
-            dialogText.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogText.GetComponent<RectTransform>().sizeDelta.x, dialogText.GetComponent<TextMeshProUGUI>().fontSize * dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+            float dialogTextWidth = dialogTextSizeDeltaWidth + (dialogLinePadding * 2);
 
-            ;
+            float dialogTextHeight = (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2);
+
+            // float dialogBackgroundWidth = dialogBackground.GetComponent<RectTransform>().sizeDelta.x;
+            float dialogBackgroundHeight = dialogBackground.GetComponent<RectTransform>().sizeDelta.y; 
+            //float dialogPadding = characterDialogText.GetComponent<RectTransform>().sizeDelta.x;
+            dialogBackground.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextWidth + (dialogLinePadding *4), dialogTextHeight);
+
+            Debug.Log(dialogBackgroundHeight);
         }       
     }
 
@@ -191,8 +208,8 @@ public class SceneStarter : MonoBehaviour
     //Formats Speech bubbles
     public void CheckCharacterFormat(GameObject speech)
     {
-        TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
-        GameObject speechBackground = speech.GetComponent<Transform>().Find("CharacterSpeechBubbleBackground").gameObject;
+        TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogBackground").Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
+        GameObject speechBackground = speech.GetComponent<Transform>().Find("CharacterDialogBackground").gameObject;
         
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
         {

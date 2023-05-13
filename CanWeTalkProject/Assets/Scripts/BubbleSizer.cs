@@ -9,7 +9,10 @@ public class BubbleSizer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<RectTransform>().sizeDelta = new Vector2(characterDialogText.GetComponent<RectTransform>().sizeDelta.x, characterDialogText.GetComponent<RectTransform>().sizeDelta.y);
+       /* float dialogWidth = characterDialogText.GetComponent<RectTransform>().sizeDelta.x;
+        float dialogHeight = characterDialogText.GetComponent<RectTransform>().sizeDelta.y;
+        //float dialogPadding = characterDialogText.GetComponent<RectTransform>().sizeDelta.x;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(dialogWidth, dialogHeight); */
 
         //Debug.Log()
     }
