@@ -125,10 +125,20 @@ public class SceneStarter : MonoBehaviour
 
             ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
 
-            
-            
-           
+
+
+
+            Debug.Log(dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+
+            dialogText.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogText.GetComponent<RectTransform>().sizeDelta.x, dialogText.GetComponent<TextMeshProUGUI>().fontSize * dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+
+            ;
         }       
+    }
+
+    public void ResizeSpeech()
+    {
+
     }
 
     public void NameCheck()
