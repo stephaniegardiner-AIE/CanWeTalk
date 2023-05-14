@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
+  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1491,6 +1491,7 @@ MonoBehaviour:
   xPositionSpeechBubble: 0
   yPositionSpeechBubble: 200
   dialogText: {fileID: 0}
+  dialogBackground: {fileID: 0}
   dialogLinePadding: 5
   lineNumber: 0
   decisionNumber: 0
@@ -1513,7 +1514,7 @@ MonoBehaviour:
   dogAttitudeBar: {fileID: 47755618}
   attitudeLerpDuration: 1
   characterTime: 0.02
-  wifeName: Lorainne
+  wifeName: Michelle
   youName: Brad
   girlName: Susie
   boyName: Tommy
@@ -1645,7 +1646,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 11
   m_OnValueChanged:
