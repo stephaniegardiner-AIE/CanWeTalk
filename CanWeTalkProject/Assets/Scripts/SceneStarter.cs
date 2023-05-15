@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 
 public class SceneStarter : MonoBehaviour
 {
+    public CharacterSpriteManager spriteManager;
     public LineBlock currentLineBlock;
     public Scene currentScene;
     public bool decision = false;
@@ -40,12 +41,6 @@ public class SceneStarter : MonoBehaviour
     public Color boyColor;
     public Color girlColor;
     public Color dogColor;
-
-    [Header("Character Sprites")]
-    public GameObject wifeSprite;
-    public GameObject boySprite;
-    public GameObject girlSprite;
-    public GameObject dogSprite;
 
     [Header("Speech Tails")]
     public GameObject speechTailLeft;
@@ -290,6 +285,7 @@ public class SceneStarter : MonoBehaviour
         {
             speechBackground.GetComponent<Image>().color = descriptionColor;
             speechText.alignment = TextAlignmentOptions.Center;
+            //FigureCharacterSprites(Line.Character character);
 
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
@@ -298,6 +294,7 @@ public class SceneStarter : MonoBehaviour
             GameObject speechTail = Instantiate(speechTailLeft) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = youColor;
+            //FigureCharacterSprites(Line.Character character);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
         {
@@ -305,6 +302,7 @@ public class SceneStarter : MonoBehaviour
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = wifeColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Wife);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
         {
@@ -312,6 +310,7 @@ public class SceneStarter : MonoBehaviour
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = boyColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Boy);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
         {
@@ -319,6 +318,7 @@ public class SceneStarter : MonoBehaviour
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = girlColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Girl);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
         {
@@ -326,6 +326,7 @@ public class SceneStarter : MonoBehaviour
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = dogColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Dog);
         } 
 
     }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class AttitudeManager : MonoBehaviour
 {
 
+
     public int wifeAttitude;
     public int youAttitude;
     public int childrenAttitude;
     public int dogAttitude;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,4 +23,6 @@ public class AttitudeManager : MonoBehaviour
     {
         
     }
+
+    
 }

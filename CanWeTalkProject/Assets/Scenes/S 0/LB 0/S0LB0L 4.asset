@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB0L 4
   m_EditorClassIdentifier: 
-  character: 0
+  character: 5
   dialog: WifeName takes a step forward and places a few papers on the table next
     to me.
   attitudeArrayLength: 0

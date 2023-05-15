@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB0L 10
   m_EditorClassIdentifier: 
-  character: 2
+  character: 4
   dialog: "Just sign the papers, please, it\u2019ll make this all so much easier
     on us both if you do."
+  attitudeArrayLength: 0
+  attitudeArray: []

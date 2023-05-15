@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB0L 9
   m_EditorClassIdentifier: 
-  character: 1
+  character: 2
   dialog: "Is this a joke or something? Please tell me you\u2019re joking."
+  attitudeArrayLength: 0
+  attitudeArray: []
