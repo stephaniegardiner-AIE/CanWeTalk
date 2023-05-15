@@ -42,7 +42,7 @@ public class CharacterSpriteManager : MonoBehaviour
             Debug.Log("there are some characters so lets go!");
             for (int i = 0; i < activeCharacterSprites.Count; i++)
             {
-                Debug.Log("aaaaaaaa");
+               /* Debug.Log("aaaaaaaa");
                 if (character.ToString() + "GO" == activeCharacterSprites[i].ToString())
                 {
                     Debug.Log("we good fam");
@@ -50,7 +50,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 else
                 {
                     NewCharacterSprite(character);
-                }
+                } */
             }
         }
     }
@@ -62,8 +62,9 @@ public class CharacterSpriteManager : MonoBehaviour
             GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
             wifeSprite.transform.SetParent(spriteLocation1.transform, false);
             wifeSprite.name = "wifeSprite";
-           
-    
+            activeCharacterSprites.Add(wifeSprite);
+            AddCharacterSprite(wifeSprite);
+
 
             //spriteLocation1.sprite = wifeSprite;
         }
@@ -72,8 +73,9 @@ public class CharacterSpriteManager : MonoBehaviour
             GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
             boySprite.transform.SetParent(spriteLocation1.transform, false);
             boySprite.name = "boySprite";
+            activeCharacterSprites.Add(boySprite);
             AddCharacterSprite(boySprite);
-        
+
             // spriteLocation1.sprite = boySprite;
         }
         if (character == Line.Character.Girl)
@@ -81,8 +83,9 @@ public class CharacterSpriteManager : MonoBehaviour
             GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
             girlSprite.transform.SetParent(spriteLocation1.transform, false);
             girlSprite.name = "girlSprite";
-            AddCharacterSprite(girlSprite);
-        
+            activeCharacterSprites.Add(girlSprite);
+             AddCharacterSprite(girlSprite);
+
             // spriteLocation1.sprite = girlSprite;
         }
         if (character == Line.Character.Dog)
@@ -90,15 +93,16 @@ public class CharacterSpriteManager : MonoBehaviour
             GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
             dogSprite.transform.SetParent(spriteLocation1.transform, false);
             dogSprite.name = "dogSprite";
+            activeCharacterSprites.Add(dogSprite);
             AddCharacterSprite(dogSprite);
             //spriteLocation1.sprite = dogSprite;
         }
     }
     public void AddCharacterSprite(GameObject newCharacterSprite)
     {
-        newCharacterSprite.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-        StartCoroutine(OpacityLerp(0, 1, newCharacterSprite));
-        activeCharacterSprites.Add(newCharacterSprite);
+       // newCharacterSprite.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+       // StartCoroutine(OpacityLerp(0, 1, newCharacterSprite));
+        //activeCharacterSprites.Add(newCharacterSprite);
     }
 
     public void MakeSmaller()
