@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 2
   dialog: "I don\u2019t love you anymore. I haven\u2019t for a while now. I didn\u2019t
-    want to put through the kids through a divorce so I tried, I really did, but
-    I don\u2019t see any other way to make it work."
+    want to put the kids through a divorce so I tried, I really did, but I don\u2019t
+    see any other way to make it work."
+  attitudeArrayLength: 0
+  attitudeArray: []

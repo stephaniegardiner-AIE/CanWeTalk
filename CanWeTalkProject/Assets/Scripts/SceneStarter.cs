@@ -41,6 +41,12 @@ public class SceneStarter : MonoBehaviour
     public Color girlColor;
     public Color dogColor;
 
+    [Header("Character Sprites")]
+    public GameObject wifeSprite;
+    public GameObject boySprite;
+    public GameObject girlSprite;
+    public GameObject dogSprite;
+
     [Header("Speech Tails")]
     public GameObject speechTailLeft;
     public GameObject speechTailRight;
@@ -114,6 +120,7 @@ public class SceneStarter : MonoBehaviour
             if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
             {
                 UpdateAttitudes(currentLineBlock.lines[lineNumber]);
+                Debug.Log("AttitudeChange!");
             }
 
                 lineNumber++;
@@ -174,7 +181,7 @@ public class SceneStarter : MonoBehaviour
         for (int i = 0; i < buttonBlock.transform.childCount; i++)
         {
             buttonsHeight += buttonBlock.transform.GetChild(i).GetComponent<RectTransform>().sizeDelta.y;
-            Debug.Log(buttonsHeight);
+           // Debug.Log(buttonsHeight);
         }
 
         //float buttonTextLine
@@ -209,7 +216,7 @@ public class SceneStarter : MonoBehaviour
         button.GetComponent<RectTransform>().sizeDelta = new Vector2(buttonWidth, 
             (buttonTextFontSize * buttonTextLineCount));
 
-        Debug.Log(buttonTextLineCount);
+        //Debug.Log(buttonTextLineCount);
     }
 
     public void NameCheck()
@@ -222,7 +229,7 @@ public class SceneStarter : MonoBehaviour
     //figures out what to run next after a line block is finished
     public void FigureNext()
     {
-        Debug.Log("LineBlockComplete");
+        //Debug.Log("LineBlockComplete");
 
         //if activity is not next runn the decision
         if (currentLineBlock.endActivityBlock == null)
@@ -333,7 +340,7 @@ public class SceneStarter : MonoBehaviour
         if (!decision)
         {
             LineRunner();
-            Debug.Log("NextLine");
+            //Debug.Log("NextLine");
         }
         
 
@@ -353,7 +360,7 @@ public class SceneStarter : MonoBehaviour
         for (int i = 0; i < line.attitudeArray.Length; i++)
 
         {
-           Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
+           //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
 
             //change you attitude
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "youAttitude")
