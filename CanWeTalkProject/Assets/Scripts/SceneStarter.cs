@@ -19,6 +19,7 @@ public class SceneStarter : MonoBehaviour
     public GameObject decisionPrefab;
     public GameObject content;
     public float contentHeight;
+    public float tailHeight;
     public float xPositionSpeechBubble;
     public float yPositionSpeechBubble;
     public Transform dialogText;
@@ -119,12 +120,12 @@ public class SceneStarter : MonoBehaviour
 
             // EndCheck();
 
-            float tailHeight = 0;
+            
 
-            if (line.transform.GetChild(1) != null)
-            {
-                tailHeight = line.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta.y;
-            }
+         //   if (line.transform.GetChild(1) != null)
+          //  {
+           //     tailHeight = line.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta.y;
+           // }
             
 
             ResizeSpeech();

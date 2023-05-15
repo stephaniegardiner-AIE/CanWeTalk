@@ -1488,6 +1488,7 @@ MonoBehaviour:
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
   content: {fileID: 473292766}
   contentHeight: 0
+  tailHeight: 40
   xPositionSpeechBubble: 0
   yPositionSpeechBubble: 200
   dialogText: {fileID: 0}
