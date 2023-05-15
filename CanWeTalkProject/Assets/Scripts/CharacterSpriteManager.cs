@@ -31,67 +31,74 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public void FigureCharacterSprites(Line.Character character)
     {
-        Debug.Log("we made ti to here");
-        for (int i = 0; i < activeCharacterSprites.Count; i++)
+        Debug.Log("Checkingifitsanewcharacter");
+        if (activeCharacterSprites.Count == 0)
         {
-            Debug.Log("aaaaaaaa");
-            if (character.ToString() + "GO" == activeCharacterSprites[i].ToString())
-            {
-                Debug.Log("we good fam");
-            }
-            else
-            {
-                if (character == Line.Character.Wife)
-                {
-                    GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
-                    wifeSprite.transform.SetParent(spriteLocation1.transform, false);
-                    wifeSprite.name = "wifeSprite";
-                    AddCharacterSprite(wifeSprite);
-
-                    //spriteLocation1.sprite = wifeSprite;
-                }
-                if (character == Line.Character.Boy)
-                {
-                    GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
-                    boySprite.transform.SetParent(spriteLocation1.transform, false);
-                    boySprite.name = "boySprite";
-                    AddCharacterSprite(boySprite);
-                    // spriteLocation1.sprite = boySprite;
-                }
-                if (character == Line.Character.Girl)
-                {
-                    GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
-                    girlSprite.transform.SetParent(spriteLocation1.transform, false);
-                    girlSprite.name = "girlSprite";
-                    AddCharacterSprite(girlSprite);
-                    // spriteLocation1.sprite = girlSprite;
-                }
-                if (character == Line.Character.Dog)
-                {
-                    GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
-                    dogSprite.transform.SetParent(spriteLocation1.transform, false);
-                    dogSprite.name = "dogSprite";
-                    AddCharacterSprite(dogSprite);
-                    //spriteLocation1.sprite = dogSprite;
-                }
-            }
+            Debug.Log("there are no characters");
+            NewCharacterSprite(character);
         }
-
-        //if (activeCharacterSprites.Contains(Find(character.ToString() + "GO"))
-       // {
-            if (character != Line.Character.You && character != Line.Character.Description)
+        else
+        {
+            Debug.Log("there are some characters so lets go!");
+            for (int i = 0; i < activeCharacterSprites.Count; i++)
             {
-                
-           // }
-
-
+                Debug.Log("aaaaaaaa");
+                if (character.ToString() + "GO" == activeCharacterSprites[i].ToString())
+                {
+                    Debug.Log("we good fam");
+                }
+                else
+                {
+                    NewCharacterSprite(character);
+                }
+            }
         }
     }
 
+    public void NewCharacterSprite(Line.Character character)
+    {
+        if (character == Line.Character.Wife)
+        {
+            GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
+            wifeSprite.transform.SetParent(spriteLocation1.transform, false);
+            wifeSprite.name = "wifeSprite";
+           
+    
+
+            //spriteLocation1.sprite = wifeSprite;
+        }
+        if (character == Line.Character.Boy)
+        {
+            GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
+            boySprite.transform.SetParent(spriteLocation1.transform, false);
+            boySprite.name = "boySprite";
+            AddCharacterSprite(boySprite);
+        
+            // spriteLocation1.sprite = boySprite;
+        }
+        if (character == Line.Character.Girl)
+        {
+            GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
+            girlSprite.transform.SetParent(spriteLocation1.transform, false);
+            girlSprite.name = "girlSprite";
+            AddCharacterSprite(girlSprite);
+        
+            // spriteLocation1.sprite = girlSprite;
+        }
+        if (character == Line.Character.Dog)
+        {
+            GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
+            dogSprite.transform.SetParent(spriteLocation1.transform, false);
+            dogSprite.name = "dogSprite";
+            AddCharacterSprite(dogSprite);
+            //spriteLocation1.sprite = dogSprite;
+        }
+    }
     public void AddCharacterSprite(GameObject newCharacterSprite)
     {
         newCharacterSprite.GetComponent<Image>().color = new Color(1, 1, 1, 0);
         StartCoroutine(OpacityLerp(0, 1, newCharacterSprite));
+        activeCharacterSprites.Add(newCharacterSprite);
     }
 
     public void MakeSmaller()
