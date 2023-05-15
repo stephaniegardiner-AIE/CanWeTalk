@@ -119,9 +119,17 @@ public class SceneStarter : MonoBehaviour
 
             // EndCheck();
 
-            ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
+            float tailHeight = 0;
+
+            if (line.transform.GetChild(1) != null)
+            {
+                tailHeight = line.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta.y;
+            }
+            
 
             ResizeSpeech();
+
+            ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
 
         }       
     }
@@ -233,7 +241,7 @@ public class SceneStarter : MonoBehaviour
         decisionBlock.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
         currentVisibleSpeech.Add(decisionBlock);
 
-        ResizeContent(decisionBlock.GetComponent<RectTransform>().sizeDelta.y);
+        
 
         
 
@@ -258,8 +266,10 @@ public class SceneStarter : MonoBehaviour
         ResizeButtonBlockBackground(decisionBlock);
 
         //activates the decision state
-        decision = true; 
-      
+        decision = true;
+
+        ResizeContent(decisionBlock.GetComponent<RectTransform>().sizeDelta.y);
+
     }
 
     //Formats Speech bubbles

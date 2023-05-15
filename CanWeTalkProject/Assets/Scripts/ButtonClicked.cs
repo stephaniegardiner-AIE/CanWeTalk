@@ -38,6 +38,7 @@ public class ButtonClicked : MonoBehaviour
         //sceneStarter.previousLines += sceneStarter.currentLineBlock.lines.Length - sceneStarter.previousLines;
         sceneStarter.LineRunner();
         sceneStarter.decision = false;
+        sceneStarter.ResizeContent(-transform.parent.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta.y);
         Destroy(transform.parent.transform.parent.gameObject);
     }
 }
