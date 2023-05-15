@@ -1504,8 +1504,8 @@ MonoBehaviour:
   boyColor: {r: 0, g: 0, b: 0, a: 0}
   girlColor: {r: 0, g: 0, b: 0, a: 0}
   dogColor: {r: 0, g: 0, b: 0, a: 0}
-  speechTailLeft: {fileID: 6323899641829304181, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
-  speechTailRight: {fileID: 7858388047293619977, guid: f427551bbf27184478c94038b2f1004c, type: 3}
+  speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
+  speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
   youAttitudeLevel: 100
   wifeAttitudeLevel: 50
   kidsAttitudeLevel: 100
