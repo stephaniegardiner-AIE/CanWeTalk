@@ -40,6 +40,10 @@ public class SceneStarter : MonoBehaviour
     public Color girlColor;
     public Color dogColor;
 
+    [Header("Speech Tails")]
+    public GameObject speechTailLeft;
+    public GameObject speechTailRight;
+
     [Header("Character Attitudes")]
     public float youAttitudeLevel;
     public float wifeAttitudeLevel;
@@ -95,7 +99,7 @@ public class SceneStarter : MonoBehaviour
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
             
-            dialogBackground = line.GetComponent<Transform>().Find("CharacterDialogBackground");
+            dialogBackground = line.GetComponent<Transform>();
             dialogText = dialogBackground.Find("CharacterDialogText");
 
             //sets the text
@@ -246,7 +250,7 @@ public class SceneStarter : MonoBehaviour
             //sets the size of teh deicision buttons
             ResizeButton(decision);
 
-            Debug.Log(decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+            //Debug.Log(decision.transform.GetChild(1).GetComponent<TextMeshProUGUI>().textInfo.lineCount);
         }
 
         ResizeButtonBlock(decisionBlock.transform.Find("DecisionButtons").gameObject);
@@ -261,35 +265,54 @@ public class SceneStarter : MonoBehaviour
     //Formats Speech bubbles
     public void CheckCharacterFormat(GameObject speech)
     {
-        TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogBackground").Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
-        GameObject speechBackground = speech.GetComponent<Transform>().Find("CharacterDialogBackground").gameObject;
+        TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
+        GameObject speechBackground = speech.GetComponent<Transform>().gameObject;
         
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
         {
             speechBackground.GetComponent<Image>().color = descriptionColor;
+            
+
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
         {
             speechBackground.GetComponent<Image>().color = youColor;
+            GameObject speechTail = Instantiate(speechTailLeft) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = youColor;
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
         {
             speechBackground.GetComponent<Image>().color = wifeColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = wifeColor;
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
         {
             speechBackground.GetComponent<Image>().color = boyColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = boyColor;
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
         {
             speechBackground.GetComponent<Image>().color = girlColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = girlColor;
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
         {
             speechBackground.GetComponent<Image>().color = dogColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = dogColor;
         } 
 
     }
+
+    //public void SpeechTailMaker(GameObject speechBackground,)
 
     //when the player presses space!
     void OnNext()
