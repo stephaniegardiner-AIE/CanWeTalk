@@ -94,14 +94,6 @@ public class SceneStarter : MonoBehaviour
             line.name = "SpeechBubble" + lineNumber.ToString();
             line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
             currentVisibleSpeech.Add(line);
-
-           
-
-            
-            //dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName);
-
-            //Debug.Log(currentLineBlock.lines[lineNumber].dialog.Replace("WifeName", wifeName));
-
             
             dialogBackground = line.GetComponent<Transform>().Find("CharacterDialogBackground");
             dialogText = dialogBackground.Find("CharacterDialogText");
@@ -112,10 +104,6 @@ public class SceneStarter : MonoBehaviour
             NameCheck();
 
             TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
-
-            //StartCoroutine(TypeWriter(dialogText.GetComponent<TextMeshProUGUI>()));
-
-           
 
             //if the line has an attitude change, now make sure that happens!!!
             if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
@@ -129,33 +117,86 @@ public class SceneStarter : MonoBehaviour
 
             ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y);
 
+            ResizeSpeech();
 
-            float dialogTextSizeDeltaWidth = dialogText.GetComponent<RectTransform>().sizeDelta.x;
-            float dialogFontSize = dialogText.GetComponent<TextMeshProUGUI>().fontSize;
-            float dialogLineCount = dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount;
-            //float dialogLineSpacing = dialogText.GetComponent<TextMeshProUGUI>().lineHeight;
-
-            //Debug.Log(dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount);
-
-            dialogText.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextSizeDeltaWidth + (dialogLinePadding * 2), 
-                (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2));
-
-            float dialogTextWidth = dialogTextSizeDeltaWidth + (dialogLinePadding * 2);
-
-            float dialogTextHeight = (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2);
-
-            // float dialogBackgroundWidth = dialogBackground.GetComponent<RectTransform>().sizeDelta.x;
-            float dialogBackgroundHeight = dialogBackground.GetComponent<RectTransform>().sizeDelta.y; 
-            //float dialogPadding = characterDialogText.GetComponent<RectTransform>().sizeDelta.x;
-            dialogBackground.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextWidth + (dialogLinePadding *4), dialogTextHeight);
-
-            Debug.Log(dialogBackgroundHeight);
         }       
     }
 
     public void ResizeSpeech()
     {
+        //establishing a bnch of variables
+        float dialogTextSizeDeltaWidth = dialogText.GetComponent<RectTransform>().sizeDelta.x;
+        float dialogFontSize = dialogText.GetComponent<TextMeshProUGUI>().fontSize;
+        float dialogLineCount = dialogText.GetComponent<TextMeshProUGUI>().textInfo.lineCount;
 
+
+        dialogText.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextSizeDeltaWidth + (dialogLinePadding * 2),
+            (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2));
+
+        float dialogTextWidth = dialogTextSizeDeltaWidth + (dialogLinePadding * 2);
+
+        float dialogTextHeight = (dialogFontSize * dialogLineCount) + (dialogLinePadding * dialogLineCount) + (dialogLinePadding * 2);
+
+ 
+        float dialogBackgroundHeight = dialogBackground.GetComponent<RectTransform>().sizeDelta.y;
+
+        dialogBackground.GetComponent<RectTransform>().sizeDelta = new Vector2(dialogTextWidth + (dialogLinePadding * 4), dialogTextHeight);
+
+        //Debug.Log(dialogBackgroundHeight);
+    }
+
+    //the background for the button block
+    public void ResizeButtonBlock(GameObject buttonBlock)
+    {
+        //float buttonBlockHeight = buttonBlock.GetComponent<RectTransform>().sizeDelta.y;
+
+        float buttonBlockWidth = buttonBlock.transform.parent.GetComponent<RectTransform>().sizeDelta.x;
+
+        int thisDialogLinePadding = (int)dialogLinePadding;
+
+        buttonBlock.GetComponent<VerticalLayoutGroup>().padding.left = (thisDialogLinePadding * 3);
+
+        float buttonsHeight = 0;
+
+        for (int i = 0; i < buttonBlock.transform.childCount; i++)
+        {
+            buttonsHeight += buttonBlock.transform.GetChild(i).GetComponent<RectTransform>().sizeDelta.y;
+            Debug.Log(buttonsHeight);
+        }
+
+        //float buttonTextLine
+
+        buttonBlock.GetComponent<RectTransform>().sizeDelta = new Vector2(buttonBlockWidth, buttonsHeight + (dialogLinePadding * 2));
+
+    }
+
+    //the actual speech bubble
+    public void ResizeButtonBlockBackground(GameObject buttonBlockBackground)
+    {
+        float buttonBlockWidth = (buttonBlockBackground.transform.GetComponent<RectTransform>().sizeDelta.x);
+        float buttonBlockHeight = 0;
+        
+        for (int i = 0; i <buttonBlockBackground.transform.childCount; i++)
+        {
+            buttonBlockHeight += buttonBlockBackground.transform.GetChild(i).GetComponent<RectTransform>().sizeDelta.y + (dialogLinePadding * 2);
+            
+        }
+
+        buttonBlockBackground.GetComponent<RectTransform>().sizeDelta = new Vector2(buttonBlockWidth, buttonBlockHeight);
+    }
+    public void ResizeButton(GameObject button)
+    {
+        TextMeshProUGUI buttonText = button.GetComponent<Transform>().Find("DecisionButtonText").GetComponent<TextMeshProUGUI>();
+        float buttonTextFontSize = buttonText.fontSize;
+        float buttonTextLineCount = buttonText.textInfo.lineCount;
+
+        float buttonWidth = button.GetComponent<RectTransform>().sizeDelta.x;
+        float buttonHeight = button.GetComponent<RectTransform>().sizeDelta.y;
+
+        button.GetComponent<RectTransform>().sizeDelta = new Vector2(buttonWidth, 
+            (buttonTextFontSize * buttonTextLineCount));
+
+        Debug.Log(buttonTextLineCount);
     }
 
     public void NameCheck()
@@ -190,15 +231,27 @@ public class SceneStarter : MonoBehaviour
 
         ResizeContent(decisionBlock.GetComponent<RectTransform>().sizeDelta.y);
 
+        
+
         //makes a decision button appear for each decision in list
         for (int i = 0; i < currentLineBlock.endDecisionBlock.decisions.Length; i++)
         {
             GameObject decision = Instantiate(decisionPrefab) as GameObject;
             decision.transform.SetParent(decisionBlock.transform.Find("DecisionButtons"), false);
             decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentLineBlock.endDecisionBlock.decisions[i].decisionName;
+            //adds type writer effect to button text
+            TypeWriter(decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
             decision.GetComponent<ButtonClicked>().decisionNumber = i;
 
+            //sets the size of teh deicision buttons
+            ResizeButton(decision);
+
+            Debug.Log(decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().textInfo.lineCount);
         }
+
+        ResizeButtonBlock(decisionBlock.transform.Find("DecisionButtons").gameObject);
+
+        ResizeButtonBlockBackground(decisionBlock);
 
         //activates the decision state
         decision = true; 
