@@ -282,7 +282,7 @@ public class SceneStarter : MonoBehaviour
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
         {
             speechBackground.GetComponent<Image>().color = descriptionColor;
-            
+            speechText.alignment = TextAlignmentOptions.Center;
 
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
