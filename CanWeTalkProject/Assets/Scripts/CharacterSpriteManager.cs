@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CharacterSpriteManager : MonoBehaviour
 {
+    public GameObject canvas;
+    
     [Header("Character Sprites")]
     public GameObject wifeSpriteGO;
     public GameObject boySpriteGO;
@@ -22,11 +24,16 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public float sizeLerpDuration;
     public float opacityLerpDuration;
+    public float positionLerpDuration;
 
     private float _sizeLerpValue;
     private float _opacityLerpValue;
+    private float _xPositionLerpValue;
+    private float _yPositionLerpValue;
 
+    public GameObject primaryCharacter;
 
+    public List<GameObject> secondaryCharacterSprites;
 
     public List<GameObject> activeCharacterSprites;
 
@@ -44,55 +51,163 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public void NewCharacterSprite(Line.Character character)
     {
-        if (character == Line.Character.Wife && !wifeActive)
+        if (character == Line.Character.Wife)
         {
-            GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
-            wifeSprite.transform.SetParent(spriteLocation1.transform, false);
-            wifeSprite.name = "wifeSprite";
-            activeCharacterSprites.Add(wifeSprite);
-            AddCharacterSprite(wifeSprite);
-            wifeActive = true;
+            if (wifeActive)
+            {
+                
+                Debug.Log("wife already active");
+                SetPrimaryCharacter("wifeSprite", wifeActive);
 
-            //spriteLocation1.sprite = wifeSprite;
-        }
-        if (character == Line.Character.Boy && !boyActive)
-        {
-            GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
-            boySprite.transform.SetParent(spriteLocation1.transform, false);
-            boySprite.name = "boySprite";
-            activeCharacterSprites.Add(boySprite);
-            AddCharacterSprite(boySprite);
-            boyActive = true;
+                ChangePosition();
+            }
+            if(!wifeActive)
+            {
+                
+                GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
+                wifeSprite.transform.SetParent(canvas.transform, false);
+                wifeSprite.name = "wifeSprite";
 
-            // spriteLocation1.sprite = boySprite;
-        }
-        if (character == Line.Character.Girl && !girlActive)
-        {
-            GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
-            girlSprite.transform.SetParent(spriteLocation1.transform, false);
-            girlSprite.name = "girlSprite";
-            activeCharacterSprites.Add(girlSprite);
-             AddCharacterSprite(girlSprite);
-            girlActive = true;
+                
+                AddCharacterSprite(wifeSprite);
+                SetPrimaryCharacter("wifeSprite", wifeActive);
+                wifeActive = true;
 
-            // spriteLocation1.sprite = girlSprite;
+                
+            }
+           
         }
-        if (character == Line.Character.Dog && !dogActive)
+
+        if (character == Line.Character.Boy)
         {
-            GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
-            dogSprite.transform.SetParent(spriteLocation1.transform, false);
-            dogSprite.name = "dogSprite";
-            activeCharacterSprites.Add(dogSprite);
-            AddCharacterSprite(dogSprite);
-            dogActive = true;
-            //spriteLocation1.sprite = dogSprite;
+            if (boyActive)
+            {
+                //SetPrimaryCharacter("boySpriteGO");
+                SetPrimaryCharacter("boySprite", boyActive);
+            }
+            if (!boyActive)
+            {
+                
+                GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
+                boySprite.transform.SetParent(canvas.transform, false);
+                boySprite.name = "boySprite";
+
+                
+                AddCharacterSprite(boySprite);
+                SetPrimaryCharacter("boySprite", boyActive);
+                boyActive = true;
+                
+            }
+
+            
         }
+
+        if (character == Line.Character.Girl)
+        {
+            if (girlActive)
+            {
+                SetPrimaryCharacter("girlSprite", girlActive);
+            }
+            if (!girlActive)
+            {
+                GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
+                girlSprite.transform.SetParent(canvas.transform, false);
+                girlSprite.name = "girlSprite";
+
+                
+                AddCharacterSprite(girlSprite);
+                SetPrimaryCharacter("girlSprite", girlActive);
+                girlActive = true;
+            }
+
+            
+
+        }
+        if (character == Line.Character.Dog)
+        {
+            if (dogActive)
+            {
+                SetPrimaryCharacter("dogSprite", dogActive);
+            }
+            if (!dogActive)
+            {
+                GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
+                dogSprite.transform.SetParent(canvas.transform, false);
+                dogSprite.name = "dogSprite";
+
+                
+                AddCharacterSprite(dogSprite);
+                SetPrimaryCharacter("dogSprite", dogActive);
+                dogActive = true;
+
+            }
+
+           
+
+        }
+    }
+
+    public void SetPrimaryCharacter(string gameObjectName, bool active)
+    {
+        GameObject characterSprite;
+
+        foreach (var character in activeCharacterSprites)
+        {
+            Debug.Log("??");
+            if (character.name == gameObjectName)
+            {
+                Debug.Log(":O");
+                characterSprite = character;
+
+                if (primaryCharacter != null)
+                {
+                    MoveToSecondary(primaryCharacter);
+                    secondaryCharacterSprites.Add(primaryCharacter);
+                }
+                           
+                primaryCharacter = characterSprite;
+                secondaryCharacterSprites.Remove(characterSprite);
+                Debug.Log("ayo");
+
+                MoveToPrimary(characterSprite);
+
+                break;
+            }
+        }
+
+        
     }
     public void AddCharacterSprite(GameObject newCharacterSprite)
     {
         newCharacterSprite.GetComponent<Image>().color = new Color(1, 1, 1, 0);
         StartCoroutine(OpacityLerp(0, 1, newCharacterSprite));
         activeCharacterSprites.Add(newCharacterSprite);
+    }
+
+    public void MoveToPrimary(GameObject characterSprite)
+    {
+        
+        StartCoroutine(PositionLerp(characterSprite.GetComponent<RectTransform>().position.x, 
+            characterSprite.GetComponent<RectTransform>().position.y, 
+            spriteLocation1.rectTransform.position.x, 
+            spriteLocation1.rectTransform.position.y, 
+            characterSprite,
+            spriteLocation1.gameObject));
+
+        //characterSprite.transform.SetParent(spriteLocation1.transform, false);
+    }
+
+    public void MoveToSecondary(GameObject characterSprite)
+    {
+        
+        StartCoroutine(PositionLerp(characterSprite.GetComponent<RectTransform>().position.x,
+            characterSprite.GetComponent<RectTransform>().position.y,
+            spriteLocation2.rectTransform.position.x,
+            spriteLocation2.rectTransform.position.y,
+            characterSprite,
+            spriteLocation2.gameObject));
+
+        //characterSprite.transform.SetParent(spriteLocation2.transform, false);
     }
 
     public void MakeSmaller()
@@ -107,7 +222,7 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public void ChangePosition()
     {
-
+       // StartCoroutine(PositionLerp())
     }
 
     IEnumerator SizeLerp(float startValue, float endValue, GameObject characterSprite)
@@ -135,5 +250,24 @@ public class CharacterSpriteManager : MonoBehaviour
             yield return null;
         }
         _opacityLerpValue = endValue;
+    }
+
+    IEnumerator PositionLerp(float xStartValue, float yStartValue, float xEndValue, float yEndValue, GameObject characterSprite, GameObject endLocation)
+    {
+
+        float timeElapsed = 0;
+        while (timeElapsed < positionLerpDuration)
+        {
+            _xPositionLerpValue = Mathf.Lerp(xStartValue, xEndValue, timeElapsed / positionLerpDuration);
+            _yPositionLerpValue = Mathf.Lerp(yStartValue, yEndValue, timeElapsed / positionLerpDuration);
+            timeElapsed += Time.deltaTime;
+            characterSprite.GetComponent<RectTransform>().position = new Vector2(_xPositionLerpValue, _yPositionLerpValue);
+            yield return null;
+        }
+        Debug.Log("Done");
+        _xPositionLerpValue = xEndValue;
+        _yPositionLerpValue = yEndValue;
+
+        characterSprite.transform.SetParent(endLocation.transform, true);
     }
 }
