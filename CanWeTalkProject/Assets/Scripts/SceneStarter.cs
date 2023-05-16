@@ -171,10 +171,6 @@ public class SceneStarter : MonoBehaviour
 
     }
 
-  /*  public void UpdateSceneBackground(Scene.DayTime dayTime, Scene.Location location)
-    {
-        
-    } */
     //runs the next line
     public void LineRunner()
     {
@@ -212,15 +208,6 @@ public class SceneStarter : MonoBehaviour
             }
 
                 lineNumber++;
-
-            // EndCheck();
-
-            
-
-         //   if (line.transform.GetChild(1) != null)
-          //  {
-           //     tailHeight = line.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta.y;
-           // }
             
 
             ResizeSpeech();

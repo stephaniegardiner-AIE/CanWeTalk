@@ -55,11 +55,9 @@ public class CharacterSpriteManager : MonoBehaviour
         {
             if (wifeActive)
             {
-                
-                Debug.Log("wife already active");
-                SetPrimaryCharacter("wifeSprite", wifeActive);
 
-                ChangePosition();
+                SetPrimaryCharacter("wifeSprite", wifeActive);
+                
             }
             if(!wifeActive)
             {
@@ -72,7 +70,6 @@ public class CharacterSpriteManager : MonoBehaviour
                 AddCharacterSprite(wifeSprite);
                 SetPrimaryCharacter("wifeSprite", wifeActive);
                 wifeActive = true;
-
                 
             }
            
@@ -96,9 +93,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 SetPrimaryCharacter("boySprite", boyActive);
                 boyActive = true;
                 
-            }
-
-            
+            }           
         }
 
         if (character == Line.Character.Girl)
@@ -117,11 +112,9 @@ public class CharacterSpriteManager : MonoBehaviour
                 AddCharacterSprite(girlSprite);
                 SetPrimaryCharacter("girlSprite", girlActive);
                 girlActive = true;
-            }
-
-            
-
+            }           
         }
+
         if (character == Line.Character.Dog)
         {
             if (dogActive)
@@ -139,10 +132,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 SetPrimaryCharacter("dogSprite", dogActive);
                 dogActive = true;
 
-            }
-
-           
-
+            }         
         }
     }
 
@@ -159,10 +149,8 @@ public class CharacterSpriteManager : MonoBehaviour
 
         foreach (var character in activeCharacterSprites)
         {
-            Debug.Log("??");
             if (character.name == gameObjectName)
             {
-                Debug.Log(":O");
                 characterSprite = character;
 
                 if (primaryCharacter != null)
@@ -172,19 +160,11 @@ public class CharacterSpriteManager : MonoBehaviour
                 }
                            
                 primaryCharacter = characterSprite;
-                secondaryCharacterSprites.Remove(characterSprite);
-                Debug.Log("ayo");
-
-                
-                MoveToPrimary(characterSprite);
-
-                
-
+                secondaryCharacterSprites.Remove(characterSprite);              
+                MoveToPrimary(characterSprite);               
                 break;
             }
-        }
-
-        
+        }        
     }
     public void AddCharacterSprite(GameObject newCharacterSprite)
     {
@@ -194,9 +174,7 @@ public class CharacterSpriteManager : MonoBehaviour
     }
 
     public void MoveToPrimary(GameObject characterSprite)
-    {
-        
-
+    {        
         StartCoroutine(SizeLerp(characterSprite.GetComponent<RectTransform>().sizeDelta.y,
             spriteLocation1.GetComponent<RectTransform>().sizeDelta.y,
             characterSprite));
@@ -209,7 +187,6 @@ public class CharacterSpriteManager : MonoBehaviour
             spriteLocation1.gameObject));
 
         CalculateSecondaryCharacterSize();
-        //characterSprite.transform.SetParent(spriteLocation1.transform, false);
     }
 
     public void MoveToSecondary(GameObject characterSprite)
@@ -226,25 +203,8 @@ public class CharacterSpriteManager : MonoBehaviour
             spriteLocation2.rectTransform.position.y,
             characterSprite,
             spriteLocation2.gameObject));
-
-
-        //characterSprite.transform.SetParent(spriteLocation2.transform, false);
     }
 
-    public void MakeSmaller()
-    {
-        //StartCoroutine(SizeLerp();
-    }
-
-    public void MakeBigger()
-    {
-
-    }
-
-    public void ChangePosition()
-    {
-       // StartCoroutine(PositionLerp())
-    }
 
     IEnumerator SizeLerp(float startValue, float endValue, GameObject characterSprite)
     {
@@ -288,9 +248,7 @@ public class CharacterSpriteManager : MonoBehaviour
             characterSprite.GetComponent<RectTransform>().position = new Vector2(_xPositionLerpValue, _yPositionLerpValue);
             yield return null;
         }
-        Debug.Log("Done");
         _xPositionLerpValue = xEndValue;
-        _yPositionLerpValue = yEndValue;        
-         
+        _yPositionLerpValue = yEndValue;                
     }
 }
