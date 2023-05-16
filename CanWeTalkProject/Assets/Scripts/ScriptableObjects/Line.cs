@@ -43,6 +43,7 @@ public class Line : ScriptableObject
     private void Awake()
     {
         attitudeArray = new AttitudeArray[attitudeArrayLength];
+        
 
         for (int i = 0; i < attitudeArrayLength; i++)
         {

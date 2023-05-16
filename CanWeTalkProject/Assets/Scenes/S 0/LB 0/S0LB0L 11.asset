@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 3
   dialog: "You can\u2019t be serious. Is this really what you want?"
-  attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArrayLength: 3
+  attitudeArray:
+  - attitudeChangeEffects: 1
+    attitudeChangeAmount: 30
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: 10
+  - attitudeChangeEffects: 3
+    attitudeChangeAmount: -20

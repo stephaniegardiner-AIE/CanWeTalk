@@ -16,4 +16,6 @@ MonoBehaviour:
   dialog: WifeName takes a step forward and places a few papers on the table next
     to me.
   attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArray:
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: -30

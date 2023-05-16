@@ -482,7 +482,7 @@ public class SceneStarter : MonoBehaviour
 
                 StartCoroutine(AttitudeLerp(youAttitudeLevel, youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar));
                 youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                AttitudeEffect(line);
+                AttitudeEffect(Line.AttitudeArray.Attitudes.youAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
 
@@ -491,7 +491,7 @@ public class SceneStarter : MonoBehaviour
             {
                 StartCoroutine(AttitudeLerp(wifeAttitudeLevel, wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, wifeAttitudeBar));
                 wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-
+                AttitudeEffect(Line.AttitudeArray.Attitudes.wifeAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
 
             //change kids attitude
@@ -499,6 +499,7 @@ public class SceneStarter : MonoBehaviour
             {
                 StartCoroutine(AttitudeLerp(kidsAttitudeLevel, kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, kidsAttitudeBar));
                 kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                AttitudeEffect(Line.AttitudeArray.Attitudes.kidsAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
 
@@ -507,7 +508,7 @@ public class SceneStarter : MonoBehaviour
             {
                 StartCoroutine(AttitudeLerp(dogAttitudeLevel, dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, dogAttitudeBar));
                 dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-
+                AttitudeEffect(Line.AttitudeArray.Attitudes.dogAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
         }
     }
@@ -528,9 +529,12 @@ public class SceneStarter : MonoBehaviour
     }
 
 
-    public void AttitudeEffect(Line line)
+    public void AttitudeEffect(Line.AttitudeArray.Attitudes character, float attitudeChangeAmount)
     {
-
+        if ((int)character >= 1)
+        {
+            spriteManager.CreateAttitudeReaction(character, attitudeChangeAmount);
+        }
     }
     IEnumerator AttitudeLerp(float startValue, float endValue, Image attitudeBar)
     {

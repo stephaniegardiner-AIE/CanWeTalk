@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -42,6 +43,11 @@ public class CharacterSpriteManager : MonoBehaviour
     public bool boyActive = false;
     public bool girlActive = false;
     public bool dogActive = false;
+
+    public GameObject activeWifeSprite;
+    public GameObject activeBoySprite;
+    public GameObject activeGirlSprite;
+    public GameObject activeDogSprite;
     // Start is called before the first frame update
 
     public void FigureCharacterSprites(Line.Character character)
@@ -64,6 +70,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 
                 GameObject wifeSprite = Instantiate(wifeSpriteGO) as GameObject;
                 wifeSprite.transform.SetParent(canvas.transform, false);
+                activeWifeSprite = wifeSprite;
                 wifeSprite.name = "wifeSprite";
 
                 
@@ -86,6 +93,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 
                 GameObject boySprite = Instantiate(boySpriteGO) as GameObject;
                 boySprite.transform.SetParent(canvas.transform, false);
+                activeBoySprite = boySprite;
                 boySprite.name = "boySprite";
 
                 
@@ -106,6 +114,7 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 GameObject girlSprite = Instantiate(girlSpriteGO) as GameObject;
                 girlSprite.transform.SetParent(canvas.transform, false);
+                activeGirlSprite = girlSprite;
                 girlSprite.name = "girlSprite";
 
                 
@@ -125,6 +134,7 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 GameObject dogSprite = Instantiate(dogSpriteGO) as GameObject;
                 dogSprite.transform.SetParent(canvas.transform, false);
+                activeDogSprite = dogSprite;
                 dogSprite.name = "dogSprite";
 
                 
@@ -215,6 +225,8 @@ public class CharacterSpriteManager : MonoBehaviour
             _sizeLerpValue = Mathf.Lerp(startValue, endValue, timeElapsed / sizeLerpDuration);
             timeElapsed += Time.deltaTime;
             characterSprite.GetComponent<RectTransform>().sizeDelta = new Vector2(_sizeLerpValue, _sizeLerpValue);
+            characterSprite.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(_sizeLerpValue / 3, _sizeLerpValue / 3);
+            characterSprite.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(_sizeLerpValue / 3, _sizeLerpValue / 3);
             yield return null;
         }
         _sizeLerpValue = endValue;
@@ -250,5 +262,53 @@ public class CharacterSpriteManager : MonoBehaviour
         }
         _xPositionLerpValue = xEndValue;
         _yPositionLerpValue = yEndValue;                
+    }
+
+    public void CreateAttitudeReaction(Line.AttitudeArray.Attitudes character, float attitudeChangeAmount)
+    {
+        Debug.Log("change for " + character);
+
+        if (character == Line.AttitudeArray.Attitudes.wifeAttitude && wifeActive)
+        {
+            if (attitudeChangeAmount >= 0)
+            {
+                activeWifeSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("wifepositivereaction");
+            }
+            else
+            {
+                activeWifeSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("wifenegativereaction");
+            }
+            
+        }
+        if (character == Line.AttitudeArray.Attitudes.kidsAttitude && (boyActive || girlActive))
+        {
+            if (attitudeChangeAmount >= 0)
+            {
+                activeBoySprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                activeGirlSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("kidpositivereaction");
+            }
+            else
+            {
+                activeBoySprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("kidnegativereaction");
+            }
+        }
+        if (character == Line.AttitudeArray.Attitudes.dogAttitude && dogActive)
+        {
+            if (attitudeChangeAmount >= 0)
+            {
+                activeDogSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("dogpositivereaction");
+            }
+            else
+            {
+                activeDogSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                Debug.Log("dognegativereaction");
+            }
+        }
     }
 }

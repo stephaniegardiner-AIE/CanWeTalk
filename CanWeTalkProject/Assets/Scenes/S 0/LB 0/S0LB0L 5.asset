@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 4
   dialog: I want a divorce.
-  attitudeArrayLength: 1
+  attitudeArrayLength: 0
   attitudeArray:
   - attitudeChangeEffects: 0
     attitudeChangeAmount: -50
