@@ -470,23 +470,24 @@ public class SceneStarter : MonoBehaviour
     //figures out what the attitude array is trying to tell us and then causes fill amount change for teh appropriate attidue bar before changing the the final attitude level
     public void UpdateAttitudes(Line line)
     {
-
+        
         for (int i = 0; i < line.attitudeArray.Length; i++)
 
         {
             //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
 
             //change you attitude
-            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "youAttitude")
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.youAttitude)
             {
 
                 StartCoroutine(AttitudeLerp(youAttitudeLevel, youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar));
                 youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                AttitudeEffect(line);
 
             }
 
             //change wife attitude
-            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "wifeAttitude")
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.wifeAttitude)
             {
                 StartCoroutine(AttitudeLerp(wifeAttitudeLevel, wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, wifeAttitudeBar));
                 wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
@@ -494,7 +495,7 @@ public class SceneStarter : MonoBehaviour
             }
 
             //change kids attitude
-            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "kidsAttitude")
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.kidsAttitude)
             {
                 StartCoroutine(AttitudeLerp(kidsAttitudeLevel, kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, kidsAttitudeBar));
                 kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
@@ -502,7 +503,7 @@ public class SceneStarter : MonoBehaviour
             }
 
             //change dog attitude
-            if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "dogAttitude")
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.dogAttitude)
             {
                 StartCoroutine(AttitudeLerp(dogAttitudeLevel, dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, dogAttitudeBar));
                 dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
@@ -527,7 +528,7 @@ public class SceneStarter : MonoBehaviour
     }
 
 
-    public void AttitudeEffect()
+    public void AttitudeEffect(Line line)
     {
 
     }
