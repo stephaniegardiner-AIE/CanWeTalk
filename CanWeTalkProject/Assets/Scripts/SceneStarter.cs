@@ -78,6 +78,8 @@ public class SceneStarter : MonoBehaviour
 
     [Header("TypeWriter")]
     public float characterTime;
+    public bool typeWriting = false;
+    public TextMeshProUGUI currentText;
 
     [Header("CharacterNames")]
     public string wifeName;
@@ -129,6 +131,8 @@ public class SceneStarter : MonoBehaviour
             LineRunner();
             //Debug.Log("NextLine");
         }
+
+
 
 
     }
@@ -188,46 +192,55 @@ public class SceneStarter : MonoBehaviour
     public void LineRunner()
     {
         //if it's run out of lines, figure out the next thing to do
-        if (lineNumber > currentLineBlock.lines.Length - 1)
+        if (typeWriting)
         {
-            FigureNext();
+            StopCoroutine(TextVisible(currentText));
+            currentText.maxVisibleCharacters = currentText.textInfo.characterCount;
         }
-        //if the lines aren't run out, run the next line
         else
         {
-            GameObject line = Instantiate(linePrefab) as GameObject;
-            CheckCharacterFormat(line);
-
-            line.transform.SetParent(content.transform, false);
-            line.name = "SpeechBubble" + lineNumber.ToString();
-            line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
-            currentVisibleSpeech.Add(line);
-            
-            dialogBackground = line.GetComponent<Transform>();
-            dialogText = dialogBackground.Find("CharacterDialogText");
-
-            //sets the text
-            dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
-
-            NameCheck();
-
-            TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
-
-            //if the line has an attitude change, now make sure that happens!!!
-            if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
+            if (lineNumber > currentLineBlock.lines.Length - 1)
             {
-                UpdateAttitudes(currentLineBlock.lines[lineNumber]);
-                Debug.Log("AttitudeChange!");
+                FigureNext();
             }
+            //if the lines aren't run out, run the next line
+            else
+            {
+                GameObject line = Instantiate(linePrefab) as GameObject;
+                CheckCharacterFormat(line);
+
+                line.transform.SetParent(content.transform, false);
+                line.name = "SpeechBubble" + lineNumber.ToString();
+                line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
+                currentVisibleSpeech.Add(line);
+
+                dialogBackground = line.GetComponent<Transform>();
+                dialogText = dialogBackground.Find("CharacterDialogText");
+
+                //sets the text
+                dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
+
+                NameCheck();
+
+                TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
+
+                //if the line has an attitude change, now make sure that happens!!!
+                if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
+                {
+                    UpdateAttitudes(currentLineBlock.lines[lineNumber]);
+                    Debug.Log("AttitudeChange!");
+                }
 
                 lineNumber++;
-            
 
-            ResizeSpeech();
 
-            ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
+                ResizeSpeech();
 
-        }       
+                ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
+
+            }
+        }
+       
     }
 
     public void ResizeSpeech()
@@ -451,6 +464,8 @@ public class SceneStarter : MonoBehaviour
 
     private IEnumerator TextVisible(TextMeshProUGUI text)
     {
+        typeWriting = true;
+        currentText = text;
         text.ForceMeshUpdate();
 
         while (text.textInfo.characterCount >= text.maxVisibleCharacters)
@@ -460,6 +475,7 @@ public class SceneStarter : MonoBehaviour
         }
 
         text.maxVisibleCharacters = text.textInfo.characterCount;
+        typeWriting = false;
     }
 
     // ATTITUDE
