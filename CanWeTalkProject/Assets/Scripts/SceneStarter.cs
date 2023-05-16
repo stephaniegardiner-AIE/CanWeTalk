@@ -120,6 +120,19 @@ public class SceneStarter : MonoBehaviour
         UpdateSceneAppearance();
     }
 
+    void OnNext()
+    {
+
+        //if the decision maker isn't active! run the next line :))))
+        if (!decision)
+        {
+            LineRunner();
+            //Debug.Log("NextLine");
+        }
+
+
+    }
+
     public void UpdateSceneAppearance()
     {
         dayNumberText.text = "Day " + dayNumber.ToString();
@@ -294,12 +307,7 @@ public class SceneStarter : MonoBehaviour
         //Debug.Log(buttonTextLineCount);
     }
 
-    public void NameCheck()
-    {
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-    }
+
 
     //figures out what to run next after a line block is finished
     public void FigureNext()
@@ -414,18 +422,7 @@ public class SceneStarter : MonoBehaviour
     //public void SpeechTailMaker(GameObject speechBackground,)
 
     //when the player presses space!
-    void OnNext()
-    {
-        
-        //if the decision maker isn't active! run the next line :))))
-        if (!decision)
-        {
-            LineRunner();
-            //Debug.Log("NextLine");
-        }
-        
 
-    } 
 
     //resises the viewscreen content box to properly fit all the speech bubbles
     public void ResizeContent(float heightToAdd)
@@ -434,6 +431,42 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
+   
+
+
+    public void NameCheck()
+    {
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+    }
+
+    //  THE TYPE WRITER
+    public void TypeWriter(TextMeshProUGUI text)
+    {
+        text.maxVisibleCharacters = 0;
+        text.ForceMeshUpdate();
+        StartCoroutine(TextVisible(text));
+    }
+
+    private IEnumerator TextVisible(TextMeshProUGUI text)
+    {
+        text.ForceMeshUpdate();
+
+        while (text.textInfo.characterCount >= text.maxVisibleCharacters)
+        {
+            text.maxVisibleCharacters++;
+            yield return new WaitForSeconds(characterTime);
+        }
+
+        text.maxVisibleCharacters = text.textInfo.characterCount;
+    }
+
+    // ATTITUDE
+    public GameObject wifeSprite;
+    public GameObject kidsSprite;
+    public GameObject dogSprite;
+
     //figures out what the attitude array is trying to tell us and then causes fill amount change for teh appropriate attidue bar before changing the the final attitude level
     public void UpdateAttitudes(Line line)
     {
@@ -441,7 +474,7 @@ public class SceneStarter : MonoBehaviour
         for (int i = 0; i < line.attitudeArray.Length; i++)
 
         {
-           //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
+            //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
 
             //change you attitude
             if (line.attitudeArray[i].attitudeChangeEffects.ToString() == "youAttitude")
@@ -493,6 +526,11 @@ public class SceneStarter : MonoBehaviour
         dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
     }
 
+
+    public void AttitudeEffect()
+    {
+
+    }
     IEnumerator AttitudeLerp(float startValue, float endValue, Image attitudeBar)
     {
         float timeElapsed = 0;
@@ -505,25 +543,4 @@ public class SceneStarter : MonoBehaviour
         }
         _valueToLerp = endValue;
     }
-
-    public void TypeWriter(TextMeshProUGUI text)
-    {
-        text.maxVisibleCharacters = 0;
-        text.ForceMeshUpdate();
-        StartCoroutine(TextVisible(text));
-    }
-
-    private IEnumerator TextVisible(TextMeshProUGUI text)
-    {
-        text.ForceMeshUpdate();
-
-        while (text.textInfo.characterCount >= text.maxVisibleCharacters)
-        {
-            text.maxVisibleCharacters++;
-            yield return new WaitForSeconds(characterTime);
-        }
-
-        text.maxVisibleCharacters = text.textInfo.characterCount;
-    }
-
 }
