@@ -48,6 +48,8 @@ public class CharacterSpriteManager : MonoBehaviour
     public GameObject activeBoySprite;
     public GameObject activeGirlSprite;
     public GameObject activeDogSprite;
+
+    public float attitudeIconTime;
     // Start is called before the first frame update
 
     public void FigureCharacterSprites(Line.Character character)
@@ -273,11 +275,13 @@ public class CharacterSpriteManager : MonoBehaviour
             if (attitudeChangeAmount >= 0)
             {
                 activeWifeSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeWifeSprite, 1);
                 Debug.Log("wifepositivereaction");
             }
             else
             {
                 activeWifeSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeWifeSprite, 0);
                 Debug.Log("wifenegativereaction");
             }
             
@@ -288,12 +292,17 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 activeBoySprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
                 activeGirlSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeBoySprite, 1);
+                StartAnimation(activeGirlSprite, 1);
+
                 Debug.Log("kidpositivereaction");
             }
             else
             {
                 activeBoySprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
                 activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeBoySprite, 0);
+                StartAnimation(activeGirlSprite, 0);
                 Debug.Log("kidnegativereaction");
             }
         }
@@ -302,13 +311,38 @@ public class CharacterSpriteManager : MonoBehaviour
             if (attitudeChangeAmount >= 0)
             {
                 activeDogSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeDogSprite, 1);
                 Debug.Log("dogpositivereaction");
             }
             else
             {
                 activeDogSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeDogSprite, 0);
                 Debug.Log("dognegativereaction");
             }
         }
+    }
+
+    public void StartAnimation(GameObject characterSprite, int childNo)
+    {
+
+        StartCoroutine(AttitudeAnimation(characterSprite.transform.GetChild(childNo).gameObject.GetComponent<Animator>()));
+    }
+
+    IEnumerator AttitudeAnimation(Animator animator)
+    {
+
+        animator.Play("AttitudeIconAnimation");
+        Debug.Log("yay");
+
+        yield return new WaitForSeconds(attitudeIconTime);
+
+        Debug.Log("timeover");
+        animator.Play("New State");
+        animator.GameObject().GetComponent<Image>().enabled = false;
+
+
+
+
     }
 }
