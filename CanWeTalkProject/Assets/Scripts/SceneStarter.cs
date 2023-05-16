@@ -15,6 +15,12 @@ public class SceneStarter : MonoBehaviour
     
     public bool decision = false;
 
+    [Header("Scene Info")]
+    public int dayNumber;
+    public Scene.WeekDay weekday;
+    public Scene.DayTime dayTime;
+    public Scene.Location location;
+
     [Header("Scene Objects")]
     public LineBlock currentLineBlock;
     public GameObject linePrefab;
@@ -35,6 +41,12 @@ public class SceneStarter : MonoBehaviour
     public int previousLines;
 
     public List<GameObject> currentVisibleSpeech;
+
+    [Header("Scene Appearance Objects")]
+    public Image sceneBackground;
+    public TextMeshProUGUI dayNumberText;
+    public TextMeshProUGUI weekdayText;
+    public TextMeshProUGUI dayTimeText;
 
     [Header("Character Colors")]
     public Color descriptionColor;
@@ -73,6 +85,19 @@ public class SceneStarter : MonoBehaviour
     public string girlName;
     public string boyName;
 
+    [Header("SceneBackgrounds")]
+    public Sprite houseDay;
+    public Sprite houseAfternoon;
+    public Sprite houseNight;
+
+    public Sprite courtDay;
+    public Sprite courtAfternoon;
+
+    public Sprite townDay;
+    public Sprite townAfternoon;
+    public Sprite townNight;
+
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -83,10 +108,73 @@ public class SceneStarter : MonoBehaviour
 
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
 
-        
+        SetSceneInfo();
     }
 
+    public void SetSceneInfo()
+    {
+        dayNumber = currentScene.dayNumber;
+        weekday = currentScene.weekday;
+        dayTime = currentScene.dayTime;
+        location = currentScene.location;
+        UpdateSceneAppearance();
+    }
 
+    public void UpdateSceneAppearance()
+    {
+        dayNumberText.text = "Day " + dayNumber.ToString();
+        weekdayText.text = weekday.ToString();
+        dayTimeText.text = dayTime.ToString();
+        //UpdateSceneBackground(dayTime, location);
+
+        if (location == Scene.Location.House)
+        {
+            if (dayTime == Scene.DayTime.Morning)
+            {
+                sceneBackground.sprite = houseDay;
+            }
+            if (dayTime == Scene.DayTime.Afternoon)
+            {
+                sceneBackground.sprite = houseAfternoon;
+            }
+            if (dayTime == Scene.DayTime.Night)
+            {
+                sceneBackground.sprite = houseNight;
+            }
+        }
+        if (location == Scene.Location.Court)
+        {
+            if (dayTime == Scene.DayTime.Morning)
+            {
+                sceneBackground.sprite = courtDay;
+            }
+            if (dayTime == Scene.DayTime.Afternoon)
+            {
+                sceneBackground.sprite = courtAfternoon;
+            }
+        }
+        if (location == Scene.Location.Town)
+        {
+            if (dayTime == Scene.DayTime.Morning)
+            {
+                sceneBackground.sprite = townDay;
+            }
+            if (dayTime == Scene.DayTime.Afternoon)
+            {
+                sceneBackground.sprite = townAfternoon;
+            }
+            if (dayTime == Scene.DayTime.Night)
+            {
+                sceneBackground.sprite = townNight;
+            }
+        }
+
+    }
+
+  /*  public void UpdateSceneBackground(Scene.DayTime dayTime, Scene.Location location)
+    {
+        
+    } */
     //runs the next line
     public void LineRunner()
     {
