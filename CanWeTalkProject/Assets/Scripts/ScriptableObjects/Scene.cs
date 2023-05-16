@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Scene", menuName = "Dialog/New Scene")]
 public class Scene : ScriptableObject
@@ -27,5 +28,14 @@ public class Scene : ScriptableObject
     }
 
     public DayTime dayTime;
+
+    public enum Location
+    {
+        House,
+        Court,
+        Town,
+    }
+
+    public Location location;
       
 }

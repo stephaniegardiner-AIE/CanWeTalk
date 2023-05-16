@@ -1544,9 +1544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 446210112}
-  currentLineBlock: {fileID: 11400000, guid: 4cce2490ba3684c468a6db97d46bb848, type: 2}
-  currentScene: {fileID: 0}
+  currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   decision: 0
+  currentLineBlock: {fileID: 0}
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}

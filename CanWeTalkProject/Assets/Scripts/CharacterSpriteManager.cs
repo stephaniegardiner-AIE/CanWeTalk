@@ -290,9 +290,7 @@ public class CharacterSpriteManager : MonoBehaviour
         }
         Debug.Log("Done");
         _xPositionLerpValue = xEndValue;
-        _yPositionLerpValue = yEndValue;
-
-        
+        _yPositionLerpValue = yEndValue;        
          
     }
 }

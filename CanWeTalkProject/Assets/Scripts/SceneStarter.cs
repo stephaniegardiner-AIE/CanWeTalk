@@ -10,11 +10,13 @@ using Unity.VisualScripting;
 public class SceneStarter : MonoBehaviour
 {
     public CharacterSpriteManager spriteManager;
-    public LineBlock currentLineBlock;
     public Scene currentScene;
+    
+    
     public bool decision = false;
 
     [Header("Scene Objects")]
+    public LineBlock currentLineBlock;
     public GameObject linePrefab;
     public GameObject decisionBlockPrefab;
     public GameObject decisionPrefab;
@@ -75,10 +77,13 @@ public class SceneStarter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentLineBlock = currentScene.lineBlocks[0];
         LineRunner();
         SetAttitude();
 
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
+
+        
     }
 
 
