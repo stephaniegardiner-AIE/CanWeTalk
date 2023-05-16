@@ -82,7 +82,6 @@ public class CharacterSpriteManager : MonoBehaviour
         {
             if (boyActive)
             {
-                //SetPrimaryCharacter("boySpriteGO");
                 SetPrimaryCharacter("boySprite", boyActive);
             }
             if (!boyActive)
@@ -147,6 +146,13 @@ public class CharacterSpriteManager : MonoBehaviour
         }
     }
 
+    public void CalculateSecondaryCharacterSize()
+    {
+        spriteLocation2.GetComponent<RectTransform>().sizeDelta = new Vector2(spriteLocation3.gameObject.GetComponent<RectTransform>().sizeDelta.x 
+            * secondaryCharacterSprites.Count, 
+            spriteLocation2.gameObject.GetComponent<RectTransform>().sizeDelta.y);
+    }
+
     public void SetPrimaryCharacter(string gameObjectName, bool active)
     {
         GameObject characterSprite;
@@ -169,7 +175,10 @@ public class CharacterSpriteManager : MonoBehaviour
                 secondaryCharacterSprites.Remove(characterSprite);
                 Debug.Log("ayo");
 
+                
                 MoveToPrimary(characterSprite);
+
+                
 
                 break;
             }
@@ -187,6 +196,11 @@ public class CharacterSpriteManager : MonoBehaviour
     public void MoveToPrimary(GameObject characterSprite)
     {
         
+
+        StartCoroutine(SizeLerp(characterSprite.GetComponent<RectTransform>().sizeDelta.y,
+            spriteLocation1.GetComponent<RectTransform>().sizeDelta.y,
+            characterSprite));
+
         StartCoroutine(PositionLerp(characterSprite.GetComponent<RectTransform>().position.x, 
             characterSprite.GetComponent<RectTransform>().position.y, 
             spriteLocation1.rectTransform.position.x, 
@@ -194,18 +208,25 @@ public class CharacterSpriteManager : MonoBehaviour
             characterSprite,
             spriteLocation1.gameObject));
 
+        CalculateSecondaryCharacterSize();
         //characterSprite.transform.SetParent(spriteLocation1.transform, false);
     }
 
     public void MoveToSecondary(GameObject characterSprite)
     {
-        
+        CalculateSecondaryCharacterSize();
+
+        StartCoroutine(SizeLerp(characterSprite.GetComponent<RectTransform>().sizeDelta.y, 
+            spriteLocation2.GetComponent<RectTransform>().sizeDelta.y, 
+            characterSprite));
+
         StartCoroutine(PositionLerp(characterSprite.GetComponent<RectTransform>().position.x,
             characterSprite.GetComponent<RectTransform>().position.y,
             spriteLocation2.rectTransform.position.x,
             spriteLocation2.rectTransform.position.y,
             characterSprite,
             spriteLocation2.gameObject));
+
 
         //characterSprite.transform.SetParent(spriteLocation2.transform, false);
     }
@@ -256,6 +277,9 @@ public class CharacterSpriteManager : MonoBehaviour
     {
 
         float timeElapsed = 0;
+
+        characterSprite.transform.SetParent(endLocation.transform, true);
+
         while (timeElapsed < positionLerpDuration)
         {
             _xPositionLerpValue = Mathf.Lerp(xStartValue, xEndValue, timeElapsed / positionLerpDuration);
@@ -268,6 +292,7 @@ public class CharacterSpriteManager : MonoBehaviour
         _xPositionLerpValue = xEndValue;
         _yPositionLerpValue = yEndValue;
 
-        characterSprite.transform.SetParent(endLocation.transform, true);
+        
+         
     }
 }
