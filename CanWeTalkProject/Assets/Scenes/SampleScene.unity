@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
+  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -831,6 +831,60 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &479706493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479706495}
+  - component: {fileID: 479706494}
+  m_Layer: 0
+  m_Name: Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &479706494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479706493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e71915a4e3acd4ab3b25c6696457e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signedPapers: 0
+  wentToWork: 0
+  pickingKidsUp: 0
+  forgotToPickKidsUp: 0
+  letKidsStayUp: 0
+  sleepingOnTheCouch: 0
+  wantsFullCustody: 0
+  wantsNoCustody: 0
+  wantsSplitCustody: 0
+  gaveKidsPancakes: 0
+--- !u!4 &479706495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479706493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &571555460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,6 +1965,8 @@ MonoBehaviour:
   dogAttitudeBar: {fileID: 47755618}
   attitudeLerpDuration: 1
   characterTime: 0.02
+  typeWriting: 0
+  currentText: {fileID: 0}
   wifeName: Michelle
   youName: Brad
   girlName: Susie
@@ -2054,7 +2110,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 11
   m_OnValueChanged:

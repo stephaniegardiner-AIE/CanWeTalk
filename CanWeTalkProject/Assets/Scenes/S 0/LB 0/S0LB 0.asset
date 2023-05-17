@@ -28,3 +28,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4ede3932e6986d42977525675fdbcd1, type: 2}
   endDecisionBlock: {fileID: 11400000, guid: 5f8d513b0df9e884d9ca82337124609b, type: 2}
   endActivityBlock: {fileID: 0}
+  conditions: 0
+  hasConditions: 1
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
