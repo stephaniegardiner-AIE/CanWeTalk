@@ -657,6 +657,8 @@ MonoBehaviour:
   boySpriteGO: {fileID: 7145855214203742274, guid: db56d64cf00738949b75ceb8137b9a4c, type: 3}
   girlSpriteGO: {fileID: 6577811365108687421, guid: c3d8cc06a10070342b01943a542e9bbb, type: 3}
   dogSpriteGO: {fileID: 1784714601309588225, guid: e0f6e86cd2719c34497b8978a69df2cb, type: 3}
+  friendSpriteGO: {fileID: 6036595002347879435, guid: 03878e11ff16e2241893ee8736130c70, type: 3}
+  lawyerSpriteGO: {fileID: 822313385104745259, guid: 7752fe7ca3e7064469386a6129b65d05, type: 3}
   spriteLocation1: {fileID: 233665225}
   spriteLocation2: {fileID: 2003356137}
   spriteLocation3: {fileID: 2113111555}
@@ -672,10 +674,14 @@ MonoBehaviour:
   boyActive: 0
   girlActive: 0
   dogActive: 0
+  friendActive: 0
+  lawyerActive: 0
   activeWifeSprite: {fileID: 0}
   activeBoySprite: {fileID: 0}
   activeGirlSprite: {fileID: 0}
   activeDogSprite: {fileID: 0}
+  activeFriendSprite: {fileID: 0}
+  activeLawyerSprite: {fileID: 0}
   attitudeIconTime: 2
 --- !u!4 &446210113
 Transform:
@@ -1948,11 +1954,13 @@ MonoBehaviour:
   weekdayText: {fileID: 351671553}
   dayTimeText: {fileID: 1852755113}
   descriptionColor: {r: 0, g: 0, b: 0, a: 0}
-  youColor: {r: 0, g: 0.6901961, b: 0.94117653, a: 1}
+  youColor: {r: 1, g: 1, b: 1, a: 1}
   wifeColor: {r: 1, g: 0.43137258, b: 0.003921569, a: 1}
   boyColor: {r: 0, g: 1, b: 0.62038326, a: 1}
   girlColor: {r: 0.9009557, g: 0, b: 1, a: 1}
   dogColor: {r: 0.06159973, g: 0, b: 1, a: 1}
+  friendColor: {r: 0, g: 0, b: 0, a: 0}
+  lawyerColor: {r: 0, g: 0, b: 0, a: 0}
   speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
   speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
   youAttitudeLevel: 100
@@ -1971,6 +1979,9 @@ MonoBehaviour:
   youName: Brad
   girlName: Susie
   boyName: Tommy
+  dogName: Bones
+  friendName: Dazza
+  lawyerName: Darlene
   houseDay: {fileID: 21300000, guid: 4f7947cb1c9da1e40b85d05930a263a4, type: 3}
   houseAfternoon: {fileID: 21300000, guid: 74895c0ff3f420441b2f03b4f4ad23aa, type: 3}
   houseNight: {fileID: 21300000, guid: 8a48332d0f25bb5419932e42c3b0c5ab, type: 3}
@@ -1979,9 +1990,6 @@ MonoBehaviour:
   townDay: {fileID: 21300000, guid: 429b7f29bfb35094f871280e6912039e, type: 3}
   townAfternoon: {fileID: 21300000, guid: 97c766315783dda43aecc8b830f5300e, type: 3}
   townNight: {fileID: 21300000, guid: c4aab8c072247904f9c03b8fe8d86ecb, type: 3}
-  wifeSprite: {fileID: 0}
-  kidsSprite: {fileID: 0}
-  dogSprite: {fileID: 0}
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0

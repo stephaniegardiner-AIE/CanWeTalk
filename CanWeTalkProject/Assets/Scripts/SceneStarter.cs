@@ -55,6 +55,8 @@ public class SceneStarter : MonoBehaviour
     public Color boyColor;
     public Color girlColor;
     public Color dogColor;
+    public Color friendColor;
+    public Color lawyerColor;
 
     [Header("Speech Tails")]
     public GameObject speechTailLeft;
@@ -86,6 +88,9 @@ public class SceneStarter : MonoBehaviour
     public string youName;
     public string girlName;
     public string boyName;
+    public string dogName;
+    public string friendName;
+    public string lawyerName;
 
     [Header("SceneBackgrounds")]
     public Sprite houseDay;
@@ -428,7 +433,23 @@ public class SceneStarter : MonoBehaviour
             speechTail.transform.SetParent(speechBackground.transform, false);
             speechTail.GetComponent<Image>().color = dogColor;
             spriteManager.FigureCharacterSprites(Line.Character.Dog);
-        } 
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Friend)
+        {
+            speechBackground.GetComponent<Image>().color = friendColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = friendColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Friend);
+        }
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Lawyer)
+        {
+            speechBackground.GetComponent<Image>().color = lawyerColor;
+            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+            speechTail.transform.SetParent(speechBackground.transform, false);
+            speechTail.GetComponent<Image>().color = lawyerColor;
+            spriteManager.FigureCharacterSprites(Line.Character.Lawyer);
+        }
 
     }
 
@@ -479,9 +500,9 @@ public class SceneStarter : MonoBehaviour
     }
 
     // ATTITUDE
-    public GameObject wifeSprite;
+   /* public GameObject wifeSprite;
     public GameObject kidsSprite;
-    public GameObject dogSprite;
+    public GameObject dogSprite; */
 
     //figures out what the attitude array is trying to tell us and then causes fill amount change for teh appropriate attidue bar before changing the the final attitude level
     public void UpdateAttitudes(Line line)

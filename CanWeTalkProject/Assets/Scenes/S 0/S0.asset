@@ -18,3 +18,4 @@ MonoBehaviour:
   dayNumber: 1
   weekday: 0
   dayTime: 2
+  location: 0

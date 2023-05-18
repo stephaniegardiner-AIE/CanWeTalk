@@ -14,6 +14,8 @@ public class Line : ScriptableObject
         Boy, //3
         Girl, //4
         Dog,  //5
+        Friend,
+        Lawyer,
     }
 
     public Character character;

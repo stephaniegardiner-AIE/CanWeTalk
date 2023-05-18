@@ -14,6 +14,8 @@ public class CharacterSpriteManager : MonoBehaviour
     public GameObject boySpriteGO;
     public GameObject girlSpriteGO;
     public GameObject dogSpriteGO;
+    public GameObject friendSpriteGO;
+    public GameObject lawyerSpriteGO;
 
     [Header("Sprite Locations")]
     public Image spriteLocation1;
@@ -43,11 +45,15 @@ public class CharacterSpriteManager : MonoBehaviour
     public bool boyActive = false;
     public bool girlActive = false;
     public bool dogActive = false;
+    public bool friendActive = false;
+    public bool lawyerActive = false;
 
     public GameObject activeWifeSprite;
     public GameObject activeBoySprite;
     public GameObject activeGirlSprite;
     public GameObject activeDogSprite;
+    public GameObject activeFriendSprite;
+    public GameObject activeLawyerSprite;
 
     public float attitudeIconTime;
     // Start is called before the first frame update
@@ -145,6 +151,46 @@ public class CharacterSpriteManager : MonoBehaviour
                 dogActive = true;
 
             }         
+        }
+        if (character == Line.Character.Friend)
+        {
+            if (friendActive)
+            {
+                SetPrimaryCharacter("friendSprite", friendActive);
+            }
+            if (!friendActive)
+            {
+                GameObject friendSprite = Instantiate(friendSpriteGO) as GameObject;
+                friendSprite.transform.SetParent(canvas.transform, false);
+                activeFriendSprite = friendSprite;
+                friendSprite.name = "friendSprite";
+
+
+                AddCharacterSprite(friendSprite);
+                SetPrimaryCharacter("friendSprite", friendActive);
+                friendActive = true;
+
+            }
+        }
+        if (character == Line.Character.Lawyer)
+        {
+            if (lawyerActive)
+            {
+                SetPrimaryCharacter("lawyerSprite", lawyerActive);
+            }
+            if (!friendActive)
+            {
+                GameObject lawyerSprite = Instantiate(lawyerSpriteGO) as GameObject;
+                lawyerSprite.transform.SetParent(canvas.transform, false);
+                activeLawyerSprite = lawyerSprite;
+                lawyerSprite.name = "lawyerSprite";
+
+
+                AddCharacterSprite(lawyerSprite);
+                SetPrimaryCharacter("lawyerSprite", lawyerActive);
+                lawyerActive = true;
+
+            }
         }
     }
 
