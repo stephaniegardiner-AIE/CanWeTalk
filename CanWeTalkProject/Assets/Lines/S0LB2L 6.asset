@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB2L 6
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 2
+  dialog: "I don\u2019t love you anymore. I haven\u2019t for a while now. I didn\u2019t
+    want to put the kids through a divorce so I tried* I really did* but I don\u2019t
+    see any other way to make it work."
   attitudeArrayLength: 0
   attitudeArray: []

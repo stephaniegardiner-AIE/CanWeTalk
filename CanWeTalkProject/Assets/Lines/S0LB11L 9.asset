@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB11L 9
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 1
+  dialog: "Good. It went really well. They understand that it\u2019s no one\u2019s
+    fault and that we both still love them."
   attitudeArrayLength: 0
   attitudeArray: []

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB7L 14
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
-  attitudeArrayLength: 0
-  attitudeArray: []
+  character: 1
+  dialog: We love you very very much* and we always will.
+  attitudeArrayLength: 1
+  attitudeArray:
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: 10

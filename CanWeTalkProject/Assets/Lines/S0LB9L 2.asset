@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB9L 2
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "The kids\u2019 faces immediately change."
   attitudeArrayLength: 0
   attitudeArray: []

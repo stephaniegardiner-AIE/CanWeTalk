@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB3L 1
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "WifeName runs up and gives me a huge hug. At any other time this would\u2019ve
+    felt nice."
   attitudeArrayLength: 0
   attitudeArray: []

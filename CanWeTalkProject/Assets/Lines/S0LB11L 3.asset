@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB11L 3
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 3
+  dialog: Are you going to grow apart from us?
   attitudeArrayLength: 0
   attitudeArray: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB3L 2
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 2
+  dialog: "Oh* thank you so much! I just can\u2019t face them right now."
   attitudeArrayLength: 0
   attitudeArray: []

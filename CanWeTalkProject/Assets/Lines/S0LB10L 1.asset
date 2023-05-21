@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB10L 1
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "I\u2019m not sure why I said that* but I\u2019ve got to stick with it
+    now."
   attitudeArrayLength: 0
   attitudeArray: []

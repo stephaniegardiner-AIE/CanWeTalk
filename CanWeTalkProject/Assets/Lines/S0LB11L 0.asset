@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB11L 0
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
-  attitudeArrayLength: 0
-  attitudeArray: []
+  character: 1
+  dialog: "No* it\u2019s not your fault* it\u2019s not anyone\u2019s fault."
+  attitudeArrayLength: 1
+  attitudeArray:
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: 10

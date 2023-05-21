@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: S0LB7L 19
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "The two of us head to bed. It feels weird* sleeping there beside someone
+    who just asked for a divorce* but at least it\u2019s better than sleeping on
+    the couch. I finally manage to drift off* dreading the day that I\u2019m about
+    to wake up to."
   attitudeArrayLength: 0
   attitudeArray: []

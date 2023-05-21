@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB1L 6
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 2
+  dialog: "You\u2019re right. Would you be able to tell them? I don\u2019t think
+    I have the strength to look them in the eyes right now."
   attitudeArrayLength: 0
   attitudeArray: []

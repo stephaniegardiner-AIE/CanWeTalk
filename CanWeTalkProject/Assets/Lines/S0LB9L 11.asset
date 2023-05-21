@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB9L 11
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: The kids refuse to give me a hug goodnight* and I head to the bedroom*
+    totally defeated.
   attitudeArrayLength: 0
   attitudeArray: []

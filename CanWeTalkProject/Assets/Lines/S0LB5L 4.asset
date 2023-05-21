@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB5L 4
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: She opens her eyes.
   attitudeArrayLength: 0
   attitudeArray: []

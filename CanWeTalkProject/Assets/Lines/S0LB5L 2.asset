@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB5L 2
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: She closes her eyes and takes a deep breath.
   attitudeArrayLength: 0
   attitudeArray: []

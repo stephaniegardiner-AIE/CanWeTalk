@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB11L 11
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: I smile and climb into bed. Neither of us know quite where to lie with
+    our new situation* but we manage to get to sleep without too much trouble.
   attitudeArrayLength: 0
   attitudeArray: []

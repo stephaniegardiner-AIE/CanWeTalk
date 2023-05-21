@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB7L 6
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: She looks over at me* waiting for me to speak.
   attitudeArrayLength: 0
   attitudeArray: []

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: S0LB8L 4
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "It feels good to put the blame on her* after all it pretty much is all
+    her fault anyway. I know that* eventually* she\u2019s going to find out about
+    this* but for now* I feel a little better."
   attitudeArrayLength: 0
   attitudeArray: []

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB8L 12
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: The two of us fall asleep* making sure to keep to our sides of the bed.
+    I can barely sleep* eventually dropping into unconsciousness hours later.
   attitudeArrayLength: 0
   attitudeArray: []

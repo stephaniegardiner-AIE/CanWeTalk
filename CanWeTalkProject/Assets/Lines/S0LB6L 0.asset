@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB6L 0
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "I walk into the kids\u2019 room* a horrible wrenching in my gut. KidBoyName
+    stirs* his tiny face looking up at mine."
   attitudeArrayLength: 0
   attitudeArray: []

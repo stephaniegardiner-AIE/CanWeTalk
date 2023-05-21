@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB10L 7
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: KidGirlName starts crying even harder. I need to get out of here before
+    I make things any worse.
   attitudeArrayLength: 0
   attitudeArray: []

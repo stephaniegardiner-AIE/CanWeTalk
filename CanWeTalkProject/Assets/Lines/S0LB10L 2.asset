@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB10L 2
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 1
+  dialog: "Yeah* uh* we just couldn\u2019t handle having such terrible kids. It put
+    so much pressure on our marriage that eventually we had to have a divorce."
   attitudeArrayLength: 0
   attitudeArray: []

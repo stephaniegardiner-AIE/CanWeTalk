@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB0L 4
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: WifeName takes a step forward and places a few papers on the table next
+    to me.
   attitudeArrayLength: 0
   attitudeArray: []

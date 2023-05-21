@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB6L 2
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "His voice wakes up KidGirlName. Her eyes look like they\u2019re peering
+    into my soul."
   attitudeArrayLength: 0
   attitudeArray: []

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: S0LB3L 3
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "I stay silent. I\u2019m already trying to wrap my head around how to tell
+    them. Without saying another word* I take my first step towards the kids\u2019
+    room* dreading the conversation I\u2019m about to have."
   attitudeArrayLength: 0
   attitudeArray: []

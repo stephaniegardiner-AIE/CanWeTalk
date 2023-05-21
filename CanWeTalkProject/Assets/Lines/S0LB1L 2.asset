@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB1L 2
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: The look on her face tells me she really is sorry. Not that it helps much.
   attitudeArrayLength: 0
   attitudeArray: []

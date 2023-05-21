@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
   m_Name: S0LB2L 1
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: 
+  character: 2
+  dialog: "This is what you always do* you never listen to me! I\u2019m telling you
+    I\u2019m not happy anymore and you call me insane!"
   attitudeArrayLength: 0
   attitudeArray: []

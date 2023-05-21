@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: S0LB9L 8
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: Every word that comes out of my mouth seems to be the wrong one. No matter
+    how hard I try* I just keep making things worse. Eventually* I decide to cut
+    my losses.
   attitudeArrayLength: 0
   attitudeArray: []

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB6L 5
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: My brain has frozen. How can I possibly tell these two amazing children
+    that their entire life is about to change?
   attitudeArrayLength: 0
   attitudeArray: []

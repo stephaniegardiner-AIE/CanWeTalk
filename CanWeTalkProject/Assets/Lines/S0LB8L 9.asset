@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB8L 9
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: WifeName lets out a huge yawn.
   attitudeArrayLength: 0
   attitudeArray: []

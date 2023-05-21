@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB7L 0
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "The two of us enter the kids\u2019 room. They\u2019re both fast asleep.
+    They look so peaceful."
   attitudeArrayLength: 0
   attitudeArray: []

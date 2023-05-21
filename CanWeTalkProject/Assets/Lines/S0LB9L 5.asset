@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB9L 5
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "It's too late. I can see it in their eyes* I\u2019ve made myself the bad
+    guy."
   attitudeArrayLength: 0
   attitudeArray: []

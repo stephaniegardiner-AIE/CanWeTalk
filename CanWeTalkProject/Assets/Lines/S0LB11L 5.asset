@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB11L 5
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: I give KidBoyName a hug and ruffle his hair.
   attitudeArrayLength: 0
   attitudeArray: []

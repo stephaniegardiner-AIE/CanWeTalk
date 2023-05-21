@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: S0LB10L 12
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: I flip over and quickly pretend to fall asleep. I spend the entire night
+    dreading seeing the kids tomorrow. They are most definitely not attending my
+    funeral when I die.
   attitudeArrayLength: 0
   attitudeArray: []

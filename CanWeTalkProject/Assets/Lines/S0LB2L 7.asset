@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: S0LB2L 7
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "I\u2019m so stunned I can\u2019t even respond."
   attitudeArrayLength: 0
   attitudeArray: []

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S0LB9L 0
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 
+  dialog: "Looking down at KidGirlName\u2019s face* her eyes filling with tears*
+    I instantly crumble."
   attitudeArrayLength: 0
   attitudeArray: []
