@@ -39,13 +39,23 @@ public class CSVtoSO
                 //create new data object
                 var tmp = new Line.AttitudeArray();
 
-                tmp.attitudeChangeAmount = int.Parse(splitData[7]);
 
-                tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
+                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[7]);
+
+                
+
+                   /* tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[8]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[9]); */
+
+
+
+                line.attitudeArray[i] = tmp;
+
 
                 //store the Data object in our dataArray
 
-                line.attitudeArray[i] = tmp;
+
             }
             //enum.Parse<Line.Character>(splitData[4]);
 
