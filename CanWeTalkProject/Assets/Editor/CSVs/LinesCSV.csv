@@ -1,12 +1,11 @@
-Scene,LineBlock,,None,Dialog,Array Length,WhoTheArrayAffects,Change Amount,WhoTheArrayAffect,ChangeAmount,,,None,,You
-0,0,0,Description,I’m watching TV when WifeName walks into the room.,,,,,,,,Description,,Wife
-0,0,1,Wife,Honey… can we talk?,,,,,,,,You,,Kids
-0,0,2,You,"Sure, what’s going on?",,,,,,,,Wife,,Dog
-0,0,3,Wife,I’ve been thinking about this for a long time and I think it’s going to be best for both of us.,,,,,,,,Boy,,
-0,0,4,Description,WifeName takes a step forward and places a few papers on the table next to me.,,,,,,,,Girl,,
-0,0,5,Wife,I want a divorce.,,,,,,,,Dog,,
-0,0,6,Description,"I let out a nervous chuckle, not sure what else to do.",,,,,,,,Friend,,
-0,0,7,You,What? What do you mean?,,,,,,,,Lawyer,,
+0,0,0,Description,I’m watching TV when WifeName walks into the room.,,,,,,,,,,
+0,0,1,Wife,Honey… can we talk?,,,,,,,,,,
+0,0,2,You,"Sure, what’s going on?",,,,,,,,,,
+0,0,3,Wife,I’ve been thinking about this for a long time and I think it’s going to be best for both of us.,,,,,,,,,,
+0,0,4,Description,WifeName takes a step forward and places a few papers on the table next to me.,,,,,,,,,,
+0,0,5,Wife,I want a divorce.,,,,,,,,,,
+0,0,6,Description,"I let out a nervous chuckle, not sure what else to do.",,,,,,,,,,
+0,0,7,You,What? What do you mean?,,,,,,,,,,
 0,0,8,Wife,"These are divorce papers, I’ve already signed them so all you have to do is-",,,,,,,,,,
 0,0,9,You,Is this a joke or something? Please tell me you’re joking.,,,,,,,,,,
 0,0,10,Wife,"Just sign the papers, please, it’ll make this all so much easier on us both if you do.",,,,,,,,,,
