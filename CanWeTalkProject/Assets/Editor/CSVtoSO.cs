@@ -40,15 +40,28 @@ public class CSVtoSO
                 var tmp = new Line.AttitudeArray();
 
 
-                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[7]);
 
                 
 
                    /* tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[8]);
                     tmp.attitudeChangeAmount = int.Parse(splitData[9]); */
 
+                if (i == 0)
+                {
 
+                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[7]);
+                }
+                else
+                {
+                    Debug.Log(line.name);
+                }
+
+             /*   if (i == 1)
+                {
+                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6 + 2]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[7 + 2]);
+                } */
 
                 line.attitudeArray[i] = tmp;
 

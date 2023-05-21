@@ -19,5 +19,5 @@ MonoBehaviour:
   attitudeArray:
   - attitudeChangeEffects: 1
     attitudeChangeAmount: -10
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: -10
+  - attitudeChangeEffects: 0
+    attitudeChangeAmount: 0
