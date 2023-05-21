@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
+  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1955,12 +1955,12 @@ MonoBehaviour:
   dayTimeText: {fileID: 1852755113}
   descriptionColor: {r: 0, g: 0, b: 0, a: 0}
   youColor: {r: 1, g: 1, b: 1, a: 1}
-  wifeColor: {r: 1, g: 0.43137258, b: 0.003921569, a: 1}
-  boyColor: {r: 0, g: 1, b: 0.62038326, a: 1}
-  girlColor: {r: 0.9009557, g: 0, b: 1, a: 1}
-  dogColor: {r: 0.06159973, g: 0, b: 1, a: 1}
-  friendColor: {r: 0, g: 0, b: 0, a: 0}
-  lawyerColor: {r: 0, g: 0, b: 0, a: 0}
+  wifeColor: {r: 1, g: 0, b: 0, a: 1}
+  boyColor: {r: 0.98823535, g: 0.45882356, b: 0.21176472, a: 1}
+  girlColor: {r: 1, g: 0.74509805, b: 0.043137256, a: 1}
+  dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
+  friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
+  lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
   speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
   speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
   youAttitudeLevel: 100
@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 11
   m_OnValueChanged:

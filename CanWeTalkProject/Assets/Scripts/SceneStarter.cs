@@ -473,6 +473,8 @@ public class SceneStarter : MonoBehaviour
         dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
         dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
         dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
+        
     }
 
     //  THE TYPE WRITER

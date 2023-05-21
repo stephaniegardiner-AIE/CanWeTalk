@@ -16,7 +16,7 @@ public class CSVtoSO
             string[] splitData = s.Split(",");
 
             Line line = ScriptableObject.CreateInstance<Line>();
-            line.name = "S" + splitData[0] + "LB" + splitData[1] + "L " + splitData[2];
+            line.name = "S" + splitData[0] + "LB" + splitData[1] + "L" + splitData[2];
 
             line.character = Line.Character.Parse<Line.Character>(splitData[3]);
 
@@ -40,12 +40,6 @@ public class CSVtoSO
                 var tmp = new Line.AttitudeArray();
 
 
-
-                
-
-                   /* tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[8]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[9]); */
-
                 if (i == 0)
                 {
 
@@ -57,17 +51,12 @@ public class CSVtoSO
                     Debug.Log(line.name);
                 }
 
-             /*   if (i == 1)
-                {
-                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6 + 2]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[7 + 2]);
-                } */
 
+                //store the Data object in our dataArray
                 line.attitudeArray[i] = tmp;
 
 
-                //store the Data object in our dataArray
-
+                line.name = line.name + "A";
 
             }
             //enum.Parse<Line.Character>(splitData[4]);
