@@ -1959,6 +1959,8 @@ MonoBehaviour:
   wifeAttitudeLevel: 50
   kidsAttitudeLevel: 100
   dogAttitudeLevel: 100
+  friendAttitudeLevel: 0
+  lawyerAttitudeLevel: 0
   youAttitudeBar: {fileID: 1845271955}
   wifeAttitudeBar: {fileID: 571555462}
   kidsAttitudeBar: {fileID: 652330352}

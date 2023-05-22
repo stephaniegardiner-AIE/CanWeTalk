@@ -68,6 +68,8 @@ public class SceneStarter : MonoBehaviour
     public float wifeAttitudeLevel;
     public float kidsAttitudeLevel;
     public float dogAttitudeLevel;
+    public float friendAttitudeLevel;
+    public float lawyerAttitudeLevel;
 
     [Header("Attitude Bar")]
     public Image youAttitudeBar;

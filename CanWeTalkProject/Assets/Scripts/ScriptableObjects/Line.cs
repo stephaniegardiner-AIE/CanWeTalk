@@ -37,6 +37,8 @@ public class Line : ScriptableObject
             wifeAttitude,
             kidsAttitude,
             dogAttitude,
+            friendAttitude,
+            lawyerAttitude,
         }
 
         public AttitudesCharacter attitudeChangeEffects;
@@ -55,11 +57,11 @@ public class Line : ScriptableObject
             //create new data object
             var tmp = new AttitudeEffects();
 
-            tmp.attitudeChangeAmount = 0;
+            //tmp.attitudeChangeAmount = 0;
 
             //store the Data object in our dataArray
             attitudeArray[i] = tmp;
-        }
+        } 
 
         
     }

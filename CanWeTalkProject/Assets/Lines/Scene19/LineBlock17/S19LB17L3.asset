@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S19LB17L3
+  m_EditorClassIdentifier: 
+  character: 0
+  dialog: "I quickly grab my pillow and make my way down to the couch. I\u2019ve
+    slept here before* but it feels significantly less comfortable than I remember.
+    I try my best to find a decent sleeping position* but no matter what* I think
+    I\u2019m going to be waking up with a sore neck tomorrow."
+  attitudeArrayLength: 0
+  attitudeArray: []
+  hasAction: 1
+  action: 6

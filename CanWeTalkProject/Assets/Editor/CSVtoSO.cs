@@ -85,10 +85,12 @@ public class CSVtoSO
 
             AssetDatabase.CreateAsset(line, $"Assets/Lines/Scene{splitData[0]}/LineBlock{splitData[1]}/{line.name}.asset");
             
-
+            
 
         }
 
         AssetDatabase.SaveAssets();
     }
+
+
 }

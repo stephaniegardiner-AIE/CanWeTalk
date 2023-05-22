@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S2LB5L0A
+  m_EditorClassIdentifier: 
+  character: 1
+  dialog: "We should present them a united front. They need to know that even though
+    we\u2019re getting divorced* we\u2019re still on each other\u2019s sides."
+  attitudeArrayLength: 1
+  attitudeArray:
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: 10
+  hasAction: 0
+  action: 0
