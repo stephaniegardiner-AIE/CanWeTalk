@@ -8,6 +8,8 @@ public class Scene : ScriptableObject
 {
     public LineBlock[] lineBlocks;
     public int dayNumber;
+
+    [SerializeField]
     public enum WeekDay
     {
         Sunday,

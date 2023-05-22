@@ -78,7 +78,10 @@ public class Line : ScriptableObject
             hasAction = false;
         }
 
-        AssetDatabase.SaveAssets();
+
+            //AssetDatabase.SaveAssets();
+        
+        
     }
     public bool hasAction;
 

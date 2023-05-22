@@ -376,8 +376,10 @@ public class SceneStarter : MonoBehaviour
         currentScene = sceneManager.scenes[sceneNumber];
         currentLineBlock = nextLineBlock;
         lineNumber = 0;
-        SetSceneInfo();
+        
         LineRunner();
+
+        SetSceneInfo();
     }
 
 
