@@ -29,6 +29,7 @@ MonoBehaviour:
   endDecisionBlock: {fileID: 0}
   endActivityBlock: {fileID: 0}
   nextLineBlock: {fileID: 11400000, guid: ac710c4b0be4678419b3f178654b9edb, type: 2}
+  nextSceneNumber: 2
   hasConditions: 0
   conditions: 0
   actionCondition: 0

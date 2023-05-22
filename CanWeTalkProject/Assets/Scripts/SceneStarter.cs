@@ -365,14 +365,14 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.nextLineBlock != null)
         {
-            GoToNextScene(currentLineBlock.nextLineBlock);
+            GoToNextScene(currentLineBlock.nextLineBlock, currentLineBlock);
         }
     }
 
-    public void GoToNextScene(LineBlock nextLineBlock)
+    public void GoToNextScene(LineBlock nextLineBlock, LineBlock currentLineblock)
     {
         
-        sceneNumber++;
+        sceneNumber = currentLineBlock.nextSceneNumber;
         currentScene = sceneManager.scenes[sceneNumber];
         currentLineBlock = nextLineBlock;
         lineNumber = 0;

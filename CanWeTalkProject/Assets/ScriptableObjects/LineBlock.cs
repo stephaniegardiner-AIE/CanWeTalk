@@ -15,7 +15,7 @@ public class LineBlock : ScriptableObject
 
     public LineBlock nextLineBlock;
 
-    
+    public int nextSceneNumber;
     public enum Conditions
     {
        None,
