@@ -74,7 +74,7 @@ public class LineBlock : ScriptableObject
 
     public bool attitudeCondition;
 
-    public Line.AttitudeArray.Attitudes attitudes;
+    public Line.AttitudeEffects.AttitudesCharacter attitudes;
     
     public enum AttitudeLevel
     {

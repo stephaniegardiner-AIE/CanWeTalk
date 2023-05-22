@@ -312,11 +312,11 @@ public class CharacterSpriteManager : MonoBehaviour
         _yPositionLerpValue = yEndValue;                
     }
 
-    public void CreateAttitudeReaction(Line.AttitudeArray.Attitudes character, float attitudeChangeAmount)
+    public void CreateAttitudeReaction(Line.AttitudeEffects.AttitudesCharacter character, float attitudeChangeAmount)
     {
         Debug.Log("change for " + character);
 
-        if (character == Line.AttitudeArray.Attitudes.wifeAttitude && wifeActive)
+        if (character == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude && wifeActive)
         {
             if (attitudeChangeAmount >= 0)
             {
@@ -332,7 +332,7 @@ public class CharacterSpriteManager : MonoBehaviour
             }
             
         }
-        if (character == Line.AttitudeArray.Attitudes.kidsAttitude && (boyActive || girlActive))
+        if (character == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude && (boyActive || girlActive))
         {
             if (attitudeChangeAmount >= 0)
             {
@@ -352,7 +352,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 Debug.Log("kidnegativereaction");
             }
         }
-        if (character == Line.AttitudeArray.Attitudes.dogAttitude && dogActive)
+        if (character == Line.AttitudeEffects.AttitudesCharacter.dogAttitude && dogActive)
         {
             if (attitudeChangeAmount >= 0)
             {

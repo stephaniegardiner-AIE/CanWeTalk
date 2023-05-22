@@ -26,9 +26,9 @@ public class Line : ScriptableObject
     public int attitudeArrayLength;
 
     [System.Serializable]
-    public class AttitudeArray
+    public class AttitudeEffects
     {
-        public enum Attitudes
+        public enum AttitudesCharacter
         {
             youAttitude,
             wifeAttitude,
@@ -36,21 +36,21 @@ public class Line : ScriptableObject
             dogAttitude,
         }
 
-        public Attitudes attitudeChangeEffects;
+        public AttitudesCharacter attitudeChangeEffects;
         public float attitudeChangeAmount;
     }
 
-    public List<AttitudeArray> attitudeArray;
+    public List<AttitudeEffects> attitudeArray;
 
     private void Awake()
     {
-        attitudeArray = new List<AttitudeArray> (new AttitudeArray[attitudeArrayLength]);
+        attitudeArray = new List<AttitudeEffects> (new AttitudeEffects[attitudeArrayLength]);
         
 
         for (int i = 0; i < attitudeArrayLength; i++)
         {
             //create new data object
-            var tmp = new AttitudeArray();
+            var tmp = new AttitudeEffects();
 
             tmp.attitudeChangeAmount = 0;
 

@@ -516,38 +516,38 @@ public class SceneStarter : MonoBehaviour
             //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);
 
             //change you attitude
-            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.youAttitude)
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
             {
 
                 StartCoroutine(AttitudeLerp(youAttitudeLevel, youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar));
                 youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                AttitudeEffect(Line.AttitudeArray.Attitudes.youAttitude, line.attitudeArray[i].attitudeChangeAmount);
+                AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.youAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
 
             //change wife attitude
-            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.wifeAttitude)
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
             {
                 StartCoroutine(AttitudeLerp(wifeAttitudeLevel, wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, wifeAttitudeBar));
                 wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                AttitudeEffect(Line.AttitudeArray.Attitudes.wifeAttitude, line.attitudeArray[i].attitudeChangeAmount);
+                AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.wifeAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
 
             //change kids attitude
-            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.kidsAttitude)
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
             {
                 StartCoroutine(AttitudeLerp(kidsAttitudeLevel, kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, kidsAttitudeBar));
                 kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                AttitudeEffect(Line.AttitudeArray.Attitudes.kidsAttitude, line.attitudeArray[i].attitudeChangeAmount);
+                AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.kidsAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
 
             //change dog attitude
-            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeArray.Attitudes.dogAttitude)
+            if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.dogAttitude)
             {
                 StartCoroutine(AttitudeLerp(dogAttitudeLevel, dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, dogAttitudeBar));
                 dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
-                AttitudeEffect(Line.AttitudeArray.Attitudes.dogAttitude, line.attitudeArray[i].attitudeChangeAmount);
+                AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.dogAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
         }
     }
@@ -568,7 +568,7 @@ public class SceneStarter : MonoBehaviour
     }
 
 
-    public void AttitudeEffect(Line.AttitudeArray.Attitudes character, float attitudeChangeAmount)
+    public void AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter character, float attitudeChangeAmount)
     {
         if ((int)character >= 1)
         {

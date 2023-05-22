@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S0LB8L0AAA
+  m_Name: S0LB9L1AA
   m_EditorClassIdentifier: 
   character: 1
-  dialog: "Your mother has decided she doesn\u2019t love us anymore. She\u2019s leaving
-    us all."
+  dialog: "No* no* honey it\u2019s not your fault at all. It\u2019s my fault."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 1
+  - attitudeChangeEffects: 2
     attitudeChangeAmount: -10
   - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
+    attitudeChangeAmount: -20

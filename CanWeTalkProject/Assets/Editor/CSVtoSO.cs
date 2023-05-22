@@ -34,7 +34,7 @@ public class CSVtoSO
             //line.attitudeArray = new List<Line.AttitudeArray>;
 
 
-            for (int i = 0; i < line.attitudeArrayLength; i++)
+         /*   for (int i = 0; i < line.attitudeArrayLength; i++)
             {
                 //create new data object
                 var tmp = new Line.AttitudeArray();
@@ -64,6 +64,33 @@ public class CSVtoSO
 
 
                 
+
+            } */
+
+            for (int i = 0; i < line.attitudeArrayLength; i++)
+            {
+                //create new data object
+                var tmp = new Line.AttitudeEffects();
+
+                tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[6]);
+                tmp.attitudeChangeAmount = int.Parse(splitData[7]);
+                line.name = line.name + "A";
+
+                if (i == 1)
+                {
+                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[8]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[9]);
+                }
+                if (i == 2)
+                {
+                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[10]);
+                    tmp.attitudeChangeAmount = int.Parse(splitData[11]);
+                }
+
+                Debug.Log(line.name + " 1 attitude change");
+
+                //store the Data object in our dataArray
+                line.attitudeArray.Add(tmp);
 
             }
             //enum.Parse<Line.Character>(splitData[4]);

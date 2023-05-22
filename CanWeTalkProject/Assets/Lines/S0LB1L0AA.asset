@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S0LB10L0AAA
+  m_Name: S0LB1L0AA
   m_EditorClassIdentifier: 
   character: 1
-  dialog: "\u2026 Yep. You guys did it."
+  dialog: "\u2026 Okay. I\u2019ll sign the papers."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 2
-    attitudeChangeAmount: -10
+  - attitudeChangeEffects: 1
+    attitudeChangeAmount: 10
   - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
+    attitudeChangeAmount: -10
