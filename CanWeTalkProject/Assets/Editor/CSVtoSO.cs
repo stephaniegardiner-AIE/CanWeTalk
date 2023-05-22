@@ -31,41 +31,6 @@ public class CSVtoSO
                 line.attitudeArrayLength = int.Parse(splitData[5]);
             }
 
-            //line.attitudeArray = new List<Line.AttitudeArray>;
-
-
-         /*   for (int i = 0; i < line.attitudeArrayLength; i++)
-            {
-                //create new data object
-                var tmp = new Line.AttitudeArray();
-
-                
-
-
-                if (i == 0)
-                {
-
-                    tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[7]);
-                    line.name = line.name + "A";
-
-                    Debug.Log(line.name + " 1 attitude change");
-
-                }
-                else
-                {
-                    line.name = line.name + "AA";
-                    Debug.Log(line.name + " 2 attitude changes");
-                }
-
-
-                //store the Data object in our dataArray
-                line.attitudeArray.Add(tmp);
-
-
-                
-
-            } */
 
             for (int i = 0; i < line.attitudeArrayLength; i++)
             {
@@ -95,8 +60,17 @@ public class CSVtoSO
             }
             //enum.Parse<Line.Character>(splitData[4]);
 
+            if (splitData[14] == "")
+            {
+                Debug.Log("no action change");
+            }
+            else
+            {
+                line.action = LineBlock.Actions.Parse<LineBlock.Actions>(splitData[14]);
+                line.hasAction = true;
+            }
 
-            //Line.Character.Parse(splitData[4]);
+            
 
             AssetDatabase.CreateAsset(line, $"Assets/Lines/{line.name}.asset");
             
