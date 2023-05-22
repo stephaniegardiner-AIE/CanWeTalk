@@ -10,9 +10,11 @@ using Unity.VisualScripting;
 public class SceneStarter : MonoBehaviour
 {
     public CharacterSpriteManager spriteManager;
+    public SceneManager sceneManager;
     public Scene currentScene;
     public Actions actions;
-    
+
+    public int sceneNumber;
     
     public bool decision = false;
 
@@ -369,9 +371,12 @@ public class SceneStarter : MonoBehaviour
 
     public void GoToNextScene(LineBlock nextLineBlock)
     {
-        currentScene = 
+        
+        sceneNumber++;
+        currentScene = sceneManager.scenes[sceneNumber];
         currentLineBlock = nextLineBlock;
         lineNumber = 0;
+        SetSceneInfo();
         LineRunner();
     }
 
@@ -508,7 +513,9 @@ public class SceneStarter : MonoBehaviour
     {
         dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
         dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidGirlName", girlName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("DogName", dogName);
+
         dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
         
     }

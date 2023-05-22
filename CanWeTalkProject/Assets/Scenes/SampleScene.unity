@@ -1917,8 +1917,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 446210112}
+  sceneManager: {fileID: 1866968159}
   currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   actions: {fileID: 479706494}
+  sceneNumber: 0
   decision: 0
   dayNumber: 0
   weekday: 0
@@ -3249,6 +3251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866968158}
+  - component: {fileID: 1866968159}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3271,6 +3274,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866968159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866968157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac9855af3cfb442a98f29378006da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
+  - {fileID: 11400000, guid: 1fcd989f40a13074c9b5b8c5b3683d3e, type: 2}
+  - {fileID: 11400000, guid: e8bf15452ee7ca447b68423f46467bf3, type: 2}
 --- !u!1 &1925744256
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S2LB5L4
+  m_Script: {fileID: 11500000, guid: 3fa3570375149a5488132bf07b65a405, type: 3}
+  m_Name: S2
   m_EditorClassIdentifier: 
-  character: 0
-  dialog: She opens her eyes.
-  attitudeArrayLength: 0
-  attitudeArray: []
-  hasAction: 0
-  action: 0
+  lineBlocks:
+  - {fileID: 11400000, guid: ac710c4b0be4678419b3f178654b9edb, type: 2}
+  dayNumber: 2
+  weekday: 1
+  dayTime: 0
+  location: 0
