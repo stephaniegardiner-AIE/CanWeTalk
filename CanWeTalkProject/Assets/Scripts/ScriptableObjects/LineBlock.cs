@@ -32,17 +32,17 @@ public class LineBlock : ScriptableObject
     {
         if (conditions == Conditions.Attitude)
         {
-            Debug.Log("attitude constraint");
+            //Debug.Log("attitude constraint");
         }
         if (conditions == Conditions.Action)
         {
-            Debug.Log("action restraint");
+            //Debug.Log("action restraint");
 
         }
 
         if (hasConditions == true)
         {
-            Debug.Log("hasConditions");
+            //Debug.Log("hasConditions");
 
 
         }

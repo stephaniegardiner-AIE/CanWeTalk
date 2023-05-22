@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S0LB8L0AA
+  m_Name: S0LB1L0AAA
   m_EditorClassIdentifier: 
   character: 1
-  dialog: "Your mother has decided she doesn\u2019t love us anymore. She\u2019s leaving
-    us all."
+  dialog: "\u2026 Okay. I\u2019ll sign the papers."
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeChangeEffects: 1
-    attitudeChangeAmount: -10
+    attitudeChangeAmount: 10
   - attitudeChangeEffects: 0
     attitudeChangeAmount: 0

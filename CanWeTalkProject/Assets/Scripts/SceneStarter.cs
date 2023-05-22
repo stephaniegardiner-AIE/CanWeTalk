@@ -510,7 +510,7 @@ public class SceneStarter : MonoBehaviour
     public void UpdateAttitudes(Line line)
     {
         
-        for (int i = 0; i < line.attitudeArray.Length; i++)
+        for (int i = 0; i < line.attitudeArray.Count; i++)
 
         {
             //Debug.Log(line.attitudeArray[i].attitudeChangeEffects);

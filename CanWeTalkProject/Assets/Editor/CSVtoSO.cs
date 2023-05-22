@@ -24,14 +24,14 @@ public class CSVtoSO
 
             if (splitData[5] == "")
             {
-                Debug.Log("ain't nothing here");
+                Debug.Log("no attitude change");
             }
             else
             {
                 line.attitudeArrayLength = int.Parse(splitData[5]);
             }
 
-            line.attitudeArray = new Line.AttitudeArray[line.attitudeArrayLength];
+            //line.attitudeArray = new List<Line.AttitudeArray>;
 
 
             for (int i = 0; i < line.attitudeArrayLength; i++)
@@ -39,24 +39,31 @@ public class CSVtoSO
                 //create new data object
                 var tmp = new Line.AttitudeArray();
 
+                
+
 
                 if (i == 0)
                 {
 
                     tmp.attitudeChangeEffects = Line.AttitudeArray.Attitudes.Parse<Line.AttitudeArray.Attitudes>(splitData[6]);
                     tmp.attitudeChangeAmount = int.Parse(splitData[7]);
+                    line.name = line.name + "A";
+
+                    Debug.Log(line.name + " 1 attitude change");
+
                 }
                 else
                 {
-                    Debug.Log(line.name);
+                    line.name = line.name + "AA";
+                    Debug.Log(line.name + " 2 attitude changes");
                 }
 
 
                 //store the Data object in our dataArray
-                line.attitudeArray[i] = tmp;
+                line.attitudeArray.Add(tmp);
 
 
-                line.name = line.name + "A";
+                
 
             }
             //enum.Parse<Line.Character>(splitData[4]);

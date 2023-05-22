@@ -40,11 +40,11 @@ public class Line : ScriptableObject
         public float attitudeChangeAmount;
     }
 
-    public AttitudeArray[] attitudeArray;
+    public List<AttitudeArray> attitudeArray;
 
     private void Awake()
     {
-        attitudeArray = new AttitudeArray[attitudeArrayLength];
+        attitudeArray = new List<AttitudeArray> (new AttitudeArray[attitudeArrayLength]);
         
 
         for (int i = 0; i < attitudeArrayLength; i++)
@@ -52,12 +52,9 @@ public class Line : ScriptableObject
             //create new data object
             var tmp = new AttitudeArray();
 
-           // tmp.attitudeChangeEffects =
-           //tmp.attitudeChangeEffects = 
             tmp.attitudeChangeAmount = 0;
 
             //store the Data object in our dataArray
-
             attitudeArray[i] = tmp;
         }
 
