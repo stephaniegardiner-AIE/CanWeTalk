@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "Is this a joke or something? Please tell me you\u2019re joking."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

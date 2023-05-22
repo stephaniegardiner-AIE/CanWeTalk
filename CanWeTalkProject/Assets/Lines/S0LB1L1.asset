@@ -17,3 +17,5 @@ MonoBehaviour:
     that it had to come to this."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

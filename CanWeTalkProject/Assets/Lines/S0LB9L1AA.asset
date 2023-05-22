@@ -16,7 +16,9 @@ MonoBehaviour:
   dialog: "No* no* honey it\u2019s not your fault at all. It\u2019s my fault."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 2
+  - attitudeChangeEffects: 3
     attitudeChangeAmount: -10
-  - attitudeChangeEffects: 0
+  - attitudeChangeEffects: 1
     attitudeChangeAmount: -20
+  hasAction: 0
+  action: 0

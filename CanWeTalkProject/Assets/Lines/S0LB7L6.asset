@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: She looks over at me* waiting for me to speak.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

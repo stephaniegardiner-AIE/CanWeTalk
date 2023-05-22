@@ -13,18 +13,23 @@ public class LineBlock : ScriptableObject
 
     public ActivityBlock endActivityBlock;
 
+    
     public enum Conditions
     {
+       None,
        Attitude,
        Action,
        Condition,
 
     }
 
+    [Header("Conditions")]
+    public bool hasConditions;
     public Conditions conditions;
 
     private void Awake()
     {
+
 
     }
 
@@ -40,15 +45,35 @@ public class LineBlock : ScriptableObject
 
         }
 
-        if (hasConditions == true)
+        if (actions != 0)
         {
-            //Debug.Log("hasConditions");
+            actionCondition = true;
+        }
+        else
+        {
+            actionCondition = false;
+        }
 
+        if (conditions != 0)
+        {
+            hasConditions = true;
+        }
+        else
+        {
+            hasConditions = false;  
+        }
 
+        if(attitudes != 0)
+        {
+            attitudeCondition = true;
+        }
+        else
+        {
+            attitudeCondition = false;
         }
     }
 
-    public bool hasConditions;
+    
 
     [Header("Action Conditions")]
     public bool actionCondition;
@@ -78,6 +103,7 @@ public class LineBlock : ScriptableObject
     
     public enum AttitudeLevel
     {
+        None,
         GreaterThan,
         LessThan,
     }
@@ -86,6 +112,7 @@ public class LineBlock : ScriptableObject
 
     public float attitudeAmount;
    
+
 
     /*[Header("Actions")]
     bool signedPapers;

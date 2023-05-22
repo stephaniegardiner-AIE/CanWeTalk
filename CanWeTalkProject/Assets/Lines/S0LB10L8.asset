@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "So\u2026 yep. Great chat. See you guys tomorrow."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

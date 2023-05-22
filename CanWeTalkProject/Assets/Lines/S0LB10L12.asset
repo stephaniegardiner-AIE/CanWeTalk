@@ -18,3 +18,5 @@ MonoBehaviour:
     funeral when I die.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

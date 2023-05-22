@@ -17,3 +17,5 @@ MonoBehaviour:
     I\u2019m not happy anymore and you call me insane!"
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

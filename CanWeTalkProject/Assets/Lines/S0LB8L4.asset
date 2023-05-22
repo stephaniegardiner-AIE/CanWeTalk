@@ -18,3 +18,5 @@ MonoBehaviour:
     this* but for now* I feel a little better."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

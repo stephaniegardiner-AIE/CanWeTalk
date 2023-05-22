@@ -17,3 +17,5 @@ MonoBehaviour:
     get to sleep.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

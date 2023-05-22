@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: Okay. We can do this.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

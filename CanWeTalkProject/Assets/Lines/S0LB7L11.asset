@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: Oh my god honey* no* not at all.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

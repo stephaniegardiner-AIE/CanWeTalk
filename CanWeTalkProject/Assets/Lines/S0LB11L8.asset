@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "How\u2019d it go?"
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

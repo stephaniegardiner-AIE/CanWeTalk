@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "You\u2019re right* that\u2019s exactly what we should do."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

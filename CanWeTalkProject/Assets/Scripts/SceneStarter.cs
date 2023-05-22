@@ -11,6 +11,7 @@ public class SceneStarter : MonoBehaviour
 {
     public CharacterSpriteManager spriteManager;
     public Scene currentScene;
+    public Actions actions;
     
     
     public bool decision = false;
@@ -236,6 +237,11 @@ public class SceneStarter : MonoBehaviour
                     Debug.Log("AttitudeChange!");
                 }
 
+                if (currentLineBlock.lines[lineNumber].hasAction)
+                {
+                    ChangeAction(currentLineBlock.lines[lineNumber]);
+                }
+
                 lineNumber++;
 
 
@@ -246,6 +252,17 @@ public class SceneStarter : MonoBehaviour
             }
         }
        
+    }
+
+    public void ChangeAction(Line currentLine)
+    {
+        Debug.Log("we made it fam");
+
+        if (currentLine.action > 0)
+        {
+            actions.SetTrue(currentLine.action);
+        }
+        
     }
 
     public void ResizeSpeech()

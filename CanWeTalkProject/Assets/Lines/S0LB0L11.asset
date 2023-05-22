@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "You can\u2019t be serious. Is this really what you want?"
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

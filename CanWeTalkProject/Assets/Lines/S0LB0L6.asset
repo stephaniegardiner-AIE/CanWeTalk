@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: I let out a nervous chuckle* not sure what else to do.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "That\u2019s great."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

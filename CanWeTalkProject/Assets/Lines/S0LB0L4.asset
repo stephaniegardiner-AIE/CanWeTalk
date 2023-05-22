@@ -17,3 +17,5 @@ MonoBehaviour:
     to me.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

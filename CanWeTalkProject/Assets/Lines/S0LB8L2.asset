@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: How could she do that to us!
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

@@ -18,3 +18,5 @@ MonoBehaviour:
     I\u2019ll talk more tomorrow. Night."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

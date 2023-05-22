@@ -17,3 +17,5 @@ MonoBehaviour:
     stirs* his tiny face looking up at mine."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

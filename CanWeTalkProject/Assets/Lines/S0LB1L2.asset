@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: The look on her face tells me she really is sorry. Not that it helps much.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

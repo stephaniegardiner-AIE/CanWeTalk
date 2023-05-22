@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: What are we going to do about the kids?
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

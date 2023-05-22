@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: After a few more questions* we put the kids back to bed and leave the room.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

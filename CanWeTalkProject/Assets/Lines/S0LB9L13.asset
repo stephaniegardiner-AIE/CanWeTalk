@@ -19,3 +19,5 @@ MonoBehaviour:
     trips to Disneyland.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

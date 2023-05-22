@@ -17,3 +17,5 @@ MonoBehaviour:
     I have the strength to look them in the eyes right now."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

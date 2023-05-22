@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "\u2026 What?"
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

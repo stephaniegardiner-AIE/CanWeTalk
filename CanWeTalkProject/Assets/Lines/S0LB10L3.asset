@@ -18,3 +18,5 @@ MonoBehaviour:
     but boy* this is a big one."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

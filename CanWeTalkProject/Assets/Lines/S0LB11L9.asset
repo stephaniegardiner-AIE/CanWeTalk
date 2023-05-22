@@ -17,3 +17,5 @@ MonoBehaviour:
     fault and that we both still love them."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

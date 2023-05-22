@@ -17,3 +17,5 @@ MonoBehaviour:
     so much pressure on our marriage that eventually we had to have a divorce."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

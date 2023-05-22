@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: Is it something we did?
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

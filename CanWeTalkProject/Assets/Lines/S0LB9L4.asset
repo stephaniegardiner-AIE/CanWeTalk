@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "Well when I say my fault* I don\u2019t mean totally my fault."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

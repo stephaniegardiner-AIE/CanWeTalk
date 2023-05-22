@@ -18,3 +18,5 @@ MonoBehaviour:
     see any other way to make it work."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

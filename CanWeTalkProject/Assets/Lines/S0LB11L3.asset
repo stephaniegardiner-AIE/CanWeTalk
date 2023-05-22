@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: Are you going to grow apart from us?
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

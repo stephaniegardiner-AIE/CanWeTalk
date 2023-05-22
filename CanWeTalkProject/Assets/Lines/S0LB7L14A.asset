@@ -16,5 +16,7 @@ MonoBehaviour:
   dialog: We love you very very much* and we always will.
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 2
+  - attitudeChangeEffects: 3
     attitudeChangeAmount: 10
+  hasAction: 0
+  action: 0

@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: I nod* and the two of us slowly wake up the children.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

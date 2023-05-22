@@ -1,5 +1,7 @@
+using Newtonsoft.Json.Converters;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Line", menuName = "Dialog/New Line")]
@@ -30,6 +32,7 @@ public class Line : ScriptableObject
     {
         public enum AttitudesCharacter
         {
+            none,
             youAttitude,
             wifeAttitude,
             kidsAttitude,
@@ -61,6 +64,25 @@ public class Line : ScriptableObject
         
     }
 
+
+    private void OnValidate()
+    {
+        if (action != 0)
+        {
+            hasAction = true;
+        }
+        if (action == 0)
+        {
+            hasAction = false;
+        }
+
+        AssetDatabase.SaveAssets();
+    }
+    public bool hasAction;
+
+    public LineBlock.Actions action;
+
+    
 }
 
 

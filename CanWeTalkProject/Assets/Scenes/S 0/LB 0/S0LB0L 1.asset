@@ -15,6 +15,6 @@ MonoBehaviour:
   character: 2
   dialog: "Honey\u2026 can we talk?"
   attitudeArrayLength: 0
-  attitudeArray:
-  - attitudeChangeEffects: 2
-    attitudeChangeAmount: -20
+  attitudeArray: []
+  hasAction: 1
+  action: 2

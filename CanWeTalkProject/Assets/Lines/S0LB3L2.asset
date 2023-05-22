@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "Oh* thank you so much! I just can\u2019t face them right now."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

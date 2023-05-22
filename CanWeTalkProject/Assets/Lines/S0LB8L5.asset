@@ -17,3 +17,5 @@ MonoBehaviour:
     bed and head back to my bedroom.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

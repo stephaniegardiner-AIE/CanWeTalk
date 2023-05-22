@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: WifeName goes over to KidGirlName and envelops her in a huge hug.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

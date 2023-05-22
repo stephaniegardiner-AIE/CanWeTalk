@@ -18,3 +18,5 @@ MonoBehaviour:
     room* dreading the conversation I\u2019m about to have."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

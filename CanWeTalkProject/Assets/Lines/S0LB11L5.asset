@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: I give KidBoyName a hug and ruffle his hair.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

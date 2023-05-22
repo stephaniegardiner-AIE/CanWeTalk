@@ -16,7 +16,9 @@ MonoBehaviour:
   dialog: "\u2026 Okay. I\u2019ll sign the papers."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 1
+  - attitudeChangeEffects: 2
     attitudeChangeAmount: 10
-  - attitudeChangeEffects: 0
+  - attitudeChangeEffects: 1
     attitudeChangeAmount: -10
+  hasAction: 0
+  action: 0

@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: All that matters is that the kids are okay through all of this.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

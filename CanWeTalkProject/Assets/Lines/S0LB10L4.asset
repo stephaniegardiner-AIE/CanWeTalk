@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "There there\u2026 don\u2019t cry. Please."
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

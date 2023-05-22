@@ -866,16 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e71915a4e3acd4ab3b25c6696457e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signedPapers: 0
-  wentToWork: 0
-  pickingKidsUp: 0
-  forgotToPickKidsUp: 0
-  letKidsStayUp: 0
-  sleepingOnTheCouch: 0
-  wantsFullCustody: 0
-  wantsNoCustody: 0
-  wantsSplitCustody: 0
-  gaveKidsPancakes: 0
+  actionList: 
 --- !u!4 &479706495
 Transform:
   m_ObjectHideFlags: 0
@@ -1927,6 +1918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 446210112}
   currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
+  actions: {fileID: 479706494}
   decision: 0
   dayNumber: 0
   weekday: 0

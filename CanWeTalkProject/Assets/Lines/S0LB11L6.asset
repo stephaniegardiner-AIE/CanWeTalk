@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: Your mother and I love you both very much* and that will never change.
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

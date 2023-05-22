@@ -16,3 +16,5 @@ MonoBehaviour:
   dialog: "Uh yeah\u2026 so\u2026"
   attitudeArrayLength: 0
   attitudeArray: []
+  hasAction: 0
+  action: 0

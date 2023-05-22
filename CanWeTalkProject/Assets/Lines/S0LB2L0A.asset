@@ -17,5 +17,7 @@ MonoBehaviour:
     insane!"
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 1
+  - attitudeChangeEffects: 2
     attitudeChangeAmount: -10
+  hasAction: 0
+  action: 0
