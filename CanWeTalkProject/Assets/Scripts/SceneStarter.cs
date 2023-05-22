@@ -32,7 +32,7 @@ public class SceneStarter : MonoBehaviour
     public float tailHeight;
     public float xPositionSpeechBubble;
     public float yPositionSpeechBubble;
-    public Transform dialogText;
+    public GameObject dialogText;
     public Transform dialogBackground;
     public float dialogLinePadding;
     public int lineNumber;
@@ -223,7 +223,7 @@ public class SceneStarter : MonoBehaviour
                 currentVisibleSpeech.Add(line);
 
                 dialogBackground = line.GetComponent<Transform>();
-                dialogText = dialogBackground.Find("CharacterDialogText");
+                dialogText = dialogBackground.Find("CharacterDialogText").gameObject;
 
                 //sets the text
                 dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
@@ -352,12 +352,29 @@ public class SceneStarter : MonoBehaviour
         //Debug.Log("LineBlockComplete");
 
         //if activity is not next runn the decision
-        if (currentLineBlock.endActivityBlock == null)
+        if (currentLineBlock.endDecisionBlock != null)
         {
             DecisionRunner();
             
         }
+        if (currentLineBlock.endActivityBlock != null)
+        {
+            //
+        }
+        if (currentLineBlock.nextLineBlock != null)
+        {
+            GoToNextScene(currentLineBlock.nextLineBlock);
+        }
     }
+
+    public void GoToNextScene(LineBlock nextLineBlock)
+    {
+        currentScene = 
+        currentLineBlock = nextLineBlock;
+        lineNumber = 0;
+        LineRunner();
+    }
+
 
     //creates a decision block when called
     public void DecisionRunner()
@@ -489,10 +506,10 @@ public class SceneStarter : MonoBehaviour
 
     public void NameCheck()
     {
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-        dialogText.GetComponent<TextMeshProUGUI>().text = dialogText.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
         
     }
 

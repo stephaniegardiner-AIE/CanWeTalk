@@ -13,6 +13,8 @@ public class LineBlock : ScriptableObject
 
     public ActivityBlock endActivityBlock;
 
+    public LineBlock nextLineBlock;
+
     
     public enum Conditions
     {
