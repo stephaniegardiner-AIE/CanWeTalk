@@ -111,8 +111,8 @@ public class LineBlock : ScriptableObject
     public AttitudeLevel attitudeLevel;
 
     public float attitudeAmount;
-   
 
+    public LineBlock ifFailedContinueTo;
 
     /*[Header("Actions")]
     bool signedPapers;

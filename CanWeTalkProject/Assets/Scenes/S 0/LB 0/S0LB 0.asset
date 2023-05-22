@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: S0LB 0
   m_EditorClassIdentifier: 
   lines:
-  - {fileID: 11400000, guid: 83a68a637e62a1346aca6959304e19f9, type: 2}
-  - {fileID: 11400000, guid: ac277260d3f42bc4a876fe53cd27f888, type: 2}
-  - {fileID: 11400000, guid: 4c4f95a1c8803d541a46fe7e29a334c6, type: 2}
-  - {fileID: 11400000, guid: af46b78a4c79f0340bb2c131d47be861, type: 2}
-  - {fileID: 11400000, guid: 6d42201168167ac48b4dd8c502327b83, type: 2}
-  - {fileID: 11400000, guid: dfaca68b3c36b8e46be4d621c2271352, type: 2}
-  - {fileID: 11400000, guid: 419a0759ba6b5414bb75ac6393675272, type: 2}
-  - {fileID: 11400000, guid: 094d97ee1f59ba246aeb89cc78a97309, type: 2}
-  - {fileID: 11400000, guid: 94ce14df002518d458cf5ba935d9a61b, type: 2}
-  - {fileID: 11400000, guid: 714ca83c0ab9d0242835ccb5c2646184, type: 2}
-  - {fileID: 11400000, guid: cd0f26e2d3a86424ab96bf9a7ea8f16a, type: 2}
-  - {fileID: 11400000, guid: b14927c6bef5e004da3393f0646b6645, type: 2}
-  - {fileID: 11400000, guid: c4ede3932e6986d42977525675fdbcd1, type: 2}
+  - {fileID: 11400000, guid: 751f60dab1d59e5468f231b67e42b514, type: 2}
+  - {fileID: 11400000, guid: f11063aabd53c314c8dce48df83fe60e, type: 2}
+  - {fileID: 11400000, guid: e135b0ab7c6be7f42bfe54391117c6ea, type: 2}
+  - {fileID: 11400000, guid: f1e9a9fd9e31ac640bb6470de30046af, type: 2}
+  - {fileID: 11400000, guid: bbef27011695c9248926481642bd837d, type: 2}
+  - {fileID: 11400000, guid: 8a83d39dfabc1a94d99157bc024a440c, type: 2}
+  - {fileID: 11400000, guid: 94f261a998f331f4f8ffb9594b89af34, type: 2}
+  - {fileID: 11400000, guid: aad58b424418ad04dacaafc616f7f9fa, type: 2}
+  - {fileID: 11400000, guid: 08a7cb4f9ffce8642bf18a849feb597b, type: 2}
+  - {fileID: 11400000, guid: 9745cbdaafefc22458ccee5daab394ea, type: 2}
+  - {fileID: 11400000, guid: f24ccff138ab20840b39dfc63db32e49, type: 2}
+  - {fileID: 11400000, guid: 2b14f131357339243875feb4fed467c4, type: 2}
+  - {fileID: 11400000, guid: 94e753a7a35a6c346b93bd50fd41202a, type: 2}
   endDecisionBlock: {fileID: 11400000, guid: 5f8d513b0df9e884d9ca82337124609b, type: 2}
   endActivityBlock: {fileID: 0}
   hasConditions: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
   attitudes: 0
   attitudeLevel: 0
   attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}

@@ -70,9 +70,20 @@ public class CSVtoSO
                 line.hasAction = true;
             }
 
-            
+            if (!Directory.Exists("Assets/Lines/Scene" + splitData[0]))
+            {
+                AssetDatabase.CreateFolder("Assets/Lines", "Scene" + splitData[0]);
+            }
 
-            AssetDatabase.CreateAsset(line, $"Assets/Lines/{line.name}.asset");
+            if (!Directory.Exists($"Assets/Lines/Scene{splitData[0]}/LineBlock" + splitData[1]))
+            {
+                AssetDatabase.CreateFolder($"Assets/Lines/Scene{splitData[0]}", "LineBlock" + splitData[1]);
+
+            }
+            
+            //string guid = AssetDatabase.CreateFolder("Assets/Lines")
+
+            AssetDatabase.CreateAsset(line, $"Assets/Lines/Scene{splitData[0]}/LineBlock{splitData[1]}/{line.name}.asset");
             
 
 
