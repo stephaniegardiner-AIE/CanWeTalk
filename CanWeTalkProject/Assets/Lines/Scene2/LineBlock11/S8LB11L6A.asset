@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: Woof!
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: 10
+  - attitudeChangeEffects: 0
+    attitudeChangeAmount: 0
   hasAction: 0
   action: 0

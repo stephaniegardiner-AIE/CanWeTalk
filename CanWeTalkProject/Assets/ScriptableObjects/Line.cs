@@ -47,7 +47,7 @@ public class Line : ScriptableObject
 
     public List<AttitudeEffects> attitudeArray;
 
-    private void OnEnable()
+    private void OnAwake()
     {
         attitudeArray = new List<AttitudeEffects> (new AttitudeEffects[attitudeArrayLength]);
         
