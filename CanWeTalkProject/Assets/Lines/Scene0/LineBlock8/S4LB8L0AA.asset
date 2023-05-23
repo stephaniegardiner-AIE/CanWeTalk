@@ -17,9 +17,9 @@ MonoBehaviour:
     us all."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
-  - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: -10
+  - attitudeChangeEffects: 1
+    attitudeChangeAmount: 10
   hasAction: 0
   action: 0

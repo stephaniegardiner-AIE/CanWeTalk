@@ -16,9 +16,9 @@ MonoBehaviour:
   dialog: "\u2026 Yep. You guys did it."
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
-  - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
+  - attitudeChangeEffects: 3
+    attitudeChangeAmount: -10
+  - attitudeChangeEffects: 1
+    attitudeChangeAmount: -5
   hasAction: 0
   action: 0

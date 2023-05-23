@@ -6,11 +6,12 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class SceneStarter : MonoBehaviour
 {
     public CharacterSpriteManager spriteManager;
-    public SceneManager sceneManager;
+    public Scenes sceneManager;
     public Scene currentScene;
     public Actions actions;
 
@@ -145,6 +146,12 @@ public class SceneStarter : MonoBehaviour
 
 
 
+    }
+
+    void OnReloadScene()
+    {
+        Debug.Log("reloading the scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void UpdateSceneAppearance()

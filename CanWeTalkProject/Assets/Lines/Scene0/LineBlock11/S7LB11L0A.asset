@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "No* it\u2019s not your fault* it\u2019s not anyone\u2019s fault."
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 0
-    attitudeChangeAmount: 0
+  - attitudeChangeEffects: 3
+    attitudeChangeAmount: 5
   hasAction: 0
   action: 0
