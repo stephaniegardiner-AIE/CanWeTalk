@@ -42,7 +42,7 @@ public class Actions : MonoBehaviour
             actionList.Add(false);
             //BuildPersonnelXml2(actionList);
 
-            Debug.Log(actionList);
+            //Debug.Log(actionList);
             //new bool boolName;
 
 

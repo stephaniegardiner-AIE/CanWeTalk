@@ -16,6 +16,7 @@ public class CharacterSpriteManager : MonoBehaviour
     public GameObject dogSpriteGO;
     public GameObject friendSpriteGO;
     public GameObject lawyerSpriteGO;
+    public GameObject principalSpriteGO;
 
     [Header("Sprite Locations")]
     public Image spriteLocation1;
@@ -47,6 +48,7 @@ public class CharacterSpriteManager : MonoBehaviour
     public bool dogActive = false;
     public bool friendActive = false;
     public bool lawyerActive = false;
+    public bool principalActive = false;
 
     public GameObject activeWifeSprite;
     public GameObject activeBoySprite;
@@ -54,6 +56,7 @@ public class CharacterSpriteManager : MonoBehaviour
     public GameObject activeDogSprite;
     public GameObject activeFriendSprite;
     public GameObject activeLawyerSprite;
+    public GameObject activePrincipalSprite;
 
     public float attitudeIconTime;
     // Start is called before the first frame update
@@ -178,7 +181,7 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 SetPrimaryCharacter("lawyerSprite", lawyerActive);
             }
-            if (!friendActive)
+            if (!lawyerActive)
             {
                 GameObject lawyerSprite = Instantiate(lawyerSpriteGO) as GameObject;
                 lawyerSprite.transform.SetParent(canvas.transform, false);
@@ -189,6 +192,26 @@ public class CharacterSpriteManager : MonoBehaviour
                 AddCharacterSprite(lawyerSprite);
                 SetPrimaryCharacter("lawyerSprite", lawyerActive);
                 lawyerActive = true;
+
+            }
+        }
+        if (character == Line.Character.Principal)
+        {
+            if (principalActive)
+            {
+                SetPrimaryCharacter("principalSprite", principalActive);
+            }
+            if (!principalActive)
+            {
+                GameObject principalSprite = Instantiate(principalSpriteGO) as GameObject;
+                principalSprite.transform.SetParent(canvas.transform, false);
+                activePrincipalSprite = principalSprite;
+                principalSprite.name = "principalSprite";
+
+
+                AddCharacterSprite(principalSprite);
+                SetPrimaryCharacter("principalSprite", principalActive);
+                principalActive = true;
 
             }
         }
@@ -314,7 +337,7 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public void CreateAttitudeReaction(Line.AttitudeEffects.AttitudesCharacter character, float attitudeChangeAmount)
     {
-        Debug.Log("change for " + character);
+        //Debug.Log("change for " + character);
 
         if (character == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude && wifeActive)
         {
@@ -322,13 +345,13 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 activeWifeSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
                 StartAnimation(activeWifeSprite, 1);
-                Debug.Log("wifepositivereaction");
+                //Debug.Log("wifepositivereaction");
             }
             else
             {
                 activeWifeSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
                 StartAnimation(activeWifeSprite, 0);
-                Debug.Log("wifenegativereaction");
+                //Debug.Log("wifenegativereaction");
             }
             
         }
@@ -341,7 +364,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 StartAnimation(activeBoySprite, 1);
                 StartAnimation(activeGirlSprite, 1);
 
-                Debug.Log("kidpositivereaction");
+                //Debug.Log("kidpositivereaction");
             }
             else
             {
@@ -349,7 +372,7 @@ public class CharacterSpriteManager : MonoBehaviour
                 activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
                 StartAnimation(activeBoySprite, 0);
                 StartAnimation(activeGirlSprite, 0);
-                Debug.Log("kidnegativereaction");
+                //Debug.Log("kidnegativereaction");
             }
         }
         if (character == Line.AttitudeEffects.AttitudesCharacter.dogAttitude && dogActive)
@@ -358,13 +381,43 @@ public class CharacterSpriteManager : MonoBehaviour
             {
                 activeDogSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
                 StartAnimation(activeDogSprite, 1);
-                Debug.Log("dogpositivereaction");
+                //Debug.Log("dogpositivereaction");
             }
             else
             {
                 activeDogSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
                 StartAnimation(activeDogSprite, 0);
-                Debug.Log("dognegativereaction");
+                //Debug.Log("dognegativereaction");
+            }
+        }
+        if (character == Line.AttitudeEffects.AttitudesCharacter.friendAttitude && friendActive)
+        {
+            if (attitudeChangeAmount >= 0)
+            {
+                activeFriendSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeFriendSprite, 1);
+                //Debug.Log("dogpositivereaction");
+            }
+            else
+            {
+                activeFriendSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeFriendSprite, 0);
+                //Debug.Log("dognegativereaction");
+            }
+        }
+        if (character == Line.AttitudeEffects.AttitudesCharacter.lawyerAttitude && lawyerActive)
+        {
+            if (attitudeChangeAmount >= 0)
+            {
+                activeLawyerSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeLawyerSprite, 1);
+                //Debug.Log("dogpositivereaction");
+            }
+            else
+            {
+                activeLawyerSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                StartAnimation(activeLawyerSprite, 0);
+                //Debug.Log("dognegativereaction");
             }
         }
     }
@@ -379,11 +432,11 @@ public class CharacterSpriteManager : MonoBehaviour
     {
 
         animator.Play("AttitudeIconAnimation");
-        Debug.Log("yay");
+        //Debug.Log("yay");
 
         yield return new WaitForSeconds(attitudeIconTime);
 
-        Debug.Log("timeover");
+       // Debug.Log("timeover");
         animator.Play("New State");
         animator.GameObject().GetComponent<Image>().enabled = false;
 
@@ -394,21 +447,68 @@ public class CharacterSpriteManager : MonoBehaviour
 
     public void ClearCharacters()
     {
-        for (int i = 0; i == activeCharacterSprites.Count; i++)
+        for (int i = 0; i == activeCharacterSprites.Count - 1; i++)
         {
             DestroySprites(activeCharacterSprites[i]);
+
+            //GameObject.Destroy(activeCharacterSprites[i]);
+
+            Debug.Log("clear characters");
         }
 
         secondaryCharacterSprites.Clear();
 
-       // primaryCharacter = null;
+        // primaryCharacter = null;
 
-
+        Debug.Log("we made it");
     }
 
     private void DestroySprites(GameObject sprite)
     {
-        Destroy(sprite.gameObject);
+        StopAllCoroutines();
+
+        if (sprite == activeWifeSprite)
+        {
+            activeWifeSprite = null;
+            wifeActive = false;
+        }
+        if (sprite == activeBoySprite)
+        {
+            activeBoySprite = null;
+            boyActive = false;
+        }
+        if (sprite == activeGirlSprite)
+        {
+            activeGirlSprite = null;
+            girlActive = false;
+        }
+        if (sprite == activeDogSprite)
+        {
+            activeDogSprite = null;
+            dogActive = false;
+        }
+        if (sprite == activeFriendSprite)
+        {
+            activeFriendSprite = null;
+            friendActive = false;
+        }
+        if (sprite == activeLawyerSprite)
+        {
+            activeLawyerSprite = null;
+            lawyerActive = false;
+        }
+        if (sprite == activePrincipalSprite)
+        {
+            activePrincipalSprite = null;
+            principalActive = false;
+        }
+
+
+        GameObject.Destroy(sprite);
+        activeCharacterSprites.Clear();
+        primaryCharacter = null;
+
+        
     }
 
     private void MakeNull(GameObject gameObject)

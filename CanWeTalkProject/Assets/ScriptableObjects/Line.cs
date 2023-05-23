@@ -18,6 +18,7 @@ public class Line : ScriptableObject
         Dog,  //5
         Friend,
         Lawyer,
+        Principal,
     }
 
     public Character character;
@@ -39,6 +40,7 @@ public class Line : ScriptableObject
             dogAttitude,
             friendAttitude,
             lawyerAttitude,
+            principalAttitude,
         }
 
         public AttitudesCharacter attitudeChangeEffects;

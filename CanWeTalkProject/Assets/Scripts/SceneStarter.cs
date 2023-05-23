@@ -62,6 +62,7 @@ public class SceneStarter : MonoBehaviour
     public Color dogColor;
     public Color friendColor;
     public Color lawyerColor;
+    public Color principalColor;
 
     [Header("Speech Tails")]
     public GameObject speechTailLeft;
@@ -74,12 +75,16 @@ public class SceneStarter : MonoBehaviour
     public float dogAttitudeLevel;
     public float friendAttitudeLevel;
     public float lawyerAttitudeLevel;
+    public float principalAttitudeLevel;
 
     [Header("Attitude Bar")]
     public Image youAttitudeBar;
     public Image wifeAttitudeBar;
     public Image kidsAttitudeBar;
     public Image dogAttitudeBar;
+    public Image friendAttitudeBar;
+    public Image lawyerAttitudeBar;
+
 
     [Header("Attitude Bar Lerping")]
     public float attitudeLerpDuration;
@@ -98,6 +103,7 @@ public class SceneStarter : MonoBehaviour
     public string dogName;
     public string friendName;
     public string lawyerName;
+    public string principalName;
 
     [Header("SceneBackgrounds")]
     public Sprite houseDay;
@@ -111,7 +117,7 @@ public class SceneStarter : MonoBehaviour
     public Sprite townAfternoon;
     public Sprite townNight;
 
-
+    public float skipSpeed;
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
@@ -144,6 +150,17 @@ public class SceneStarter : MonoBehaviour
             //Debug.Log("NextLine");
         }
 
+    }
+
+    private void SkipDialog()
+    {
+        //if the decision maker isn't active! run the next line :))))
+        if (!decision)
+        {
+            LineRunner();
+            //Debug.Log("Skip dialog");
+            //Debug.Log("NextLine");
+        }
     }
 
     void OnFinishDialog()
@@ -243,7 +260,7 @@ public class SceneStarter : MonoBehaviour
                 if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
                 {
                     UpdateAttitudes(currentLineBlock.lines[lineNumber]);
-                    Debug.Log("AttitudeChange!");
+                    //Debug.Log("AttitudeChange!");
                 }
 
                 if (currentLineBlock.lines[lineNumber].hasAction)
@@ -265,7 +282,7 @@ public class SceneStarter : MonoBehaviour
 
     public void ChangeAction(Line currentLine)
     {
-        Debug.Log("we made it fam");
+       // Debug.Log("we made it fam");
 
         if (currentLine.action > 0)
         {
@@ -644,9 +661,11 @@ public class SceneStarter : MonoBehaviour
     {
         while (lineNumber < currentLineBlock.lines.Length)
         {
-            OnNext();
-
-            yield return null;
+            SkipDialog();
+            yield return new WaitForSeconds(skipSpeed);
         }
+
+        FigureNext();
+        //yield return null;
     }
 }

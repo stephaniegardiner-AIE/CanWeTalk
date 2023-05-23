@@ -1986,6 +1986,7 @@ MonoBehaviour:
   townDay: {fileID: 21300000, guid: 429b7f29bfb35094f871280e6912039e, type: 3}
   townAfternoon: {fileID: 21300000, guid: 97c766315783dda43aecc8b830f5300e, type: 3}
   townNight: {fileID: 21300000, guid: c4aab8c072247904f9c03b8fe8d86ecb, type: 3}
+  skipSpeed: 0.1
 --- !u!4 &1258858589
 Transform:
   m_ObjectHideFlags: 0
