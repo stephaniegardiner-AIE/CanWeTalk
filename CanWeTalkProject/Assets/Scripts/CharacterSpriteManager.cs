@@ -391,4 +391,28 @@ public class CharacterSpriteManager : MonoBehaviour
 
 
     }
+
+    public void ClearCharacters()
+    {
+        for (int i = 0; i == activeCharacterSprites.Count; i++)
+        {
+            DestroySprites(activeCharacterSprites[i]);
+        }
+
+        secondaryCharacterSprites.Clear();
+
+       // primaryCharacter = null;
+
+
+    }
+
+    private void DestroySprites(GameObject sprite)
+    {
+        Destroy(sprite.gameObject);
+    }
+
+    private void MakeNull(GameObject gameObject)
+    {
+        gameObject = null;
+    }
 }

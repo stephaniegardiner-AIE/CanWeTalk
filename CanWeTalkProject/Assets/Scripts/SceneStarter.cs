@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SceneStarter : MonoBehaviour
 {
@@ -143,12 +144,13 @@ public class SceneStarter : MonoBehaviour
             //Debug.Log("NextLine");
         }
 
-
-
-
     }
 
+    void OnFinishDialog()
+    {
 
+        StartCoroutine(DialogSkipper());
+    }
 
     public void UpdateSceneAppearance()
     {
@@ -383,6 +385,8 @@ public class SceneStarter : MonoBehaviour
         LineRunner();
 
         SetSceneInfo();
+
+        spriteManager.ClearCharacters();
     }
 
 
@@ -634,5 +638,15 @@ public class SceneStarter : MonoBehaviour
             yield return null;
         }
         _valueToLerp = endValue;
+    }
+
+    IEnumerator DialogSkipper()
+    {
+        while (lineNumber < currentLineBlock.lines.Length)
+        {
+            OnNext();
+
+            yield return null;
+        }
     }
 }
