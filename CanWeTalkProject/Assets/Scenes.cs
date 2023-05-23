@@ -7,9 +7,12 @@ public class Scenes : MonoBehaviour
 {
     public Scene[] scenes;
     // Start is called before the first frame update
+    public AudioSource audioSource;
+
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,4 +26,6 @@ public class Scenes : MonoBehaviour
         Debug.Log("reloading the scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    
 }

@@ -659,6 +659,7 @@ MonoBehaviour:
   dogSpriteGO: {fileID: 1784714601309588225, guid: e0f6e86cd2719c34497b8978a69df2cb, type: 3}
   friendSpriteGO: {fileID: 6036595002347879435, guid: 03878e11ff16e2241893ee8736130c70, type: 3}
   lawyerSpriteGO: {fileID: 822313385104745259, guid: 7752fe7ca3e7064469386a6129b65d05, type: 3}
+  principalSpriteGO: {fileID: 0}
   spriteLocation1: {fileID: 233665225}
   spriteLocation2: {fileID: 2003356137}
   spriteLocation3: {fileID: 2113111555}
@@ -676,12 +677,14 @@ MonoBehaviour:
   dogActive: 0
   friendActive: 0
   lawyerActive: 0
+  principalActive: 0
   activeWifeSprite: {fileID: 0}
   activeBoySprite: {fileID: 0}
   activeGirlSprite: {fileID: 0}
   activeDogSprite: {fileID: 0}
   activeFriendSprite: {fileID: 0}
   activeLawyerSprite: {fileID: 0}
+  activePrincipalSprite: {fileID: 0}
   attitudeIconTime: 2
 --- !u!4 &446210113
 Transform:
@@ -1955,6 +1958,7 @@ MonoBehaviour:
   dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
   friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
   lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
+  principalColor: {r: 0, g: 0, b: 0, a: 0}
   speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
   speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
   youAttitudeLevel: 100
@@ -1963,10 +1967,13 @@ MonoBehaviour:
   dogAttitudeLevel: 100
   friendAttitudeLevel: 0
   lawyerAttitudeLevel: 0
+  principalAttitudeLevel: 0
   youAttitudeBar: {fileID: 1845271955}
   wifeAttitudeBar: {fileID: 571555462}
   kidsAttitudeBar: {fileID: 652330352}
   dogAttitudeBar: {fileID: 47755618}
+  friendAttitudeBar: {fileID: 0}
+  lawyerAttitudeBar: {fileID: 0}
   attitudeLerpDuration: 1
   characterTime: 0.02
   typeWriting: 0
@@ -1978,6 +1985,7 @@ MonoBehaviour:
   dogName: Bones
   friendName: Dazza
   lawyerName: Darlene
+  principalName: 
   houseDay: {fileID: 21300000, guid: 4f7947cb1c9da1e40b85d05930a263a4, type: 3}
   houseAfternoon: {fileID: 21300000, guid: 74895c0ff3f420441b2f03b4f4ad23aa, type: 3}
   houseNight: {fileID: 21300000, guid: 8a48332d0f25bb5419932e42c3b0c5ab, type: 3}
@@ -2117,7 +2125,7 @@ MonoBehaviour:
   m_Direction: 2
   m_Value: 0
   m_Size: 1
-  m_NumberOfSteps: 11
+  m_NumberOfSteps: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
