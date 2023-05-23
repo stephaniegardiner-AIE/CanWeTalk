@@ -148,11 +148,7 @@ public class SceneStarter : MonoBehaviour
 
     }
 
-    void OnReloadScene()
-    {
-        Debug.Log("reloading the scene");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+
 
     public void UpdateSceneAppearance()
     {
