@@ -44,7 +44,19 @@ public class Line : ScriptableObject
         }
 
         public AttitudesCharacter attitudeChangeEffects;
-        public float attitudeChangeAmount;
+
+        public enum AttitudeChange
+        {
+            megaLoss,
+            highLoss,
+            midLoss,
+            lowLoss,
+            lowGain,
+            midGain,
+            highGain,
+            megaGain,
+        }
+        //public float attitudeChangeAmount;
     }
 
     public List<AttitudeEffects> attitudeArray;
