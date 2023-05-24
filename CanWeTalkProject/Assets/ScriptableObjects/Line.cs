@@ -56,7 +56,7 @@ public class Line : ScriptableObject
             highGain,
             megaGain,
         }
-        //public float attitudeChangeAmount;
+        public float attitudeChangeAmount;
     }
 
     public List<AttitudeEffects> attitudeArray;

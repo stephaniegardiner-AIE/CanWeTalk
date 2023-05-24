@@ -1898,6 +1898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189340550}
+  - component: {fileID: 1189340551}
   m_Layer: 0
   m_Name: CharacterManager
   m_TagString: Untagged
@@ -1920,6 +1921,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189340551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189340549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322c7dd784d46ec42bd80f5e375aea41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionColor: {r: 0, g: 0, b: 0, a: 1}
+  youName: Brad
+  youColor: {r: 1, g: 1, b: 1, a: 1}
+  wifeName: Jeanine
+  wifeColor: {r: 1, g: 0, b: 0, a: 1}
+  boyName: Tommy
+  boyColor: {r: 0.98823535, g: 0.45882356, b: 0.21176472, a: 1}
+  girlName: Susie
+  girlColor: {r: 1, g: 0.74509805, b: 0.043137256, a: 1}
+  dogName: Bones
+  dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
+  friendName: Dazza
+  friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
+  lawyerName: Darlene
+  lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
+  principalName: Margaret
+  principalColor: {r: 0.9254902, g: 0.21960783, b: 0.7787786, a: 1}
 --- !u!1 &1258858587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1981,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 446210112}
+  characterManager: {fileID: 1189340551}
+  attitudeManager: {fileID: 2023615025}
   sceneManager: {fileID: 1866968159}
   currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   actions: {fileID: 479706494}
@@ -1981,42 +2013,12 @@ MonoBehaviour:
   dayNumberText: {fileID: 1442992955}
   weekdayText: {fileID: 351671553}
   dayTimeText: {fileID: 1852755113}
-  descriptionColor: {r: 0, g: 0, b: 0, a: 0}
-  youColor: {r: 1, g: 1, b: 1, a: 1}
-  wifeColor: {r: 1, g: 0, b: 0, a: 1}
-  boyColor: {r: 0.98823535, g: 0.45882356, b: 0.21176472, a: 1}
-  girlColor: {r: 1, g: 0.74509805, b: 0.043137256, a: 1}
-  dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
-  friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
-  lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
-  principalColor: {r: 0, g: 0, b: 0, a: 0}
   speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
   speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
-  youAttitudeLevel: 100
-  wifeAttitudeLevel: 50
-  kidsAttitudeLevel: 100
-  dogAttitudeLevel: 100
-  friendAttitudeLevel: 0
-  lawyerAttitudeLevel: 0
-  principalAttitudeLevel: 0
-  youAttitudeBar: {fileID: 1845271955}
-  wifeAttitudeBar: {fileID: 571555462}
-  kidsAttitudeBar: {fileID: 652330352}
-  dogAttitudeBar: {fileID: 47755618}
-  friendAttitudeBar: {fileID: 0}
-  lawyerAttitudeBar: {fileID: 0}
   attitudeLerpDuration: 1
   characterTime: 0.02
   typeWriting: 0
   currentText: {fileID: 0}
-  wifeName: Michelle
-  youName: Brad
-  girlName: Susie
-  boyName: Tommy
-  dogName: Bones
-  friendName: Dazza
-  lawyerName: Darlene
-  principalName: 
   houseDay: {fileID: 21300000, guid: 4f7947cb1c9da1e40b85d05930a263a4, type: 3}
   houseAfternoon: {fileID: 21300000, guid: 74895c0ff3f420441b2f03b4f4ad23aa, type: 3}
   houseNight: {fileID: 21300000, guid: 8a48332d0f25bb5419932e42c3b0c5ab, type: 3}
@@ -3714,6 +3716,71 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &2023615024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023615026}
+  - component: {fileID: 2023615025}
+  m_Layer: 0
+  m_Name: AttitudeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2023615025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023615024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45a29fcb06b7264eb2f701795031060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  youAttitudeLevel: 100
+  wifeAttitudeLevel: 50
+  kidsAttitudeLevel: 80
+  dogAttitudeLevel: 100
+  friendAttitudeLevel: 85
+  lawyerAttitudeLevel: 50
+  principalAttitudeLevel: 55
+  megaLoss: -20
+  highLoss: -10
+  midLoss: -5
+  lowLoss: -2
+  lowGain: 2
+  midGain: 3
+  highGain: 10
+  megaGain: 20
+  youAttitudeBar: {fileID: 0}
+  wifeAttitudeBar: {fileID: 0}
+  kidsAttitudeBar: {fileID: 0}
+  dogAttitudeBar: {fileID: 0}
+  friendAttitudeBar: {fileID: 0}
+  lawyerAttitudeBar: {fileID: 0}
+--- !u!4 &2023615026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023615024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113111553
 GameObject:
   m_ObjectHideFlags: 0
