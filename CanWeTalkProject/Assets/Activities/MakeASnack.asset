@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d425a94ff0a941c48b7f1e1c782a89bd, type: 3}
   m_Name: MakeASnack
   m_EditorClassIdentifier: 
-  activityName: 
-  attitudeChange: 0
+  activityName: Make a snack
+  attitudeArrayLength: 0
+  attitudeArray: []

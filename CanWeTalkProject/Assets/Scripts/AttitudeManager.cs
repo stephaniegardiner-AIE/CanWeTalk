@@ -6,12 +6,16 @@ public class AttitudeManager : MonoBehaviour
 {
 
 
-    public int wifeAttitude;
-    public int youAttitude;
-    public int childrenAttitude;
-    public int dogAttitude;
+    [Header("Character Attitudes")]
+    public float youAttitudeLevel;
+    public float wifeAttitudeLevel;
+    public float kidsAttitudeLevel;
+    public float dogAttitudeLevel;
+    public float friendAttitudeLevel;
+    public float lawyerAttitudeLevel;
+    public float principalAttitudeLevel;
 
-
+    [Header("AttitudeChangeAmount")]
     public float megaLoss;
     public float highLoss;
     public float midLoss;
@@ -20,6 +24,14 @@ public class AttitudeManager : MonoBehaviour
     public float midGain;
     public float highGain;
     public float megaGain;
+
+    [Header("Attitude Bar")]
+    public Image youAttitudeBar;
+    public Image wifeAttitudeBar;
+    public Image kidsAttitudeBar;
+    public Image dogAttitudeBar;
+    public Image friendAttitudeBar;
+    public Image lawyerAttitudeBar;
 
     // Start is called before the first frame update
     void Start()

@@ -11,7 +11,9 @@ using System.Linq;
 
 public class SceneStarter : MonoBehaviour
 {
-    public CharacterSpriteManager spriteManager;
+    public SpriteManager spriteManager;
+    public CharacterManager characterManager;
+    public AttitudeManager attitudeManager;
     public Scenes sceneManager;
     public Scene currentScene;
     public Actions actions;
@@ -53,37 +55,11 @@ public class SceneStarter : MonoBehaviour
     public TextMeshProUGUI weekdayText;
     public TextMeshProUGUI dayTimeText;
 
-    [Header("Character Colors")]
-    public Color descriptionColor;
-    public Color youColor;
-    public Color wifeColor;
-    public Color boyColor;
-    public Color girlColor;
-    public Color dogColor;
-    public Color friendColor;
-    public Color lawyerColor;
-    public Color principalColor;
+
 
     [Header("Speech Tails")]
     public GameObject speechTailLeft;
     public GameObject speechTailRight;
-
-    [Header("Character Attitudes")]
-    public float youAttitudeLevel;
-    public float wifeAttitudeLevel;
-    public float kidsAttitudeLevel;
-    public float dogAttitudeLevel;
-    public float friendAttitudeLevel;
-    public float lawyerAttitudeLevel;
-    public float principalAttitudeLevel;
-
-    [Header("Attitude Bar")]
-    public Image youAttitudeBar;
-    public Image wifeAttitudeBar;
-    public Image kidsAttitudeBar;
-    public Image dogAttitudeBar;
-    public Image friendAttitudeBar;
-    public Image lawyerAttitudeBar;
 
 
     [Header("Attitude Bar Lerping")]
@@ -95,15 +71,7 @@ public class SceneStarter : MonoBehaviour
     public bool typeWriting = false;
     public TextMeshProUGUI currentText;
 
-    [Header("CharacterNames")]
-    public string wifeName;
-    public string youName;
-    public string girlName;
-    public string boyName;
-    public string dogName;
-    public string friendName;
-    public string lawyerName;
-    public string principalName;
+
 
     [Header("SceneBackgrounds")]
     public Sprite houseDay;
@@ -456,65 +424,65 @@ public class SceneStarter : MonoBehaviour
         
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
         {
-            speechBackground.GetComponent<Image>().color = descriptionColor;
+            speechBackground.GetComponent<Image>().color = characterManager.descriptionColor;
             speechText.alignment = TextAlignmentOptions.Center;
             //FigureCharacterSprites(Line.Character character);
 
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
         {
-            speechBackground.GetComponent<Image>().color = youColor;
+            speechBackground.GetComponent<Image>().color = characterManager.youColor;
             GameObject speechTail = Instantiate(speechTailLeft) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = youColor;
+            speechTail.GetComponent<Image>().color = characterManager.youColor;
             //FigureCharacterSprites(Line.Character character);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
         {
-            speechBackground.GetComponent<Image>().color = wifeColor;
+            speechBackground.GetComponent<Image>().color = characterManager.wifeColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = wifeColor;
+            speechTail.GetComponent<Image>().color = characterManager.wifeColor;
             spriteManager.FigureCharacterSprites(Line.Character.Wife);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
         {
-            speechBackground.GetComponent<Image>().color = boyColor;
+            speechBackground.GetComponent<Image>().color = characterManager.boyColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = boyColor;
+            speechTail.GetComponent<Image>().color = characterManager.boyColor;
             spriteManager.FigureCharacterSprites(Line.Character.Boy);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
         {
-            speechBackground.GetComponent<Image>().color = girlColor;
+            speechBackground.GetComponent<Image>().color = characterManager.girlColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = girlColor;
+            speechTail.GetComponent<Image>().color = characterManager.girlColor;
             spriteManager.FigureCharacterSprites(Line.Character.Girl);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
         {
-            speechBackground.GetComponent<Image>().color = dogColor;
+            speechBackground.GetComponent<Image>().color = characterManager.dogColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = dogColor;
+            speechTail.GetComponent<Image>().color = characterManager.dogColor;
             spriteManager.FigureCharacterSprites(Line.Character.Dog);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Friend)
         {
-            speechBackground.GetComponent<Image>().color = friendColor;
+            speechBackground.GetComponent<Image>().color = characterManager.friendColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = friendColor;
+            speechTail.GetComponent<Image>().color = characterManager.friendColor;
             spriteManager.FigureCharacterSprites(Line.Character.Friend);
         }
         if (currentLineBlock.lines[lineNumber].character == Line.Character.Lawyer)
         {
-            speechBackground.GetComponent<Image>().color = lawyerColor;
+            speechBackground.GetComponent<Image>().color = characterManager.lawyerColor;
             GameObject speechTail = Instantiate(speechTailRight) as GameObject;
             speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = lawyerColor;
+            speechTail.GetComponent<Image>().color = characterManager.lawyerColor;
             spriteManager.FigureCharacterSprites(Line.Character.Lawyer);
         }
 
@@ -537,10 +505,10 @@ public class SceneStarter : MonoBehaviour
 
     public void NameCheck()
     {
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", wifeName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", boyName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidGirlName", girlName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("DogName", dogName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", characterManager.wifeName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", characterManager.boyName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidGirlName", characterManager.girlName);
+        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("DogName", characterManager.dogName);
 
         dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
         
@@ -588,8 +556,8 @@ public class SceneStarter : MonoBehaviour
             if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
             {
 
-                StartCoroutine(AttitudeLerp(youAttitudeLevel, youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, youAttitudeBar));
-                youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                StartCoroutine(AttitudeLerp(attitudeManager.youAttitudeLevel, attitudeManager.youAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, attitudeManager.youAttitudeBar));
+                attitudeManager.youAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
                 AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.youAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
@@ -597,16 +565,16 @@ public class SceneStarter : MonoBehaviour
             //change wife attitude
             if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
             {
-                StartCoroutine(AttitudeLerp(wifeAttitudeLevel, wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, wifeAttitudeBar));
-                wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                StartCoroutine(AttitudeLerp(attitudeManager.wifeAttitudeLevel, attitudeManager.wifeAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, attitudeManager.wifeAttitudeBar));
+                attitudeManager.wifeAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
                 AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.wifeAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
 
             //change kids attitude
             if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
             {
-                StartCoroutine(AttitudeLerp(kidsAttitudeLevel, kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, kidsAttitudeBar));
-                kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                StartCoroutine(AttitudeLerp(attitudeManager.kidsAttitudeLevel, attitudeManager.kidsAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, attitudeManager.kidsAttitudeBar));
+                attitudeManager.kidsAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
                 AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.kidsAttitude, line.attitudeArray[i].attitudeChangeAmount);
 
             }
@@ -614,8 +582,8 @@ public class SceneStarter : MonoBehaviour
             //change dog attitude
             if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.dogAttitude)
             {
-                StartCoroutine(AttitudeLerp(dogAttitudeLevel, dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, dogAttitudeBar));
-                dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
+                StartCoroutine(AttitudeLerp(attitudeManager.dogAttitudeLevel, attitudeManager.dogAttitudeLevel + line.attitudeArray[i].attitudeChangeAmount, attitudeManager.dogAttitudeBar));
+                attitudeManager.dogAttitudeLevel += line.attitudeArray[i].attitudeChangeAmount;
                 AttitudeEffect(Line.AttitudeEffects.AttitudesCharacter.dogAttitude, line.attitudeArray[i].attitudeChangeAmount);
             }
         }
@@ -630,10 +598,10 @@ public class SceneStarter : MonoBehaviour
 
     public void SetAttitude()
     {
-        youAttitudeBar.fillAmount = youAttitudeLevel / 100;
-        wifeAttitudeBar.fillAmount = wifeAttitudeLevel / 100;
-        kidsAttitudeBar.fillAmount = kidsAttitudeLevel / 100;
-        dogAttitudeBar.fillAmount = dogAttitudeLevel / 100;
+        attitudeManager.youAttitudeBar.fillAmount = attitudeManager.youAttitudeLevel / 100;
+        attitudeManager.wifeAttitudeBar.fillAmount = attitudeManager.wifeAttitudeLevel / 100;
+        attitudeManager.kidsAttitudeBar.fillAmount = attitudeManager.kidsAttitudeLevel / 100;
+        attitudeManager.dogAttitudeBar.fillAmount = attitudeManager.dogAttitudeLevel / 100;
     }
 
 

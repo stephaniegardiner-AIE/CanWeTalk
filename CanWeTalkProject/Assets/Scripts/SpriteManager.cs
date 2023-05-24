@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterSpriteManager : MonoBehaviour
+public class SpriteManager : MonoBehaviour
 {
     public GameObject canvas;
     

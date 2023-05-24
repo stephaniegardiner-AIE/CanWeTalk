@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: CatchUpWithLawyer
   m_EditorClassIdentifier: 
   activityName: 
-  attitudeChange: 0
+  attitudeArrayLength: 2
+  attitudeArray:
+  - attitudeChangeEffects: 6
+    attitudeChangeAmount: 0
+  - attitudeChangeEffects: 0
+    attitudeChangeAmount: 0
