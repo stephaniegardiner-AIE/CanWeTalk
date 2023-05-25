@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322c7dd784d46ec42bd80f5e375aea41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionColor: {r: 0, g: 0, b: 0, a: 1}
+  descriptionColor: {r: 0, g: 0, b: 0, a: 0}
   youName: Brad
   youColor: {r: 1, g: 1, b: 1, a: 1}
   wifeName: Jeanine
@@ -3760,10 +3760,10 @@ MonoBehaviour:
   midGain: 3
   highGain: 10
   megaGain: 20
-  youAttitudeBar: {fileID: 0}
-  wifeAttitudeBar: {fileID: 0}
-  kidsAttitudeBar: {fileID: 0}
-  dogAttitudeBar: {fileID: 0}
+  youAttitudeBar: {fileID: 1845271955}
+  wifeAttitudeBar: {fileID: 571555462}
+  kidsAttitudeBar: {fileID: 652330352}
+  dogAttitudeBar: {fileID: 47755618}
   friendAttitudeBar: {fileID: 0}
   lawyerAttitudeBar: {fileID: 0}
 --- !u!4 &2023615026
