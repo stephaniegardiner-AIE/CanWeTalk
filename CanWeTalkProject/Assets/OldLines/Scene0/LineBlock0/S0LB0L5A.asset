@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: I want a divorce.
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: 0
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 1
   hasAction: 0
   action: 0
