@@ -45,14 +45,6 @@ public class AttitudeManager : MonoBehaviour
         SetAttitude();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //figures out the amount of atttitude to change
-
 
     public void UpdateAttitudes(Line line)
     {
@@ -69,6 +61,7 @@ public class AttitudeManager : MonoBehaviour
         }
     }
 
+    //figures out the amount of atttitude to change SUPER efficiently
     public void FigureAttitudeChangeAmount(Line line, int i, float attitudeToChange, float whoseAttitude, Image whoseAttitudeBar)
     {
         if (line.attitudeArray[i].attitudeChangeAmount == Line.AttitudeEffects.AttitudeChange.megaLoss)
@@ -107,9 +100,10 @@ public class AttitudeManager : MonoBehaviour
         FigureWhoseAttitudeIsChanging(line, i, attitudeToChange, whoseAttitude, whoseAttitudeBar);
     }
 
+    //its self explanatory, it also alters the attitude level of the character on this actual script
     public void FigureWhoseAttitudeIsChanging(Line line, int i, float attitudeToChange, float whoseAttitude, Image whoseAttitudeBar)
     {
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
         {
 
             whoseAttitude = youAttitudeLevel;
@@ -119,7 +113,7 @@ public class AttitudeManager : MonoBehaviour
         }
 
         //change wife attitude
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
         {
             whoseAttitude = wifeAttitudeLevel;
             whoseAttitudeBar = wifeAttitudeBar;
@@ -127,7 +121,7 @@ public class AttitudeManager : MonoBehaviour
         }
 
         //change kids attitude
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
         {
             whoseAttitude = kidsAttitudeLevel;
             whoseAttitudeBar = kidsAttitudeBar;
@@ -135,28 +129,28 @@ public class AttitudeManager : MonoBehaviour
         }
 
         //change dog attitude
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.dogAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.dogAttitude)
         {
             whoseAttitude = dogAttitudeLevel;
             whoseAttitudeBar = dogAttitudeBar;
             dogAttitudeLevel += attitudeToChange;
         }
 
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.friendAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.friendAttitude)
         {
             whoseAttitude = friendAttitudeLevel;
             whoseAttitudeBar = friendAttitudeBar;
             friendAttitudeLevel += attitudeToChange;
         }
 
-        if (line.attitudeArray[i].attitudeChangeEffects == Line.AttitudeEffects.AttitudesCharacter.lawyerAttitude)
+        if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.lawyerAttitude)
         {
             whoseAttitude = lawyerAttitudeLevel;
             whoseAttitudeBar = lawyerAttitudeBar;
             lawyerAttitudeLevel += attitudeToChange;
         }
 
-        ChangeAttitude(attitudeToChange, whoseAttitude, whoseAttitudeBar, line.attitudeArray[i].attitudeChangeEffects);
+        ChangeAttitude(attitudeToChange, whoseAttitude, whoseAttitudeBar, line.attitudeArray[i].attitudeCharacter);
 
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using System.Collections;
 using System.IO;
 
 
@@ -31,28 +32,50 @@ public class CSVtoSO
                 line.attitudeArrayLength = int.Parse(splitData[6]);
             }
 
+           // line.attitudeArray = new List<Line.AttitudeEffects>(new Line.AttitudeEffects[line.attitudeArrayLength]);
 
             for (int i = 0; i < line.attitudeArrayLength; i++)
             {
                 //create new data object
                 var tmp = new Line.AttitudeEffects();
 
-                tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[7]);
-                tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[8]);
-                line.name = line.name + "A";
-
-                if (i == 1)
+                /*for (int a = 0; a == line.attitudeArrayLength;)
                 {
-                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[9]);
+                    tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[7]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[8]);
+                    Debug.Log(line.name + " 1 attitude change");
+                } */
+                
+
+             if (i == 0)
+                {
+                    tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[7]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[8]);
+                    Debug.Log(line.name + " 1 attitude change");
+                }   
+
+
+              if (i == 1)
+                {
+                    Debug.Log("2 attitude cahnges");
+                    tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[9]);
                     tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[10]);
                 }
-                if (i == 2)
+                
+               /* if (i == 1)
                 {
-                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[11]);
-                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[12]);
-                }
 
-                Debug.Log(line.name + " 1 attitude change");
+                    Debug.Log(line.name + " 2 attitude change");
+                } */
+               
+                if (line.attitudeArrayLength == 3)
+                {
+                    tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[11]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[12]);
+                    Debug.Log(line.name + " 3 attitude changes");
+                } 
+
+                line.name = line.name + "A";
 
                 //store the Data object in our dataArray
                 line.attitudeArray.Add(tmp);
@@ -60,7 +83,7 @@ public class CSVtoSO
             }
             //enum.Parse<Line.Character>(splitData[4]);
 
-            if (splitData[14] == "")
+           /* if (splitData[14] == "")
             {
                 Debug.Log("no action change");
             }
@@ -68,7 +91,7 @@ public class CSVtoSO
             {
                 line.action = LineBlock.Actions.Parse<LineBlock.Actions>(splitData[15]);
                 line.hasAction = true;
-            }
+            } */
 
             if (!Directory.Exists("Assets/Lines/Day" + splitData[0]))
             {

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
+  m_Name: S15LB56L12
+  m_EditorClassIdentifier: 
+  character: 2
+  dialog: I told you I need sleep! But instead of listening* you just tried to find
+    a way to make it look like you were supporting me when all you wanted to do was
+    keep the poker night going.
+  attitudeArrayLength: 0
+  attitudeArray: []
+  hasAction: 0
+  action: 0

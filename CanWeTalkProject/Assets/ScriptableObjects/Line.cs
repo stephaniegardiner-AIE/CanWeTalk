@@ -43,10 +43,11 @@ public class Line : ScriptableObject
             principalAttitude,
         }
 
-        public AttitudesCharacter attitudeChangeEffects;
+        public AttitudesCharacter attitudeCharacter;
 
         public enum AttitudeChange
         {
+            none,
             megaLoss,
             highLoss,
             midLoss,
@@ -63,21 +64,25 @@ public class Line : ScriptableObject
 
     public List<AttitudeEffects> attitudeArray;
 
-    private void OnAwake()
+    private void OnEnable()
     {
-        attitudeArray = new List<AttitudeEffects> (new AttitudeEffects[attitudeArrayLength]);
-        
-
-        for (int i = 0; i < attitudeArrayLength; i++)
+        if (attitudeArray == null)
         {
-            //create new data object
-            var tmp = new AttitudeEffects();
+            attitudeArray = new List<AttitudeEffects>(new AttitudeEffects[attitudeArrayLength]);
+            Debug.Log("Awake");
 
-            //tmp.attitudeChangeAmount = 0;
+            for (int i = 0; i < attitudeArrayLength; i++)
+            {
+                //create new data object
+                var tmp = new AttitudeEffects();
 
-            //store the Data object in our dataArray
-            attitudeArray[i] = tmp;
-        } 
+
+
+                //store the Data object in our dataArray
+                attitudeArray[i] = tmp;
+            }
+        }
+
 
         
     }

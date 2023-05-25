@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "I\u2019m watching TV when WifeName walks into the room."
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 0
+  - attitudeCharacter: 0
     attitudeChangeAmount: 0
   hasAction: 0
   action: 0
