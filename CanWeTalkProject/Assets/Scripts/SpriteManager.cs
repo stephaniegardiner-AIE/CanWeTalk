@@ -61,6 +61,10 @@ public class SpriteManager : MonoBehaviour
     public float attitudeIconTime;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     public void FigureCharacterSprites(Line.Character character)
     {
             NewCharacterSprite(character);

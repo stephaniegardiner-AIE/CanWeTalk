@@ -16,19 +16,19 @@ public class CSVtoSO
             string[] splitData = s.Split(",");
 
             Line line = ScriptableObject.CreateInstance<Line>();
-            line.name = "S" + splitData[0] + "LB" + splitData[1] + "L" + splitData[2];
+            line.name = "S" + splitData[1] + "LB" + splitData[2] + "L" + splitData[3];
 
-            line.character = Line.Character.Parse<Line.Character>(splitData[3]);
+            line.character = Line.Character.Parse<Line.Character>(splitData[4]);
 
-            line.dialog = splitData[4];
+            line.dialog = splitData[5];
 
-            if (splitData[5] == "")
+            if (splitData[6] == "")
             {
                 Debug.Log("no attitude change");
             }
             else
             {
-                line.attitudeArrayLength = int.Parse(splitData[5]);
+                line.attitudeArrayLength = int.Parse(splitData[6]);
             }
 
 
@@ -37,19 +37,19 @@ public class CSVtoSO
                 //create new data object
                 var tmp = new Line.AttitudeEffects();
 
-                tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[6]);
-                tmp.attitudeChangeAmount = int.Parse(splitData[7]);
+                tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[7]);
+                tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[8]);
                 line.name = line.name + "A";
 
                 if (i == 1)
                 {
-                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[8]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[9]);
+                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[9]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[10]);
                 }
                 if (i == 2)
                 {
-                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[10]);
-                    tmp.attitudeChangeAmount = int.Parse(splitData[11]);
+                    tmp.attitudeChangeEffects = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[11]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[12]);
                 }
 
                 Debug.Log(line.name + " 1 attitude change");
@@ -66,24 +66,28 @@ public class CSVtoSO
             }
             else
             {
-                line.action = LineBlock.Actions.Parse<LineBlock.Actions>(splitData[14]);
+                line.action = LineBlock.Actions.Parse<LineBlock.Actions>(splitData[15]);
                 line.hasAction = true;
             }
 
-            if (!Directory.Exists("Assets/Lines/Scene" + splitData[0]))
+            if (!Directory.Exists("Assets/Lines/Day" + splitData[0]))
             {
-                AssetDatabase.CreateFolder("Assets/Lines", "Scene" + splitData[0]);
+                AssetDatabase.CreateFolder("Assets/Lines", "Day" + splitData[0]);
+            }
+            if (!Directory.Exists($"Assets/Lines/Day{splitData[0]}/Scene" + splitData[1]))
+            {
+                AssetDatabase.CreateFolder($"Assets/Lines/Day{splitData[0]}", "Scene" + splitData[1]);
             }
 
-            if (!Directory.Exists($"Assets/Lines/Scene{splitData[0]}/LineBlock" + splitData[1]))
+            if (!Directory.Exists($"Assets/Lines/Day{splitData[0]}/Scene{splitData[1]}/LineBlock" + splitData[2]))
             {
-                AssetDatabase.CreateFolder($"Assets/Lines/Scene{splitData[0]}", "LineBlock" + splitData[1]);
+                AssetDatabase.CreateFolder($"Assets/Lines/Day{splitData[0]}/Scene{splitData[1]}", "LineBlock" + splitData[2]);
 
             }
             
             //string guid = AssetDatabase.CreateFolder("Assets/Lines")
 
-            AssetDatabase.CreateAsset(line, $"Assets/Lines/Scene{splitData[0]}/LineBlock{splitData[1]}/{line.name}.asset");
+            AssetDatabase.CreateAsset(line, $"Assets/Lines/Day{splitData[0]}/Scene{splitData[1]}/LineBlock{splitData[2]}/{line.name}.asset");
             
             
 

@@ -2015,7 +2015,6 @@ MonoBehaviour:
   dayTimeText: {fileID: 1852755113}
   speechTailLeft: {fileID: 8613503967809978592, guid: 62e8a961f1d5d2342af8135ec28b882b, type: 3}
   speechTailRight: {fileID: 5969571318988765083, guid: f427551bbf27184478c94038b2f1004c, type: 3}
-  attitudeLerpDuration: 1
   characterTime: 0.02
   typeWriting: 0
   currentText: {fileID: 0}
@@ -3745,6 +3744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45a29fcb06b7264eb2f701795031060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteManager: {fileID: 446210112}
   youAttitudeLevel: 100
   wifeAttitudeLevel: 50
   kidsAttitudeLevel: 80
@@ -3766,6 +3766,7 @@ MonoBehaviour:
   dogAttitudeBar: {fileID: 47755618}
   friendAttitudeBar: {fileID: 0}
   lawyerAttitudeBar: {fileID: 0}
+  attitudeLerpDuration: 1
 --- !u!4 &2023615026
 Transform:
   m_ObjectHideFlags: 0

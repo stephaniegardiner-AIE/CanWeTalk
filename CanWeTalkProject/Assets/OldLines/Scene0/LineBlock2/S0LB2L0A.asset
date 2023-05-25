@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: S0LB0L5A
+  m_Name: S0LB2L0A
   m_EditorClassIdentifier: 
-  character: 2
-  dialog: I want a divorce.
+  character: 1
+  dialog: "Are you kidding me? No way will I sign those papers* you\u2019re being
+    insane!"
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: -20
+  - attitudeChangeEffects: 2
+    attitudeChangeAmount: 2
   hasAction: 0
   action: 0
