@@ -11,22 +11,30 @@ public class Activity : ScriptableObject
 
     public List<Line.AttitudeEffects> attitudeArray;
 
-    private void OnAwake()
+    private void OnEnable()
     {
-        attitudeArray = new List<Line.AttitudeEffects>(new Line.AttitudeEffects[attitudeArrayLength]);
 
-
-        for (int i = 0; i < attitudeArrayLength; i++)
+        if(attitudeArray == null)
         {
-            //create new data object
-            var tmp = new Line.AttitudeEffects();
+            attitudeArray = new List<Line.AttitudeEffects>(new Line.AttitudeEffects[attitudeArrayLength]);
 
-            //tmp.attitudeChangeAmount = 0;
 
-            //store the Data object in our dataArray
-            attitudeArray[i] = tmp;
+            for (int i = 0; i < attitudeArrayLength; i++)
+            {
+                //create new data object
+                var tmp = new Line.AttitudeEffects();
+
+                //tmp.attitudeChangeAmount = 0;
+
+                //store the Data object in our dataArray
+                attitudeArray[i] = tmp;
+            }
         }
 
-
     }
+
+    public Scene.Location locations;
+
+
+
 }
