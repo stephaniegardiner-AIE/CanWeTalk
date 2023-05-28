@@ -92,7 +92,14 @@ public class LineBlock : ScriptableObject
         WantsFullCustody,
         WantsNoCustody,
         WantsSplitCustody,
-        GaveKidsPancakes
+        GaveKidsPancakes,
+        LawyerAtCourt,
+        WifeAndKidsHome,
+        FriendAtTown,
+        KidsAtSchool,
+        KidsHome,
+        DogHome
+ 
     }
 
     public Actions actions;

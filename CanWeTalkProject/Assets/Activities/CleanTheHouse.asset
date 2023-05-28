@@ -14,4 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityName: Clean the house
   attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArray:
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 6
+  - attitudeCharacter: 3
+    attitudeChangeAmount: 5
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 4
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 0
+  actionArray: 
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 0
+  dayTimeArray: 

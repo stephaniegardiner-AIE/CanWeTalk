@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d425a94ff0a941c48b7f1e1c782a89bd, type: 3}
   m_Name: PickKidsUpFromSchool
   m_EditorClassIdentifier: 
-  activityName: 
-  attitudeChange: 0
+  activityName: Pick the kids up from school
+  attitudeArrayLength: 2
+  attitudeArray:
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 5
+  - attitudeCharacter: 3
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 02000000
+  actionArrayLength: 1
+  actionArray: 0e000000
+  dayTypeArrayLength: 1
+  dayTypeArray: 01000000
+  dayTimeArrayLength: 1
+  dayTimeArray: 02000000

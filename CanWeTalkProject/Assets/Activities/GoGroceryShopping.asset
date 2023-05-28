@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d425a94ff0a941c48b7f1e1c782a89bd, type: 3}
   m_Name: GoGroceryShopping
   m_EditorClassIdentifier: 
-  activityName: 
-  attitudeChange: 0
+  activityName: Go grocery shopping
+  attitudeArrayLength: 1
+  attitudeArray:
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 02000000
+  actionArrayLength: 0
+  actionArray: 
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 2
+  dayTimeArray: 0100000002000000

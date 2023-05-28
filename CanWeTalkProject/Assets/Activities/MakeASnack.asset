@@ -13,5 +13,19 @@ MonoBehaviour:
   m_Name: MakeASnack
   m_EditorClassIdentifier: 
   activityName: Make a snack
-  attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArrayLength: 3
+  attitudeArray:
+  - attitudeCharacter: 4
+    attitudeChangeAmount: 4
+  - attitudeCharacter: 3
+    attitudeChangeAmount: 4
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 0
+  actionArray: 
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 0
+  dayTimeArray: 

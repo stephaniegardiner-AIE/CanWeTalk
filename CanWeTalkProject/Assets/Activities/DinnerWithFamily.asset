@@ -14,4 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activityName: Dinner with the family
   attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArray:
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 5
+  - attitudeCharacter: 3
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 1
+  actionArray: 0c000000
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 1
+  dayTimeArray: 03000000

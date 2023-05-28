@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: PlayWithKids
   m_EditorClassIdentifier: 
   activityName: Play with the kids
-  attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArrayLength: 1
+  attitudeArray:
+  - attitudeCharacter: 3
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 1
+  actionArray: 0f000000
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 0
+  dayTimeArray: 

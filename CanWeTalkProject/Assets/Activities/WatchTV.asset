@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: WatchTV
   m_EditorClassIdentifier: 
   activityName: Watch TV
-  attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArrayLength: 2
+  attitudeArray:
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 4
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 0
+  actionArray: 
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 0
+  dayTimeArray: 

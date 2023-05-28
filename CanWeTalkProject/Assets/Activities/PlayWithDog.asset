@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: PlayWithDog
   m_EditorClassIdentifier: 
   activityName: Play with the dog
-  attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArrayLength: 2
+  attitudeArray:
+  - attitudeCharacter: 4
+    attitudeChangeAmount: 5
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 5
+  locationArrayLength: 1
+  locationArray: 00000000
+  actionArrayLength: 1
+  actionArray: 10000000
+  dayTypeArrayLength: 0
+  dayTypeArray: 
+  dayTimeArrayLength: 0
+  dayTimeArray: 
