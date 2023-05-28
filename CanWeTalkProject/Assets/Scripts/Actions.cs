@@ -63,8 +63,10 @@ public class Actions : MonoBehaviour
 
         public void Start()
     {
+        DontDestroyOnLoad(gameObject);
         actionList.Clear();
         MakeActionList();
+
     }
 
 

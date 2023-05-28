@@ -2739,6 +2739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c743de10d31c441ab6d1eb613a3716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: {fileID: 1258858588}
+  actions: {fileID: 479706494}
   activites:
   - {fileID: 11400000, guid: 4616fc2f8aa66874384bfdaa6c08d9f5, type: 2}
   - {fileID: 11400000, guid: 0d1b491018768fa488162c297ffd5200, type: 2}
@@ -2756,6 +2758,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c40aa1ee66fb8b342a1983e662ebcedb, type: 2}
   - {fileID: 11400000, guid: 3c2409b5288d29d4c993241521389b07, type: 2}
   - {fileID: 11400000, guid: 0aca0ae938ed97143a70dd254b733b7a, type: 2}
+  currentActivites: []
 --- !u!4 &1605725102
 Transform:
   m_ObjectHideFlags: 0

@@ -17,5 +17,5 @@ MonoBehaviour:
     going to be best for both of us."
   attitudeArrayLength: 0
   attitudeArray: []
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 11

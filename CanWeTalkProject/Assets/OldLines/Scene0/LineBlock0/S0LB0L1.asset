@@ -16,5 +16,5 @@ MonoBehaviour:
   dialog: "Honey\u2026 can we talk?"
   attitudeArrayLength: 0
   attitudeArray: []
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 14
