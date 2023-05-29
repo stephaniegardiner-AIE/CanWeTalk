@@ -8,9 +8,9 @@ public class Activity : ScriptableObject
     public string activityName;
     public Line activityResponse;
 
-    [Header("Attitude Arrays")]
+   /* [Header("Attitude Arrays")]
     public int attitudeArrayLength;
-    public List<Line.AttitudeEffects> attitudeArray;
+    public List<Line.AttitudeEffects> attitudeArray; */
 
     [Header("Location Conditions")]
     public int locationArrayLength;
@@ -33,7 +33,7 @@ public class Activity : ScriptableObject
     private void OnEnable()
     {
 
-        if(attitudeArray == null)
+      /*  if(attitudeArray == null)
         {
             attitudeArray = new List<Line.AttitudeEffects>(new Line.AttitudeEffects[attitudeArrayLength]);
 
@@ -48,7 +48,7 @@ public class Activity : ScriptableObject
                 //store the Data object in our dataArray
                 attitudeArray[i] = tmp;
             }
-        }
+        } */
 
         if(locationArray == null)
         {

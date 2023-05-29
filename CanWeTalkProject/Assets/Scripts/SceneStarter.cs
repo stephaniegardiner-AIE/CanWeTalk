@@ -280,7 +280,7 @@ public class SceneStarter : MonoBehaviour
 
 
         //if the line has an attitude change, now make sure that happens!!!
-        if (activityManager.currentActivites[activityNumber].attitudeArrayLength > 0)
+        if (activityManager.currentActivites[activityNumber].activityResponse.attitudeArrayLength > 0)
         {
             Debug.Log("hello!");
             attitudeManager.UpdateAttitudes(activityManager.currentActivites[activityNumber].activityResponse);
