@@ -6,7 +6,7 @@ using UnityEngine;
 public class Activity : ScriptableObject
 {
     public string activityName;
-    public Line activityReponse;
+    public Line activityResponse;
 
     [Header("Attitude Arrays")]
     public int attitudeArrayLength;

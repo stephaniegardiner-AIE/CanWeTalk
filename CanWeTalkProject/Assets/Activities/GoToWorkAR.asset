@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee98a0203f7fe948839b76e8b31b119, type: 3}
-  m_Name: AR 0
+  m_Name: GoToWorkAR
   m_EditorClassIdentifier: 
   character: 0
   dialog: activity happened
   attitudeArrayLength: 0
-  attitudeArray: []
+  attitudeArray:
+  - attitudeCharacter: 6
+    attitudeChangeAmount: 5
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 5
   hasAction: 0
   action: 0

@@ -271,21 +271,25 @@ public class SceneStarter : MonoBehaviour
         dialogText = dialogBackground.Find("CharacterDialogText").gameObject;
 
         //sets the text
-        dialogText.GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[activityNumber].activityReponse.dialog;
+        dialogText.GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[activityNumber].activityResponse.dialog;
 
         NameCheck();
 
         TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
 
-        //if the line has an attitude change, now make sure that happens!!!
-      /*  if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
-        {
-            attitudeManager.UpdateAttitudes(currentLineBlock.lines[lineNumber]);
-            //Debug.Log("AttitudeChange!");
-        } */
 
-      /*  if (currentLineBlock.lines[lineNumber].hasAction)
+
+        //if the line has an attitude change, now make sure that happens!!!
+        if (activityManager.currentActivites[activityNumber].attitudeArrayLength > 0)
         {
+            Debug.Log("hello!");
+            attitudeManager.UpdateAttitudes(activityManager.currentActivites[activityNumber].activityResponse);
+            
+        } 
+
+     /*   if (currentLineBlock.lines[lineNumber].hasAction)
+        {
+        
             ChangeAction(currentLineBlock.lines[lineNumber]);
         } */
 
@@ -389,13 +393,13 @@ public class SceneStarter : MonoBehaviour
         
         if (button.tag == "Activity")
         {
-            Debug.Log("I'm an activity");
+            //Debug.Log("I'm an activity");
             TextMeshProUGUI buttonText = button.GetComponent<Transform>().Find("ActivityButtonText").GetComponent<TextMeshProUGUI>();
             float buttonTextFontSize = buttonText.fontSize;
             float buttonTextLineCount = buttonText.textInfo.lineCount;
 
-            Debug.Log(buttonText.textInfo.lineCount);
-            Debug.Log(button.GetComponent<RectTransform>().sizeDelta.y);
+            //Debug.Log(buttonText.textInfo.lineCount);
+           // Debug.Log(button.GetComponent<RectTransform>().sizeDelta.y);
 
             float buttonWidth = button.GetComponent<RectTransform>().sizeDelta.x;
             float buttonHeight = button.GetComponent<RectTransform>().sizeDelta.y;
@@ -407,8 +411,6 @@ public class SceneStarter : MonoBehaviour
 
         //Debug.Log(buttonTextLineCount);
     }
-
-
 
     //figures out what to run next after a line block is finished
     public void FigureNext()
@@ -445,7 +447,6 @@ public class SceneStarter : MonoBehaviour
 
         spriteManager.ClearCharacters();
     }
-
 
     //creates a decision block when called
     public void DecisionRunner()
@@ -601,20 +602,12 @@ public class SceneStarter : MonoBehaviour
 
     }
 
-    //public void SpeechTailMaker(GameObject speechBackground,)
-
-    //when the player presses space!
-
-
     //resises the viewscreen content box to properly fit all the speech bubbles
     public void ResizeContent(float heightToAdd)
     {
         content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, contentHeight + heightToAdd);
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
-
-   
-
 
     public void NameCheck()
     {
@@ -650,14 +643,6 @@ public class SceneStarter : MonoBehaviour
         text.maxVisibleCharacters = text.textInfo.characterCount;
         typeWriting = false;
     }
-
-    // ATTITUDE
-   /* public GameObject wifeSprite;
-    public GameObject kidsSprite;
-    public GameObject dogSprite; */
-
-    //figures out what the attitude array is trying to tell us and then causes fill amount change for teh appropriate attidue bar before changing the the final attitude level
-
 
     IEnumerator DialogSkipper()
     {
