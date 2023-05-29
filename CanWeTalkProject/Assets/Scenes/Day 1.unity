@@ -2741,7 +2741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 1258858588}
   actions: {fileID: 479706494}
-  activites:
+  activities:
   - {fileID: 11400000, guid: 4616fc2f8aa66874384bfdaa6c08d9f5, type: 2}
   - {fileID: 11400000, guid: 0d1b491018768fa488162c297ffd5200, type: 2}
   - {fileID: 11400000, guid: e5d1b39a1317c0f418ba9d7c8ea63c44, type: 2}

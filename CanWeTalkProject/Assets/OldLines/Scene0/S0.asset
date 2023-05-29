@@ -21,5 +21,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 36991fb14ee36de4fae826786517a18d, type: 2}
   dayNumber: 1
   weekday: 0
-  dayTime: 2
+  dayTime: 3
+  dayType: 2
   location: 0

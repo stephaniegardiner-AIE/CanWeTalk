@@ -12,7 +12,8 @@ public class Scenes : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
+;        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
