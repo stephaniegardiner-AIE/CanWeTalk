@@ -99,7 +99,7 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
 
         SetSceneInfo();
-        ActivityRunner();
+       ActivityRunner();
         
     }
 
@@ -210,46 +210,91 @@ public class SceneStarter : MonoBehaviour
             //if the lines aren't run out, run the next line
             else
             {
-                GameObject line = Instantiate(linePrefab) as GameObject;
-                CheckCharacterFormat(line);
 
-                line.transform.SetParent(content.transform, false);
-                line.name = "SpeechBubble" + lineNumber.ToString();
-                line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
-                currentVisibleSpeech.Add(line);
-
-                dialogBackground = line.GetComponent<Transform>();
-                dialogText = dialogBackground.Find("CharacterDialogText").gameObject;
-
-                //sets the text
-                dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
-
-                NameCheck();
-
-                TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
-
-                //if the line has an attitude change, now make sure that happens!!!
-                if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
-                {
-                    attitudeManager.UpdateAttitudes(currentLineBlock.lines[lineNumber]);
-                    //Debug.Log("AttitudeChange!");
-                }
-
-                if (currentLineBlock.lines[lineNumber].hasAction)
-                {
-                    ChangeAction(currentLineBlock.lines[lineNumber]);
-                }
-
-                lineNumber++;
-
-
-                ResizeSpeech();
-
-                ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
-
+                CreateLine();
             }
         }
        
+    }
+
+    public void CreateLine()
+    {
+        GameObject line = Instantiate(linePrefab) as GameObject;
+        CheckCharacterFormat(line);
+
+        line.transform.SetParent(content.transform, false);
+        line.name = "SpeechBubble" + lineNumber.ToString();
+        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
+        currentVisibleSpeech.Add(line);
+
+        dialogBackground = line.GetComponent<Transform>();
+        dialogText = dialogBackground.Find("CharacterDialogText").gameObject;
+
+        //sets the text
+        dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
+
+        NameCheck();
+
+        TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
+
+        //if the line has an attitude change, now make sure that happens!!!
+        if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
+        {
+            attitudeManager.UpdateAttitudes(currentLineBlock.lines[lineNumber]);
+            //Debug.Log("AttitudeChange!");
+        }
+
+        if (currentLineBlock.lines[lineNumber].hasAction)
+        {
+            ChangeAction(currentLineBlock.lines[lineNumber]);
+        }
+
+        lineNumber++;
+
+
+        ResizeSpeech();
+
+        ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
+    }
+
+    public void CreateActivityResponse(int activityNumber)
+    {
+        GameObject line = Instantiate(linePrefab) as GameObject;
+        CheckCharacterFormat(line);
+
+        line.transform.SetParent(content.transform, false);
+        line.name = "SpeechBubble" + lineNumber.ToString();
+        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
+        currentVisibleSpeech.Add(line);
+
+        dialogBackground = line.GetComponent<Transform>();
+        dialogText = dialogBackground.Find("CharacterDialogText").gameObject;
+
+        //sets the text
+        dialogText.GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[activityNumber].activityReponse.dialog;
+
+        NameCheck();
+
+        TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
+
+        //if the line has an attitude change, now make sure that happens!!!
+      /*  if (currentLineBlock.lines[lineNumber].attitudeArrayLength > 0)
+        {
+            attitudeManager.UpdateAttitudes(currentLineBlock.lines[lineNumber]);
+            //Debug.Log("AttitudeChange!");
+        } */
+
+      /*  if (currentLineBlock.lines[lineNumber].hasAction)
+        {
+            ChangeAction(currentLineBlock.lines[lineNumber]);
+        } */
+
+        lineNumber++;
+
+
+        ResizeSpeech();
+
+        ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
     }
 
     public void ChangeAction(Line currentLine)

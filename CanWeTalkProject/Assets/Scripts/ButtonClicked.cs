@@ -53,8 +53,17 @@ public class ButtonClicked : MonoBehaviour
 
     public void RunActivity()
     {
-        
+
+        //sceneStarter.currentLineBlock = sceneStarter.currentLineBlock.endDecisionBlock.decisions[decisionNumber].followingLineBlock;
         sceneStarter.lineNumber = 0;
+        sceneStarter.currentVisibleSpeech.Remove(sceneStarter.currentVisibleSpeech[sceneStarter.currentVisibleSpeech.Count - 1]);
+        //sceneStarter.previousLines += sceneStarter.currentLineBlock.lines.Length - sceneStarter.previousLines;
+        sceneStarter.CreateActivityResponse(activityNumber);
+        sceneStarter.decision = false;
+        sceneStarter.ResizeContent(-transform.parent.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta.y);
+        Destroy(transform.parent.transform.parent.gameObject);
+
+        //DO ATTITUDE CHANGE
 
     }
 }
