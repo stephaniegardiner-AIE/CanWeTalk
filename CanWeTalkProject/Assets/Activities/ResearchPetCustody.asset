@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: ResearchPetCustody
   m_EditorClassIdentifier: 
   activityName: Research pet custody laws
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 3
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 4
-  - attitudeCharacter: 4
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: 2678ed725c11e31408f20d76e1e03655, type: 2}
   locationArrayLength: 1
   locationArray: 01000000
   actionArrayLength: 0

@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: PickKidsUpFromSchool
   m_EditorClassIdentifier: 
   activityName: Pick the kids up from school
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 2
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 3
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: 65b5c890368e53b4e81b76f928eb44b1, type: 2}
   locationArrayLength: 1
   locationArray: 02000000
   actionArrayLength: 1

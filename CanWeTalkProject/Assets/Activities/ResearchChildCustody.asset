@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: ResearchChildCustody
   m_EditorClassIdentifier: 
   activityName: Reasearch child custody laws
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 3
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 4
-  - attitudeCharacter: 3
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: f63066ed59090054e8c1ac1c23b58d39, type: 2}
   locationArrayLength: 1
   locationArray: 01000000
   actionArrayLength: 0

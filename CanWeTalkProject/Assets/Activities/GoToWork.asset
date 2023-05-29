@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: GoToWork
   m_EditorClassIdentifier: 
   activityName: Go to work
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 2
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 4
+  activityResponse: {fileID: 11400000, guid: 34d784c4e025bf149b2cb8d24152cebd, type: 2}
   locationArrayLength: 1
   locationArray: 02000000
   actionArrayLength: 0

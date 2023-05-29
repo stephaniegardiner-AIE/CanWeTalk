@@ -13,15 +13,7 @@ MonoBehaviour:
   m_Name: CleanTheHouse
   m_EditorClassIdentifier: 
   activityName: Clean the house
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 0
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 6
-  - attitudeCharacter: 3
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 4
+  activityResponse: {fileID: 11400000, guid: 3264b60bb650f9a49a4309c5963f479b, type: 2}
   locationArrayLength: 1
   locationArray: 00000000
   actionArrayLength: 0

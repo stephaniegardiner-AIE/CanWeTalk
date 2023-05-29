@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 0
   dialog: activity happened
-  attitudeArrayLength: 0
+  attitudeArrayLength: 1
   attitudeArray:
-  - attitudeCharacter: 6
-    attitudeChangeAmount: 5
-  - attitudeCharacter: 1
+  - attitudeCharacter: 3
     attitudeChangeAmount: 5
   hasAction: 0
   action: 0

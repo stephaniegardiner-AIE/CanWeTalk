@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: GoToThePub
   m_EditorClassIdentifier: 
   activityName: Go to the pub
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 2
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 4
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: e193ff10eb1cdaa4e9f0fdfa309519f2, type: 2}
   locationArrayLength: 1
   locationArray: 02000000
   actionArrayLength: 0

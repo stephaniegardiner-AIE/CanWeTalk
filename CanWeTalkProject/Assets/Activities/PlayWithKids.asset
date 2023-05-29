@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: PlayWithKids
   m_EditorClassIdentifier: 
   activityName: Play with the kids
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 1
-  attitudeArray:
-  - attitudeCharacter: 3
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: 82bab85f0905b0e4fa00724ef6924860, type: 2}
   locationArrayLength: 1
   locationArray: 00000000
   actionArrayLength: 1

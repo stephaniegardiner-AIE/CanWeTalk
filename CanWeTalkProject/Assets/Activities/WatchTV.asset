@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: WatchTV
   m_EditorClassIdentifier: 
   activityName: Watch TV
-  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
-  attitudeArrayLength: 2
-  attitudeArray:
-  - attitudeCharacter: 2
-    attitudeChangeAmount: 4
-  - attitudeCharacter: 1
-    attitudeChangeAmount: 5
+  activityResponse: {fileID: 11400000, guid: 1036adf2bd73eb148b6a66abe6855d0c, type: 2}
   locationArrayLength: 1
   locationArray: 00000000
   actionArrayLength: 0
