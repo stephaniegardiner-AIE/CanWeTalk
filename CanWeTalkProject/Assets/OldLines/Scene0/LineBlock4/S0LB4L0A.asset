@@ -17,7 +17,7 @@ MonoBehaviour:
     make me tell them. This was your call* you need to handle it yourself."
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 2
-    attitudeChangeAmount: -10
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 3
   hasAction: 0
   action: 0

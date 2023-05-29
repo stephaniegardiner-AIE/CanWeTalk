@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog: "I don\u2019t love you anymore!"
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: -20
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 1
   hasAction: 0
   action: 0

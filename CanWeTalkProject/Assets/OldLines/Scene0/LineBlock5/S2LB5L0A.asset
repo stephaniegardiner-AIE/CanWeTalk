@@ -17,7 +17,7 @@ MonoBehaviour:
     we\u2019re getting divorced* we\u2019re still on each other\u2019s sides."
   attitudeArrayLength: 1
   attitudeArray:
-  - attitudeChangeEffects: 2
-    attitudeChangeAmount: 10
+  - attitudeCharacter: 2
+    attitudeChangeAmount: 6
   hasAction: 0
   action: 0

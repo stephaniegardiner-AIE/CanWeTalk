@@ -16,9 +16,9 @@ MonoBehaviour:
   dialog: Alright. I can tell them.
   attitudeArrayLength: 2
   attitudeArray:
-  - attitudeChangeEffects: 2
+  - attitudeCharacter: 2
     attitudeChangeAmount: 5
-  - attitudeChangeEffects: 1
-    attitudeChangeAmount: -5
+  - attitudeCharacter: 1
+    attitudeChangeAmount: 4
   hasAction: 0
   action: 0
