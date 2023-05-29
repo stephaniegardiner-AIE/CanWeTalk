@@ -289,7 +289,7 @@ public class SceneStarter : MonoBehaviour
             ChangeAction(currentLineBlock.lines[lineNumber]);
         } */
 
-        lineNumber++;
+        //lineNumber++;
 
 
         ResizeSpeech();

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GoGroceryShopping
   m_EditorClassIdentifier: 
   activityName: Go grocery shopping
+  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
   attitudeArrayLength: 1
   attitudeArray:
   - attitudeCharacter: 2

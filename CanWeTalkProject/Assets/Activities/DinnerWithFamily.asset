@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DinnerWithFamily
   m_EditorClassIdentifier: 
   activityName: Dinner with the family
+  activityReponse: {fileID: 11400000, guid: 4dc9ab2faed46d841ae1fa57611082ff, type: 2}
   attitudeArrayLength: 0
   attitudeArray:
   - attitudeCharacter: 2

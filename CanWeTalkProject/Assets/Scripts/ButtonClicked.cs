@@ -55,7 +55,7 @@ public class ButtonClicked : MonoBehaviour
     {
 
         //sceneStarter.currentLineBlock = sceneStarter.currentLineBlock.endDecisionBlock.decisions[decisionNumber].followingLineBlock;
-        sceneStarter.lineNumber = 0;
+        //sceneStarter.lineNumber = 0;
         sceneStarter.currentVisibleSpeech.Remove(sceneStarter.currentVisibleSpeech[sceneStarter.currentVisibleSpeech.Count - 1]);
         //sceneStarter.previousLines += sceneStarter.currentLineBlock.lines.Length - sceneStarter.previousLines;
         sceneStarter.CreateActivityResponse(activityNumber);
