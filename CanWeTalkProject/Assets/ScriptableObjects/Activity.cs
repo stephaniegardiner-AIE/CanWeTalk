@@ -6,6 +6,7 @@ using UnityEngine;
 public class Activity : ScriptableObject
 {
     public string activityName;
+    public Line activityReponse;
 
     [Header("Attitude Arrays")]
     public int attitudeArrayLength;
@@ -26,6 +27,8 @@ public class Activity : ScriptableObject
     [Header("Day Time Conditions")]
     public int dayTimeArrayLength;
     public List<Scene.DayTime> dayTimeArray;
+
+    
 
     private void OnEnable()
     {
