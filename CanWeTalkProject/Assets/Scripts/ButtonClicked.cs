@@ -7,6 +7,7 @@ public class ButtonClicked : MonoBehaviour
     // Start is called before the first frame update
     public SceneStarter sceneStarter;
     public int decisionNumber;
+    public int activityNumber;
     //public int decisionNumber;
     void Start()
     {
@@ -26,8 +27,16 @@ public class ButtonClicked : MonoBehaviour
     public void Click()
     {
         sceneStarter = FindObjectOfType<SceneStarter>();
-        NewLineBlock();
+
+        if (gameObject.tag == "Decision")
+        {
+            NewLineBlock();
+        }
         
+        if (gameObject.tag == "Activity")
+        {
+            RunActivity();
+        }
     }
 
     public void NewLineBlock()
@@ -40,5 +49,12 @@ public class ButtonClicked : MonoBehaviour
         sceneStarter.decision = false;
         sceneStarter.ResizeContent(-transform.parent.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta.y);
         Destroy(transform.parent.transform.parent.gameObject);
+    }
+
+    public void RunActivity()
+    {
+        
+        sceneStarter.lineNumber = 0;
+
     }
 }

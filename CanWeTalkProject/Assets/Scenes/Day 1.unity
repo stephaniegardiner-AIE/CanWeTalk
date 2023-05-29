@@ -1983,6 +1983,7 @@ MonoBehaviour:
   spriteManager: {fileID: 446210112}
   characterManager: {fileID: 1189340551}
   attitudeManager: {fileID: 2023615025}
+  activityManager: {fileID: 1605725101}
   sceneManager: {fileID: 1866968159}
   currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   actions: {fileID: 479706494}
@@ -1996,6 +1997,8 @@ MonoBehaviour:
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
+  activityBlockPrefab: {fileID: 9089653576729137649, guid: d6c7b08b57c25124fbcd9cd4fb1fbe12, type: 3}
+  activityPrefab: {fileID: 7118284946906040738, guid: 793841a50d095c4469e6803ab8fdf24a, type: 3}
   content: {fileID: 473292766}
   contentHeight: 0
   tailHeight: 40
@@ -2006,6 +2009,7 @@ MonoBehaviour:
   dialogLinePadding: 5
   lineNumber: 0
   decisionNumber: 0
+  activityNumber: 0
   currentTextToWrite: {fileID: 0}
   previousLines: 0
   currentVisibleSpeech: []
@@ -3570,6 +3574,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1889032816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889032818}
+  - component: {fileID: 1889032817}
+  m_Layer: 0
+  m_Name: GameStructure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1889032817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889032816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e939f79d57453b408f09476a6377207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daysAmount: 14
+  dayStructure:
+  - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
+  - {fileID: 11400000, guid: 809cf8730094c774996eb587eb459e34, type: 2}
+  - {fileID: 11400000, guid: 4b6fefcda94c9a54e986b8e8a482a153, type: 2}
+  - {fileID: 11400000, guid: 74a58348eadae3248a1be8a0585d8a5c, type: 2}
+  - {fileID: 11400000, guid: a4ab74e20df93744cab196bdfc2f8c24, type: 2}
+  - {fileID: 11400000, guid: 7081adc2b1b75524697772ecca7c3f94, type: 2}
+  - {fileID: 11400000, guid: aa185c9557d6c0441b0e2bc2e7dd6e1f, type: 2}
+  - {fileID: 11400000, guid: 17be221fd204a3040b293939650ed043, type: 2}
+  - {fileID: 11400000, guid: 19e6ce28516a66748934d910183d32aa, type: 2}
+  - {fileID: 11400000, guid: d52d3affe38364942acfbd51519ed8ca, type: 2}
+  - {fileID: 11400000, guid: 2d67cfb141e24af43921184779a366d8, type: 2}
+  - {fileID: 11400000, guid: 97867cd123acbe54992e97105bfe69c5, type: 2}
+  - {fileID: 11400000, guid: 9ab558294c116c043af6ae62ddc9550e, type: 2}
+--- !u!4 &1889032818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889032816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925744256
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,9 @@ public class LineBlock : ScriptableObject
 
     public DecisionBlock endDecisionBlock;
 
-    public ActivityBlock endActivityBlock;
+    public bool runActivityBlockNext;
+
+    //public ActivityBlock endActivityBlock;
 
     public LineBlock nextLineBlock;
 

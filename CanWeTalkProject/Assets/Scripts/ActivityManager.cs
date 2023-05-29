@@ -15,7 +15,7 @@ public class ActivityManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        CreateActivityList();
+        //CreateActivityList();
     }
 
     // Update is called once per frame
@@ -26,14 +26,17 @@ public class ActivityManager : MonoBehaviour
 
     public void CreateActivityList()
     {
-        Debug.Log("the current scene is at the " + scene.currentScene.location);
-        Debug.Log("the current scene is on the " + scene.currentScene.dayType);
-        //currentActivites.Clear();
+
+        currentActivites.Clear();
+
+       // Debug.Log("the current scene is at the " + scene.currentScene.location);
+       // Debug.Log("the current scene is on the " + scene.currentScene.dayType);
+        
 
         for (int i = 0; i < activities.Length; i++)
         {
             bool location = false;
-            bool action = true;
+            bool action = false;
             bool dayType = false;
             bool dayTime = false;
 
@@ -44,14 +47,14 @@ public class ActivityManager : MonoBehaviour
                     if (activities[i].locationArray[e] == scene.currentScene.location)
                     {
                         location = true;
-                        Debug.Log(activities[i].locationArray[e] + "this is a house");
+                       // Debug.Log(activities[i].locationArray[e] + "this is a house");
                     }
                 }
             }
             if (activities[i].locationArray.Count == 0)
             {
                 location = true;
-                Debug.Log(activities[i].locationArray + "this one doesn't care");
+              //  Debug.Log(activities[i].locationArray + "this one doesn't care");
             }
 
             if (activities[i].dayTypeArray != null)
@@ -61,14 +64,14 @@ public class ActivityManager : MonoBehaviour
                     if(activities[i].dayTypeArray[e] == scene.currentScene.dayType)
                     {
                         dayType = true;
-                        Debug.Log(activities[i].dayTypeArray[e] + "this is on the weekend");
+                       // Debug.Log(activities[i].dayTypeArray[e] + "this is on the weekend");
                     }
                 }
             }
             if (activities[i].dayTypeArray.Count == 0)
             {
                 dayType = true;
-                Debug.Log(activities[i].dayTypeArray + "this one doesn't care what week type it is");
+              //  Debug.Log(activities[i].dayTypeArray + "this one doesn't care what week type it is");
             }
 
 
@@ -79,39 +82,39 @@ public class ActivityManager : MonoBehaviour
                     if (activities[i].dayTimeArray[e] == scene.currentScene.dayTime)
                     {
                         dayTime = true;
-                        Debug.Log(activities[i].dayTimeArray[e] + "is at night");
+                      //  Debug.Log(activities[i].dayTimeArray[e] + "is at night");
                     }
                 }
             }
             if (activities[i].dayTimeArray.Count == 0)
             {
                 dayTime = true;
-                Debug.Log(activities[i].dayTimeArray + "doens't care what time of day it is");
+               // Debug.Log(activities[i].dayTimeArray + "doens't care what time of day it is");
             }
 
 
-            /*   if (activites[i].actionArray != null)
-               {
+            if (activities[i].actionArray != null)
+            {
 
                    //REVISE THIS ONE
-                   /*  for (int e = 0; e < activites[i].actionArrayLength; e++)
-                     {
-                         if (actions.actionList[(int)activites[i].actionArray[e]])
-                         {
-                             action = true;
-                         } 
-                     } 
+                for (int e = 0; e < activities[i].actionArrayLength; e++)
+                {
+                    if (actions.actionList[(int)activities[i].actionArray[e]])
+                    {
+                        action = true;
+                    } 
+                } 
 
                    action = true;
-                   Debug.Log("action true");
+                  // Debug.Log("action true");
                }
-               if (activites[i].actionArray == null)
+               if (activities[i].actionArrayLength == 0)
                {
                    action = true;
-                   Debug.Log("action true");
+                 //  Debug.Log("action true");
                }
 
-               if (activites[i].dayTypeArray != null)
+              /* if (activites[i].dayTypeArray != null)
                {
 
                    for (int e = 0; e < activites[i].dayTypeArrayLength; e++)
@@ -149,7 +152,7 @@ public class ActivityManager : MonoBehaviour
 
             if (location && action && dayType && dayTime)
             {
-                Debug.Log("we made it");
+              //  Debug.Log("we made it");
                 currentActivites.Add(activities[i]);
 
 
