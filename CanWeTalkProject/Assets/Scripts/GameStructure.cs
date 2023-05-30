@@ -110,9 +110,10 @@ public class GameStructure : MonoBehaviour
             Debug.Log("Run activity");
             sceneStarter.ActivityRunner();
         }
+        if (currentDaySO.morning.GetType() == typeof()
     }
 
-    public void GoToNextDayTime()
+    public void GoToAfternoon()
     {
 
     }

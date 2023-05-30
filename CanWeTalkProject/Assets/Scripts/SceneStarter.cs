@@ -18,6 +18,7 @@ public class SceneStarter : MonoBehaviour
     public Scenes sceneManager;
     public DialogScene currentScene;
     public Actions actions;
+    public GameStructure gameStructure;
 
     public int sceneNumber;
     
@@ -339,6 +340,8 @@ public class SceneStarter : MonoBehaviour
         ResizeSpeech();
 
         ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
+
+        gameStructure.
     }
 
     public void ChangeAction(Line currentLine)
