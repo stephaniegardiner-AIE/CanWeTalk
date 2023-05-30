@@ -73,7 +73,14 @@ public class CSVtoSO
                     tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[11]);
                     tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[12]);
                     Debug.Log(line.name + " 3 attitude changes");
-                } 
+                }
+
+                if (line.attitudeArrayLength == 4)
+                {
+                    tmp.attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.Parse<Line.AttitudeEffects.AttitudesCharacter>(splitData[13]);
+                    tmp.attitudeChangeAmount = Line.AttitudeEffects.AttitudeChange.Parse<Line.AttitudeEffects.AttitudeChange>(splitData[14]);
+                    Debug.Log(line.name + " 4 attitude changes");
+                }
 
                 line.name = line.name + "A";
 

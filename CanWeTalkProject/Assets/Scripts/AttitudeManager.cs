@@ -41,7 +41,16 @@ public class AttitudeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (GameObject.FindGameObjectsWithTag("AttitudeManager").Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+       
         SetAttitude();
     }
 

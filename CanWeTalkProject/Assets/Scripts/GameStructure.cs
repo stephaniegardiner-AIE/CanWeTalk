@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStructure : MonoBehaviour
 {
+    public SceneStarter sceneStarter;
     public int daysAmount;
     public int currentDay = 0;
     public DayStructure currentDaySO;
@@ -12,7 +13,22 @@ public class GameStructure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
+        if (GameObject.FindGameObjectsWithTag("GameStructure").Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+            StartGame();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+     
+        
+        
+
+        Debug.Log("???");
     }
 
     // Update is called once per frame
@@ -51,13 +67,40 @@ public class GameStructure : MonoBehaviour
 
     public void StartGame()
     {
-        currentDaySO = dayStructure[currentDay];
-        LoadScene();
+        
+
+        Debug.Log("why");
+
+        if (currentDaySO == null)
+        {
+            currentDaySO = dayStructure[currentDay];
+
+            if (SceneManager.GetActiveScene().name == currentDaySO.scene.name)
+            {
+                
+                LoadScene();
+                Debug.Log("yo waht");
+                RunScene();
+            }
+        }
+
+
     }
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(currentDaySO.scene.name); 
+        SceneManager.LoadScene(currentDaySO.scene.name);
+        Debug.Log("load the scene");
+        
+    }
+
+    public void RunScene()
+    {
+       // if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
+       // {
+            Debug.Log("Run activity");
+            sceneStarter.ActivityRunner();
+       // }
     }
 
 }

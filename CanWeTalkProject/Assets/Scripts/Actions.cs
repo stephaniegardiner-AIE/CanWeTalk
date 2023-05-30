@@ -63,7 +63,15 @@ public class Actions : MonoBehaviour
 
         public void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (GameObject.FindGameObjectsWithTag("Actions").Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+;
         actionList.Clear();
         MakeActionList();
 

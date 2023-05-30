@@ -13,4 +13,6 @@ public class DayStructure : ScriptableObject
         public ScriptableObject afternoon;
         public ScriptableObject night;
 
+    public DialogScene.DayTime dayTime;
+
 }

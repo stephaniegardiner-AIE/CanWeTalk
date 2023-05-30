@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Decision
   - Activity
+  - GameStructure
+  - ActivityManager
+  - AttitudeManager
+  - CharacterManager
+  - SceneManager
+  - Actions
+  - SpriteManager
   layers:
   - Default
   - TransparentFX

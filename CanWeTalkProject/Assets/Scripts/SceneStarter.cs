@@ -92,14 +92,18 @@ public class SceneStarter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentLineBlock = currentScene.lineBlocks[0];
+        if (currentScene.lineBlocks.Length != 0)
+        {
+            currentLineBlock = currentScene.lineBlocks[0];
+        }
+        
         //LineRunner();
         
 
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
 
-        SetSceneInfo();
-       ActivityRunner();
+       // SetSceneInfo();
+       //ActivityRunner();
         
     }
 
@@ -203,16 +207,21 @@ public class SceneStarter : MonoBehaviour
         }
         else
         {
-            if (lineNumber > currentLineBlock.lines.Length - 1)
+            if (currentScene.lineBlocks.Length != 0)
             {
-                FigureNext();
-            }
-            //if the lines aren't run out, run the next line
-            else
-            {
+                if (lineNumber > currentLineBlock.lines.Length - 1)
+                {
+                    FigureNext();
+                }
+                //if the lines aren't run out, run the next line
+                else
+                {
 
-                CreateLine();
+                    CreateLine();
+                }
             }
+
+
         }
        
     }

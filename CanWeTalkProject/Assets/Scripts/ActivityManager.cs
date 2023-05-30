@@ -13,17 +13,17 @@ public class ActivityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (GameObject.FindGameObjectsWithTag("ActivityManager").Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         //CreateActivityList();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void CreateActivityList()
     {
 
