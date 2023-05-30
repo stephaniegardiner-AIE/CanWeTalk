@@ -20,7 +20,11 @@ public class ActivityManager : MonoBehaviour
     public void AssignSelf()
     {
         SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        
         thisone.activityManager = this;
+
+       // 
+        //alsothisone.activit
     }
     public void CreateActivityList()
     {
@@ -34,7 +38,7 @@ public class ActivityManager : MonoBehaviour
         for (int i = 0; i < activities.Length; i++)
         {
             bool location = false;
-            bool action = false;
+            bool action = true;
             bool dayType = false;
             bool dayTime = false;
 
@@ -95,13 +99,13 @@ public class ActivityManager : MonoBehaviour
             {
 
                    //REVISE THIS ONE
-                for (int e = 0; e < activities[i].actionArrayLength; e++)
+              /*  for (int e = 0; e < activities[i].actionArrayLength; e++)
                 {
                     if (actions.actionList[(int)activities[i].actionArray[e]])
                     {
                         action = true;
                     } 
-                } 
+                } */
 
                    action = true;
                   // Debug.Log("action true");

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Line;
 
 [CreateAssetMenu(fileName = "LineBlock", menuName = "Dialog/New Line Block")]
 public class LineBlock : ScriptableObject
@@ -49,7 +50,7 @@ public class LineBlock : ScriptableObject
 
         }
 
-        if (actions != 0)
+        if (actionArrayLength != 0)
         {
             actionCondition = true;
         }
@@ -82,38 +83,64 @@ public class LineBlock : ScriptableObject
     [Header("Action Conditions")]
     public bool actionCondition;
 
-    public enum Actions
+    public class ActionListElement
     {
-        None,
-        SignedPapers,
-        WentToWork,
-        PickingKidsUp,
-        ForgotToPickKidsUp,
-        LetKidsStayUp,
-        SleepingOnCouch,
-        WantsFullCustody,
-        WantsNoCustody,
-        WantsSplitCustody,
-        GaveKidsPancakes,
-        LawyerAtCourt,
-        WifeAndKidsHome,
-        FriendAtTown,
-        KidsAtSchool,
-        KidsHome,
-        DogHome,
-        DidntDisciplineKids,
-        NeitherParentUnfit,
-        WantsTheDog,
-        GotLawyerNumber,
-        WentOutPartying,
-        DeadDog,
-        LeftChildrenHomeAlone
+        public enum Actions
+        {
+            None,
+            SignedPapers,
+            WentToWork,
+            PickingKidsUp,
+            ForgotToPickKidsUp,
+            LetKidsStayUp,
+            SleepingOnCouch,
+            WantsFullCustody,
+            WantsNoCustody,
+            WantsSplitCustody,
+            GaveKidsPancakes,
+            LawyerAtCourt,
+            WifeAndKidsHome,
+            FriendAtTown,
+            KidsAtSchool,
+            KidsHome,
+            DogHome,
+            DidntDisciplineKids,
+            NeitherParentUnfit,
+            WantsTheDog,
+            GotLawyerNumber,
+            WentOutPartying,
+            DeadDog,
+            LeftChildrenHomeAlone
+
+
+        }
+
+        public Actions actionsCondition;
     }
 
-    public Actions actions;
+    public int actionArrayLength;
+    public List<ActionListElement> actionArray;
+
+    private void OnEnable()
+    {
+        if (actionArray == null)
+        {
+            actionArray = new List<ActionListElement>(new ActionListElement[actionArrayLength]);
+            Debug.Log("Awake");
+
+            for (int i = 0; i < actionArrayLength; i++)
+            {
+                //create new data object
+                var tmp = new ActionListElement();
+
+                //store the Data object in our dataArray
+                actionArray[i] = tmp;
+            }
+        }
+    }
+
 
     [Header("Attitude Conditions")]
-
     public bool attitudeCondition;
 
     public Line.AttitudeEffects.AttitudesCharacter attitudes;

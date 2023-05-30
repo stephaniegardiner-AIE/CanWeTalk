@@ -27,15 +27,15 @@ public class Actions : MonoBehaviour
 
     public void MakeActionList()
     {
-        var actionsCount = LineBlock.Actions.GetNames(typeof(LineBlock.Actions)).Length;
+        var actionsCount = LineBlock.ActionListElement.Actions.GetNames(typeof(LineBlock.ActionListElement)).Length;
 
         //actionList = new Dictionary<string, bool>();
 
 
         for (int i = 0; i < actionsCount; i++)
         {
-            var actionNumber = (LineBlock.Actions)i;
-            var actionDisplayStatus = (LineBlock.Actions)actionNumber;
+            var actionNumber = (LineBlock.ActionListElement.Actions)i;
+            var actionDisplayStatus = (LineBlock.ActionListElement.Actions)actionNumber;
             string boolName = actionDisplayStatus.ToString();
 
 
@@ -63,27 +63,28 @@ public class Actions : MonoBehaviour
 
         public void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("Actions").Length == 1)
-        {
-            //DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-           // Destroy(gameObject);
-        }
+
+            DontDestroyOnLoad(gameObject);
+
 ;
         actionList.Clear();
-        MakeActionList();
+        //MakeActionList();
 
     }
 
 
 
-    public void SetTrue(LineBlock.Actions action)
+    public void SetTrue(LineBlock.ActionListElement.Actions action)
     {
         int actionNumber = (int)action;
         actionList[actionNumber] = true;
 
     }
 
+    public void AssignSelf()
+    {
+        ActivityManager thisone = FindObjectOfType<ActivityManager>();
+
+        thisone.actions = this;
+    }
 }

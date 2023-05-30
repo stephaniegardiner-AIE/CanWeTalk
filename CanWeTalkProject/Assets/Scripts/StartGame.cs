@@ -17,6 +17,7 @@ public class StartGame : MonoBehaviour
     public ActivityManager activityManager;
     public Scenes sceneManager;
     public GameStructure gameStructure;
+    public Actions actions;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class StartGame : MonoBehaviour
         sceneManager.AssignSelf();
         gameStructure = FindObjectOfType<GameStructure>();
         gameStructure.AssignSelf();
+        actions = FindObjectOfType<Actions>();
+        actions.AssignSelf();
     }
 
     public void StartTheGame()

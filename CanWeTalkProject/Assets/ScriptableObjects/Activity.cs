@@ -18,7 +18,7 @@ public class Activity : ScriptableObject
 
     [Header("Action Conditions")]
     public int actionArrayLength;
-    public List<LineBlock.Actions> actionArray;
+    public List<LineBlock.ActionListElement> actionArray;
 
     [Header("Day Type Conditions")]
     public int dayTypeArrayLength;
@@ -64,11 +64,11 @@ public class Activity : ScriptableObject
 
         if (actionArray == null)
         {
-            actionArray = new List<LineBlock.Actions>(new LineBlock.Actions[actionArrayLength]);
+            actionArray = new List<LineBlock.ActionListElement>(new LineBlock.ActionListElement[actionArrayLength]);
 
             for (int i = 0; i < actionArrayLength; i++)
             {
-                var tmp = new LineBlock.Actions();
+                var tmp = new LineBlock.ActionListElement();
 
                 actionArray[i] = tmp;
             }

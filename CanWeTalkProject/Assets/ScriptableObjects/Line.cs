@@ -106,7 +106,7 @@ public class Line : ScriptableObject
     }
     public bool hasAction;
 
-    public LineBlock.Actions action;
+    public LineBlock.ActionListElement action;
 
     
 }

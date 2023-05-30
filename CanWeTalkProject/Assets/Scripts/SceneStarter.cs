@@ -116,12 +116,12 @@ public class SceneStarter : MonoBehaviour
 
             contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
 
-        spriteManager = GameObject.FindWithTag("SpriteManager").GetComponent<SpriteManager>(); ;
+        /*spriteManager = GameObject.FindWithTag("SpriteManager").GetComponent<SpriteManager>(); ;
         characterManager = GameObject.FindWithTag("CharacterManager").GetComponent<CharacterManager>();
         attitudeManager = GameObject.FindWithTag("AttitudeManager").GetComponent<AttitudeManager>();
         activityManager = GameObject.FindWithTag("ActivityManager").GetComponent<ActivityManager>();
         sceneManager = GameObject.FindWithTag("SceneManager").GetComponent<Scenes>();
-        actions = GameObject.FindWithTag("Actions").GetComponent<Actions>();
+        actions = GameObject.FindWithTag("Actions").GetComponent<Actions>();*/
 
     /* }
      else
@@ -239,7 +239,7 @@ public class SceneStarter : MonoBehaviour
         }
         else
         {
-            if (currentScene.lineBlocks.Length != 0)
+            if (currentScene.lineBlocks.Length != 0 && currentScene.lineBlocks != null)
             {
                 if (lineNumber > currentLineBlock.lines.Length - 1)
                 {
