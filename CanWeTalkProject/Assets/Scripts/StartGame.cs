@@ -12,11 +12,26 @@ using System.Linq;
 public class StartGame : MonoBehaviour
 {
     public CharacterManager characterManager;
+    public SpriteManager spriteManager;
+    public AttitudeManager attitudeManager;
+    public ActivityManager activityManager;
+    public Scenes sceneManager;
+    public GameStructure gameStructure;
 
     void Start()
     {
         characterManager = FindObjectOfType<CharacterManager>();
         characterManager.AssignSelf();
+        spriteManager = FindObjectOfType<SpriteManager>();
+        spriteManager.AssignSelf();
+        attitudeManager = FindObjectOfType<AttitudeManager>();
+        attitudeManager.AssignSelf();
+        activityManager = FindObjectOfType<ActivityManager>();
+        activityManager.AssignSelf();
+        sceneManager = FindObjectOfType<Scenes>();
+        sceneManager.AssignSelf();
+        gameStructure = FindObjectOfType<GameStructure>();
+        gameStructure.AssignSelf();
     }
 
     public void StartTheGame()

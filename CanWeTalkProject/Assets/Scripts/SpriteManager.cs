@@ -64,14 +64,9 @@ public class SpriteManager : MonoBehaviour
 
     private void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("SpriteManager").Length == 1)
-        {
-           // DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-           // Destroy(gameObject);
-        }
+
+           DontDestroyOnLoad(gameObject);
+
         
     }
     public void FigureCharacterSprites(Line.Character character)
@@ -522,6 +517,12 @@ public class SpriteManager : MonoBehaviour
         primaryCharacter = null;
 
         
+    }
+
+    public void AssignSelf()
+    {
+        SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        thisone.spriteManager = this;
     }
 
     private void MakeNull(GameObject gameObject)

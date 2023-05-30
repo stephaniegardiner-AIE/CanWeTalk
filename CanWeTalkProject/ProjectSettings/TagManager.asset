@@ -15,6 +15,12 @@ TagManager:
   - SpriteManager
   - SceneStarter
   - Content
+  - YouBar
+  - WifeBar
+  - KidsBar
+  - DogBar
+  - FriendBar
+  - LawyerBar
   layers:
   - Default
   - TransparentFX

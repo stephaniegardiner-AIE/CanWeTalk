@@ -12,14 +12,8 @@ public class Scenes : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("SceneManager").Length == 1)
-        {
-           // DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-           // Destroy(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
+        
 ;        audioSource = GetComponent<AudioSource>();
     }
 
@@ -27,6 +21,12 @@ public class Scenes : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AssignSelf()
+    {
+        SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        thisone.sceneManager = this;
     }
 
     void OnReloadScene()

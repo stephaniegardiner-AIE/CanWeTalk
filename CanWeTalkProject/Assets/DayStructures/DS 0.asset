@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b068059426eab92488efcf98df5ca258, type: 3}
   m_Name: DS 0
   m_EditorClassIdentifier: 
-  scene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  scene: {fileID: 102900000, guid: 8216eac011acf784ba3320185ef34605, type: 3}
   morning: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   afternoon: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   night: {fileID: 11400000, guid: c1b842aa331be234cb67534a8836d56c, type: 2}
+  dayTime: 0
