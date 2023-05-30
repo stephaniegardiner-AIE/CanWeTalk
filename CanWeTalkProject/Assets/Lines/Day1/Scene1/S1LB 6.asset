@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8af505186dae44344a060a5b7c531d89, type: 2}
   - {fileID: 11400000, guid: 6deb1309467e89a4fb83784017b4dbc1, type: 2}
   - {fileID: 11400000, guid: 99c14d346ab5d1b458e01cfe8f169b11, type: 2}
-  endDecisionBlock: {fileID: 0}
+  endDecisionBlock: {fileID: 11400000, guid: 49987470533416047a4a046690651771, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextSceneNumber: 0
