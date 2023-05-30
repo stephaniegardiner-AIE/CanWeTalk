@@ -15,21 +15,9 @@ public class GameStructure : MonoBehaviour
     void Start()
     {
 
-        if (GameObject.FindGameObjectsWithTag("GameStructure").Length == 1)
-        {
-           // DontDestroyOnLoad(gameObject);
+
+           DontDestroyOnLoad(gameObject);
             StartGame();
-            Debug.Log("lets start the game");
-        }
-        else
-        {
-           // Destroy(gameObject);
-
-            Debug.Log("DESTROY");
-        }
-
-        
-        
 
 
         Debug.Log("???");
@@ -40,7 +28,11 @@ public class GameStructure : MonoBehaviour
     {
 
     }
-
+    public void AssignSelf()
+    {
+        SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        thisone.gameStructure = this;
+    }
     private void OnAwake()
     {
         if (dayStructure == null)

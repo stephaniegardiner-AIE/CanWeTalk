@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 47755618}
   m_Layer: 5
   m_Name: DogAttitudeBar
-  m_TagString: Untagged
+  m_TagString: DogBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 302112245}
   m_Layer: 5
   m_Name: FriendAttitudeBar (1)
-  m_TagString: Untagged
+  m_TagString: FriendBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,84 +699,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379601011}
   m_CullTransparentMesh: 1
---- !u!1 &446210111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 446210113}
-  - component: {fileID: 446210112}
-  m_Layer: 0
-  m_Name: SpriteManager
-  m_TagString: SpriteManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &446210112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446210111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20a5685da18ea148b50947edbd5ff88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 982518831}
-  wifeSpriteGO: {fileID: 7298558987304019034, guid: f7cf8ee828c19b44793895fe7b468dcf, type: 3}
-  boySpriteGO: {fileID: 7145855214203742274, guid: db56d64cf00738949b75ceb8137b9a4c, type: 3}
-  girlSpriteGO: {fileID: 6577811365108687421, guid: c3d8cc06a10070342b01943a542e9bbb, type: 3}
-  dogSpriteGO: {fileID: 1784714601309588225, guid: e0f6e86cd2719c34497b8978a69df2cb, type: 3}
-  friendSpriteGO: {fileID: 6036595002347879435, guid: 03878e11ff16e2241893ee8736130c70, type: 3}
-  lawyerSpriteGO: {fileID: 822313385104745259, guid: 7752fe7ca3e7064469386a6129b65d05, type: 3}
-  principalSpriteGO: {fileID: 0}
-  spriteLocation1: {fileID: 233665225}
-  spriteLocation2: {fileID: 2003356137}
-  spriteLocation3: {fileID: 2113111555}
-  spriteLocation4: {fileID: 0}
-  character: 0
-  sizeLerpDuration: 0.25
-  opacityLerpDuration: 0.5
-  positionLerpDuration: 0.5
-  primaryCharacter: {fileID: 0}
-  secondaryCharacterSprites: []
-  activeCharacterSprites: []
-  wifeActive: 0
-  boyActive: 0
-  girlActive: 0
-  dogActive: 0
-  friendActive: 0
-  lawyerActive: 0
-  principalActive: 0
-  activeWifeSprite: {fileID: 0}
-  activeBoySprite: {fileID: 0}
-  activeGirlSprite: {fileID: 0}
-  activeDogSprite: {fileID: 0}
-  activeFriendSprite: {fileID: 0}
-  activeLawyerSprite: {fileID: 0}
-  activePrincipalSprite: {fileID: 0}
-  attitudeIconTime: 2
---- !u!4 &446210113
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446210111}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 971.9824, y: 634.5, z: 5.1063232}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465174882
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &571555460
 GameObject:
@@ -974,7 +896,7 @@ GameObject:
   - component: {fileID: 571555462}
   m_Layer: 5
   m_Name: WifeAttitudeBar
-  m_TagString: Untagged
+  m_TagString: WifeBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,6 +959,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571555460}
   m_CullTransparentMesh: 1
+--- !u!1 &577506175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577506177}
+  - component: {fileID: 577506176}
+  m_Layer: 0
+  m_Name: Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577506176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577506175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed92d150f1f5b94f833294f164eaa3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterManager: {fileID: 0}
+  spriteManager: {fileID: 0}
+  attitudeManager: {fileID: 0}
+  activityManager: {fileID: 0}
+  sceneManager: {fileID: 0}
+  gameStructure: {fileID: 0}
+--- !u!4 &577506177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577506175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 617.58307, y: 271.5237, z: 2.0578003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652330350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1022,7 @@ GameObject:
   - component: {fileID: 652330352}
   m_Layer: 5
   m_Name: KidsAttitudeBar
-  m_TagString: Untagged
+  m_TagString: KidsBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1713,67 +1685,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1189340549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1189340550}
-  - component: {fileID: 1189340551}
-  m_Layer: 0
-  m_Name: CharacterManager
-  m_TagString: CharacterManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1189340550
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189340549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1189340551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189340549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322c7dd784d46ec42bd80f5e375aea41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  descriptionColor: {r: 0, g: 0, b: 0, a: 0}
-  youName: Brad
-  youColor: {r: 1, g: 1, b: 1, a: 1}
-  wifeName: Jeanine
-  wifeColor: {r: 1, g: 0, b: 0, a: 1}
-  boyName: Tommy
-  boyColor: {r: 0.98823535, g: 0.45882356, b: 0.21176472, a: 1}
-  girlName: Susie
-  girlColor: {r: 1, g: 0.74509805, b: 0.043137256, a: 1}
-  dogName: Bones
-  dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
-  friendName: Dazza
-  friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
-  lawyerName: Darlene
-  lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
-  principalName: Margaret
-  principalColor: {r: 0.9254902, g: 0.21960783, b: 0.7787786, a: 1}
 --- !u!1 &1258858587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,13 +1715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e3121daad64df47bdfef8019f19393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteManager: {fileID: 446210112}
-  characterManager: {fileID: 1189340551}
-  attitudeManager: {fileID: 2023615025}
-  activityManager: {fileID: 1605725101}
-  sceneManager: {fileID: 1866968159}
+  spriteManager: {fileID: 0}
+  characterManager: {fileID: 0}
+  attitudeManager: {fileID: 0}
+  activityManager: {fileID: 0}
+  sceneManager: {fileID: 0}
   currentScene: {fileID: 11400000, guid: 71c7d5d92259a204da1eaac9d6822f78, type: 2}
   actions: {fileID: 479706494}
+  gameStructure: {fileID: 0}
   sceneNumber: 0
   decision: 0
   dayNumber: 0
@@ -1983,7 +1895,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 100
   m_OnValueChanged:
@@ -2253,7 +2165,7 @@ GameObject:
   - component: {fileID: 1488598398}
   m_Layer: 5
   m_Name: LawyerAttitudeBar (2)
-  m_TagString: Untagged
+  m_TagString: LawyerBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2505,70 +2417,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1605725100
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1605725102}
-  - component: {fileID: 1605725101}
-  m_Layer: 0
-  m_Name: ActivityManager
-  m_TagString: ActivityManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1605725101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605725100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c743de10d31c441ab6d1eb613a3716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: {fileID: 1258858588}
-  actions: {fileID: 479706494}
-  activities:
-  - {fileID: 11400000, guid: 4616fc2f8aa66874384bfdaa6c08d9f5, type: 2}
-  - {fileID: 11400000, guid: 0d1b491018768fa488162c297ffd5200, type: 2}
-  - {fileID: 11400000, guid: e5d1b39a1317c0f418ba9d7c8ea63c44, type: 2}
-  - {fileID: 11400000, guid: 269c0dcdabadbc34682a044d7c834868, type: 2}
-  - {fileID: 11400000, guid: 52ef178f62c0df44cbb5eb744f85565b, type: 2}
-  - {fileID: 11400000, guid: 27fbe98c2979b3d42ab527e9d1b78a66, type: 2}
-  - {fileID: 11400000, guid: 05ac5d5b0209d49449f4e72a26d4a900, type: 2}
-  - {fileID: 11400000, guid: 86eeb648c8ec4c147b67892398b57297, type: 2}
-  - {fileID: 11400000, guid: 5312ebcc45432e946b0d54be5943493a, type: 2}
-  - {fileID: 11400000, guid: 52ca35b86504e7c4fb993060e1595189, type: 2}
-  - {fileID: 11400000, guid: 3c3eda392f715844d82b5bf95348ff2f, type: 2}
-  - {fileID: 11400000, guid: 3fce6eb14bf72af44b0e7a363c04c671, type: 2}
-  - {fileID: 11400000, guid: a58afd1dc934c8648b817d83fb45b2f7, type: 2}
-  - {fileID: 11400000, guid: c40aa1ee66fb8b342a1983e662ebcedb, type: 2}
-  - {fileID: 11400000, guid: 3c2409b5288d29d4c993241521389b07, type: 2}
-  - {fileID: 11400000, guid: 0aca0ae938ed97143a70dd254b733b7a, type: 2}
-  currentActivites: []
---- !u!4 &1605725102
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605725100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1648131900
 GameObject:
   m_ObjectHideFlags: 1
@@ -2944,7 +2792,7 @@ GameObject:
   - component: {fileID: 1845271955}
   m_Layer: 5
   m_Name: YouAttitudeBar
-  m_TagString: Untagged
+  m_TagString: YouBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3142,215 +2990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852755111}
   m_CullTransparentMesh: 1
---- !u!1 &1866968157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1866968158}
-  - component: {fileID: 1866968159}
-  - component: {fileID: 1866968160}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: SceneManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1866968158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866968157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1866968159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866968157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfac9855af3cfb442a98f29378006da0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
-  - {fileID: 11400000, guid: 1fcd989f40a13074c9b5b8c5b3683d3e, type: 2}
-  - {fileID: 11400000, guid: e8bf15452ee7ca447b68423f46467bf3, type: 2}
-  audioSource: {fileID: 0}
---- !u!82 &1866968160
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866968157}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &1889032816
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1889032818}
-  - component: {fileID: 1889032817}
-  m_Layer: 0
-  m_Name: GameStructure
-  m_TagString: GameStructure
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1889032817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889032816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e939f79d57453b408f09476a6377207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneStarter: {fileID: 1258858588}
-  daysAmount: 14
-  currentDay: 0
-  currentDaySO: {fileID: 0}
-  dayStructure:
-  - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
-  - {fileID: 11400000, guid: 809cf8730094c774996eb587eb459e34, type: 2}
-  - {fileID: 11400000, guid: 4b6fefcda94c9a54e986b8e8a482a153, type: 2}
-  - {fileID: 11400000, guid: 74a58348eadae3248a1be8a0585d8a5c, type: 2}
-  - {fileID: 11400000, guid: a4ab74e20df93744cab196bdfc2f8c24, type: 2}
-  - {fileID: 11400000, guid: 7081adc2b1b75524697772ecca7c3f94, type: 2}
-  - {fileID: 11400000, guid: aa185c9557d6c0441b0e2bc2e7dd6e1f, type: 2}
-  - {fileID: 11400000, guid: 17be221fd204a3040b293939650ed043, type: 2}
-  - {fileID: 11400000, guid: 19e6ce28516a66748934d910183d32aa, type: 2}
-  - {fileID: 11400000, guid: d52d3affe38364942acfbd51519ed8ca, type: 2}
-  - {fileID: 11400000, guid: 2d67cfb141e24af43921184779a366d8, type: 2}
-  - {fileID: 11400000, guid: 97867cd123acbe54992e97105bfe69c5, type: 2}
-  - {fileID: 11400000, guid: 9ab558294c116c043af6ae62ddc9550e, type: 2}
-  - {fileID: 11400000, guid: 65b2d05e4f611864dad7351bb38ed267, type: 2}
---- !u!4 &1889032818
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889032816}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925744256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,73 +3199,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &2023615024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2023615026}
-  - component: {fileID: 2023615025}
-  m_Layer: 0
-  m_Name: AttitudeManager
-  m_TagString: AttitudeManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2023615025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023615024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a45a29fcb06b7264eb2f701795031060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteManager: {fileID: 446210112}
-  youAttitudeLevel: 100
-  wifeAttitudeLevel: 50
-  kidsAttitudeLevel: 80
-  dogAttitudeLevel: 100
-  friendAttitudeLevel: 85
-  lawyerAttitudeLevel: 50
-  principalAttitudeLevel: 55
-  megaLoss: -20
-  highLoss: -10
-  midLoss: -5
-  lowLoss: -2
-  lowGain: 2
-  midGain: 3
-  highGain: 10
-  megaGain: 20
-  youAttitudeBar: {fileID: 1845271955}
-  wifeAttitudeBar: {fileID: 571555462}
-  kidsAttitudeBar: {fileID: 652330352}
-  dogAttitudeBar: {fileID: 47755618}
-  friendAttitudeBar: {fileID: 302112245}
-  lawyerAttitudeBar: {fileID: 1488598398}
-  attitudeLerpDuration: 1
---- !u!4 &2023615026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023615024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113111553
 GameObject:
   m_ObjectHideFlags: 0

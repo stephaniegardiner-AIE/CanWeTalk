@@ -41,16 +41,9 @@ public class AttitudeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("AttitudeManager").Length == 1)
-        {
-           // DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            //Destroy(gameObject);
-        }
+      
+        DontDestroyOnLoad(gameObject);
 
-       
         SetAttitude();
     }
 
@@ -198,5 +191,24 @@ public class AttitudeManager : MonoBehaviour
             yield return null;
         }
         _valueToLerp = endValue;
+    }
+
+    public void AssignSelf()
+    {
+        SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        thisone.attitudeManager = this;
+
+        GameObject youBar = GameObject.FindGameObjectWithTag("YouBar");
+        youAttitudeBar = youBar.GetComponent<Image>();
+        GameObject wifeBar = GameObject.FindGameObjectWithTag("WifeBar");
+        wifeAttitudeBar = wifeBar.GetComponent<Image>();
+        GameObject kidsBar = GameObject.FindGameObjectWithTag("KidsBar");
+        kidsAttitudeBar = kidsBar.GetComponent<Image>();
+        GameObject dogBar = GameObject.FindGameObjectWithTag("DogBar");
+        dogAttitudeBar = dogBar.GetComponent<Image>();
+        GameObject friendBar = GameObject.FindGameObjectWithTag("FriendBar");
+        friendAttitudeBar = friendBar.GetComponent<Image>();
+        GameObject lawyerBar = GameObject.FindGameObjectWithTag("LawyerBar");
+        lawyerAttitudeBar = lawyerBar.GetComponent<Image>();
     }
 }
