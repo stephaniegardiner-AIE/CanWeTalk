@@ -1619,13 +1619,13 @@ MonoBehaviour:
   lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
   principalName: Margaret
   principalColor: {r: 0.9254902, g: 0.21960783, b: 0.7787786, a: 1}
-  inputFieldWife: {fileID: 0}
-  inputFieldSon: {fileID: 0}
-  inputFieldDaughter: {fileID: 0}
-  inputFieldDog: {fileID: 0}
-  inputFieldFriend: {fileID: 0}
-  inputFieldLawyer: {fileID: 0}
-  inputFieldYou: {fileID: 0}
+  inputFieldWife: {fileID: 55016641}
+  inputFieldSon: {fileID: 752002303}
+  inputFieldDaughter: {fileID: 1318618510}
+  inputFieldDog: {fileID: 1407751278}
+  inputFieldFriend: {fileID: 1671159840}
+  inputFieldLawyer: {fileID: 1100063773}
+  inputFieldYou: {fileID: 1457422695}
 --- !u!4 &577116924
 Transform:
   m_ObjectHideFlags: 0
