@@ -185,7 +185,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63794385
 GameObject:
@@ -290,67 +290,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &416378231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 416378233}
-  - component: {fileID: 416378232}
-  m_Layer: 0
-  m_Name: CharacterManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &416378232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416378231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322c7dd784d46ec42bd80f5e375aea41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  descriptionColor: {r: 0, g: 0, b: 0, a: 0}
-  youName: Brad
-  youColor: {r: 1, g: 1, b: 1, a: 1}
-  wifeName: Jeanine
-  wifeColor: {r: 1, g: 0, b: 0, a: 1}
-  boyName: Tommy
-  boyColor: {r: 0.98823535, g: 0.45882356, b: 0.21176472, a: 1}
-  girlName: Susie
-  girlColor: {r: 1, g: 0.74509805, b: 0.043137256, a: 1}
-  dogName: Bones
-  dogColor: {r: 0.227451, g: 0.5254902, b: 1, a: 1}
-  friendName: Dazza
-  friendColor: {r: 0.36078432, g: 0.6392157, b: 0.18823531, a: 1}
-  lawyerName: Darlene
-  lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
-  principalName: Margaret
-  principalColor: {r: 0.9254902, g: 0.21960783, b: 0.7787786, a: 1}
---- !u!4 &416378233
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416378231}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &843766904
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +716,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334761006
 GameObject:
@@ -964,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 1334761007}
-  characterManager: {fileID: 416378232}
+  characterManager: {fileID: 0}
   attitudeManager: {fileID: 1283915212}
   activityManager: {fileID: 41861195}
   sceneManager: {fileID: 1075177740}
@@ -1314,7 +1253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1728574333
 GameObject:
@@ -1373,7 +1312,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1874474871
 GameObject:

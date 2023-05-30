@@ -11,15 +11,25 @@ using System.Linq;
 
 public class StartGame : MonoBehaviour
 {
+    public CharacterManager characterManager;
 
     void Start()
     {
+        characterManager = FindObjectOfType<CharacterManager>();
+        characterManager.AssignSelf();
+    }
 
+    public void StartTheGame()
+    {
+        SceneManager.LoadScene("Day 1");
+    }
+
+    public void Test()
+    {
     }
 
     public void NameCharacters()
     {
-        Debug.Log("Y");
         SceneManager.LoadScene("CharacterNamer");
     }
 
