@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,13 +17,13 @@ public class GameStructure : MonoBehaviour
 
         if (GameObject.FindGameObjectsWithTag("GameStructure").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
             StartGame();
             Debug.Log("lets start the game");
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
 
             Debug.Log("DESTROY");
         }
@@ -66,7 +67,7 @@ public class GameStructure : MonoBehaviour
         currentDay++;
         currentDaySO = dayStructure[currentDay];
         //sceneStarter = GameObject.FindGameObjectWithTag("SceneStarter").GetComponent<SceneStarter>();
-        LoadScene();
+        //LoadScene();
     }
 
     public void StartGame()
@@ -84,7 +85,7 @@ public class GameStructure : MonoBehaviour
             if (SceneManager.GetActiveScene().name == currentDaySO.scene.name)
             {
                 
-                LoadScene();
+                //LoadScene();
                 Debug.Log("yo waht");
                 RunScene();
             }
@@ -95,7 +96,7 @@ public class GameStructure : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(currentDaySO.scene.name);
+        //SceneManager.LoadScene(currentDaySO.scene.name);
         Debug.Log("load the scene");
 
         
@@ -104,11 +105,16 @@ public class GameStructure : MonoBehaviour
 
     public void RunScene()
     {
-       // if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
-       // {
+        if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
+        {
             Debug.Log("Run activity");
             sceneStarter.ActivityRunner();
-       // }
+        }
+    }
+
+    public void GoToNextDayTime()
+    {
+
     }
 
 }

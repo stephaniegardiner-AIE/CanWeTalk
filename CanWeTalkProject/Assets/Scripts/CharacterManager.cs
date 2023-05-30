@@ -44,11 +44,11 @@ public class CharacterManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("CharacterManager").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
     }

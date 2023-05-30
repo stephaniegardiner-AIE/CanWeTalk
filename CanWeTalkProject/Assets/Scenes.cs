@@ -14,11 +14,11 @@ public class Scenes : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("SceneManager").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 ;        audioSource = GetComponent<AudioSource>();
     }

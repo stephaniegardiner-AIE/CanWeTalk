@@ -15,11 +15,11 @@ public class ActivityManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("ActivityManager").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
         //CreateActivityList();

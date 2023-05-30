@@ -66,11 +66,11 @@ public class SpriteManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("SpriteManager").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
         
     }

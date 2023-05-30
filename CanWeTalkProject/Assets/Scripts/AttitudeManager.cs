@@ -43,11 +43,11 @@ public class AttitudeManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("AttitudeManager").Length == 1)
         {
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
        
