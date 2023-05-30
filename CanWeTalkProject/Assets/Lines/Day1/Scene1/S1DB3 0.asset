@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d685774c63c7f4aa1a2a2267c8644f, type: 3}
-  m_Name: S1DB0 0
+  m_Name: S1DB3 0
   m_EditorClassIdentifier: 
-  decisionName: Blame their mother
+  decisionName: Blame their mother.
   followingLineBlock: {fileID: 11400000, guid: eccd7652bb448994b9fe55fa14d28888, type: 2}
