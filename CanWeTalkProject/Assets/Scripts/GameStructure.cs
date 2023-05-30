@@ -18,15 +18,18 @@ public class GameStructure : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             StartGame();
+            Debug.Log("lets start the game");
         }
         else
         {
             Destroy(gameObject);
+
+            Debug.Log("DESTROY");
         }
 
-     
         
         
+
 
         Debug.Log("???");
     }
@@ -62,6 +65,7 @@ public class GameStructure : MonoBehaviour
     {
         currentDay++;
         currentDaySO = dayStructure[currentDay];
+        //sceneStarter = GameObject.FindGameObjectWithTag("SceneStarter").GetComponent<SceneStarter>();
         LoadScene();
     }
 
@@ -74,6 +78,8 @@ public class GameStructure : MonoBehaviour
         if (currentDaySO == null)
         {
             currentDaySO = dayStructure[currentDay];
+            //sceneStarter = GameObject.FindGameObjectWithTag("SceneStarter").GetComponent<SceneStarter>();
+            //Debug.Log(GameObject.FindGameObjectWithTag("SceneStarter"));
 
             if (SceneManager.GetActiveScene().name == currentDaySO.scene.name)
             {
@@ -91,6 +97,8 @@ public class GameStructure : MonoBehaviour
     {
         SceneManager.LoadScene(currentDaySO.scene.name);
         Debug.Log("load the scene");
+
+        
         
     }
 

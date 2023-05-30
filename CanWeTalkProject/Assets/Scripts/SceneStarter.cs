@@ -92,20 +92,51 @@ public class SceneStarter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (currentScene.lineBlocks.Length != 0)
+
+      /*  if (GameObject.FindGameObjectsWithTag("AttitudeManager").Length == 1)
         {
-            currentLineBlock = currentScene.lineBlocks[0];
-        }
-        
-        //LineRunner();
-        
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(content);
+            DontDestroyOnLoad(sceneBackground);
+            DontDestroyOnLoad(dayNumberText);
+            DontDestroyOnLoad(weekdayText);
+            DontDestroyOnLoad (dayTimeText);
+            DontDestroyOnLoad(currentText); */
 
-        contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
 
-       // SetSceneInfo();
-       //ActivityRunner();
-        
-    }
+
+            if (currentScene.lineBlocks.Length != 0)
+            {
+                currentLineBlock = currentScene.lineBlocks[0];
+            }
+
+            //LineRunner();
+
+
+            contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
+
+        spriteManager = GameObject.FindWithTag("SpriteManager").GetComponent<SpriteManager>(); ;
+        characterManager = GameObject.FindWithTag("CharacterManager").GetComponent<CharacterManager>();
+        attitudeManager = GameObject.FindWithTag("AttitudeManager").GetComponent<AttitudeManager>();
+        activityManager = GameObject.FindWithTag("ActivityManager").GetComponent<ActivityManager>();
+        sceneManager = GameObject.FindWithTag("SceneManager").GetComponent<Scenes>();
+        actions = GameObject.FindWithTag("Actions").GetComponent<Actions>();
+
+    /* }
+     else
+     {
+         Destroy(gameObject);
+
+
+     } */
+
+
+
+
+    // SetSceneInfo();
+    //ActivityRunner();
+
+}
 
     public void SetSceneInfo()
     {
@@ -501,6 +532,8 @@ public class SceneStarter : MonoBehaviour
 
     public void ActivityRunner()
     {
+        Debug.Log("Run Activity");
+        
         activityManager.CreateActivityList();
 
         //instantiates the activity speech block

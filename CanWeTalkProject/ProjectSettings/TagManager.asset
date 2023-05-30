@@ -13,6 +13,8 @@ TagManager:
   - SceneManager
   - Actions
   - SpriteManager
+  - SceneStarter
+  - Content
   layers:
   - Default
   - TransparentFX
