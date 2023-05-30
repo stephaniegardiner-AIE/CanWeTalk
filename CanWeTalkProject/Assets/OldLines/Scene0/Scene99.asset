@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fa3570375149a5488132bf07b65a405, type: 3}
-  m_Name: S2
+  m_Script: {fileID: 11500000, guid: ddbc0237bf348b343a35ea98eb507eeb, type: 3}
+  m_Name: Scene99
   m_EditorClassIdentifier: 
   lineBlocks:
-  - {fileID: 11400000, guid: ac710c4b0be4678419b3f178654b9edb, type: 2}
-  dayNumber: 2
-  weekday: 1
-  dayTime: 1
-  dayType: 1
+  - {fileID: 11400000, guid: 71dcc9b5bf7f94042946d609c3f1f11a, type: 2}
+  dayNumber: 0
+  weekday: 0
+  dayTime: 0
+  dayType: 0
   location: 0
