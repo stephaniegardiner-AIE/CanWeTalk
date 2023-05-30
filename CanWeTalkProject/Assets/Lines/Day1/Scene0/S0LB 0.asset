@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ecb819499a7c1be408563e30cbf16dbf, type: 2}
   - {fileID: 11400000, guid: 4da4f1e0aea72634183aa018bfc5de7a, type: 2}
   - {fileID: 11400000, guid: 339ea96d19160bd4eb9bbb3a5e62a3bd, type: 2}
-  endDecisionBlock: {fileID: 0}
+  endDecisionBlock: {fileID: 11400000, guid: 75a991572dab58840a2261e08dc70a6b, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextSceneNumber: 0

@@ -20,5 +20,5 @@ MonoBehaviour:
     attitudeChangeAmount: 5
   - attitudeCharacter: 1
     attitudeChangeAmount: 5
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 1
