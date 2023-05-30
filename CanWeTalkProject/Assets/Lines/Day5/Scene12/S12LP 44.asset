@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S12LP 44
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 95813623075fdd44294cda6b7253fe45, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S12LP 46
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: c722b8de2add2c34b887600f16f9a29e, type: 2}
+  - {fileID: 11400000, guid: 450b8cff3ce0a774b9f0ed96a7cf42aa, type: 2}
+  - {fileID: 11400000, guid: 7d29e3f243eb8d440a7e2c664cdbbe41, type: 2}
+  - {fileID: 11400000, guid: faab39e1b58dba94db4c73c602da83b6, type: 2}
+  - {fileID: 11400000, guid: 02bd49caf1ca2f6479fb99cdd32c396a, type: 2}
+  - {fileID: 11400000, guid: de409962d757fff41808f179660a7d1a, type: 2}
+  - {fileID: 11400000, guid: ec1909400d07e3146a68c2a17984be57, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
