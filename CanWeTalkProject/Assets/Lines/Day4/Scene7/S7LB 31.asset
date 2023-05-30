@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S7LB 31
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 5f5a9b18507909e49aab82ee573d30ab, type: 2}
+  - {fileID: 11400000, guid: 0d9526dd8a8fcd546a50d8fd86fc9d2c, type: 2}
+  - {fileID: 11400000, guid: 73597cb823cf1f14a8b3100e4a3c7be6, type: 2}
+  - {fileID: 11400000, guid: 0a81b16613796ce41a84ee529f6552ff, type: 2}
+  - {fileID: 11400000, guid: 8295807436bf96648a2c0055d3eb699a, type: 2}
+  - {fileID: 11400000, guid: 4289f3e580452f54392bb31065e3753d, type: 2}
+  - {fileID: 11400000, guid: 376954dfb0319a140a13d4c8e180fd86, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
