@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S11LB 42
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: d753755092ff3834c8b2b82b6f2f3171, type: 2}
+  - {fileID: 11400000, guid: 8e033e42951f6c545877d2eb9a60ee06, type: 2}
+  - {fileID: 11400000, guid: 34b573482450a32499b550ad768dc970, type: 2}
+  - {fileID: 11400000, guid: 5c7c78b915fe59e47b072e3ef8c489d1, type: 2}
+  - {fileID: 11400000, guid: d4d9993f841de3d4abf5a08f3a485e37, type: 2}
+  - {fileID: 11400000, guid: 5f6862a21d5722746b222781fe2c6a2f, type: 2}
+  - {fileID: 11400000, guid: c362095a9d76e3049808e948cc9c7896, type: 2}
+  - {fileID: 11400000, guid: 895f3dfab6318ab45bf50c7b2492d3d0, type: 2}
+  - {fileID: 11400000, guid: 15eb239edb0d2a54e85157d6614aa3a5, type: 2}
+  - {fileID: 11400000, guid: 8e55c537f9e56d14cad87e337d2e1fbf, type: 2}
+  - {fileID: 11400000, guid: ff7e1948b3767924b9509f86219a2586, type: 2}
+  - {fileID: 11400000, guid: 026a8a3434338a14fa44b19ab8c30ae2, type: 2}
+  - {fileID: 11400000, guid: f65ef420356b08e4f8f6b3077d867a4b, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
