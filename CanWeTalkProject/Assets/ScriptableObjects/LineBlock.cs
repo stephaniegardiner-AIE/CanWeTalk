@@ -100,8 +100,14 @@ public class LineBlock : ScriptableObject
         FriendAtTown,
         KidsAtSchool,
         KidsHome,
-        DogHome
- 
+        DogHome,
+        DidntDisciplineKids,
+        NeitherParentUnfit,
+        WantsTheDog,
+        GotLawyerNumber,
+        WentOutPartying,
+        DeadDog,
+        LeftChildrenHomeAlone
     }
 
     public Actions actions;

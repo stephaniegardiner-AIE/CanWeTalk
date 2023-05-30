@@ -341,7 +341,7 @@ public class SceneStarter : MonoBehaviour
 
         ResizeContent(line.GetComponent<RectTransform>().sizeDelta.y + tailHeight);
 
-        gameStructure.
+      //  gameStructure.
     }
 
     public void ChangeAction(Line currentLine)
