@@ -1754,13 +1754,6 @@ MonoBehaviour:
   lawyerColor: {r: 0.5137255, g: 0.21960786, b: 0.92549026, a: 1}
   principalName: Margaret
   principalColor: {r: 0.9254902, g: 0.21960783, b: 0.7787786, a: 1}
-  inputFieldWife: {fileID: 55016641}
-  inputFieldSon: {fileID: 752002303}
-  inputFieldDaughter: {fileID: 1318618510}
-  inputFieldDog: {fileID: 1407751278}
-  inputFieldFriend: {fileID: 1671159840}
-  inputFieldLawyer: {fileID: 1100063773}
-  inputFieldYou: {fileID: 1457422695}
 --- !u!4 &577116924
 Transform:
   m_ObjectHideFlags: 0
@@ -3420,7 +3413,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e939f79d57453b408f09476a6377207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneStarter: {fileID: 0}
   daysAmount: 14
+  currentDay: 0
+  currentDaySO: {fileID: 0}
   dayStructure:
   - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
   - {fileID: 11400000, guid: 809cf8730094c774996eb587eb459e34, type: 2}
@@ -5296,6 +5292,7 @@ MonoBehaviour:
   sceneManager: {fileID: 906270192}
   currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   actions: {fileID: 1876200796}
+  gameStructure: {fileID: 0}
   sceneNumber: 0
   decision: 0
   dayNumber: 0
