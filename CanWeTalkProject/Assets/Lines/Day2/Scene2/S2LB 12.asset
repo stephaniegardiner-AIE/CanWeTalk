@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S2LB 12
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: b917e0846f95b044bbea26e032093784, type: 2}
+  - {fileID: 11400000, guid: 5bbf256991191b84b94ec1fca17551fc, type: 2}
+  - {fileID: 11400000, guid: 2dfa336993bad65439ea9ee57df4fdc8, type: 2}
+  - {fileID: 11400000, guid: 9f8563ffaef06b043812f7bd9f778d31, type: 2}
+  - {fileID: 11400000, guid: 37fe161372b5e2149b52c144f27e1a0b, type: 2}
+  - {fileID: 11400000, guid: 83a797801fd704e45953d8304c1ea3e0, type: 2}
+  - {fileID: 11400000, guid: aa278fb9cc968bc4e92f524ee0a01c18, type: 2}
+  - {fileID: 11400000, guid: 21de5290382432245808bf29bb91a645, type: 2}
+  - {fileID: 11400000, guid: bcac7821ec1c6e049b5408b59167a437, type: 2}
+  - {fileID: 11400000, guid: 72d8920df27282f46b3c48eb9c3f0bdc, type: 2}
+  - {fileID: 11400000, guid: 9f694a90d051cac44ade45c3126e88ad, type: 2}
+  - {fileID: 11400000, guid: 644c19525d6b05f44a4b581207e887ec, type: 2}
+  - {fileID: 11400000, guid: 7c505b8bad49b80448fe0ae9f6a248ca, type: 2}
+  - {fileID: 11400000, guid: 651196ce3090b8c48a89704eb941d02b, type: 2}
+  - {fileID: 11400000, guid: 77362f1e1c19fcc4f9d7b45a2b3bc576, type: 2}
+  - {fileID: 11400000, guid: c4019009e0211a547bc2a6374768d507, type: 2}
+  - {fileID: 11400000, guid: 65f9692934b169a478fd44b74fa8db8b, type: 2}
+  - {fileID: 11400000, guid: 4d940a401c648ab42bff6bdbeae2b2e9, type: 2}
+  - {fileID: 11400000, guid: 7bdfd77aa94a4954991728e010a6b971, type: 2}
+  - {fileID: 11400000, guid: 216f973a5d65aaa4dbaab4379fcb5810, type: 2}
+  - {fileID: 11400000, guid: 7e9e4f0fb7e7af84b8892aa477e7998d, type: 2}
+  - {fileID: 11400000, guid: 768c793c212adf54bb5b21b59c4217d2, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}

@@ -16,7 +16,7 @@ public class SceneStarter : MonoBehaviour
     public AttitudeManager attitudeManager;
     public ActivityManager activityManager;
     public Scenes sceneManager;
-    public Scene currentScene;
+    public DialogScene currentScene;
     public Actions actions;
 
     public int sceneNumber;
@@ -25,9 +25,9 @@ public class SceneStarter : MonoBehaviour
 
     [Header("Scene Info")]
     public int dayNumber;
-    public Scene.WeekDay weekday;
-    public Scene.DayTime dayTime;
-    public Scene.Location location;
+    public DialogScene.WeekDay weekday;
+    public DialogScene.DayTime dayTime;
+    public DialogScene.Location location;
 
     [Header("Scene Objects")]
     public LineBlock currentLineBlock;
@@ -148,43 +148,43 @@ public class SceneStarter : MonoBehaviour
         dayTimeText.text = dayTime.ToString();
         //UpdateSceneBackground(dayTime, location);
 
-        if (location == Scene.Location.House)
+        if (location == DialogScene.Location.House)
         {
-            if (dayTime == Scene.DayTime.Morning)
+            if (dayTime == DialogScene.DayTime.Morning)
             {
                 sceneBackground.sprite = houseDay;
             }
-            if (dayTime == Scene.DayTime.Afternoon)
+            if (dayTime == DialogScene.DayTime.Afternoon)
             {
                 sceneBackground.sprite = houseAfternoon;
             }
-            if (dayTime == Scene.DayTime.Night)
+            if (dayTime == DialogScene.DayTime.Night)
             {
                 sceneBackground.sprite = houseNight;
             }
         }
-        if (location == Scene.Location.Court)
+        if (location == DialogScene.Location.Court)
         {
-            if (dayTime == Scene.DayTime.Morning)
+            if (dayTime == DialogScene.DayTime.Morning)
             {
                 sceneBackground.sprite = courtDay;
             }
-            if (dayTime == Scene.DayTime.Afternoon)
+            if (dayTime == DialogScene.DayTime.Afternoon)
             {
                 sceneBackground.sprite = courtAfternoon;
             }
         }
-        if (location == Scene.Location.Town)
+        if (location == DialogScene.Location.Town)
         {
-            if (dayTime == Scene.DayTime.Morning)
+            if (dayTime == DialogScene.DayTime.Morning)
             {
                 sceneBackground.sprite = townDay;
             }
-            if (dayTime == Scene.DayTime.Afternoon)
+            if (dayTime == DialogScene.DayTime.Afternoon)
             {
                 sceneBackground.sprite = townAfternoon;
             }
-            if (dayTime == Scene.DayTime.Night)
+            if (dayTime == DialogScene.DayTime.Night)
             {
                 sceneBackground.sprite = townNight;
             }

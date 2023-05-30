@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
+  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2237,7 +2237,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1541002727}
   m_HandleRect: {fileID: 1541002726}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 100
   m_OnValueChanged:
@@ -3758,6 +3758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daysAmount: 14
+  currentDay: 0
+  currentDaySO: {fileID: 0}
   dayStructure:
   - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
   - {fileID: 11400000, guid: 809cf8730094c774996eb587eb459e34, type: 2}
@@ -3772,6 +3774,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d67cfb141e24af43921184779a366d8, type: 2}
   - {fileID: 11400000, guid: 97867cd123acbe54992e97105bfe69c5, type: 2}
   - {fileID: 11400000, guid: 9ab558294c116c043af6ae62ddc9550e, type: 2}
+  - {fileID: 11400000, guid: 65b2d05e4f611864dad7351bb38ed267, type: 2}
 --- !u!4 &1889032818
 Transform:
   m_ObjectHideFlags: 0

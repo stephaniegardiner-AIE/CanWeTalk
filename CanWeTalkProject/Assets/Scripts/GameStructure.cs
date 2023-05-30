@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStructure : MonoBehaviour
 {
     public int daysAmount;
+    public int currentDay = 0;
+    public DayStructure currentDaySO;
     public List<DayStructure> dayStructure;
     // Start is called before the first frame update
     void Start()
@@ -37,9 +40,24 @@ public class GameStructure : MonoBehaviour
             }
         }
 
+    }
 
+    public void ProgressDay()
+    {
+        currentDay++;
+        currentDaySO = dayStructure[currentDay];
+        LoadScene();
+    }
 
+    public void StartGame()
+    {
+        currentDaySO = dayStructure[currentDay];
+        LoadScene();
+    }
 
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(currentDaySO.scene.name); 
     }
 
 }

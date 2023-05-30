@@ -14,7 +14,7 @@ public class Activity : ScriptableObject
 
     [Header("Location Conditions")]
     public int locationArrayLength;
-    public List<Scene.Location> locationArray;
+    public List<DialogScene.Location> locationArray;
 
     [Header("Action Conditions")]
     public int actionArrayLength;
@@ -22,11 +22,11 @@ public class Activity : ScriptableObject
 
     [Header("Day Type Conditions")]
     public int dayTypeArrayLength;
-    public List<Scene.DayType> dayTypeArray;
+    public List<DialogScene.DayType> dayTypeArray;
 
     [Header("Day Time Conditions")]
     public int dayTimeArrayLength;
-    public List<Scene.DayTime> dayTimeArray;
+    public List<DialogScene.DayTime> dayTimeArray;
 
     
 
@@ -52,11 +52,11 @@ public class Activity : ScriptableObject
 
         if(locationArray == null)
         {
-            locationArray = new List<Scene.Location>(new Scene.Location[locationArrayLength]);
+            locationArray = new List<DialogScene.Location>(new DialogScene.Location[locationArrayLength]);
 
             for (int i = 0; i < locationArrayLength; i++)
             {
-                var tmp = new Scene.Location();
+                var tmp = new DialogScene.Location();
 
                 locationArray[i] = tmp;
             }
@@ -76,11 +76,11 @@ public class Activity : ScriptableObject
 
         if (dayTypeArray == null)
         {
-            dayTypeArray = new List<Scene.DayType>(new Scene.DayType[dayTypeArrayLength]);
+            dayTypeArray = new List<DialogScene.DayType>(new DialogScene.DayType[dayTypeArrayLength]);
 
             for (int i = 0; i < dayTypeArrayLength; i++)
             {
-                var tmp = new Scene.DayType();
+                var tmp = new DialogScene.DayType();
 
                 dayTypeArray[i] = tmp;
             }
@@ -88,11 +88,11 @@ public class Activity : ScriptableObject
 
         if (dayTimeArray == null)
         {
-            dayTimeArray = new List<Scene.DayTime>(new Scene.DayTime[dayTimeArrayLength]);
+            dayTimeArray = new List<DialogScene.DayTime>(new DialogScene.DayTime[dayTimeArrayLength]);
 
             for (int i = 0; i < dayTimeArrayLength; i++)
             {
-                var tmp = new Scene.DayTime();
+                var tmp = new DialogScene.DayTime();
 
                 dayTimeArray[i] = tmp;
             }

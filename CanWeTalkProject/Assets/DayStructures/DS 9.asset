@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b068059426eab92488efcf98df5ca258, type: 3}
   m_Name: DS 9
   m_EditorClassIdentifier: 
+  scene: {fileID: 102900000, guid: d4f4b5045ead2ff4a9f058f4196b9759, type: 3}
   morning: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   afternoon: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   night: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}

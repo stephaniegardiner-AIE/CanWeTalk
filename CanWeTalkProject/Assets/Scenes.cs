@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scenes : MonoBehaviour
 {
-    public Scene[] scenes;
+    public DialogScene[] scenes;
     // Start is called before the first frame update
     public AudioSource audioSource;
 
