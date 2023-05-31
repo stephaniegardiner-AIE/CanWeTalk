@@ -126,7 +126,7 @@ public class LineBlock : ScriptableObject
         if (actionArray == null)
         {
             actionArray = new List<ActionListElement>(new ActionListElement[actionArrayLength]);
-            Debug.Log("Awake");
+            //Debug.Log("Awake");
 
             for (int i = 0; i < actionArrayLength; i++)
             {

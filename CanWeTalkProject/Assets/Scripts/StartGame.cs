@@ -40,6 +40,8 @@ public class StartGame : MonoBehaviour
     public void StartTheGame()
     {
         SceneManager.LoadScene("Day 1");
+
+        gameStructure.RunScene();
     }
 
     public void Test()

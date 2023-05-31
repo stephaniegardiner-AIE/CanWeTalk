@@ -106,10 +106,14 @@ public class SceneStarter : MonoBehaviour
 
 
 
+        if (currentScene.lineBlocks != null)
+        {
             if (currentScene.lineBlocks.Length != 0)
             {
                 currentLineBlock = currentScene.lineBlocks[0];
             }
+        }    
+
 
             //LineRunner();
 

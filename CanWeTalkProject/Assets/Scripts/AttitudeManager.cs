@@ -44,7 +44,7 @@ public class AttitudeManager : MonoBehaviour
       
         DontDestroyOnLoad(gameObject);
 
-        SetAttitude();
+        //SetAttitude();
     }
 
 
