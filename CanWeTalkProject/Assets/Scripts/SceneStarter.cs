@@ -23,6 +23,8 @@ public class SceneStarter : MonoBehaviour
     public int sceneNumber;
     
     public bool decision = false;
+    public bool activity = false;
+    public bool activityChosen = true;
 
     [Header("Scene Info")]
     public int dayNumber;
@@ -150,6 +152,11 @@ public class SceneStarter : MonoBehaviour
             {
                 LineRunner();
                 //Debug.Log("NextLine");
+            }
+            if (activityChosen)
+            {
+                Debug.Log("sup fam");
+                gameStructure.GoToAfternoon();
             }
         }
 
@@ -535,6 +542,9 @@ public class SceneStarter : MonoBehaviour
         {
             Debug.Log("Run Activity");
 
+            activity = true;
+            activityChosen = false;
+
             activityManager.CreateActivityList();
 
             //instantiates the activity speech block
@@ -568,7 +578,7 @@ public class SceneStarter : MonoBehaviour
             ResizeButtonBlockBackground(activityBlock);
 
             //activates the decision state
-            decision = true;
+            //decision = true;
 
             ResizeContent(activityBlock.GetComponent<RectTransform>().sizeDelta.y);
         }

@@ -153,7 +153,14 @@ public class GameStructure : MonoBehaviour
 
     public void GoToAfternoon()
     {
-
+        if (currentDaySO.afternoon.GetType() == typeof(ActivityBlock))
+        {
+            Debug.Log("Run activity");
+            sceneStarter = FindObjectOfType<SceneStarter>();
+            sceneStarter.AssignSelf();
+            sceneStarter.StartSceneStarter();
+            sceneStarter.ActivityRunner();
+        }
     }
 
 }

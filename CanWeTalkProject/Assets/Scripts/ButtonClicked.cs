@@ -59,7 +59,8 @@ public class ButtonClicked : MonoBehaviour
         sceneStarter.currentVisibleSpeech.Remove(sceneStarter.currentVisibleSpeech[sceneStarter.currentVisibleSpeech.Count - 1]);
         //sceneStarter.previousLines += sceneStarter.currentLineBlock.lines.Length - sceneStarter.previousLines;
         sceneStarter.CreateActivityResponse(activityNumber);
-        sceneStarter.decision = false;
+        sceneStarter.activityChosen = true;
+        sceneStarter.activity = false;
         sceneStarter.ResizeContent(-transform.parent.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta.y);
         Destroy(transform.parent.transform.parent.gameObject);
 
