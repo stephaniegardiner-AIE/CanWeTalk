@@ -82,7 +82,9 @@ public class LineBlock : ScriptableObject
 
     [Header("Action Conditions")]
     public bool actionCondition;
+    public int actionArrayLength;
 
+    [System.Serializable]
     public class ActionListElement
     {
         public enum Actions
@@ -111,14 +113,19 @@ public class LineBlock : ScriptableObject
             WentOutPartying,
             DeadDog,
             LeftChildrenHomeAlone
-
-
         }
 
         public Actions actionsCondition;
+
+        public enum TrueOrFalse
+        {
+            True,
+            False,
+        }
+        public TrueOrFalse trueOrFalse;
     }
 
-    public int actionArrayLength;
+    
     public List<ActionListElement> actionArray;
 
     private void OnEnable()
@@ -132,6 +139,8 @@ public class LineBlock : ScriptableObject
             {
                 //create new data object
                 var tmp = new ActionListElement();
+
+               // tmp.actionsCondition = 0;
 
                 //store the Data object in our dataArray
                 actionArray[i] = tmp;

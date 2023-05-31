@@ -17,7 +17,7 @@ MonoBehaviour:
   locationArrayLength: 1
   locationArray: 02000000
   actionArrayLength: 1
-  actionArray: 0d000000
+  actionArray: []
   dayTypeArrayLength: 0
   dayTypeArray: 
   dayTimeArrayLength: 1
