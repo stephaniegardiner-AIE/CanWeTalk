@@ -90,11 +90,11 @@ public class Line : ScriptableObject
 
     private void OnValidate()
     {
-        if (action.actionsCondition != 0)
+        if (action != 0)
         {
             hasAction = true;
         }
-        if (action.actionsCondition == 0)
+        if (action == 0)
         {
             hasAction = false;
         }
@@ -106,7 +106,7 @@ public class Line : ScriptableObject
     }
     public bool hasAction;
 
-    public LineBlock.ActionListElement action;
+    public LineBlock.ActionListElement.Actions action;
 
     
 }
