@@ -18,5 +18,5 @@ MonoBehaviour:
   attitudeArray:
   - attitudeCharacter: 1
     attitudeChangeAmount: 5
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 9

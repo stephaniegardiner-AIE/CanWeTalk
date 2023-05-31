@@ -17,5 +17,5 @@ MonoBehaviour:
     I\u2019ll be sleeping on the couch for the foreseeable future."
   attitudeArrayLength: 0
   attitudeArray: []
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 6

@@ -26,14 +26,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6ad6205ce5b7f746b68e71b7940af8e, type: 2}
   - {fileID: 11400000, guid: a96b16701edb35a48a285a8286a20044, type: 2}
   - {fileID: 11400000, guid: dbd26c0b1415df94fbd51ce44fb17819, type: 2}
-  endDecisionBlock: {fileID: 0}
+  endDecisionBlock: {fileID: 11400000, guid: fa9b9168909b1f84abd977156d6a96a3, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextSceneNumber: 0
   hasConditions: 0
   conditions: 0
   actionCondition: 0
-  actions: 0
+  actionArrayLength: 0
+  actionArray: []
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0

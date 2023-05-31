@@ -17,5 +17,5 @@ MonoBehaviour:
     if I forgot. She\u2019d never stop bringing it up. Ever."
   attitudeArrayLength: 0
   attitudeArray: []
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 3

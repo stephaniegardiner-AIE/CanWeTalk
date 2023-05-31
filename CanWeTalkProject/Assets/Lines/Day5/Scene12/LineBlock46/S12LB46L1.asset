@@ -16,5 +16,5 @@ MonoBehaviour:
   dialog: "Excuse me? Then I\u2019m filing for full custody too!"
   attitudeArrayLength: 0
   attitudeArray: []
-  hasAction: 0
-  action: 0
+  hasAction: 1
+  action: 7
