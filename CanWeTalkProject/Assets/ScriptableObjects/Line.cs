@@ -90,11 +90,11 @@ public class Line : ScriptableObject
 
     private void OnValidate()
     {
-        if (action != 0)
+        if (action.actionsCondition != 0)
         {
             hasAction = true;
         }
-        if (action == 0)
+        if (action.actionsCondition == 0)
         {
             hasAction = false;
         }

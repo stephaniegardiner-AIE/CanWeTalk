@@ -348,9 +348,9 @@ public class SceneStarter : MonoBehaviour
     {
        // Debug.Log("we made it fam");
 
-        if (currentLine.action > 0)
+        if (currentLine.action.actionsCondition > 0)
         {
-            actions.SetTrue(currentLine.action);
+            actions.SetTrue(currentLine.action.actionsCondition);
         }
         
     }
