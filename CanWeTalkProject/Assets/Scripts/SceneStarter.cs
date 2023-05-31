@@ -89,59 +89,48 @@ public class SceneStarter : MonoBehaviour
     public Sprite townNight;
 
     public float skipSpeed;
+
+    public void AssignSelf()
+    {
+        GameStructure thisone = FindObjectOfType<GameStructure>();
+
+        thisone.sceneStarter = this;
+
+        ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
+        thisotherone.scene = this;
+
+        //GameObject content = FindObjectOfType<>
+    }
+
     //public GameObject scrollContent;
     // Start is called before the first frame update
     void Start()
     {
+        AssignSelf();
+        StartSceneStarter();
+        // SetSceneInfo();
+        ActivityRunner();
+    }
 
-      /*  if (GameObject.FindGameObjectsWithTag("AttitudeManager").Length == 1)
+    public void StartSceneStarter()
+    {
+        if (gameStructure.isRunning)
         {
-            DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(content);
-            DontDestroyOnLoad(sceneBackground);
-            DontDestroyOnLoad(dayNumberText);
-            DontDestroyOnLoad(weekdayText);
-            DontDestroyOnLoad (dayTimeText);
-            DontDestroyOnLoad(currentText); */
-
-
-
-        if (currentScene.lineBlocks != null)
-        {
-            if (currentScene.lineBlocks.Length != 0)
+            if (currentScene.lineBlocks != null)
             {
-                currentLineBlock = currentScene.lineBlocks[0];
+                if (currentScene.lineBlocks.Length != 0)
+                {
+                    currentLineBlock = currentScene.lineBlocks[0];
+                }
             }
-        }    
-
 
             //LineRunner();
 
-
             contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
-
-        /*spriteManager = GameObject.FindWithTag("SpriteManager").GetComponent<SpriteManager>(); ;
-        characterManager = GameObject.FindWithTag("CharacterManager").GetComponent<CharacterManager>();
-        attitudeManager = GameObject.FindWithTag("AttitudeManager").GetComponent<AttitudeManager>();
-        activityManager = GameObject.FindWithTag("ActivityManager").GetComponent<ActivityManager>();
-        sceneManager = GameObject.FindWithTag("SceneManager").GetComponent<Scenes>();
-        actions = GameObject.FindWithTag("Actions").GetComponent<Actions>();*/
-
-    /* }
-     else
-     {
-         Destroy(gameObject);
+        }
 
 
-     } */
-
-
-
-
-    // SetSceneInfo();
-    //ActivityRunner();
-
-}
+    }
 
     public void SetSceneInfo()
     {
@@ -154,13 +143,16 @@ public class SceneStarter : MonoBehaviour
 
     void OnNext()
     {
-
-        //if the decision maker isn't active! run the next line :))))
-        if (!decision)
+        if (gameStructure.isRunning)
         {
-            LineRunner();
-            //Debug.Log("NextLine");
+            //if the decision maker isn't active! run the next line :))))
+            if (!decision)
+            {
+                LineRunner();
+                //Debug.Log("NextLine");
+            }
         }
+
 
     }
 
@@ -539,43 +531,48 @@ public class SceneStarter : MonoBehaviour
 
     public void ActivityRunner()
     {
-        Debug.Log("Run Activity");
-        
-        activityManager.CreateActivityList();
-
-        //instantiates the activity speech block
-        GameObject activityBlock = Instantiate(activityBlockPrefab) as GameObject;
-        activityBlock.transform.SetParent(content.transform, false);
-        activityBlock.name = "Activity" + activityNumber.ToString();
-        activityBlock.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
-        currentVisibleSpeech.Add(activityBlock);
-
-        //makes a decision button appear for each decision in list
-        for (int i = 0; i < activityManager.currentActivites.Count; i++)
+        if (gameStructure.isRunning)
         {
-            //Debug.Log(activityManager.currentActivites.Count);
-            GameObject activity = Instantiate(activityPrefab) as GameObject;
-            activity.tag = "Activity";
-            activity.transform.SetParent(activityBlock.transform.Find("ActivityButtons"), false);
-            activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[i].activityName;
-            //adds type writer effect to button text
-            TypeWriter(activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
-            activity.GetComponent<ButtonClicked>().activityNumber = i;
+            Debug.Log("Run Activity");
 
-            //sets the size of teh deicision buttons
-            ResizeButton(activity);
+            activityManager.CreateActivityList();
 
-            //Debug.Log(decision.transform.GetChild(1).GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+            //instantiates the activity speech block
+            GameObject activityBlock = Instantiate(activityBlockPrefab) as GameObject;
+            activityBlock.transform.SetParent(content.transform, false);
+            activityBlock.name = "Activity" + activityNumber.ToString();
+            activityBlock.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPositionSpeechBubble, yPositionSpeechBubble);
+            currentVisibleSpeech.Add(activityBlock);
+
+            //makes a decision button appear for each decision in list
+            for (int i = 0; i < activityManager.currentActivites.Count; i++)
+            {
+                Debug.Log(activityManager.currentActivites.Count + SceneManager.GetActiveScene().name);
+
+                GameObject activity = Instantiate(activityPrefab) as GameObject;
+                activity.tag = "Activity";
+                activity.transform.SetParent(activityBlock.transform.Find("ActivityButtons"), false);
+                activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[i].activityName;
+                //adds type writer effect to button text
+                TypeWriter(activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
+                activity.GetComponent<ButtonClicked>().activityNumber = i;
+
+                //sets the size of teh deicision buttons
+                ResizeButton(activity);
+
+                //Debug.Log(decision.transform.GetChild(1).GetComponent<TextMeshProUGUI>().textInfo.lineCount);
+            }
+
+            ResizeButtonBlock(activityBlock.transform.Find("ActivityButtons").gameObject);
+
+            ResizeButtonBlockBackground(activityBlock);
+
+            //activates the decision state
+            decision = true;
+
+            ResizeContent(activityBlock.GetComponent<RectTransform>().sizeDelta.y);
         }
-
-        ResizeButtonBlock(activityBlock.transform.Find("ActivityButtons").gameObject);
-
-        ResizeButtonBlockBackground(activityBlock);
-          
-        //activates the decision state
-        decision = true;
-
-        ResizeContent(activityBlock.GetComponent<RectTransform>().sizeDelta.y);
+ 
 
     }
 

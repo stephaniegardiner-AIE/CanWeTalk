@@ -41,6 +41,7 @@ public class CharacterManager : MonoBehaviour
     public string principalName;
     public Color principalColor;
 
+    [Header("InputFields")]
     public InputField inputFieldWife;
     public InputField inputFieldSon;
     public InputField inputFieldDaughter;

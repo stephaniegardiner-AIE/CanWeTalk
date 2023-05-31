@@ -16,4 +16,4 @@ MonoBehaviour:
   morning: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   afternoon: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
   night: {fileID: 11400000, guid: c1b842aa331be234cb67534a8836d56c, type: 2}
-  dayTime: 0
+  dayTime: 1

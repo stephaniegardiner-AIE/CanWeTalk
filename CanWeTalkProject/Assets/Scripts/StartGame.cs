@@ -18,6 +18,7 @@ public class StartGame : MonoBehaviour
     public Scenes sceneManager;
     public GameStructure gameStructure;
     public Actions actions;
+    public SceneStarter sceneStarter;
 
     void Start()
     {
@@ -35,13 +36,14 @@ public class StartGame : MonoBehaviour
         gameStructure.AssignSelf();
         actions = FindObjectOfType<Actions>();
         actions.AssignSelf();
+        sceneStarter = FindObjectOfType<SceneStarter>();
+        sceneStarter.AssignSelf();
     }
 
     public void StartTheGame()
     {
-        SceneManager.LoadScene("Day 1");
+        gameStructure.StartGame();
 
-        gameStructure.RunScene();
     }
 
     public void Test()

@@ -2287,6 +2287,7 @@ MonoBehaviour:
   sceneManager: {fileID: 0}
   gameStructure: {fileID: 0}
   actions: {fileID: 0}
+  sceneStarter: {fileID: 0}
 --- !u!4 &661620033
 Transform:
   m_ObjectHideFlags: 0
@@ -4214,10 +4215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e939f79d57453b408f09476a6377207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameRunning: 0
   sceneStarter: {fileID: 0}
   daysAmount: 14
   currentDay: 0
-  currentDaySO: {fileID: 0}
+  currentDaySO: {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
   dayStructure:
   - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
   - {fileID: 11400000, guid: 809cf8730094c774996eb587eb459e34, type: 2}
@@ -4232,6 +4234,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d67cfb141e24af43921184779a366d8, type: 2}
   - {fileID: 11400000, guid: 97867cd123acbe54992e97105bfe69c5, type: 2}
   - {fileID: 11400000, guid: 9ab558294c116c043af6ae62ddc9550e, type: 2}
+  characterManager: {fileID: 0}
+  spriteManager: {fileID: 0}
+  attitudeManager: {fileID: 0}
+  activityManager: {fileID: 0}
+  sceneManager: {fileID: 0}
+  gameStructure: {fileID: 0}
+  actions: {fileID: 0}
 --- !u!4 &1232211813
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,6 +5711,7 @@ MonoBehaviour:
   sceneManager: {fileID: 0}
   gameStructure: {fileID: 0}
   actions: {fileID: 0}
+  sceneStarter: {fileID: 0}
 --- !u!4 &1682910685
 Transform:
   m_ObjectHideFlags: 0
@@ -6264,7 +6274,7 @@ MonoBehaviour:
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}
   activityBlockPrefab: {fileID: 9089653576729137649, guid: d6c7b08b57c25124fbcd9cd4fb1fbe12, type: 3}
   activityPrefab: {fileID: 7118284946906040738, guid: 793841a50d095c4469e6803ab8fdf24a, type: 3}
-  content: {fileID: 0}
+  content: {fileID: 1791379101}
   contentHeight: 0
   tailHeight: 40
   xPositionSpeechBubble: 0

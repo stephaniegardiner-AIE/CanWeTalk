@@ -6,18 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class GameStructure : MonoBehaviour
 {
+    public bool isRunning;
     public SceneStarter sceneStarter;
     public int daysAmount;
     public int currentDay = 0;
     public DayStructure currentDaySO;
     public List<DayStructure> dayStructure;
+
+    public CharacterManager characterManager;
+    public SpriteManager spriteManager;
+    public AttitudeManager attitudeManager;
+    public ActivityManager activityManager;
+    public Scenes sceneManager;
+    public GameStructure gameStructure;
+    public Actions actions;
+
     // Start is called before the first frame update
     void Start()
     {
 
 
            DontDestroyOnLoad(gameObject);
-            StartGame();
+            //StartGame();
 
 
         Debug.Log("???");
@@ -83,26 +93,62 @@ public class GameStructure : MonoBehaviour
             }
         }
 
+        LoadScene();
+        //gameStructure.gameRunning = true;
+
+        
+
 
     }
 
     public void LoadScene()
     {
-        //SceneManager.LoadScene(currentDaySO.scene.name);
+        SceneManager.LoadScene(currentDaySO.scene.name);
         Debug.Log("load the scene");
+        
+        RunScene();
 
-        
-        
     }
 
     public void RunScene()
     {
-        if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
-        {
-            Debug.Log("Run activity");
-            sceneStarter.ActivityRunner();
-        }
+       // if (isRunning)
+        //{
+            characterManager = FindObjectOfType<CharacterManager>();
+            characterManager.AssignSelf();
+            spriteManager = FindObjectOfType<SpriteManager>();
+            spriteManager.AssignSelf();
+            attitudeManager = FindObjectOfType<AttitudeManager>();
+            attitudeManager.AssignSelf();
+            activityManager = FindObjectOfType<ActivityManager>();
+            activityManager.AssignSelf();
+            sceneManager = FindObjectOfType<Scenes>();
+            sceneManager.AssignSelf();
+            gameStructure = FindObjectOfType<GameStructure>();
+            gameStructure.AssignSelf();
+            actions = FindObjectOfType<Actions>();
+            actions.AssignSelf();
+
+
+            if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
+            {
+                Debug.Log("Run activity");
+                sceneStarter = FindObjectOfType<SceneStarter>();
+                sceneStarter.AssignSelf();
+                sceneStarter.StartSceneStarter();
+            isRunning = true;
+           // sceneStarter.ActivityRunner();
+
+            }
+        //}
+
+
       //  if (currentDaySO.morning.GetType() == typeof()
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+       // Debug.Log(scene.name + mode);
     }
 
     public void GoToAfternoon()
