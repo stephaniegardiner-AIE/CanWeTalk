@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: ResearchChildCustodyAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: 'researched child custody
+
+'
   attitudeArrayLength: 3
   attitudeArray:
   - attitudeCharacter: 2

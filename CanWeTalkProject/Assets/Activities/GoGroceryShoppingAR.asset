@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GoGroceryShoppingAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: 'went grocery shopping
+
+'
   attitudeArrayLength: 1
   attitudeArray:
   - attitudeCharacter: 2

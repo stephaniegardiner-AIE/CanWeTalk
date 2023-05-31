@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CleanTheHouseAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: cleaned the house
   attitudeArrayLength: 3
   attitudeArray:
   - attitudeCharacter: 2

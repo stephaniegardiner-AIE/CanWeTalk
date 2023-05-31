@@ -9,9 +9,7 @@ public class DayStructure : ScriptableObject
 {
 
     public Object scene;
-    public ScriptableObject morning;
-        public ScriptableObject afternoon;
-        public ScriptableObject night;
+    public ScriptableObject[] dayParts;
 
     public DialogScene.DayTime dayTime;
 

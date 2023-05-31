@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayWithKidsAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: played with kids
   attitudeArrayLength: 1
   attitudeArray:
   - attitudeCharacter: 3

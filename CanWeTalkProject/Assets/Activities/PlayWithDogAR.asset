@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayWithDogAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: played with dog
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 4

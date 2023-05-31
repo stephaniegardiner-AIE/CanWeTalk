@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MakeASnackAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: 'made a snack
+
+'
   attitudeArrayLength: 3
   attitudeArray:
   - attitudeCharacter: 4

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: RaidVendingMachineAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: activity happened
+  dialog: 'raided the vending machine
+
+'
   attitudeArrayLength: 1
   attitudeArray:
   - attitudeCharacter: 1

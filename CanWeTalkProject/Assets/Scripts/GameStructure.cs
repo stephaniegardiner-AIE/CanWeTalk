@@ -10,6 +10,7 @@ public class GameStructure : MonoBehaviour
     public SceneStarter sceneStarter;
     public int daysAmount;
     public int currentDay = 0;
+    public int dayTime;
     public DayStructure currentDaySO;
     public List<DayStructure> dayStructure;
 
@@ -130,7 +131,7 @@ public class GameStructure : MonoBehaviour
             actions.AssignSelf();
 
 
-            if (currentDaySO.morning.GetType() == typeof(ActivityBlock))
+            if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
             {
                 Debug.Log("Run activity");
                 sceneStarter = FindObjectOfType<SceneStarter>();
@@ -153,7 +154,8 @@ public class GameStructure : MonoBehaviour
 
     public void GoToAfternoon()
     {
-        if (currentDaySO.afternoon.GetType() == typeof(ActivityBlock))
+        dayTime++;
+        if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
         {
             Debug.Log("Run activity");
             sceneStarter = FindObjectOfType<SceneStarter>();
