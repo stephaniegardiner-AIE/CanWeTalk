@@ -23,12 +23,12 @@ MonoBehaviour:
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextSceneNumber: 0
-  hasConditions: 0
-  conditions: 0
+  hasConditions: 1
+  conditions: 1
   actionCondition: 0
-  actions: 0
-  attitudeCondition: 0
-  attitudes: 0
-  attitudeLevel: 0
-  attitudeAmount: 0
-  ifFailedContinueTo: {fileID: 0}
+  actionArrayLength: 0
+  attitudeCondition: 1
+  attitudes: 3
+  attitudeLevel: 1
+  attitudeAmount: 50
+  ifFailedContinueTo: {fileID: 11400000, guid: 30616e6dd35b6b447af8554c301706fb, type: 2}

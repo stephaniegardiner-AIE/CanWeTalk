@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6b3bd2a31c18f4e9b761797e76e7b5, type: 3}
   m_Name: S4DB 5
   m_EditorClassIdentifier: 
-  decisions: []
+  decisions:
+  - {fileID: 11400000, guid: 95509f7a4799a88419e557f2fa187b74, type: 2}
+  - {fileID: 11400000, guid: da022fbb94120a949b4a60ae8a29dfb0, type: 2}

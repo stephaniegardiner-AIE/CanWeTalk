@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S4LB 19A
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 35f6224163f607c46a84e858a2681d53, type: 2}
+  - {fileID: 11400000, guid: 262ad2d6093bbf345930624a4b327646, type: 2}
+  - {fileID: 11400000, guid: 1e645eb1b5348dd4482b6109261d9651, type: 2}
+  - {fileID: 11400000, guid: 467864dac278e094f85933cb6baa6bde, type: 2}
+  - {fileID: 11400000, guid: 82a7c63cb86f6424fbbbda08b8a48e67, type: 2}
+  - {fileID: 11400000, guid: 1bb6fa02d1428a248a10f64b67647a69, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextSceneNumber: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actions: 0
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
