@@ -480,28 +480,39 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.runActivityBlockNext)
         {
-            //
+            Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
         }
-        if (currentLineBlock.nextLineBlock != null)
+        if (currentLineBlock.nextScene != null)
         {
-            GoToNextScene(currentLineBlock.nextLineBlock, currentLineBlock);
+            GoToNextScene(currentLineBlock.nextScene);
+        }
+        if (currentLineBlock.goToNextDayTime)
+        {
+            gameStructure.GoToNextDayType();
         }
     }
 
-    public void GoToNextScene(LineBlock nextLineBlock, LineBlock currentLineblock)
+    public void GoToNextScene(DialogScene nextScene)
     {
-        
+        for (int i = 0; i < sceneManager.scenes.Length; i++)
+        {
+            if (sceneManager.scenes[i].name == nextScene.name)
+            {
+                sceneManager.currentScene = nextScene;
+                sceneManager.currentSceneNo = i;
+            }
+        }
         //sceneNumber = currentLineBlock.nextSceneNumber;
         //sceneManager.currentScene = sceneManager.scenes[sceneNumber];
-        currentLineBlock = nextLineBlock;
+        currentLineBlock = sceneManager.currentScene.lineBlocks[0];
         lineNumber = 0;
         
         LineRunner();
 
-        SetSceneInfo();
+        //SetSceneInfo();
 
         spriteManager.ClearCharacters();
-    }
+    } 
 
     //creates a decision block when called
     public void DecisionRunner()

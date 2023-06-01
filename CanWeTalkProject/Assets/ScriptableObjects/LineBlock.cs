@@ -7,7 +7,7 @@ using static Line;
 public class LineBlock : ScriptableObject
 {
     //public
-
+   // [Tooltip($"{lines[}")]
     public Line[] lines;
 
     public DecisionBlock endDecisionBlock;
@@ -18,7 +18,9 @@ public class LineBlock : ScriptableObject
 
     public LineBlock nextLineBlock;
 
-    public int nextSceneNumber;
+    public DialogScene nextScene;
+
+    public bool goToNextDayTime;
     public enum Conditions
     {
        None,

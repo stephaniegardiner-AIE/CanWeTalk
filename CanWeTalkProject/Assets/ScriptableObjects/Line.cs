@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Line", menuName = "Dialog/New Line")]
+
 public class Line : ScriptableObject
 {
 
