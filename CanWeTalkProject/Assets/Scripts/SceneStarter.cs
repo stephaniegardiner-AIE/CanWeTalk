@@ -102,6 +102,7 @@ public class SceneStarter : MonoBehaviour
         ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
         thisotherone.scene = this;
 
+        //thisone.gameStructure.CallAssignSelfs();
         //StartSceneStarter();
 
         //GameObject content = FindObjectOfType<>
@@ -117,6 +118,7 @@ public class SceneStarter : MonoBehaviour
     void Start()
     {
         AssignSelf();
+        gameStructure.CallAssignSelfs();
 
         //ActivityRunner();
 
@@ -146,7 +148,7 @@ public class SceneStarter : MonoBehaviour
     public void StartSceneStarter()
     {
 
-
+ 
 
         if (gameStructure.isRunning)
         {

@@ -153,6 +153,7 @@ public class GameStructure : MonoBehaviour
         ProgressDay();
         StartGame();
         CallAssignSelfs();
+
     }
 
     public void CallAssignSelfs()
@@ -170,8 +171,6 @@ public class GameStructure : MonoBehaviour
         activityManager.AssignSelf();
         sceneManager = FindObjectOfType<Scenes>();
         sceneManager.AssignSelf();
-        gameStructure = FindObjectOfType<GameStructure>();
-        gameStructure.AssignSelf();
         actions = FindObjectOfType<Actions>();
         actions.AssignSelf();
     }
