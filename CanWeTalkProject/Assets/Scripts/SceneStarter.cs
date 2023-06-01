@@ -147,17 +147,17 @@ public class SceneStarter : MonoBehaviour
     {
         if (gameStructure.isRunning)
         {
-            Debug.Log("on next");
+            //Debug.Log("on next");
             //if the decision maker isn't active! run the next line :))))
             if (!decision)
             {
-                Debug.Log("line runner");
+                //Debug.Log("line runner");
                 LineRunner();
                 //Debug.Log("NextLine");
             }
             if (activityChosen)
             {
-                Debug.Log("sup fam");
+                //Debug.Log("sup fam");
                 activityChosen = false;
                 gameStructure.GoToNextDayType();
                 
@@ -246,7 +246,7 @@ public class SceneStarter : MonoBehaviour
         }
         else
         {
-            Debug.Log("almost made it");
+            //Debug.Log("almost made it");
             if (sceneManager.currentScene.lineBlocks.Length != 0 && sceneManager.currentScene.lineBlocks != null)
             {
                 if (lineNumber > currentLineBlock.lines.Length - 1)
@@ -295,6 +295,7 @@ public class SceneStarter : MonoBehaviour
 
         if (currentLineBlock.lines[lineNumber].hasAction)
         {
+            Debug.Log("change action");
             ChangeAction(currentLineBlock.lines[lineNumber]);
         }
 
@@ -331,7 +332,7 @@ public class SceneStarter : MonoBehaviour
         //if the line has an attitude change, now make sure that happens!!!
         if (activityManager.currentActivites[activityNumber].activityResponse.attitudeArrayLength > 0)
         {
-            Debug.Log("hello!");
+            //Debug.Log("hello!");
             attitudeManager.UpdateAttitudes(activityManager.currentActivites[activityNumber].activityResponse);
             
         } 
@@ -354,10 +355,13 @@ public class SceneStarter : MonoBehaviour
 
     public void ChangeAction(Line currentLine)
     {
-       // Debug.Log("we made it fam");
+        // Debug.Log("we made it fam");
+
+        Debug.Log("hi");
 
         if (currentLine.action > 0)
         {
+            Debug.Log("damn");
             actions.SetTrue(currentLine.action);
         }
         
@@ -545,7 +549,7 @@ public class SceneStarter : MonoBehaviour
     {
         if (gameStructure.isRunning)
         {
-            Debug.Log("Run Activity");
+            //Debug.Log("Run Activity");
 
             activity = true;
             activityChosen = false;
@@ -562,7 +566,7 @@ public class SceneStarter : MonoBehaviour
             //makes a decision button appear for each decision in list
             for (int i = 0; i < activityManager.currentActivites.Count; i++)
             {
-                Debug.Log(activityManager.currentActivites.Count + SceneManager.GetActiveScene().name);
+               // Debug.Log(activityManager.currentActivites.Count + SceneManager.GetActiveScene().name);
 
                 GameObject activity = Instantiate(activityPrefab) as GameObject;
                 activity.tag = "Activity";
