@@ -162,6 +162,8 @@ public class SceneStarter : MonoBehaviour
 
             //LineRunner();
 
+            SetSceneInfo();
+
             contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
         }
 

@@ -20,13 +20,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1bdab6afd7e6f342b4705fe55ab5fce, type: 2}
   - {fileID: 11400000, guid: 580bbe567eeaef747aacea18ed8c31d5, type: 2}
   endDecisionBlock: {fileID: 0}
-  runActivityBlockNext: 0
+  runActivityBlockNext: 1
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
+  nextScene: {fileID: 0}
+  goToNextDayTime: 0
+  goToNextDay: 0
   hasConditions: 1
   conditions: 1
   actionCondition: 0
   actionArrayLength: 0
+  actionArray: []
   attitudeCondition: 1
   attitudes: 3
   attitudeLevel: 1

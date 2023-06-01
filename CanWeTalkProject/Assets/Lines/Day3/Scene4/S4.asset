@@ -20,8 +20,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 717805207e3da0649a2a68db93d8f36d, type: 2}
   - {fileID: 11400000, guid: 32f2887330d4f694f9cfac37142871d7, type: 2}
   - {fileID: 11400000, guid: 2027b1cb3d6484f48acb142e01d0e4d9, type: 2}
-  dayNumber: 0
-  weekday: 0
-  dayTime: 0
-  dayType: 2
+  dayNumber: 3
+  weekday: 2
+  dayTime: 1
+  dayType: 1
   location: 0
