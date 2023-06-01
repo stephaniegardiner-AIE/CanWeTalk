@@ -476,7 +476,7 @@ MonoBehaviour:
   weekday: 0
   dayTime: 0
   location: 0
-  currentLineBlock: {fileID: 0}
+  currentLineBlock: {fileID: 11400000, guid: 13d91e83b94b7f04f8bc62fd9e1b2963, type: 2}
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
   decisionBlockPrefab: {fileID: 9089653576729137649, guid: a07edc41dadc009439e69ed141c86844, type: 3}
   decisionPrefab: {fileID: 7118284946906040738, guid: 4add4cb55bf80e5428be08632a46388b, type: 3}

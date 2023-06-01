@@ -130,7 +130,7 @@ public class SceneStarter : MonoBehaviour
             // sceneStarter.ActivityRunner();
 
         }
-        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(LineBlock))
+        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(DialogScene))
         {
             Debug.Log("RUN LINE BLOCK");
 

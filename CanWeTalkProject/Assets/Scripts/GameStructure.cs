@@ -135,14 +135,17 @@ public class GameStructure : MonoBehaviour
             Debug.Log("RUN ACTIVITY");
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
+
             sceneStarter.StartSceneStarter();
             sceneStarter.ActivityRunner();
         }
-        if (currentDaySO.dayParts[dayTime].GetType() == typeof(LineBlock))
+        if (currentDaySO.dayParts[dayTime].GetType() == typeof(DialogScene))
         {
             Debug.Log("RUN LINE BLOCK");
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
+
+            //sceneManager.currentScene = currentDaySO.dayParts[dayTime].G;
             sceneStarter.StartSceneStarter();
             sceneStarter.LineRunner();
         }
@@ -150,6 +153,7 @@ public class GameStructure : MonoBehaviour
 
     public void GoToNextDay()
     {
+        dayTime = 0;
         ProgressDay();
         StartGame();
         CallAssignSelfs();
