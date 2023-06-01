@@ -33,11 +33,12 @@ public class Scenes : MonoBehaviour
         thisone.sceneManager = this;
         ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
         thisotherone.sceneManager = this;
+       // Debug.Log("assign scenes");
     }
 
     void OnReloadScene()
     {
-        Debug.Log("reloading the scene");
+      //  Debug.Log("reloading the scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -60,6 +60,7 @@ public class CharacterManager : MonoBehaviour
     {
         SceneStarter thisone = FindObjectOfType<SceneStarter>();
         thisone.characterManager = this;
+       // Debug.Log("assign character manager");
     }
 
     public void ChangeNameWife()

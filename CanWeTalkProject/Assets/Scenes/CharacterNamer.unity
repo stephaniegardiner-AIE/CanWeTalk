@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRunning: 0
   sceneStarter: {fileID: 0}
-  daysAmount: 14
+  daysAmount: 8
   currentDay: 0
   dayTime: 0
   currentDaySO: {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
@@ -4235,18 +4235,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7081adc2b1b75524697772ecca7c3f94, type: 2}
   - {fileID: 11400000, guid: aa185c9557d6c0441b0e2bc2e7dd6e1f, type: 2}
   - {fileID: 11400000, guid: 17be221fd204a3040b293939650ed043, type: 2}
-  - {fileID: 11400000, guid: 19e6ce28516a66748934d910183d32aa, type: 2}
-  - {fileID: 11400000, guid: d52d3affe38364942acfbd51519ed8ca, type: 2}
-  - {fileID: 11400000, guid: 2d67cfb141e24af43921184779a366d8, type: 2}
-  - {fileID: 11400000, guid: 97867cd123acbe54992e97105bfe69c5, type: 2}
-  - {fileID: 11400000, guid: 9ab558294c116c043af6ae62ddc9550e, type: 2}
-  characterManager: {fileID: 0}
-  spriteManager: {fileID: 0}
-  attitudeManager: {fileID: 0}
-  activityManager: {fileID: 0}
-  sceneManager: {fileID: 0}
-  gameStructure: {fileID: 0}
-  actions: {fileID: 0}
+  characterManager: {fileID: 577116923}
+  spriteManager: {fileID: 1496908813}
+  attitudeManager: {fileID: 1830396687}
+  activityManager: {fileID: 337928163}
+  sceneManager: {fileID: 906270192}
+  gameStructure: {fileID: 1232211812}
+  actions: {fileID: 1876200796}
 --- !u!4 &1232211813
 Transform:
   m_ObjectHideFlags: 0
@@ -6268,8 +6263,9 @@ MonoBehaviour:
   actions: {fileID: 1876200796}
   gameStructure: {fileID: 0}
   decision: 0
-  activity: 0
-  activityChosen: 1
+  activityActive: 0
+  activityChosen: 0
+  changingDay: 0
   dayNumber: 0
   weekday: 0
   dayTime: 0

@@ -497,7 +497,8 @@ MonoBehaviour:
   gameStructure: {fileID: 0}
   decision: 0
   activity: 0
-  activityChosen: 1
+  activityChosen: 0
+  changingDay: 0
   dayNumber: 0
   weekday: 0
   dayTime: 0

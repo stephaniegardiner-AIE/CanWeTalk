@@ -210,5 +210,7 @@ public class AttitudeManager : MonoBehaviour
         friendAttitudeBar = friendBar.GetComponent<Image>();
         GameObject lawyerBar = GameObject.FindGameObjectWithTag("LawyerBar");
         lawyerAttitudeBar = lawyerBar.GetComponent<Image>();
+
+      //  Debug.Log("assign attitude manager");
     }
 }

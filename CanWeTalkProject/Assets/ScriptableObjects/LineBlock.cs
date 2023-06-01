@@ -21,6 +21,8 @@ public class LineBlock : ScriptableObject
     public DialogScene nextScene;
 
     public bool goToNextDayTime;
+
+    public bool goToNextDay;
     public enum Conditions
     {
        None,

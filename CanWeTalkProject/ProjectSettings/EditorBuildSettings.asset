@@ -6,10 +6,37 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Day 1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/MainMenu.unity
+    guid: f6e013efbbbf99e45a19498498c82f77
   - enabled: 1
     path: Assets/Scenes/CharacterNamer.unity
-    guid: 225b9a7c3d06d924ea241eeb91cdd78f
+    guid: d807ce833e0a8a94bb7dcb28913d1ba1
+  - enabled: 1
+    path: Assets/Scenes/Day 1.unity
+    guid: 8216eac011acf784ba3320185ef34605
+  - enabled: 1
+    path: Assets/Scenes/Day 2.unity
+    guid: f6e6e52f49e97c44ca2fab12407d0192
+  - enabled: 1
+    path: Assets/Scenes/Day 3.unity
+    guid: 86e5bc80e5d901941b54caf5984423ed
+  - enabled: 1
+    path: Assets/Scenes/Day 4.unity
+    guid: b94dc2995da52344c8b83ef46f8a62b1
+  - enabled: 1
+    path: Assets/Scenes/Day 5.unity
+    guid: 4a3900ae17fb65c4b9e7f60c2ce2b67c
+  - enabled: 1
+    path: Assets/Scenes/Day 6.unity
+    guid: 73556666cdc25b44985d72cfc8ed259e
+  - enabled: 1
+    path: Assets/Scenes/Day 7.unity
+    guid: 6ccdd3927c2ecd049aca2c5a519086d4
+  - enabled: 1
+    path: Assets/Scenes/Day 8.unity
+    guid: 61b9f4637ebd92c40aee77aca28ac8c2
+  - enabled: 1
+    path: Assets/Scenes/EndOfDemo.unity
+    guid: c3ec5ceeca40aa24c82d1ddaae3bac9b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3e9c000ad05b8b64c9e826943b7a42af, type: 2}

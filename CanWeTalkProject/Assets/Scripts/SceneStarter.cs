@@ -22,9 +22,10 @@ public class SceneStarter : MonoBehaviour
 
     //public int sceneNumber;
     
-    public bool decision = false;
-    public bool activity = false;
-    public bool activityChosen = true;
+    public bool decision;
+    public bool activityActive;
+    public bool activityChosen;
+    public bool changingDay;
 
     [Header("Scene Info")]
     public int dayNumber;
@@ -101,7 +102,14 @@ public class SceneStarter : MonoBehaviour
         ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
         thisotherone.scene = this;
 
+        //StartSceneStarter();
+
         //GameObject content = FindObjectOfType<>
+    }
+
+    private void Update()
+    {
+        //Debug.Log(activityActive);
     }
 
     //public GameObject scrollContent;
@@ -109,13 +117,37 @@ public class SceneStarter : MonoBehaviour
     void Start()
     {
         AssignSelf();
-        StartSceneStarter();
+
+        //ActivityRunner();
+
+        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
+        {
+            Debug.Log("RUN ACTIVITY");
+
+            ActivityRunner();
+            // sceneStarter.ActivityRunner();
+
+        }
+        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(LineBlock))
+        {
+            Debug.Log("RUN LINE BLOCK");
+
+            LineRunner();
+
+        }
+
+
+
+
         // SetSceneInfo();
-        ActivityRunner();
+        // ActivityRunner();
     }
 
     public void StartSceneStarter()
     {
+
+
+
         if (gameStructure.isRunning)
         {
             if (sceneManager.currentScene.lineBlocks != null)
@@ -145,7 +177,7 @@ public class SceneStarter : MonoBehaviour
 
     void OnNext()
     {
-        if (gameStructure.isRunning)
+        if (gameStructure.isRunning && !changingDay)
         {
             //Debug.Log("on next");
             //if the decision maker isn't active! run the next line :))))
@@ -159,7 +191,7 @@ public class SceneStarter : MonoBehaviour
             {
                 //Debug.Log("sup fam");
                 activityChosen = false;
-                gameStructure.GoToNextDayType();
+                gameStructure.GoToNextDayTime();
                 
             }
         }
@@ -295,7 +327,7 @@ public class SceneStarter : MonoBehaviour
 
         if (currentLineBlock.lines[lineNumber].hasAction)
         {
-            Debug.Log("change action");
+           // Debug.Log("change action");
             ChangeAction(currentLineBlock.lines[lineNumber]);
         }
 
@@ -357,11 +389,11 @@ public class SceneStarter : MonoBehaviour
     {
         // Debug.Log("we made it fam");
 
-        Debug.Log("hi");
+        //Debug.Log("hi");
 
         if (currentLine.action > 0)
         {
-            Debug.Log("damn");
+            //Debug.Log("damn");
             actions.SetTrue(currentLine.action);
         }
         
@@ -470,7 +502,7 @@ public class SceneStarter : MonoBehaviour
     //figures out what to run next after a line block is finished
     public void FigureNext()
     {
-        //Debug.Log("LineBlockComplete");
+
 
         //if activity is not next runn the decision
         if (currentLineBlock.endDecisionBlock != null)
@@ -484,15 +516,28 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.nextScene != null)
         {
-            GoToNextScene(currentLineBlock.nextScene);
+            GoToNextDialogScene(currentLineBlock.nextScene);
         }
         if (currentLineBlock.goToNextDayTime)
         {
-            gameStructure.GoToNextDayType();
+            
+            gameStructure.GoToNextDayTime();
         }
+        //Debug.Log("LineBlockComplete");
+        if (currentLineBlock.goToNextDay)
+        {
+            //currentLineBlock = sceneManager.currentScene.lineBlocks[0];
+            //lineNumber = 0;
+            changingDay = true;
+            spriteManager.ClearCharacters();
+            gameStructure.GoToNextDay();
+
+            //GoToNextScene();
+        }
+
     }
 
-    public void GoToNextScene(DialogScene nextScene)
+    public void GoToNextDialogScene(DialogScene nextScene)
     {
         for (int i = 0; i < sceneManager.scenes.Length; i++)
         {
@@ -557,13 +602,18 @@ public class SceneStarter : MonoBehaviour
     }
 
     public void ActivityRunner()
+
+        
     {
+        Debug.Log("att actvity manager");
+
         if (gameStructure.isRunning)
         {
+
+            Debug.Log("made it past isrunning");
             //Debug.Log("Run Activity");
 
-            activity = true;
-            activityChosen = false;
+
 
             activityManager.CreateActivityList();
 
@@ -601,6 +651,9 @@ public class SceneStarter : MonoBehaviour
             //decision = true;
 
             ResizeContent(activityBlock.GetComponent<RectTransform>().sizeDelta.y);
+
+            activityActive = true;
+            activityChosen = false;
         }
  
 

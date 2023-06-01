@@ -461,14 +461,14 @@ public class SpriteManager : MonoBehaviour
 
             //GameObject.Destroy(activeCharacterSprites[i]);
 
-            Debug.Log("clear characters");
+           // Debug.Log("clear characters");
         }
 
         secondaryCharacterSprites.Clear();
 
         // primaryCharacter = null;
 
-        Debug.Log("we made it");
+       // Debug.Log("we made it");
     }
 
     private void DestroySprites(GameObject sprite)
@@ -523,6 +523,7 @@ public class SpriteManager : MonoBehaviour
     {
         SceneStarter thisone = FindObjectOfType<SceneStarter>();
         thisone.spriteManager = this;
+       // Debug.Log("assign sprite manager");
     }
 
     private void MakeNull(GameObject gameObject)

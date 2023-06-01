@@ -25,24 +25,15 @@ public class GameStructure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
-           DontDestroyOnLoad(gameObject);
-            //StartGame();
-
-
-        Debug.Log("???");
+        DontDestroyOnLoad(gameObject);
+       // Debug.Log("???");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void AssignSelf()
     {
         SceneStarter thisone = FindObjectOfType<SceneStarter>();
         thisone.gameStructure = this;
+       // Debug.Log("assign game structure");
     }
     private void OnAwake()
     {
@@ -56,8 +47,6 @@ public class GameStructure : MonoBehaviour
                 //create new data object
                 var tmp = new DayStructure();
 
-
-
                 //store the Data object in our dataArray
                 dayStructure[i] = tmp;
             }
@@ -69,35 +58,18 @@ public class GameStructure : MonoBehaviour
     {
         currentDay++;
         currentDaySO = dayStructure[currentDay];
-        //sceneStarter = GameObject.FindGameObjectWithTag("SceneStarter").GetComponent<SceneStarter>();
-        //LoadScene();
     }
 
     public void StartGame()
     {
-        
 
-        Debug.Log("why");
 
         if (currentDaySO == null)
         {
             currentDaySO = dayStructure[currentDay];
-            //sceneStarter = GameObject.FindGameObjectWithTag("SceneStarter").GetComponent<SceneStarter>();
-            //Debug.Log(GameObject.FindGameObjectWithTag("SceneStarter"));
-
-            if (SceneManager.GetActiveScene().name == currentDaySO.scene.name)
-            {
-                
-                //LoadScene();
-                Debug.Log("yo waht");
-                RunScene();
-            }
         }
 
         LoadScene();
-        //gameStructure.gameRunning = true;
-
-        
 
 
     }
@@ -105,46 +77,47 @@ public class GameStructure : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(currentDaySO.scene.name);
-        Debug.Log("load the scene");
-        
+        //Debug.Log("load the scene");
+
         RunScene();
 
     }
 
     public void RunScene()
     {
-       // if (isRunning)
+        // if (isRunning)
         //{
-            characterManager = FindObjectOfType<CharacterManager>();
-            characterManager.AssignSelf();
-            spriteManager = FindObjectOfType<SpriteManager>();
-            spriteManager.AssignSelf();
-            attitudeManager = FindObjectOfType<AttitudeManager>();
-            attitudeManager.AssignSelf();
-            activityManager = FindObjectOfType<ActivityManager>();
-            activityManager.AssignSelf();
-            sceneManager = FindObjectOfType<Scenes>();
-            sceneManager.AssignSelf();
-            gameStructure = FindObjectOfType<GameStructure>();
-            gameStructure.AssignSelf();
-            actions = FindObjectOfType<Actions>();
-            actions.AssignSelf();
+        CallAssignSelfs();
+
+        isRunning = true;
 
 
-            if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
+        //CallAssignSelfs();
+        sceneStarter.StartSceneStarter();
+
+        
+
+
+
+      /*  if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
             {
-                Debug.Log("Run activity");
-                sceneStarter = FindObjectOfType<SceneStarter>();
-                sceneStarter.AssignSelf();
-                sceneStarter.StartSceneStarter();
-            isRunning = true;
-           // sceneStarter.ActivityRunner();
+                Debug.Log("RUN ACTIVITY");
 
-            }
+            sceneStarter.ActivityRunner();
+            // sceneStarter.ActivityRunner();
+
+        }
+        if (currentDaySO.dayParts[dayTime].GetType() == typeof(LineBlock))
+        {
+            Debug.Log("RUN LINE BLOCK");
+
+            sceneStarter.LineRunner();
+
+        } */
         //}
 
 
-      //  if (currentDaySO.morning.GetType() == typeof()
+        //  if (currentDaySO.morning.GetType() == typeof()
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -152,14 +125,14 @@ public class GameStructure : MonoBehaviour
        // Debug.Log(scene.name + mode);
     }
 
-    public void GoToNextDayType()
+    public void GoToNextDayTime()
     {
         dayTime++;
         sceneManager.currentSceneNo++;
         sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
         if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
         {
-            Debug.Log("Run activity");
+            Debug.Log("RUN ACTIVITY");
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
             sceneStarter.StartSceneStarter();
@@ -167,7 +140,7 @@ public class GameStructure : MonoBehaviour
         }
         if (currentDaySO.dayParts[dayTime].GetType() == typeof(LineBlock))
         {
-            Debug.Log("help me please");
+            Debug.Log("RUN LINE BLOCK");
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
             sceneStarter.StartSceneStarter();
@@ -175,6 +148,33 @@ public class GameStructure : MonoBehaviour
         }
     }
 
+    public void GoToNextDay()
+    {
+        ProgressDay();
+        StartGame();
+        CallAssignSelfs();
+    }
+
+    public void CallAssignSelfs()
+    {
+        AssignSelf();
+        sceneStarter = FindObjectOfType<SceneStarter>();
+        sceneStarter.AssignSelf();
+        characterManager = FindObjectOfType<CharacterManager>();
+        characterManager.AssignSelf();
+        spriteManager = FindObjectOfType<SpriteManager>();
+        spriteManager.AssignSelf();
+        attitudeManager = FindObjectOfType<AttitudeManager>();
+        attitudeManager.AssignSelf();
+        activityManager = FindObjectOfType<ActivityManager>();
+        activityManager.AssignSelf();
+        sceneManager = FindObjectOfType<Scenes>();
+        sceneManager.AssignSelf();
+        gameStructure = FindObjectOfType<GameStructure>();
+        gameStructure.AssignSelf();
+        actions = FindObjectOfType<Actions>();
+        actions.AssignSelf();
+    }
 }
 
 

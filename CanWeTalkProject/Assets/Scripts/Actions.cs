@@ -36,9 +36,9 @@ public class Actions : MonoBehaviour
     {       
         
         int actionNumber = (int)action;
-        Debug.Log("lets go" + actionNumber);
+       // Debug.Log("lets go" + actionNumber);
         actionList[actionNumber] = true;
-        Debug.Log(actionNumber);
+      //  Debug.Log(actionNumber);
 
     }
 
@@ -48,5 +48,6 @@ public class Actions : MonoBehaviour
         thisone.actions = this;
         SceneStarter thisotherone = FindObjectOfType<SceneStarter>();
         thisotherone.actions = this;
+       // Debug.Log("assign actions");
     }
 }

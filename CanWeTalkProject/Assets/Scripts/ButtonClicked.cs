@@ -60,7 +60,7 @@ public class ButtonClicked : MonoBehaviour
         //sceneStarter.previousLines += sceneStarter.currentLineBlock.lines.Length - sceneStarter.previousLines;
         sceneStarter.CreateActivityResponse(activityNumber);
         sceneStarter.activityChosen = true;
-        sceneStarter.activity = false;
+        sceneStarter.activityActive = false;
         sceneStarter.ResizeContent(-transform.parent.transform.parent.gameObject.GetComponent<RectTransform>().sizeDelta.y);
         Destroy(transform.parent.transform.parent.gameObject);
 

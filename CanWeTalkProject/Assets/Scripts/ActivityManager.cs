@@ -24,7 +24,9 @@ public class ActivityManager : MonoBehaviour
         
         thisone.activityManager = this;
 
-       // 
+       // Debug.Log("assign activity");
+
+        // 
         //alsothisone.activit
     }
     public void CreateActivityList()
