@@ -997,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: {fileID: 1797358792}
+  sceneManager: {fileID: 0}
   actions: {fileID: 1876200796}
   activities:
   - {fileID: 11400000, guid: 4616fc2f8aa66874384bfdaa6c08d9f5, type: 2}
@@ -3013,10 +3014,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
-  - {fileID: 11400000, guid: 1fcd989f40a13074c9b5b8c5b3683d3e, type: 2}
-  - {fileID: 11400000, guid: e8bf15452ee7ca447b68423f46467bf3, type: 2}
+  - {fileID: 11400000, guid: 71c7d5d92259a204da1eaac9d6822f78, type: 2}
+  - {fileID: 11400000, guid: 71c7d5d92259a204da1eaac9d6822f78, type: 2}
+  - {fileID: 11400000, guid: c1b842aa331be234cb67534a8836d56c, type: 2}
+  - {fileID: 11400000, guid: c009f14e7b1532648a6152e2acc5f216, type: 2}
+  - {fileID: 11400000, guid: 45c8f192edc44f64497f17754e610b04, type: 2}
   audioSource: {fileID: 0}
+  currentSceneNo: 0
+  currentScene: {fileID: 0}
 --- !u!82 &906270193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4215,10 +4220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e939f79d57453b408f09476a6377207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameRunning: 0
+  isRunning: 0
   sceneStarter: {fileID: 0}
   daysAmount: 14
   currentDay: 0
+  dayTime: 0
   currentDaySO: {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
   dayStructure:
   - {fileID: 11400000, guid: 0814c90f26b626940aaff6ce1e496550, type: 2}
@@ -6259,11 +6265,11 @@ MonoBehaviour:
   attitudeManager: {fileID: 1830396687}
   activityManager: {fileID: 337928163}
   sceneManager: {fileID: 906270192}
-  currentScene: {fileID: 11400000, guid: f596ba89c36f63b478e92dd002ff7406, type: 2}
   actions: {fileID: 1876200796}
   gameStructure: {fileID: 0}
-  sceneNumber: 0
   decision: 0
+  activity: 0
+  activityChosen: 1
   dayNumber: 0
   weekday: 0
   dayTime: 0

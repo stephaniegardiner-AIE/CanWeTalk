@@ -16,11 +16,11 @@ public class SceneStarter : MonoBehaviour
     public AttitudeManager attitudeManager;
     public ActivityManager activityManager;
     public Scenes sceneManager;
-    public DialogScene currentScene;
+    //public DialogScene currentScene;
     public Actions actions;
     public GameStructure gameStructure;
 
-    public int sceneNumber;
+    //public int sceneNumber;
     
     public bool decision = false;
     public bool activity = false;
@@ -118,11 +118,11 @@ public class SceneStarter : MonoBehaviour
     {
         if (gameStructure.isRunning)
         {
-            if (currentScene.lineBlocks != null)
+            if (sceneManager.currentScene.lineBlocks != null)
             {
-                if (currentScene.lineBlocks.Length != 0)
+                if (sceneManager.currentScene.lineBlocks.Length != 0)
                 {
-                    currentLineBlock = currentScene.lineBlocks[0];
+                    currentLineBlock = sceneManager.currentScene.lineBlocks[0];
                 }
             }
 
@@ -136,10 +136,10 @@ public class SceneStarter : MonoBehaviour
 
     public void SetSceneInfo()
     {
-        dayNumber = currentScene.dayNumber;
-        weekday = currentScene.weekday;
-        dayTime = currentScene.dayTime;
-        location = currentScene.location;
+        dayNumber = sceneManager.currentScene.dayNumber;
+        weekday = sceneManager.currentScene.weekday;
+        dayTime = sceneManager.currentScene.dayTime;
+        location = sceneManager.currentScene.location;
         UpdateSceneAppearance();
     }
 
@@ -147,16 +147,20 @@ public class SceneStarter : MonoBehaviour
     {
         if (gameStructure.isRunning)
         {
+            Debug.Log("on next");
             //if the decision maker isn't active! run the next line :))))
             if (!decision)
             {
+                Debug.Log("line runner");
                 LineRunner();
                 //Debug.Log("NextLine");
             }
             if (activityChosen)
             {
                 Debug.Log("sup fam");
-                gameStructure.GoToAfternoon();
+                activityChosen = false;
+                gameStructure.GoToNextDayType();
+                
             }
         }
 
@@ -242,7 +246,8 @@ public class SceneStarter : MonoBehaviour
         }
         else
         {
-            if (currentScene.lineBlocks.Length != 0 && currentScene.lineBlocks != null)
+            Debug.Log("almost made it");
+            if (sceneManager.currentScene.lineBlocks.Length != 0 && sceneManager.currentScene.lineBlocks != null)
             {
                 if (lineNumber > currentLineBlock.lines.Length - 1)
                 {
@@ -482,8 +487,8 @@ public class SceneStarter : MonoBehaviour
     public void GoToNextScene(LineBlock nextLineBlock, LineBlock currentLineblock)
     {
         
-        sceneNumber = currentLineBlock.nextSceneNumber;
-        currentScene = sceneManager.scenes[sceneNumber];
+        //sceneNumber = currentLineBlock.nextSceneNumber;
+        //sceneManager.currentScene = sceneManager.scenes[sceneNumber];
         currentLineBlock = nextLineBlock;
         lineNumber = 0;
         

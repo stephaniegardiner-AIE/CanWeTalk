@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActivityManager : MonoBehaviour
 {
     public SceneStarter scene;
+    public Scenes sceneManager;
     public Actions actions;
     public Activity[] activities;
 
@@ -15,7 +16,7 @@ public class ActivityManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        CreateActivityList();
+        //CreateActivityList();
     }
     public void AssignSelf()
     {
@@ -46,7 +47,7 @@ public class ActivityManager : MonoBehaviour
             {
                 for (int e = 0; e < activities[i].locationArrayLength; e++)
                 {
-                    if (activities[i].locationArray[e] == scene.currentScene.location)
+                    if (activities[i].locationArray[e] == sceneManager.currentScene.location)
                     {
                         location = true;
                        // Debug.Log(activities[i].locationArray[e] + "this is a house");
@@ -63,7 +64,7 @@ public class ActivityManager : MonoBehaviour
             {
                 for (int e = 0; e < activities[i].dayTypeArrayLength; e++)
                 {
-                    if(activities[i].dayTypeArray[e] == scene.currentScene.dayType)
+                    if(activities[i].dayTypeArray[e] == sceneManager.currentScene.dayType)
                     {
                         dayType = true;
                        // Debug.Log(activities[i].dayTypeArray[e] + "this is on the weekend");
@@ -81,7 +82,7 @@ public class ActivityManager : MonoBehaviour
             {
                 for (int e = 0; e < activities[i].dayTimeArrayLength; e++)
                 {
-                    if (activities[i].dayTimeArray[e] == scene.currentScene.dayTime)
+                    if (activities[i].dayTimeArray[e] == sceneManager.currentScene.dayTime)
                     {
                         dayTime = true;
                       //  Debug.Log(activities[i].dayTimeArray[e] + "is at night");

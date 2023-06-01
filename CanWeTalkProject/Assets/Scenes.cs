@@ -8,6 +8,8 @@ public class Scenes : MonoBehaviour
     public DialogScene[] scenes;
     // Start is called before the first frame update
     public AudioSource audioSource;
+    public int currentSceneNo;
+    public DialogScene currentScene;
 
 
     void Start()
@@ -15,6 +17,8 @@ public class Scenes : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
 ;        audioSource = GetComponent<AudioSource>();
+
+        currentScene = scenes[currentSceneNo];
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class Scenes : MonoBehaviour
     {
         SceneStarter thisone = FindObjectOfType<SceneStarter>();
         thisone.sceneManager = this;
+        ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
+        thisotherone.sceneManager = this;
     }
 
     void OnReloadScene()

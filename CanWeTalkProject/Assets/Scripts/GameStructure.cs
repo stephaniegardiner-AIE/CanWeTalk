@@ -152,9 +152,11 @@ public class GameStructure : MonoBehaviour
        // Debug.Log(scene.name + mode);
     }
 
-    public void GoToAfternoon()
+    public void GoToNextDayType()
     {
         dayTime++;
+        sceneManager.currentSceneNo++;
+        sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
         if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
         {
             Debug.Log("Run activity");
@@ -162,6 +164,14 @@ public class GameStructure : MonoBehaviour
             sceneStarter.AssignSelf();
             sceneStarter.StartSceneStarter();
             sceneStarter.ActivityRunner();
+        }
+        if (currentDaySO.dayParts[dayTime].GetType() == typeof(LineBlock))
+        {
+            Debug.Log("help me please");
+            sceneStarter = FindObjectOfType<SceneStarter>();
+            sceneStarter.AssignSelf();
+            sceneStarter.StartSceneStarter();
+            sceneStarter.LineRunner();
         }
     }
 

@@ -27,7 +27,7 @@ public class Actions : MonoBehaviour
 
     public void MakeActionList()
     {
-        var actionsCount = LineBlock.ActionListElement.Actions.GetNames(typeof(LineBlock.ActionListElement)).Length;
+        var actionsCount = LineBlock.ActionListElement.Actions.GetNames(typeof(LineBlock.ActionListElement.Actions)).Length;
 
         //actionList = new Dictionary<string, bool>();
 
