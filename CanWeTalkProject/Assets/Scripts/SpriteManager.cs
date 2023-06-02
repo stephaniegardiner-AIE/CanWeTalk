@@ -459,17 +459,37 @@ public class SpriteManager : MonoBehaviour
         {
             DestroySprites(activeCharacterSprites[i]);
 
+            
+
             //GameObject.Destroy(activeCharacterSprites[i]);
 
            // Debug.Log("clear characters");
         }
 
+        activeCharacterSprites.Clear();
+        //activeCharacterSprites.Count = 0;
         secondaryCharacterSprites.Clear();
 
-        // primaryCharacter = null;
+         primaryCharacter = null;
 
-       // Debug.Log("we made it");
-    }
+         wifeActive = false;
+    boyActive = false;
+    girlActive = false;
+    dogActive = false;
+    friendActive = false;
+    lawyerActive = false;
+    principalActive = false;
+
+activeWifeSprite = null;
+activeBoySprite = null;
+activeGirlSprite = null;
+activeDogSprite = null;
+activeFriendSprite = null;
+activeLawyerSprite = null;
+ activePrincipalSprite = null;
+
+    // Debug.Log("we made it");
+}
 
     private void DestroySprites(GameObject sprite)
     {

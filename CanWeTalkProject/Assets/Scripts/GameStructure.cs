@@ -127,6 +127,8 @@ public class GameStructure : MonoBehaviour
 
     public void GoToNextDayTime()
     {
+        spriteManager.ClearCharacters();
+
         dayTime++;
         sceneManager.currentSceneNo++;
         sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
@@ -153,6 +155,7 @@ public class GameStructure : MonoBehaviour
 
     public void GoToNextDay()
     {
+        spriteManager.ClearCharacters();
         dayTime = 0;
         ProgressDay();
         StartGame();

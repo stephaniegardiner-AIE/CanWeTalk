@@ -174,7 +174,21 @@ public class SceneStarter : MonoBehaviour
     {
         dayNumber = sceneManager.currentScene.dayNumber;
         weekday = sceneManager.currentScene.weekday;
-        dayTime = sceneManager.currentScene.dayTime;
+
+        if (gameStructure.dayTime == 0)
+        {
+            dayTime = DialogScene.DayTime.Morning;
+        }
+        if (gameStructure.dayTime == 1)
+        {
+            dayTime = DialogScene.DayTime.Afternoon;
+        }
+        if (gameStructure.dayTime == 2)
+        {
+            dayTime = DialogScene.DayTime.Night;
+        }
+
+        //dayTime = sceneManager.currentScene.dayTime;
         location = sceneManager.currentScene.location;
         UpdateSceneAppearance();
     }
@@ -533,7 +547,7 @@ public class SceneStarter : MonoBehaviour
             //currentLineBlock = sceneManager.currentScene.lineBlocks[0];
             //lineNumber = 0;
             changingDay = true;
-            spriteManager.ClearCharacters();
+
             gameStructure.GoToNextDay();
 
             //GoToNextScene();
