@@ -120,6 +120,8 @@ public class SceneStarter : MonoBehaviour
         AssignSelf();
         gameStructure.CallAssignSelfs();
 
+        StartSceneStarter();
+
         //ActivityRunner();
 
         if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
@@ -158,11 +160,17 @@ public class SceneStarter : MonoBehaviour
                 {
                     currentLineBlock = sceneManager.currentScene.lineBlocks[0];
                 }
+
+                SetSceneInfo();
             }
 
+            if (dayNumberText != null)
+            {
+                SetSceneInfo();
+            }
             //LineRunner();
 
-            SetSceneInfo();
+            
 
             contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
         }

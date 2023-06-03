@@ -56,8 +56,7 @@ public class GameStructure : MonoBehaviour
 
     public void ProgressDay()
     {
-        currentDay++;
-        currentDaySO = dayStructure[currentDay];
+
     }
 
     public void StartGame()
@@ -66,6 +65,7 @@ public class GameStructure : MonoBehaviour
 
         if (currentDaySO == null)
         {
+            Debug.Log(currentDaySO);
             currentDaySO = dayStructure[currentDay];
         }
 
@@ -92,8 +92,8 @@ public class GameStructure : MonoBehaviour
         isRunning = true;
 
 
-        //CallAssignSelfs();
-        sceneStarter.StartSceneStarter();
+       // sceneStarter.
+       // sceneStarter.
 
         
 
@@ -155,9 +155,33 @@ public class GameStructure : MonoBehaviour
 
     public void GoToNextDay()
     {
+
+
+
         spriteManager.ClearCharacters();
         dayTime = 0;
-        ProgressDay();
+        //ProgressDay();
+
+        currentDay++;
+        currentDaySO = dayStructure[currentDay];
+
+        //sceneManager.currentSceneNo = FindObjectOfType;
+
+        //if (currentDaySO.dayParts[0].GetType().Name.ToString() == "DialogScene")
+        //{
+        sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[0];
+        //}
+
+
+        for (int i = 0; i < sceneManager.scenes.Length; i++)
+        {
+            if (sceneManager.scenes[i].name == sceneManager.currentScene.name)
+            {
+                //sceneManager.currentScene = nextScene;
+                sceneManager.currentSceneNo = i;
+            }
+        }
+
         StartGame();
         CallAssignSelfs();
 
