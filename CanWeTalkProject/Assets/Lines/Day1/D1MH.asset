@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D1MH
   m_EditorClassIdentifier: 
   lineBlocks: []
-  dayNumber: 1
+  dayNumber: 0
   weekday: 0
   dayTime: 1
   dayType: 2

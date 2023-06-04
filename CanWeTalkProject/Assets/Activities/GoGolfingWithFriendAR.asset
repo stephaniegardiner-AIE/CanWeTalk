@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: GoGolfingWithFriendAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'went golfing with friend
-
-'
+  dialog: I go golfing with friend name.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 5

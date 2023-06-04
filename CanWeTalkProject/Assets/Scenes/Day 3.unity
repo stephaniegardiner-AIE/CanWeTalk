@@ -194,9 +194,9 @@ MonoBehaviour:
   activityActive: 0
   activityChosen: 0
   changingDay: 0
-  dayNumber: 0
-  weekday: 0
-  dayTime: 0
+  dayNumber: 3
+  weekday: 2
+  dayTime: 1
   location: 0
   currentLineBlock: {fileID: 11400000, guid: 0324cf723fac9954097404ebd9481855, type: 2}
   linePrefab: {fileID: 2259409190784553032, guid: b213c2ace16a4554bb588558b3ab1288, type: 3}
@@ -249,7 +249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86885994
 GameObject:
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554686428053167445, guid: cd9457cdfc1c1014195773b85cb25b62, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7554686428053167445, guid: cd9457cdfc1c1014195773b85cb25b62, type: 3}
       propertyPath: m_AnchorMax.x
@@ -568,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554686429022947173, guid: cd9457cdfc1c1014195773b85cb25b62, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7554686429054658111, guid: cd9457cdfc1c1014195773b85cb25b62, type: 3}
       propertyPath: m_AnchorMax.y
@@ -839,7 +839,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1648131900
 GameObject:
@@ -870,7 +870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748536733
 GameObject:
@@ -954,5 +954,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

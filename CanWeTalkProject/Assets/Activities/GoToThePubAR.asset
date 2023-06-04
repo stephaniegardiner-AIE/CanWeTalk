@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: GoToThePubAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'went to pub
-
-'
+  dialog: I go to the pub.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 2

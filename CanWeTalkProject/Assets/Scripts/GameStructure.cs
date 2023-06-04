@@ -78,7 +78,7 @@ public class GameStructure : MonoBehaviour
     {
         SceneManager.LoadScene(currentDaySO.scene.name);
         //Debug.Log("load the scene");
-
+       // CallAssignSelfs();
         RunScene();
 
     }
@@ -201,15 +201,16 @@ public class GameStructure : MonoBehaviour
         }
 
         StartGame();
-        CallAssignSelfs();
+        
 
     }
 
     public void CallAssignSelfs()
     {
+        Debug.Log(sceneStarter.gameStructure);
         AssignSelf();
-        sceneStarter = FindObjectOfType<SceneStarter>();
-        sceneStarter.AssignSelf();
+        //sceneStarter = FindObjectOfType<SceneStarter>();
+        //sceneStarter.AssignSelf();
         characterManager = FindObjectOfType<CharacterManager>();
         characterManager.AssignSelf();
         spriteManager = FindObjectOfType<SpriteManager>();

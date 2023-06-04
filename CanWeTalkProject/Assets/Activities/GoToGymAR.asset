@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GoToGymAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: went to gym
+  dialog: I go to the gym.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 2

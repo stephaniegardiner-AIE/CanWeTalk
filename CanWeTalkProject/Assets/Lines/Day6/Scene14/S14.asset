@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b8f1378dec448e47a8438946efb5d85, type: 2}
   - {fileID: 11400000, guid: cf5ace7cad6e16e419e9e9b32b3a5e59, type: 2}
   - {fileID: 11400000, guid: 7cdc69900b9bff84398d6070fbaa0859, type: 2}
-  dayNumber: 6
+  dayNumber: 5
   weekday: 5
   dayTime: 1
   dayType: 1

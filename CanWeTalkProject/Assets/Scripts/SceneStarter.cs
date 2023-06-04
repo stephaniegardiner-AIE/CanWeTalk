@@ -103,7 +103,7 @@ public class SceneStarter : MonoBehaviour
         thisotherone.scene = this;
 
         //thisone.gameStructure.CallAssignSelfs();
-        //StartSceneStarter();
+        StartSceneStarter();
 
         //GameObject content = FindObjectOfType<>
     }
@@ -118,7 +118,7 @@ public class SceneStarter : MonoBehaviour
     void Start()
     {
         AssignSelf();
-        gameStructure.CallAssignSelfs();
+        //gameStructure.CallAssignSelfs();
 
         StartSceneStarter();
 
@@ -150,33 +150,41 @@ public class SceneStarter : MonoBehaviour
     public void StartSceneStarter()
     {
 
- 
-
-        if (gameStructure.isRunning)
+        if (gameStructure == null)
         {
-            if (sceneManager.currentScene.lineBlocks != null)
+            AssignSelf();
+        }
+        else
+        {
+            if (gameStructure.isRunning)
             {
-                if (sceneManager.currentScene.lineBlocks.Length != 0)
+                if (sceneManager.currentScene.lineBlocks != null)
                 {
-                    currentLineBlock = sceneManager.currentScene.lineBlocks[0];
+                    if (sceneManager.currentScene.lineBlocks.Length != 0)
+                    {
+                        currentLineBlock = sceneManager.currentScene.lineBlocks[0];
+                    }
+
+                    SetSceneInfo();
                 }
 
-                SetSceneInfo();
-            }
+                if (dayNumberText != null)
+                {
+                    SetSceneInfo();
+                }
+                //LineRunner();
 
-            if (dayNumberText != null)
-            {
-                SetSceneInfo();
-            }
-            //LineRunner();
+                // if(gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
+                // {
+                //currentLineBlock = null;
+                // }
 
-            if(gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
-            {
-                currentLineBlock = null;
+                contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
             }
-
-            contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
         }
+
+
+        
 
 
     }
@@ -210,7 +218,7 @@ public class SceneStarter : MonoBehaviour
         {
             //Debug.Log("on next");
             //if the decision maker isn't active! run the next line :))))
-            if (!decision)
+            if (!decision && !activityActive && !activityChosen)
             {
                 //Debug.Log("line runner");
                 LineRunner();
