@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: S20
   m_EditorClassIdentifier: 
   lineBlocks: []
-  dayNumber: 0
+  dayNumber: 8
   weekday: 0
-  dayTime: 0
+  dayTime: 1
   dayType: 2
   location: 0

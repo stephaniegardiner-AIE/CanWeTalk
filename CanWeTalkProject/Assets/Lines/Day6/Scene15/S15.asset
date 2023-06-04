@@ -15,8 +15,8 @@ MonoBehaviour:
   lineBlocks:
   - {fileID: 11400000, guid: 6ea8083f21a5ae14089d4fcef098c0a3, type: 2}
   - {fileID: 11400000, guid: 2cd7cf07a132e5b44a0f6e2d72ff99f4, type: 2}
-  dayNumber: 0
-  weekday: 0
-  dayTime: 0
-  dayType: 2
+  dayNumber: 6
+  weekday: 5
+  dayTime: 1
+  dayType: 1
   location: 0
