@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9412a79717d851346b073f482acc6171, type: 2}
   endDecisionBlock: {fileID: 0}
   runActivityBlockNext: 0
-  nextLineBlock: {fileID: 0}
+  nextLineBlock: {fileID: 11400000, guid: 90a3caacc9675e24996f61757ab674f0, type: 2}
   nextScene: {fileID: 0}
   goToNextDayTime: 0
   goToNextDay: 0

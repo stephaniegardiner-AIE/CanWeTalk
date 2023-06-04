@@ -24,8 +24,8 @@ MonoBehaviour:
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextScene: {fileID: 0}
-  goToNextDayTime: 1
-  goToNextDay: 0
+  goToNextDayTime: 0
+  goToNextDay: 1
   hasConditions: 0
   conditions: 0
   actionCondition: 0

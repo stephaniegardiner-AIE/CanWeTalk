@@ -15,6 +15,6 @@ MonoBehaviour:
   scene: {fileID: 102900000, guid: 86e5bc80e5d901941b54caf5984423ed, type: 3}
   dayParts:
   - {fileID: 11400000, guid: 5fa1049eb56e09c4c8aef4b0dda257f1, type: 2}
-  - {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
+  - {fileID: 11400000, guid: 20f5f2420a422b14ba1de30ed71bb88c, type: 2}
   - {fileID: 11400000, guid: 4bfd577b60c25cf42900e4053d900578, type: 2}
   dayTime: 1
