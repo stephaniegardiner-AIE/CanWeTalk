@@ -126,7 +126,7 @@ public class SceneStarter : MonoBehaviour
 
         if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
         {
-            Debug.Log("RUN ACTIVITY");
+            //Debug.Log("RUN ACTIVITY");
 
             ActivityRunner();
             // sceneStarter.ActivityRunner();
@@ -134,11 +134,11 @@ public class SceneStarter : MonoBehaviour
         }
         if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(DialogScene))
         {
-            Debug.Log("RUN LINE BLOCK");
+           // Debug.Log("RUN LINE BLOCK");
 
             LineRunner();
 
-        }
+        } 
 
 
 
@@ -170,7 +170,10 @@ public class SceneStarter : MonoBehaviour
             }
             //LineRunner();
 
-            
+            if(gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
+            {
+                currentLineBlock = null;
+            }
 
             contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
         }
@@ -244,7 +247,7 @@ public class SceneStarter : MonoBehaviour
 
     public void UpdateSceneAppearance()
     {
-        dayNumberText.text = "Day " + dayNumber.ToString();
+        dayNumberText.text = "Day " + (dayNumber + 1).ToString();
         weekdayText.text = weekday.ToString();
         dayTimeText.text = dayTime.ToString();
         //UpdateSceneBackground(dayTime, location);
@@ -538,6 +541,7 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.runActivityBlockNext)
         {
+            ActivityRunner();
             Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
         }
         if (currentLineBlock.nextScene != null)
@@ -633,12 +637,12 @@ public class SceneStarter : MonoBehaviour
 
         
     {
-        Debug.Log("att actvity manager");
+       // Debug.Log("att actvity manager");
 
         if (gameStructure.isRunning)
         {
 
-            Debug.Log("made it past isrunning");
+           // Debug.Log("made it past isrunning");
             //Debug.Log("Run Activity");
 
 

@@ -90,34 +90,6 @@ public class GameStructure : MonoBehaviour
         CallAssignSelfs();
 
         isRunning = true;
-
-
-       // sceneStarter.
-       // sceneStarter.
-
-        
-
-
-
-      /*  if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
-            {
-                Debug.Log("RUN ACTIVITY");
-
-            sceneStarter.ActivityRunner();
-            // sceneStarter.ActivityRunner();
-
-        }
-        if (currentDaySO.dayParts[dayTime].GetType() == typeof(LineBlock))
-        {
-            Debug.Log("RUN LINE BLOCK");
-
-            sceneStarter.LineRunner();
-
-        } */
-        //}
-
-
-        //  if (currentDaySO.morning.GetType() == typeof()
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -127,18 +99,61 @@ public class GameStructure : MonoBehaviour
 
     public void GoToNextDayTime()
     {
+        Debug.Log("GO TO NEXT DAY TIME");
+
         spriteManager.ClearCharacters();
 
         dayTime++;
-        sceneManager.currentSceneNo++;
-        sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
+
+        if (dayTime > 2)
+        {
+            GoToNextDay();
+        }
+
+        if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
+        {
+            Debug.Log(currentDaySO.dayParts[dayTime].GetType());
+            sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
+
+            for (int i = 0; i < sceneManager.scenes.Length; i++)
+            {
+                if (sceneManager.scenes[i].name == sceneManager.currentScene.name)
+                {
+                    //sceneManager.currentScene = nextScene;
+                    sceneManager.currentSceneNo = i;
+                }
+                else
+                {
+                    Debug.Log("could not find match for " + sceneManager.currentScene.name);
+                }
+            }
+
+
+        }
+        else
+        {
+            Debug.Log(currentDaySO.dayParts[dayTime].GetType());
+
+        }
+
+        //
+        //sceneManager.currentSceneNo++;
+        //sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
         if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
         {
+            //sceneManager.currentSceneNo = 0;
+            //sceneManager.currentScene = sceneManager.scenes[0];
+
+
             Debug.Log("RUN ACTIVITY");
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
 
-            sceneStarter.StartSceneStarter();
+           // sceneStarter.currentLineBlock = null;
+            sceneStarter.lineNumber = 0;
+
+            //sceneStarter.StartSceneStarter();
+            sceneStarter.SetSceneInfo();
             sceneStarter.ActivityRunner();
         }
         if (currentDaySO.dayParts[dayTime].GetType() == typeof(DialogScene))
@@ -147,8 +162,11 @@ public class GameStructure : MonoBehaviour
             sceneStarter = FindObjectOfType<SceneStarter>();
             sceneStarter.AssignSelf();
 
+            sceneStarter.lineNumber = 0;
+
             //sceneManager.currentScene = currentDaySO.dayParts[dayTime].G;
             sceneStarter.StartSceneStarter();
+            sceneStarter.SetSceneInfo();
             sceneStarter.LineRunner();
         }
     }
@@ -156,7 +174,7 @@ public class GameStructure : MonoBehaviour
     public void GoToNextDay()
     {
 
-
+        Debug.Log("GO TO NEXT DAY");
 
         spriteManager.ClearCharacters();
         dayTime = 0;
@@ -169,7 +187,7 @@ public class GameStructure : MonoBehaviour
 
         //if (currentDaySO.dayParts[0].GetType().Name.ToString() == "DialogScene")
         //{
-        sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[0];
+        sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
         //}
 
 
