@@ -102,15 +102,6 @@ public class SceneStarter : MonoBehaviour
         ActivityManager thisotherone = FindObjectOfType<ActivityManager>();
         thisotherone.scene = this;
 
-        //thisone.gameStructure.CallAssignSelfs();
-       // StartSceneStarter();
-
-        //GameObject content = FindObjectOfType<>
-    }
-
-    private void Update()
-    {
-        //Debug.Log(activityActive);
     }
 
     //public GameObject scrollContent;
@@ -118,19 +109,7 @@ public class SceneStarter : MonoBehaviour
     void Start()
     {
         AssignSelf();
-        //gameStructure.CallAssignSelfs();
-
         StartSceneStarter();
-
-        //ActivityRunner();
-
-
-
-
-
-
-        // SetSceneInfo();
-        // ActivityRunner();
     }
 
     public void StartSceneStarter()
@@ -395,7 +374,7 @@ public class SceneStarter : MonoBehaviour
     public void CreateActivityResponse(int activityNumber)
     {
         GameObject line = Instantiate(linePrefab) as GameObject;
-       // CheckCharacterFormat(line);
+        CheckCharacterFormat(line);
 
         line.transform.SetParent(content.transform, false);
         line.name = "SpeechBubble" + lineNumber.ToString();
@@ -566,7 +545,7 @@ public class SceneStarter : MonoBehaviour
         if (currentLineBlock.runActivityBlockNext)
         {
             ActivityRunner();
-            Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
+           // Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
         }
         if (currentLineBlock.nextLineBlock != null)
         {
@@ -597,202 +576,155 @@ public class SceneStarter : MonoBehaviour
 
     public void GoToNextLineBlock(LineBlock nextLineBlock)
     {
+        bool attitudeConditionsMet = true;
+        bool actionConditionsMet = true;
+
+
+
+
+
         //Attitude Conditions
-        if (nextLineBlock.attitudeCondition)
+        if (nextLineBlock.attitudeCondition || nextLineBlock.actionCondition)
         {
             Line.AttitudeEffects.AttitudesCharacter attitudeCharacter;
             float characterAttitudeLevel;
             
+            //for wife attitude
             if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
             {
                 attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.wifeAttitude;
                 characterAttitudeLevel = attitudeManager.wifeAttitudeLevel;
 
+                //if condition is greater than
                 if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
                 {
                     if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
-                else
+                //if condition is less than
+                if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.LessThan)
                 {
                     if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
             }
+            //for kids attitude
             if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
             {
                 attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.kidsAttitude;
                 characterAttitudeLevel = attitudeManager.kidsAttitudeLevel;
 
+                //if condition is more than
                 if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
                 {
                     if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
+                //if condition is less than
                 else
                 {
                     if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
             }
+            //for yout attittude
             if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
             {
                 attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.youAttitude;
                 characterAttitudeLevel = attitudeManager.youAttitudeLevel;
 
+                //if conhdition is mnore than 
                 if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
                 {
                     if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
+                // if condition is less than
                 else
                 {
                     if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
                     {
-                        currentLineBlock = nextLineBlock;
-                        lineNumber = 0;
-
-                        LineRunner();
+                        attitudeConditionsMet = true;
                     }
                     else
                     {
-                        if (nextLineBlock.ifFailedRunActivity)
-                        {
-                            ActivityRunner();
-                        }
-                        else
-                        {
-                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                        }
+                        attitudeConditionsMet = false;
                     }
                 }
             }
 
-
-        }
-        if (nextLineBlock.actionCondition)
-        {
-            for (int i =0; i < nextLineBlock.actionArrayLength; i++)
+            for (int i = 0; i < nextLineBlock.actionArrayLength; i++)
             {
 
                 int actionConditionNo = (int)nextLineBlock.actionArray[i].actionsCondition;
                 if (actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
                 {
-                    currentLineBlock = nextLineBlock;
-                    lineNumber = 0;
-
-                    LineRunner();
+                    actionConditionsMet = true;
                 }
                 if (actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
                 {
-                    if (nextLineBlock.ifFailedRunActivity)
-                    {
-                        ActivityRunner();
-                    }
-                    else
-                    {
-                        GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                    }
-                    
+                    attitudeConditionsMet = false;
+
                 }
                 if (!actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
                 {
-                    if (nextLineBlock.ifFailedRunActivity)
-                    {
-                        ActivityRunner();
-                    }
-                    else
-                    {
-                        GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
-                    }
+                    attitudeConditionsMet = false;
                 }
                 if (!actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
                 {
-                    currentLineBlock = nextLineBlock;
-                    lineNumber = 0;
-
-                    LineRunner();
+                    actionConditionsMet = true;
                 }
+            }
+
+
+        }
+
+        if (actionConditionsMet && attitudeConditionsMet)
+        {
+            currentLineBlock = nextLineBlock;
+            lineNumber = 0;
+
+            LineRunner();
+        }
+        else
+        {
+            if (nextLineBlock.ifFailedRunActivity)
+            {
+                ActivityRunner();
+            }
+            else
+            {
+                GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
             }
         }
 
@@ -928,70 +860,80 @@ public class SceneStarter : MonoBehaviour
     {
         TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
         GameObject speechBackground = speech.GetComponent<Transform>().gameObject;
-        
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)                   
+
+        if (activityActive)
         {
             speechBackground.GetComponent<Image>().color = characterManager.descriptionColor;
             speechText.alignment = TextAlignmentOptions.Center;
-            //FigureCharacterSprites(Line.Character character);
+        }
+        else
+        {
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.descriptionColor;
+                speechText.alignment = TextAlignmentOptions.Center;
+                //FigureCharacterSprites(Line.Character character);
 
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.youColor;
+                GameObject speechTail = Instantiate(speechTailLeft) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.youColor;
+                //FigureCharacterSprites(Line.Character character);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.wifeColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.wifeColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Wife);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.boyColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.boyColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Boy);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.girlColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.girlColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Girl);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.dogColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.dogColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Dog);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Friend)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.friendColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.friendColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Friend);
+            }
+            if (currentLineBlock.lines[lineNumber].character == Line.Character.Lawyer)
+            {
+                speechBackground.GetComponent<Image>().color = characterManager.lawyerColor;
+                GameObject speechTail = Instantiate(speechTailRight) as GameObject;
+                speechTail.transform.SetParent(speechBackground.transform, false);
+                speechTail.GetComponent<Image>().color = characterManager.lawyerColor;
+                spriteManager.FigureCharacterSprites(Line.Character.Lawyer);
+            }
         }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.You)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.youColor;
-            GameObject speechTail = Instantiate(speechTailLeft) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.youColor;
-            //FigureCharacterSprites(Line.Character character);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Wife)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.wifeColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.wifeColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Wife);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Boy)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.boyColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.boyColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Boy);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Girl)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.girlColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.girlColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Girl);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Dog)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.dogColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.dogColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Dog);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Friend)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.friendColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.friendColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Friend);
-        }
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Lawyer)
-        {
-            speechBackground.GetComponent<Image>().color = characterManager.lawyerColor;
-            GameObject speechTail = Instantiate(speechTailRight) as GameObject;
-            speechTail.transform.SetParent(speechBackground.transform, false);
-            speechTail.GetComponent<Image>().color = characterManager.lawyerColor;
-            spriteManager.FigureCharacterSprites(Line.Character.Lawyer);
-        }
+        
+        
 
     }
 

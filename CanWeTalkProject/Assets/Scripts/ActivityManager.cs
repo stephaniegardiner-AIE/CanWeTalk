@@ -40,8 +40,8 @@ public class ActivityManager : MonoBehaviour
 
         for (int i = 0; i < activities.Length; i++)
         {
-            bool location = false;
-            bool action = true;
+            bool location = true;
+            bool action = false;
             bool dayType = false;
             bool dayTime = false;
 

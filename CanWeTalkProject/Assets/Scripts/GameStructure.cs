@@ -129,7 +129,7 @@ public class GameStructure : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("could not find match for " + sceneManager.currentScene.name);
+                       // Debug.Log("could not find match for " + sceneManager.currentScene.name);
                     }
                 }
 
@@ -191,8 +191,12 @@ public class GameStructure : MonoBehaviour
         currentDay++;
         currentDaySO = dayStructure[currentDay];
 
-
-        sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
+        if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
+        { 
+            
+            sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
+        }
+            
 
         for (int i = 0; i < sceneManager.scenes.Length; i++)
         {

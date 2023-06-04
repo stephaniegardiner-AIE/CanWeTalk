@@ -187,6 +187,11 @@ public class AttitudeManager : MonoBehaviour
         {
             _valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / attitudeLerpDuration);
             timeElapsed += Time.deltaTime;
+
+            if (attitudeBar == null)
+            {
+                StopAllCoroutines();
+            }
             attitudeBar.fillAmount = _valueToLerp / 100;
             yield return null;
         }
