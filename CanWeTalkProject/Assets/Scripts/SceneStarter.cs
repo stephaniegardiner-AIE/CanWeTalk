@@ -103,7 +103,7 @@ public class SceneStarter : MonoBehaviour
         thisotherone.scene = this;
 
         //thisone.gameStructure.CallAssignSelfs();
-        StartSceneStarter();
+       // StartSceneStarter();
 
         //GameObject content = FindObjectOfType<>
     }
@@ -124,21 +124,7 @@ public class SceneStarter : MonoBehaviour
 
         //ActivityRunner();
 
-        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
-        {
-            //Debug.Log("RUN ACTIVITY");
 
-            ActivityRunner();
-            // sceneStarter.ActivityRunner();
-
-        }
-        if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(DialogScene))
-        {
-           // Debug.Log("RUN LINE BLOCK");
-
-            LineRunner();
-
-        } 
 
 
 
@@ -156,8 +142,27 @@ public class SceneStarter : MonoBehaviour
         }
         else
         {
+
+
             if (gameStructure.isRunning)
             {
+                if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
+                {
+                    //Debug.Log("RUN ACTIVITY");
+                    SetSceneInfo();
+
+                    ActivityRunner();
+                    // sceneStarter.ActivityRunner();
+
+                }
+                if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(DialogScene))
+                {
+                    // Debug.Log("RUN LINE BLOCK");
+                    SetSceneInfo();
+                    LineRunner();
+
+                }
+
                 if (sceneManager.currentScene.lineBlocks != null)
                 {
                     if (sceneManager.currentScene.lineBlocks.Length != 0)
@@ -231,7 +236,14 @@ public class SceneStarter : MonoBehaviour
                 gameStructure.GoToNextDayTime();
                 
             }
+            if (sceneBackground.sprite.name == "SpeechBubble")
+            {
+                
+                SetSceneInfo();
+            }
         }
+
+
 
 
     }

@@ -61,7 +61,7 @@ public class GameStructure : MonoBehaviour
 
     public void StartGame()
     {
-
+        isRunning = false;
 
         if (currentDaySO == null)
         {
@@ -87,9 +87,11 @@ public class GameStructure : MonoBehaviour
     {
         // if (isRunning)
         //{
+        isRunning = true;
+
         CallAssignSelfs();
 
-        isRunning = true;
+        
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -101,7 +103,7 @@ public class GameStructure : MonoBehaviour
     {
         Debug.Log("GO TO NEXT DAY TIME");
 
-        spriteManager.ClearCharacters();
+
 
         dayTime++;
 
@@ -109,66 +111,72 @@ public class GameStructure : MonoBehaviour
         {
             GoToNextDay();
         }
-
-        if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
-        {
-            Debug.Log(currentDaySO.dayParts[dayTime].GetType());
-            sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
-
-            for (int i = 0; i < sceneManager.scenes.Length; i++)
-            {
-                if (sceneManager.scenes[i].name == sceneManager.currentScene.name)
-                {
-                    //sceneManager.currentScene = nextScene;
-                    sceneManager.currentSceneNo = i;
-                }
-                else
-                {
-                    Debug.Log("could not find match for " + sceneManager.currentScene.name);
-                }
-            }
-
-
-        }
         else
         {
-            Debug.Log(currentDaySO.dayParts[dayTime].GetType());
+            spriteManager.ClearCharacters();
 
+            if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
+            {
+                Debug.Log(currentDaySO.dayParts[dayTime].GetType());
+                sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
+
+                for (int i = 0; i < sceneManager.scenes.Length; i++)
+                {
+                    if (sceneManager.scenes[i].name == sceneManager.currentScene.name)
+                    {
+                        //sceneManager.currentScene = nextScene;
+                        sceneManager.currentSceneNo = i;
+                    }
+                    else
+                    {
+                        Debug.Log("could not find match for " + sceneManager.currentScene.name);
+                    }
+                }
+
+
+            }
+            else
+            {
+                Debug.Log(currentDaySO.dayParts[dayTime].GetType());
+
+            }
+
+            //
+            //sceneManager.currentSceneNo++;
+            //sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
+            if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
+            {
+                //sceneManager.currentSceneNo = 0;
+                //sceneManager.currentScene = sceneManager.scenes[0];
+
+
+                Debug.Log("RUN ACTIVITY");
+                sceneStarter = FindObjectOfType<SceneStarter>();
+                //sceneStarter.AssignSelf();
+
+                //sceneStarter.currentLineBlock = null;
+                sceneStarter.lineNumber = 0;
+
+                //sceneStarter.StartSceneStarter();
+                sceneStarter.SetSceneInfo();
+                sceneStarter.ActivityRunner();
+            }
+            if (currentDaySO.dayParts[dayTime].GetType() == typeof(DialogScene))
+            {
+                Debug.Log("RUN LINE BLOCK");
+                sceneStarter = FindObjectOfType<SceneStarter>();
+                //sceneStarter.AssignSelf();
+
+                sceneStarter.lineNumber = 0;
+
+                //sceneManager.currentScene = currentDaySO.dayParts[dayTime].G;
+                sceneStarter.StartSceneStarter();
+                sceneStarter.SetSceneInfo();
+                sceneStarter.LineRunner();
+            }
         }
 
-        //
-        //sceneManager.currentSceneNo++;
-        //sceneManager.currentScene = sceneManager.scenes[sceneManager.currentSceneNo];
-        if (currentDaySO.dayParts[dayTime].GetType() == typeof(ActivityBlock))
-        {
-            //sceneManager.currentSceneNo = 0;
-            //sceneManager.currentScene = sceneManager.scenes[0];
-
-
-            Debug.Log("RUN ACTIVITY");
-            sceneStarter = FindObjectOfType<SceneStarter>();
-            sceneStarter.AssignSelf();
-
-           // sceneStarter.currentLineBlock = null;
-            sceneStarter.lineNumber = 0;
-
-            //sceneStarter.StartSceneStarter();
-            sceneStarter.SetSceneInfo();
-            sceneStarter.ActivityRunner();
-        }
-        if (currentDaySO.dayParts[dayTime].GetType() == typeof(DialogScene))
-        {
-            Debug.Log("RUN LINE BLOCK");
-            sceneStarter = FindObjectOfType<SceneStarter>();
-            sceneStarter.AssignSelf();
-
-            sceneStarter.lineNumber = 0;
-
-            //sceneManager.currentScene = currentDaySO.dayParts[dayTime].G;
-            sceneStarter.StartSceneStarter();
-            sceneStarter.SetSceneInfo();
-            sceneStarter.LineRunner();
-        }
+        
     }
 
     public void GoToNextDay()
