@@ -340,7 +340,7 @@ public class SceneStarter : MonoBehaviour
         //sets the text
         dialogText.GetComponent<TextMeshProUGUI>().text = currentLineBlock.lines[lineNumber].dialog;
 
-        NameCheck();
+        NameCheck(dialogText.GetComponent<TextMeshProUGUI>());
 
         TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
 
@@ -381,7 +381,7 @@ public class SceneStarter : MonoBehaviour
         //sets the text
         dialogText.GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[activityNumber].activityResponse.dialog;
 
-        NameCheck();
+        NameCheck(dialogText.transform.GetComponent<TextMeshProUGUI>());
 
         TypeWriter(dialogText.GetComponent<TextMeshProUGUI>());
 
@@ -606,6 +606,8 @@ public class SceneStarter : MonoBehaviour
             decision.tag = "Decision";
             decision.transform.SetParent(decisionBlock.transform.Find("DecisionButtons"), false);
             decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentLineBlock.endDecisionBlock.decisions[i].decisionName;
+
+            NameCheck(decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
             //adds type writer effect to button text
             TypeWriter(decision.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
             decision.GetComponent<ButtonClicked>().decisionNumber = i;
@@ -659,6 +661,7 @@ public class SceneStarter : MonoBehaviour
                 activity.tag = "Activity";
                 activity.transform.SetParent(activityBlock.transform.Find("ActivityButtons"), false);
                 activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = activityManager.currentActivites[i].activityName;
+                NameCheck(activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
                 //adds type writer effect to button text
                 TypeWriter(activity.transform.GetChild(0).GetComponent<TextMeshProUGUI>());
                 activity.GetComponent<ButtonClicked>().activityNumber = i;
@@ -764,14 +767,20 @@ public class SceneStarter : MonoBehaviour
         contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
     }
 
-    public void NameCheck()
+    public void NameCheck(TextMeshProUGUI textToReplace)
     {
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("WifeName", characterManager.wifeName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidBoyName", characterManager.boyName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("KidGirlName", characterManager.girlName);
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("DogName", characterManager.dogName);
+        
+        textToReplace.text = textToReplace.text.Replace("WifeName", characterManager.wifeName);
+        textToReplace.text = textToReplace.text.Replace("KidBoyName", characterManager.boyName);
+        textToReplace.text = textToReplace.text.Replace("KidGirlName", characterManager.girlName);
+        textToReplace.text = textToReplace.text.Replace("DogName", characterManager.dogName);
+        textToReplace.text = textToReplace.text.Replace("FriendName", characterManager.friendName);
+        textToReplace.text = textToReplace.text.Replace("HotDivorceLawyerName", characterManager.lawyerName);
+        textToReplace.text = textToReplace.text.Replace("PlayerName", characterManager.youName);
 
-        dialogText.transform.GetComponent<TextMeshProUGUI>().text = dialogText.transform.GetComponent<TextMeshProUGUI>().text.Replace("*", ",");
+
+
+        textToReplace.text = textToReplace.text.Replace("*", ",");
         
     }
 
