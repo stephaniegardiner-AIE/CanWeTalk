@@ -116,7 +116,8 @@ public class LineBlock : ScriptableObject
             GotLawyerNumber,
             WentOutPartying,
             DeadDog,
-            LeftChildrenHomeAlone
+            LeftChildrenHomeAlone,
+            PlayGolf,
         }
 
         public Actions actionsCondition;
@@ -170,6 +171,8 @@ public class LineBlock : ScriptableObject
     public float attitudeAmount;
 
     public LineBlock ifFailedContinueTo;
+
+    public bool ifFailedRunActivity;
 
     /*[Header("Actions")]
     bool signedPapers;

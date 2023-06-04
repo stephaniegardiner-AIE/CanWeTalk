@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DS 7
   m_EditorClassIdentifier: 
   scene: {fileID: 102900000, guid: 61b9f4637ebd92c40aee77aca28ac8c2, type: 3}
-  morning: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
-  afternoon: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
-  night: {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
+  dayParts:
+  - {fileID: 11400000, guid: c0e9f7bf679fe3e448fcda81767b4c42, type: 2}
+  - {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
+  - {fileID: 11400000, guid: 878526cb7cd9f5b4cad2ab78cde497c9, type: 2}
+  dayTime: 1

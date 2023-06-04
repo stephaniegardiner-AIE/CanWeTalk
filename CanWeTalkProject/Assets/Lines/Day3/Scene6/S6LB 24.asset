@@ -22,17 +22,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 461b11f5825b8394d8f3ce4d88dce983, type: 2}
   - {fileID: 11400000, guid: 5cbc941b15024bc44987f5157219f12a, type: 2}
   - {fileID: 11400000, guid: ce5c7bca2726b9445a80769dc4521d75, type: 2}
-  endDecisionBlock: {fileID: 11400000, guid: 5f1e07542ac491b4ba00b2c92d955bf3, type: 2}
+  endDecisionBlock: {fileID: 11400000, guid: 4e0a7470ab4dbe84cadce2c2acc626a1, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
-  hasConditions: 0
-  conditions: 0
-  actionCondition: 0
-  actionArrayLength: 0
-  actionArray: []
+  nextScene: {fileID: 0}
+  goToNextDayTime: 0
+  goToNextDay: 0
+  hasConditions: 1
+  conditions: 2
+  actionCondition: 1
+  actionArrayLength: 2
+  actionArray:
+  - actionsCondition: 3
+    trueOrFalse: 0
+  - actionsCondition: 4
+    trueOrFalse: 1
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0
   attitudeAmount: 0
-  ifFailedContinueTo: {fileID: 0}
+  ifFailedContinueTo: {fileID: 11400000, guid: a20028fbe509718458df85428692666c, type: 2}
+  ifFailedRunActivity: 0

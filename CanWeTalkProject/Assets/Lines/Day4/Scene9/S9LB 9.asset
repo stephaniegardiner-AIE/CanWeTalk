@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6b3bd2a31c18f4e9b761797e76e7b5, type: 3}
   m_Name: S9LB 9
   m_EditorClassIdentifier: 
-  decisions: []
+  decisions:
+  - {fileID: 11400000, guid: 0d7a3d087daef5141bbac8ec529dad06, type: 2}
+  - {fileID: 11400000, guid: 8fd44f806133258469040c1be2e39d85, type: 2}
+  - {fileID: 11400000, guid: 543a6ec3b3d90504f897b9367bc1882e, type: 2}

@@ -186,24 +186,18 @@ public class GameStructure : MonoBehaviour
 
         spriteManager.ClearCharacters();
         dayTime = 0;
-        //ProgressDay();
+
 
         currentDay++;
         currentDaySO = dayStructure[currentDay];
 
-        //sceneManager.currentSceneNo = FindObjectOfType;
 
-        //if (currentDaySO.dayParts[0].GetType().Name.ToString() == "DialogScene")
-        //{
         sceneManager.currentScene = (DialogScene)currentDaySO.dayParts[dayTime];
-        //}
-
 
         for (int i = 0; i < sceneManager.scenes.Length; i++)
         {
             if (sceneManager.scenes[i].name == sceneManager.currentScene.name)
             {
-                //sceneManager.currentScene = nextScene;
                 sceneManager.currentSceneNo = i;
             }
         }

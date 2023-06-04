@@ -20,6 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4eec509877ec0b0469d7aa1f7c95d98a, type: 2}
   dayNumber: 6
   weekday: 6
-  dayTime: 1
+  dayTime: 3
   dayType: 2
   location: 0

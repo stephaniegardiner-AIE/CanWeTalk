@@ -184,6 +184,8 @@ public class SceneStarter : MonoBehaviour
                 //currentLineBlock = null;
                 // }
 
+                
+
                 contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
             }
         }
@@ -215,6 +217,8 @@ public class SceneStarter : MonoBehaviour
         //dayTime = sceneManager.currentScene.dayTime;
         location = sceneManager.currentScene.location;
         UpdateSceneAppearance();
+
+        attitudeManager.SetAttitude();
     }
 
     void OnNext()
@@ -391,7 +395,7 @@ public class SceneStarter : MonoBehaviour
     public void CreateActivityResponse(int activityNumber)
     {
         GameObject line = Instantiate(linePrefab) as GameObject;
-        CheckCharacterFormat(line);
+       // CheckCharacterFormat(line);
 
         line.transform.SetParent(content.transform, false);
         line.name = "SpeechBubble" + lineNumber.ToString();
@@ -564,6 +568,10 @@ public class SceneStarter : MonoBehaviour
             ActivityRunner();
             Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
         }
+        if (currentLineBlock.nextLineBlock != null)
+        {
+            GoToNextLineBlock(currentLineBlock.nextLineBlock);
+        }
         if (currentLineBlock.nextScene != null)
         {
             GoToNextDialogScene(currentLineBlock.nextScene);
@@ -583,6 +591,209 @@ public class SceneStarter : MonoBehaviour
             gameStructure.GoToNextDay();
 
             //GoToNextScene();
+        }
+
+    }
+
+    public void GoToNextLineBlock(LineBlock nextLineBlock)
+    {
+        //Attitude Conditions
+        if (nextLineBlock.attitudeCondition)
+        {
+            Line.AttitudeEffects.AttitudesCharacter attitudeCharacter;
+            float characterAttitudeLevel;
+            
+            if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.wifeAttitude)
+            {
+                attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.wifeAttitude;
+                characterAttitudeLevel = attitudeManager.wifeAttitudeLevel;
+
+                if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
+                {
+                    if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+                else
+                {
+                    if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+            }
+            if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.kidsAttitude)
+            {
+                attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.kidsAttitude;
+                characterAttitudeLevel = attitudeManager.kidsAttitudeLevel;
+
+                if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
+                {
+                    if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+                else
+                {
+                    if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+            }
+            if(nextLineBlock.attitudes == Line.AttitudeEffects.AttitudesCharacter.youAttitude)
+            {
+                attitudeCharacter = Line.AttitudeEffects.AttitudesCharacter.youAttitude;
+                characterAttitudeLevel = attitudeManager.youAttitudeLevel;
+
+                if (nextLineBlock.attitudeLevel == LineBlock.AttitudeLevel.GreaterThan)
+                {
+                    if (characterAttitudeLevel > nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+                else
+                {
+                    if (characterAttitudeLevel <= nextLineBlock.attitudeAmount)
+                    {
+                        currentLineBlock = nextLineBlock;
+                        lineNumber = 0;
+
+                        LineRunner();
+                    }
+                    else
+                    {
+                        if (nextLineBlock.ifFailedRunActivity)
+                        {
+                            ActivityRunner();
+                        }
+                        else
+                        {
+                            GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                        }
+                    }
+                }
+            }
+
+
+        }
+        if (nextLineBlock.actionCondition)
+        {
+            for (int i =0; i < nextLineBlock.actionArrayLength; i++)
+            {
+
+                int actionConditionNo = (int)nextLineBlock.actionArray[i].actionsCondition;
+                if (actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+                {
+                    currentLineBlock = nextLineBlock;
+                    lineNumber = 0;
+
+                    LineRunner();
+                }
+                if (actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+                {
+                    if (nextLineBlock.ifFailedRunActivity)
+                    {
+                        ActivityRunner();
+                    }
+                    else
+                    {
+                        GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                    }
+                    
+                }
+                if (!actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+                {
+                    if (nextLineBlock.ifFailedRunActivity)
+                    {
+                        ActivityRunner();
+                    }
+                    else
+                    {
+                        GoToNextLineBlock(nextLineBlock.ifFailedContinueTo);
+                    }
+                }
+                if (!actions.actionList[actionConditionNo] && nextLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+                {
+                    currentLineBlock = nextLineBlock;
+                    lineNumber = 0;
+
+                    LineRunner();
+                }
+            }
         }
 
     }
@@ -718,7 +929,7 @@ public class SceneStarter : MonoBehaviour
         TextMeshProUGUI speechText = speech.GetComponent<Transform>().Find("CharacterDialogText").GetComponent<TextMeshProUGUI>();
         GameObject speechBackground = speech.GetComponent<Transform>().gameObject;
         
-        if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)
+        if (currentLineBlock.lines[lineNumber].character == Line.Character.Description)                   
         {
             speechBackground.GetComponent<Image>().color = characterManager.descriptionColor;
             speechText.alignment = TextAlignmentOptions.Center;

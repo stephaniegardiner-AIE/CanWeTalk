@@ -16,9 +16,9 @@ MonoBehaviour:
   dialog: Are you kidding me?
   attitudeArrayLength: 3
   attitudeArray:
-  - attitudeCharacter: 1
+  - attitudeCharacter: 2
     attitudeChangeAmount: 3
-  - attitudeCharacter: 1
+  - attitudeCharacter: 3
     attitudeChangeAmount: 3
   - attitudeCharacter: 1
     attitudeChangeAmount: 3

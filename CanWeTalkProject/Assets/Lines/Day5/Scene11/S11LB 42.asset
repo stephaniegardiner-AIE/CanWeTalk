@@ -29,13 +29,17 @@ MonoBehaviour:
   endDecisionBlock: {fileID: 0}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
+  nextScene: {fileID: 0}
+  goToNextDayTime: 1
+  goToNextDay: 0
   hasConditions: 0
   conditions: 0
   actionCondition: 0
-  actions: 0
+  actionArrayLength: 0
+  actionArray: []
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0
   attitudeAmount: 0
   ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0

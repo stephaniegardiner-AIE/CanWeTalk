@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 102900000, guid: 73556666cdc25b44985d72cfc8ed259e, type: 3}
   dayParts:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3bab3e9f95d935c4e9e9fbc1805aa1a7, type: 2}
   - {fileID: 11400000, guid: f3f1d434ec220bd4aaecb1e904e3a18e, type: 2}
-  - {fileID: 0}
-  dayTime: 0
+  - {fileID: 11400000, guid: b7e05d003cdaeb54abc4c9f99c61aca2, type: 2}
+  dayTime: 1

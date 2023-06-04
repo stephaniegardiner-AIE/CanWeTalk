@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6b3bd2a31c18f4e9b761797e76e7b5, type: 3}
   m_Name: S13DB12
   m_EditorClassIdentifier: 
-  decisions: []
+  decisions:
+  - {fileID: 11400000, guid: 24e728bb1969a164d87b98a07187f8c5, type: 2}
+  - {fileID: 11400000, guid: a48705eb41ca5d144936de03111b53f4, type: 2}

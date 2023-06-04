@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S7LB 28
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: f69efa8f1a090d144b044588b25e5788, type: 2}
+  - {fileID: 11400000, guid: a1ee6eec468a42f46a05ba55e0a85cf4, type: 2}
+  - {fileID: 11400000, guid: 1844ced777e1e4b4a971d287bc9da322, type: 2}
+  - {fileID: 11400000, guid: 7669c3f2827e9b04b87ead8bdfb982db, type: 2}
+  - {fileID: 11400000, guid: ff95143897a0809459636f7ce237e547, type: 2}
+  - {fileID: 11400000, guid: b82b3dbc296fdf24eba4b1c2931ad24b, type: 2}
+  - {fileID: 11400000, guid: ad43b6dddfdef8f4c8552a1867716ba9, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextScene: {fileID: 0}
+  goToNextDayTime: 1
+  goToNextDay: 0
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actionArrayLength: 0
+  actionArray: []
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0

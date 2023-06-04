@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7d944f665bc44397e90026e94839d, type: 3}
+  m_Name: S20LB 73
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 04909562c0b95ff4e9e3ba28137f6283, type: 2}
+  - {fileID: 11400000, guid: 39f0a832eb9e14642b4bf430d6801967, type: 2}
+  - {fileID: 11400000, guid: 82438f33fe2ec254582eab79ae27acee, type: 2}
+  - {fileID: 11400000, guid: 89692a1959dc2c14d959101643cac642, type: 2}
+  - {fileID: 11400000, guid: 0cd0f6015ccf7db40b250127f339be72, type: 2}
+  - {fileID: 11400000, guid: 1fe8a98b05ea10f499060d27f2300b03, type: 2}
+  - {fileID: 11400000, guid: 62f4d35095d70404b94fa5bd62211461, type: 2}
+  - {fileID: 11400000, guid: 1fd4e795a0a557d49b932b686fbd7633, type: 2}
+  - {fileID: 11400000, guid: dfde537bd1ac6da459854804e78d9d85, type: 2}
+  - {fileID: 11400000, guid: 5adbc118148a62f43844ac4320c1d2ab, type: 2}
+  - {fileID: 11400000, guid: a8ab2945a6d62554dad5d4efb8056fec, type: 2}
+  - {fileID: 11400000, guid: 13b1710e13faac043a9c696095a31529, type: 2}
+  - {fileID: 11400000, guid: 91b2b4abb4bcaeb4883a516c9feaffe3, type: 2}
+  - {fileID: 11400000, guid: 4875b87ad3d1d2349bb3625b7ba13843, type: 2}
+  - {fileID: 11400000, guid: 4b29d3f117fbb4c4c854377a10656b27, type: 2}
+  - {fileID: 11400000, guid: 43714d62afb359c46a53f514706fd8d5, type: 2}
+  - {fileID: 11400000, guid: 9bff8134054996f40aa5d38d439c6a5e, type: 2}
+  endDecisionBlock: {fileID: 0}
+  runActivityBlockNext: 0
+  nextLineBlock: {fileID: 0}
+  nextScene: {fileID: 0}
+  goToNextDayTime: 0
+  goToNextDay: 1
+  hasConditions: 0
+  conditions: 0
+  actionCondition: 0
+  actionArrayLength: 0
+  actionArray: []
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
+  attitudeAmount: 0
+  ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0
