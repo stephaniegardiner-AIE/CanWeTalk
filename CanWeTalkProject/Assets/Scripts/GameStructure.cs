@@ -76,6 +76,8 @@ public class GameStructure : MonoBehaviour
 
     public void LoadScene()
     {
+        spriteManager.ClearCharacters();
+
         SceneManager.LoadScene(currentDaySO.scene.name);
         //Debug.Log("load the scene");
        // CallAssignSelfs();
@@ -113,8 +115,7 @@ public class GameStructure : MonoBehaviour
         }
         else
         {
-            spriteManager.ClearCharacters();
-
+            
             if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
             {
                 Debug.Log(currentDaySO.dayParts[dayTime].GetType());

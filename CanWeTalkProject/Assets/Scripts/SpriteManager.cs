@@ -77,6 +77,21 @@ public class SpriteManager : MonoBehaviour
 
     public void NewCharacterSprite(Line.Character character)
     {
+        //for (int i = 0; i < activeCharacterSprites.Count; i++)
+        //{
+        //    if (activeCharacterSprites[i] == null)
+        //    {
+        //        activeCharacterSprites.Remove(activeCharacterSprites[i]);
+        //    }
+        //}
+        //for (int i = 0; i < secondaryCharacterSprites.Count; i++)
+        //{
+        //    if (secondaryCharacterSprites[i] == null)
+        //    {
+        //        secondaryCharacterSprites.Remove(secondaryCharacterSprites[i]);
+        //    }
+        //}
+
         if (character == Line.Character.Wife)
         {
             if (wifeActive)
@@ -400,9 +415,9 @@ public class SpriteManager : MonoBehaviour
                 }
                 if (girlActive)
                 {
-                    activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
-
-                    StartAnimation(activeGirlSprite, 0);
+                                    activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                
+                StartAnimation(activeGirlSprite, 0);
                 }
 
                 //Debug.Log("kidnegativereaction");
@@ -480,41 +495,54 @@ public class SpriteManager : MonoBehaviour
 
     public void ClearCharacters()
     {
+        primaryCharacter = null;
+
         for (int i = 0; i == activeCharacterSprites.Count - 1; i++)
         {
-            DestroySprites(activeCharacterSprites[i]);
+            
+
+            GameObject.Destroy(activeCharacterSprites[i]);
+            activeCharacterSprites.Remove(activeCharacterSprites[i]);
+            
+           // DestroySprites(activeCharacterSprites[i]);
 
             
 
             //GameObject.Destroy(activeCharacterSprites[i]);
 
-           // Debug.Log("clear characters");
+            // Debug.Log("clear characters");
+
+            if (i == activeCharacterSprites.Count - 1)
+            {
+
+            }
         }
 
-        activeCharacterSprites.Clear();
+        //
         //activeCharacterSprites.Count = 0;
+        //
+        activeCharacterSprites.Clear();
         secondaryCharacterSprites.Clear();
 
-         primaryCharacter = null;
 
-         wifeActive = false;
-    boyActive = false;
-    girlActive = false;
-    dogActive = false;
-    friendActive = false;
-    lawyerActive = false;
-    principalActive = false;
+        wifeActive = false;
+        boyActive = false;
+        girlActive = false;
+        dogActive = false;
+        friendActive = false;
+        lawyerActive = false;
+        principalActive = false;
 
-activeWifeSprite = null;
-activeBoySprite = null;
-activeGirlSprite = null;
-activeDogSprite = null;
-activeFriendSprite = null;
-activeLawyerSprite = null;
- activePrincipalSprite = null;
+        activeWifeSprite = null;
+        activeBoySprite = null;
+        activeGirlSprite = null;
+        activeDogSprite = null;
+        activeFriendSprite = null;
+        activeLawyerSprite = null;
+        activePrincipalSprite = null;
 
-    // Debug.Log("we made it");
-}
+        // Debug.Log("we made it");
+    }
 
     private void DestroySprites(GameObject sprite)
     {
@@ -558,7 +586,7 @@ activeLawyerSprite = null;
 
 
         GameObject.Destroy(sprite);
-        activeCharacterSprites.Clear();
+        //activeCharacterSprites.Clear();
         primaryCharacter = null;
 
         
