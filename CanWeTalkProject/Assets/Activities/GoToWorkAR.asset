@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: GoToWorkAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'went to work
-
-'
+  dialog: I go to work. It's pretty boring, as always.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 2

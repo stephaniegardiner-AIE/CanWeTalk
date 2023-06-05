@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: MakeASnackAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'made a snack
-
-'
+  dialog: I make a snack. Chocolate on celery, my favourite.
   attitudeArrayLength: 3
   attitudeArray:
   - attitudeCharacter: 4
