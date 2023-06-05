@@ -1000,7 +1000,6 @@ MonoBehaviour:
   sceneManager: {fileID: 0}
   actions: {fileID: 1876200796}
   activities:
-  - {fileID: 11400000, guid: 4616fc2f8aa66874384bfdaa6c08d9f5, type: 2}
   - {fileID: 11400000, guid: 0d1b491018768fa488162c297ffd5200, type: 2}
   - {fileID: 11400000, guid: e5d1b39a1317c0f418ba9d7c8ea63c44, type: 2}
   - {fileID: 11400000, guid: 269c0dcdabadbc34682a044d7c834868, type: 2}
@@ -1012,9 +1011,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52ca35b86504e7c4fb993060e1595189, type: 2}
   - {fileID: 11400000, guid: 3c3eda392f715844d82b5bf95348ff2f, type: 2}
   - {fileID: 11400000, guid: 3fce6eb14bf72af44b0e7a363c04c671, type: 2}
-  - {fileID: 11400000, guid: a58afd1dc934c8648b817d83fb45b2f7, type: 2}
-  - {fileID: 11400000, guid: c40aa1ee66fb8b342a1983e662ebcedb, type: 2}
-  - {fileID: 11400000, guid: 3c2409b5288d29d4c993241521389b07, type: 2}
   - {fileID: 11400000, guid: 0aca0ae938ed97143a70dd254b733b7a, type: 2}
   currentActivites: []
 --- !u!4 &337928164
