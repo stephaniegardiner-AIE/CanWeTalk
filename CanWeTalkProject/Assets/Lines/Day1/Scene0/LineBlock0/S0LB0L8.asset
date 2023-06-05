@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 2
   dialog: "These are divorce papers* I\u2019ve already signed them so all you have
-    to do is-"
+    to do is..."
   attitudeArrayLength: 0
   attitudeArray: []
   hasAction: 0
