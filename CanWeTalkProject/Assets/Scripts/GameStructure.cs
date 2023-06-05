@@ -21,6 +21,7 @@ public class GameStructure : MonoBehaviour
     public Scenes sceneManager;
     public GameStructure gameStructure;
     public Actions actions;
+    int sceneNumber = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +77,10 @@ public class GameStructure : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(currentDaySO.scene.name);
+        spriteManager.ClearCharacters();
+
+        SceneManager.LoadScene("Day " + sceneNumber);
+        sceneNumber++;
         //Debug.Log("load the scene");
        // CallAssignSelfs();
         RunScene();
@@ -113,8 +117,7 @@ public class GameStructure : MonoBehaviour
         }
         else
         {
-            spriteManager.ClearCharacters();
-
+            
             if (currentDaySO.dayParts[dayTime].GetType().ToString() == "DialogScene")
             {
                 Debug.Log(currentDaySO.dayParts[dayTime].GetType());

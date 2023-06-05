@@ -126,6 +126,9 @@ public class SceneStarter : MonoBehaviour
 
             if (gameStructure.isRunning)
             {
+                spriteManager.activeCharacterSprites.Clear();
+                spriteManager.secondaryCharacterSprites.Clear();
+
                 if (gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
                 {
                     //Debug.Log("RUN ACTIVITY");
@@ -157,6 +160,8 @@ public class SceneStarter : MonoBehaviour
                 {
                     SetSceneInfo();
                 }
+
+
                 //LineRunner();
 
                 // if(gameStructure.currentDaySO.dayParts[gameStructure.dayTime].GetType() == typeof(ActivityBlock))
@@ -164,7 +169,7 @@ public class SceneStarter : MonoBehaviour
                 //currentLineBlock = null;
                 // }
 
-                
+
 
                 contentHeight = content.GetComponent<RectTransform>().sizeDelta.y;
             }
@@ -545,20 +550,23 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.runActivityBlockNext)
         {
+            spriteManager.ClearCharacters();
             ActivityRunner();
            // Debug.Log("RUN ACTVIITY BLOCK NEXT YOU HAVEN'T SET IT UP THOUGH STEPH");
         }
         if (currentLineBlock.nextLineBlock != null)
         {
+            
             GoToNextLineBlock(currentLineBlock.nextLineBlock);
         }
         if (currentLineBlock.nextScene != null)
         {
+            spriteManager.ClearCharacters();
             GoToNextDialogScene(currentLineBlock.nextScene);
         }
         if (currentLineBlock.goToNextDayTime)
         {
-            
+            spriteManager.ClearCharacters();
             gameStructure.GoToNextDayTime();
         }
         //Debug.Log("LineBlockComplete");

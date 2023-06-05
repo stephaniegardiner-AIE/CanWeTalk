@@ -241,7 +241,11 @@ public class AttitudeManager : MonoBehaviour
             {
                 StopAllCoroutines();
             }
-            attitudeBar.fillAmount = _valueToLerp / 100;
+            else
+            {
+                attitudeBar.fillAmount = _valueToLerp / 100;
+            }
+            
             yield return null;
         }
         _valueToLerp = endValue;
