@@ -15,4 +15,3 @@ MonoBehaviour:
   decisions:
   - {fileID: 11400000, guid: 47fc32ed7c5968e43a7dfbccd3bb9a5f, type: 2}
   - {fileID: 11400000, guid: 628dd4b2c2a0f42489a2c445f75e000c, type: 2}
-  - {fileID: 11400000, guid: 2dbdac54b8664754fbb58214f0b1bc99, type: 2}

@@ -257,7 +257,7 @@ public class SceneStarter : MonoBehaviour
     public void UpdateSceneAppearance()
     {
         dayNumberText.text = "Day " + (dayNumber + 1).ToString();
-        weekdayText.text = weekday.ToString() + " " + dayTime.ToString();
+        weekdayText.text = weekday.ToString() + ", " + dayTime.ToString();
         //dayTimeText.text = dayTime.ToString();
         //UpdateSceneBackground(dayTime, location);
 
@@ -321,6 +321,8 @@ public class SceneStarter : MonoBehaviour
             {
                 if (lineNumber > currentLineBlock.lines.Length - 1)
                 {
+
+                    Debug.Log("line runner " + currentLineBlock.lines.Length + sceneManager.currentScene.name + " " + lineNumber);
                     FigureNext();
                 }
                 //if the lines aren't run out, run the next line
@@ -556,24 +558,29 @@ public class SceneStarter : MonoBehaviour
         }
         if (currentLineBlock.nextLineBlock != null)
         {
-            
+            lineNumber = 0;
+            Debug.Log("go to next line block " + currentLineBlock.lines.Length + sceneManager.currentScene.name + " " + lineNumber);
             GoToNextLineBlock(currentLineBlock.nextLineBlock);
         }
         if (currentLineBlock.nextScene != null)
         {
+            lineNumber = 0;
+            Debug.Log("go to next dialog scene " + currentLineBlock.lines.Length + sceneManager.currentScene.name + " " + lineNumber);
             spriteManager.ClearCharacters();
             GoToNextDialogScene(currentLineBlock.nextScene);
         }
         if (currentLineBlock.goToNextDayTime)
         {
+            Debug.Log("go to next day time " + currentLineBlock.lines.Length + sceneManager.currentScene.name + " " + lineNumber);
             spriteManager.ClearCharacters();
             gameStructure.GoToNextDayTime();
         }
         //Debug.Log("LineBlockComplete");
         if (currentLineBlock.goToNextDay)
         {
+            Debug.Log("go to next day " + currentLineBlock.lines.Length + sceneManager.currentScene.name + " " + lineNumber);
             //currentLineBlock = sceneManager.currentScene.lineBlocks[0];
-            //lineNumber = 0;
+            lineNumber = 0;
             changingDay = true;
 
             gameStructure.GoToNextDay();
@@ -588,9 +595,9 @@ public class SceneStarter : MonoBehaviour
         bool attitudeConditionsMet = true;
         bool actionConditionsMet = true;
 
-
-
-
+        Debug.Log(lineNumber + " for start of gotonextlineblock");
+        lineNumber = 0;
+        Debug.Log(lineNumber + " for after of gotonextlineblock");
 
         //Attitude Conditions
         if (nextLineBlock.attitudeCondition || nextLineBlock.actionCondition)
@@ -723,6 +730,8 @@ public class SceneStarter : MonoBehaviour
             currentLineBlock = nextLineBlock;
             lineNumber = 0;
 
+            typeWriting = false;
+            //LineRunner();
             LineRunner();
         }
         else
@@ -747,85 +756,85 @@ public class SceneStarter : MonoBehaviour
             {
                 sceneManager.currentScene = nextScene;
                 sceneManager.currentSceneNo = i;
-                currentLineBlock = sceneManager.currentScene.lineBlocks[0];
+                lineNumber = 0;
+                GoToNextLineBlock(sceneManager.currentScene.lineBlocks[0]);
+                //currentLineBlock = sceneManager.currentScene.lineBlocks[0];
                 Debug.Log("panic");
+                
             }
         }
-        //sceneNumber = currentLineBlock.nextSceneNumber;
-        //sceneManager.currentScene = sceneManager.scenes[sceneNumber];
-        
+
+
+
         //lineNumber = 0;
 
+        //LineRunner();
+
         
-        
-
-
-
-
 
         //Attitude Conditions
-        if (currentLineBlock.actionCondition)
-        {
-            Debug.Log("we're here");
+        //if (currentLineBlock.actionCondition)
+        //{
+        //    Debug.Log("we're here");
 
-            bool actionConditionsMet = false;
+        //    bool actionConditionsMet = false;
 
-            for (int i = 0; i < currentLineBlock.actionArrayLength; i++)
-            {
-                Debug.Log("here we g0");
-                int actionConditionNo = (int)currentLineBlock.actionArray[i].actionsCondition;
-                if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
-                {
-                    Debug.Log("if action is true and it wants true");
-                    actionConditionsMet = true;
-                }
-                if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
-                {
-                    Debug.Log("if action is true and it want false");
-                    actionConditionsMet = false;
+        //    for (int i = 0; i < currentLineBlock.actionArrayLength; i++)
+        //    {
+        //        Debug.Log("here we g0");
+        //        int actionConditionNo = (int)currentLineBlock.actionArray[i].actionsCondition;
+        //        if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+        //        {
+        //            Debug.Log("if action is true and it wants true");
+        //            actionConditionsMet = true;
+        //        }
+        //        if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+        //        {
+        //            Debug.Log("if action is true and it want false");
+        //            actionConditionsMet = false;
 
-                }
-                if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
-                {
-                    Debug.Log("if action is false and wants true");
-                    actionConditionsMet = false;
-                }
-                if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
-                {
-                    Debug.Log("if action is false and wants false");
-                    actionConditionsMet = true;
-                }
-                Debug.Log("didn't match anything here");
-            }
+        //        }
+        //        if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+        //        {
+        //            Debug.Log("if action is false and wants true");
+        //            actionConditionsMet = false;
+        //        }
+        //        if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+        //        {
+        //            Debug.Log("if action is false and wants false");
+        //            actionConditionsMet = true;
+        //        }
+        //        Debug.Log("didn't match anything here");
+        //    }
 
-            if (actionConditionsMet)
-            {
-                //currentLineBlock = nextLineBlock;
-                Debug.Log("conditions met");
-                lineNumber = 0;
+        //    if (actionConditionsMet)
+        //    {
+        //        //currentLineBlock = nextLineBlock;
+        //        Debug.Log("conditions met");
+        //        lineNumber = 0;
 
-                LineRunner();
-            }
-            else
-            {
+        //        LineRunner();
+        //    }
+        //    else
+        //    {
 
-                //else
-                //{
-                Debug.Log("conditions failed so going to next");
-                GoToNextLineBlock(currentLineBlock.ifFailedContinueTo);
-                //}
-            }
-        }
-        else
-        {
-            lineNumber = 0;
+        //        //else
+        //        //{
+        //        Debug.Log("conditions failed so going to next");
+        //        GoToNextLineBlock(currentLineBlock.ifFailedContinueTo);
+        //        //}
+        //    }
+        //}
+        //else
+        //{
+        //    lineNumber = 0;
 
-            LineRunner();
-        }
+        //    LineRunner();
+        //}
 
 
 
-       // LineRunner();
+        // LineRunner();
 
         //SetSceneInfo();
 
