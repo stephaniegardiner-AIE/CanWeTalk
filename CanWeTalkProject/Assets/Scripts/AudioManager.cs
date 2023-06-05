@@ -53,4 +53,15 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(soundLibrary[itemID].itemCategory[soundID]); //play that sound
     }
+
+    public void AssignSelf()
+    {
+        SceneStarter thisone = FindObjectOfType<SceneStarter>();
+        thisone.audioManager = this;
+        AttitudeManager soundChanges = FindObjectOfType<AttitudeManager>();
+        soundChanges.audioManager = this;
+        SpriteManager gotThatDogInHim = FindObjectOfType<SpriteManager>();
+        gotThatDogInHim.audioManager = this;
+
+    }
 }

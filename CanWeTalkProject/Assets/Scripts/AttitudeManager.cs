@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AttitudeManager : MonoBehaviour
 {
     public SpriteManager spriteManager;
+    public AudioManager audioManager;
 
     [Header("Character Attitudes")]
     public float youAttitudeLevel;
@@ -111,6 +112,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = youAttitudeLevel;
             whoseAttitudeBar = youAttitudeBar;
             youAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 4);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 3);
+            }
 
         }
 
@@ -120,6 +129,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = wifeAttitudeLevel;
             whoseAttitudeBar = wifeAttitudeBar;
             wifeAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 5);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 2);
+            }
         }
 
         //change kids attitude
@@ -128,6 +145,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = kidsAttitudeLevel;
             whoseAttitudeBar = kidsAttitudeBar;
             kidsAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 5);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 2);
+            }
         }
 
         //change dog attitude
@@ -136,6 +161,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = dogAttitudeLevel;
             whoseAttitudeBar = dogAttitudeBar;
             dogAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 5);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 2);
+            }
         }
 
         if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.friendAttitude)
@@ -143,6 +176,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = friendAttitudeLevel;
             whoseAttitudeBar = friendAttitudeBar;
             friendAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 5);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 2);
+            }
         }
 
         if (line.attitudeArray[i].attitudeCharacter == Line.AttitudeEffects.AttitudesCharacter.lawyerAttitude)
@@ -150,6 +191,14 @@ public class AttitudeManager : MonoBehaviour
             whoseAttitude = lawyerAttitudeLevel;
             whoseAttitudeBar = lawyerAttitudeBar;
             lawyerAttitudeLevel += attitudeToChange;
+            if (attitudeToChange > 0)
+            {
+                audioManager.PlaySound(1, 5);
+            }
+            else
+            {
+                audioManager.PlaySound(1, 2);
+            }
         }
 
         ChangeAttitude(attitudeToChange, whoseAttitude, whoseAttitudeBar, line.attitudeArray[i].attitudeCharacter);

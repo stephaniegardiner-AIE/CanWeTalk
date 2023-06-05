@@ -19,6 +19,7 @@ public class StartGame : MonoBehaviour
     public GameStructure gameStructure;
     public Actions actions;
     public SceneStarter sceneStarter;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -38,6 +39,8 @@ public class StartGame : MonoBehaviour
         actions.AssignSelf();
         sceneStarter = FindObjectOfType<SceneStarter>();
         sceneStarter.AssignSelf();
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.AssignSelf();
     }
 
     public void StartTheGame()

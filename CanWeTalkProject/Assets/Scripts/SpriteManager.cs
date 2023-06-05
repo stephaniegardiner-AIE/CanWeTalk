@@ -26,6 +26,7 @@ public class SpriteManager : MonoBehaviour
     public Image spriteLocation4;
 
     public Line.Character character;
+    public AudioManager audioManager;
 
     public float sizeLerpDuration;
     public float opacityLerpDuration;
@@ -95,6 +96,7 @@ public class SpriteManager : MonoBehaviour
                 
                 AddCharacterSprite(wifeSprite);
                 SetPrimaryCharacter("wifeSprite", wifeActive);
+                audioManager.PlaySound(1, 0);
                 wifeActive = true;
                 
             }
@@ -118,6 +120,7 @@ public class SpriteManager : MonoBehaviour
                 
                 AddCharacterSprite(boySprite);
                 SetPrimaryCharacter("boySprite", boyActive);
+                audioManager.PlaySound(1, 0);
                 boyActive = true;
                 
             }           
@@ -139,6 +142,7 @@ public class SpriteManager : MonoBehaviour
                 
                 AddCharacterSprite(girlSprite);
                 SetPrimaryCharacter("girlSprite", girlActive);
+                audioManager.PlaySound(1, 0);
                 girlActive = true;
             }           
         }
@@ -148,6 +152,7 @@ public class SpriteManager : MonoBehaviour
             if (dogActive)
             {
                 SetPrimaryCharacter("dogSprite", dogActive);
+                audioManager.PlaySound(0, 0);
             }
             if (!dogActive)
             {
@@ -159,6 +164,7 @@ public class SpriteManager : MonoBehaviour
                 
                 AddCharacterSprite(dogSprite);
                 SetPrimaryCharacter("dogSprite", dogActive);
+                audioManager.PlaySound(0, 0);
                 dogActive = true;
 
             }         
@@ -179,6 +185,7 @@ public class SpriteManager : MonoBehaviour
 
                 AddCharacterSprite(friendSprite);
                 SetPrimaryCharacter("friendSprite", friendActive);
+                audioManager.PlaySound(1, 0);
                 friendActive = true;
 
             }
@@ -199,6 +206,7 @@ public class SpriteManager : MonoBehaviour
 
                 AddCharacterSprite(lawyerSprite);
                 SetPrimaryCharacter("lawyerSprite", lawyerActive);
+                audioManager.PlaySound(1, 0);
                 lawyerActive = true;
 
             }
