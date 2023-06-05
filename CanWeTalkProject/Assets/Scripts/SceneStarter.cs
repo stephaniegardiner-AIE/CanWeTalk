@@ -62,7 +62,7 @@ public class SceneStarter : MonoBehaviour
     public Image sceneBackground;
     public TextMeshProUGUI dayNumberText;
     public TextMeshProUGUI weekdayText;
-    public TextMeshProUGUI dayTimeText;
+    //public TextMeshProUGUI dayTimeText;
 
 
 
@@ -257,8 +257,8 @@ public class SceneStarter : MonoBehaviour
     public void UpdateSceneAppearance()
     {
         dayNumberText.text = "Day " + (dayNumber + 1).ToString();
-        weekdayText.text = weekday.ToString();
-        dayTimeText.text = dayTime.ToString();
+        weekdayText.text = weekday.ToString() + " " + dayTime.ToString();
+        //dayTimeText.text = dayTime.ToString();
         //UpdateSceneBackground(dayTime, location);
 
         if (location == DialogScene.Location.House)
