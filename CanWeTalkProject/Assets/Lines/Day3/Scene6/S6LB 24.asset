@@ -30,16 +30,12 @@ MonoBehaviour:
   goToNextDay: 0
   hasConditions: 1
   conditions: 2
-  actionCondition: 1
-  actionArrayLength: 2
-  actionArray:
-  - actionsCondition: 3
-    trueOrFalse: 0
-  - actionsCondition: 4
-    trueOrFalse: 1
+  actionCondition: 0
+  actionArrayLength: 0
+  actionArray: []
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0
   attitudeAmount: 0
-  ifFailedContinueTo: {fileID: 11400000, guid: a20028fbe509718458df85428692666c, type: 2}
+  ifFailedContinueTo: {fileID: 0}
   ifFailedRunActivity: 0

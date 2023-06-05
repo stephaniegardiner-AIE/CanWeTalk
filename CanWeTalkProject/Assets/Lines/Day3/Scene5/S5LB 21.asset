@@ -16,17 +16,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5bfcdfb78619c6048ae21166639f52cd, type: 2}
   endDecisionBlock: {fileID: 0}
   runActivityBlockNext: 0
-  nextLineBlock: {fileID: 0}
+  nextLineBlock: {fileID: 11400000, guid: 366ec4ff94ef09a42866da8fdc818617, type: 2}
   nextScene: {fileID: 0}
-  goToNextDayTime: 1
+  goToNextDayTime: 0
   goToNextDay: 0
-  hasConditions: 1
-  conditions: 2
+  hasConditions: 0
+  conditions: 0
   actionCondition: 0
   actionArrayLength: 0
-  actionArray:
-  - actionsCondition: 1
-    trueOrFalse: 0
+  actionArray: []
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0
