@@ -375,19 +375,36 @@ public class SpriteManager : MonoBehaviour
         {
             if (attitudeChangeAmount >= 0)
             {
-                activeBoySprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
-                activeGirlSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
-                StartAnimation(activeBoySprite, 1);
-                StartAnimation(activeGirlSprite, 1);
+                if (boyActive)
+                {
+                    activeBoySprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+                    StartAnimation(activeBoySprite, 1);
+                }
+                if (girlActive)
+                {
+                    activeGirlSprite.transform.GetChild(1).gameObject.GetComponent<Image>().enabled = true;
+
+                    StartAnimation(activeGirlSprite, 1);
+                }
+                
+                
 
                 //Debug.Log("kidpositivereaction");
             }
             else
             {
-                activeBoySprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
-                activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
-                StartAnimation(activeBoySprite, 0);
-                StartAnimation(activeGirlSprite, 0);
+                if (boyActive)
+                {
+                    activeBoySprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+                    StartAnimation(activeBoySprite, 0);
+                }
+                if (girlActive)
+                {
+                    activeGirlSprite.transform.GetChild(0).gameObject.GetComponent<Image>().enabled = true;
+
+                    StartAnimation(activeGirlSprite, 0);
+                }
+
                 //Debug.Log("kidnegativereaction");
             }
         }
