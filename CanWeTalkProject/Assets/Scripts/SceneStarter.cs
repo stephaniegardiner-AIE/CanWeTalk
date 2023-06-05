@@ -15,6 +15,7 @@ public class SceneStarter : MonoBehaviour
     public CharacterManager characterManager;
     public AttitudeManager attitudeManager;
     public ActivityManager activityManager;
+    public AudioManager audioManager;
     public Scenes sceneManager;
     //public DialogScene currentScene;
     public Actions actions;
@@ -979,6 +980,7 @@ public class SceneStarter : MonoBehaviour
         {
             text.maxVisibleCharacters++;
             yield return new WaitForSeconds(characterTime);
+            audioManager.PlaySound(1, 12);
         }
 
         text.maxVisibleCharacters = text.textInfo.characterCount;

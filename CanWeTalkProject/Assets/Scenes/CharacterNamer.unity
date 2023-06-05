@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
+  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2289,6 +2289,7 @@ MonoBehaviour:
   gameStructure: {fileID: 0}
   actions: {fileID: 0}
   sceneStarter: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!4 &661620033
 Transform:
   m_ObjectHideFlags: 0
@@ -5005,6 +5006,7 @@ MonoBehaviour:
   spriteLocation3: {fileID: 0}
   spriteLocation4: {fileID: 0}
   character: 0
+  audioManager: {fileID: 0}
   sizeLerpDuration: 0.25
   opacityLerpDuration: 0.5
   positionLerpDuration: 0.5
@@ -5727,6 +5729,7 @@ MonoBehaviour:
   gameStructure: {fileID: 0}
   actions: {fileID: 0}
   sceneStarter: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!4 &1682910685
 Transform:
   m_ObjectHideFlags: 0
@@ -5818,6 +5821,167 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694725329}
   m_CullTransparentMesh: 1
+--- !u!1 &1713015200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713015203}
+  - component: {fileID: 1713015202}
+  - component: {fileID: 1713015201}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1713015201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713015200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba2ff396bfedf044b6111d9e93edf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioBGM: {fileID: 1713015202}
+  audioAmbient: {fileID: 0}
+  soundLibrary:
+  - itemCategory:
+    - {fileID: 8300000, guid: 578dad035df83fd47b8b1bd2bf9aac2f, type: 3}
+  - itemCategory:
+    - {fileID: 8300000, guid: c84198b5f185c674eaa0da2d3ad92d52, type: 3}
+    - {fileID: 8300000, guid: 86cbb7a81edbd20438e16e9c6527eb45, type: 3}
+    - {fileID: 8300000, guid: f89b552c609ee57418ef999f5dd7446a, type: 3}
+    - {fileID: 8300000, guid: 47baaef587bc5914daf7082b92e0054f, type: 3}
+    - {fileID: 8300000, guid: ed838a13b9b13c841b6daf2f2ea7e306, type: 3}
+    - {fileID: 8300000, guid: d4ae203791db5f74598e15affc57e6b0, type: 3}
+    - {fileID: 8300000, guid: c5de322c00d13844290a16ed827a9c08, type: 3}
+    - {fileID: 8300000, guid: 37400a35652efe440b4f582126d0d5de, type: 3}
+    - {fileID: 8300000, guid: ff08f86b5f35cff4aa342184ad144f73, type: 3}
+    - {fileID: 8300000, guid: 6d7c1f8215d3f68459f7fdae17df5d53, type: 3}
+    - {fileID: 8300000, guid: 718a6eac642504e4dae5ece2c0a2fe34, type: 3}
+    - {fileID: 8300000, guid: fa12caf036fd5864596dd80f8c1f010a, type: 3}
+    - {fileID: 8300000, guid: 47dbb1686867b714f9652295c799460c, type: 3}
+  audioAmbienceSounds: []
+--- !u!82 &1713015202
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713015200}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7a23a1d72e5bd8347a325c8a536a2b0a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1713015203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713015200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 583.29376, y: 255.57118, z: 14.694345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757714659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,6 +6437,7 @@ MonoBehaviour:
   characterManager: {fileID: 0}
   attitudeManager: {fileID: 1830396687}
   activityManager: {fileID: 337928163}
+  audioManager: {fileID: 0}
   sceneManager: {fileID: 906270192}
   actions: {fileID: 1876200796}
   gameStructure: {fileID: 0}
@@ -6557,6 +6722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 1496908813}
+  audioManager: {fileID: 0}
   youAttitudeLevel: 100
   wifeAttitudeLevel: 50
   kidsAttitudeLevel: 80
