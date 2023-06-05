@@ -28,10 +28,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0fe0d234bcff53b428e4b75b407df681, type: 2}
   - {fileID: 11400000, guid: 558c1d597b701124daf2b82764fd11da, type: 2}
   endDecisionBlock: {fileID: 0}
-  runActivityBlockNext: 1
+  runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextScene: {fileID: 0}
-  goToNextDayTime: 0
+  goToNextDayTime: 1
   goToNextDay: 0
   hasConditions: 0
   conditions: 0

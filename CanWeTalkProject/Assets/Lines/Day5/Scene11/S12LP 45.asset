@@ -22,7 +22,9 @@ MonoBehaviour:
   endDecisionBlock: {fileID: 0}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
+  nextScene: {fileID: 0}
+  goToNextDayTime: 1
+  goToNextDay: 0
   hasConditions: 1
   conditions: 1
   actionCondition: 0
@@ -33,3 +35,4 @@ MonoBehaviour:
   attitudeLevel: 1
   attitudeAmount: 20
   ifFailedContinueTo: {fileID: 11400000, guid: 4de22eba3762a3542a38000c9b8df98b, type: 2}
+  ifFailedRunActivity: 0
