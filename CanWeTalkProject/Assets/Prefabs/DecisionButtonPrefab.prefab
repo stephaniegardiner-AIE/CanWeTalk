@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneStarter: {fileID: 0}
   decisionNumber: 0
+  activityNumber: 0
 --- !u!1 &7118284947096553239
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +218,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Decision 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2a477b081acfa7e46887d145455765bd, type: 2}
-  m_sharedMaterial: {fileID: 945742126926769786, guid: 2a477b081acfa7e46887d145455765bd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6cc9dd69198e0ee40a77aa8b63f5fd77, type: 2}
+  m_sharedMaterial: {fileID: -2751962919625881571, guid: 6cc9dd69198e0ee40a77aa8b63f5fd77, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -242,8 +243,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
