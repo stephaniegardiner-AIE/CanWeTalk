@@ -747,14 +747,85 @@ public class SceneStarter : MonoBehaviour
             {
                 sceneManager.currentScene = nextScene;
                 sceneManager.currentSceneNo = i;
+                currentLineBlock = sceneManager.currentScene.lineBlocks[0];
+                Debug.Log("panic");
             }
         }
         //sceneNumber = currentLineBlock.nextSceneNumber;
         //sceneManager.currentScene = sceneManager.scenes[sceneNumber];
-        currentLineBlock = sceneManager.currentScene.lineBlocks[0];
-        lineNumber = 0;
         
-        LineRunner();
+        //lineNumber = 0;
+
+        
+        
+
+
+
+
+
+        //Attitude Conditions
+        if (currentLineBlock.actionCondition)
+        {
+            Debug.Log("we're here");
+
+            bool actionConditionsMet = false;
+
+            for (int i = 0; i < currentLineBlock.actionArrayLength; i++)
+            {
+                Debug.Log("here we g0");
+                int actionConditionNo = (int)currentLineBlock.actionArray[i].actionsCondition;
+                if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+                {
+                    Debug.Log("if action is true and it wants true");
+                    actionConditionsMet = true;
+                }
+                if (actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+                {
+                    Debug.Log("if action is true and it want false");
+                    actionConditionsMet = false;
+
+                }
+                if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.True)
+                {
+                    Debug.Log("if action is false and wants true");
+                    actionConditionsMet = false;
+                }
+                if (!actions.actionList[actionConditionNo] && currentLineBlock.actionArray[i].trueOrFalse == LineBlock.ActionListElement.TrueOrFalse.False)
+                {
+                    Debug.Log("if action is false and wants false");
+                    actionConditionsMet = true;
+                }
+                Debug.Log("didn't match anything here");
+            }
+
+            if (actionConditionsMet)
+            {
+                //currentLineBlock = nextLineBlock;
+                Debug.Log("conditions met");
+                lineNumber = 0;
+
+                LineRunner();
+            }
+            else
+            {
+
+                //else
+                //{
+                Debug.Log("conditions failed so going to next");
+                GoToNextLineBlock(currentLineBlock.ifFailedContinueTo);
+                //}
+            }
+        }
+        else
+        {
+            lineNumber = 0;
+
+            LineRunner();
+        }
+
+
+
+       // LineRunner();
 
         //SetSceneInfo();
 

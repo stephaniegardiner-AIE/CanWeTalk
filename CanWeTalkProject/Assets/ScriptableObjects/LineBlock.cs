@@ -118,6 +118,7 @@ public class LineBlock : ScriptableObject
             DeadDog,
             LeftChildrenHomeAlone,
             PlayGolf,
+            TellingAlone,
         }
 
         public Actions actionsCondition;
