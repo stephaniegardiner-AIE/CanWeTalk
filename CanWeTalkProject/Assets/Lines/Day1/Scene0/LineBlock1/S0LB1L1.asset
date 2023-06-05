@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: S0LB1L1
   m_EditorClassIdentifier: 
   character: 2
-  dialog: "Thank you. It really will make this so much easier. I\u2019m really sorry
-    that it had to come to this."
+  dialog: "Thank you. It will make this so much easier. I\u2019m so sorry that it
+    had to come to this."
   attitudeArrayLength: 0
   attitudeArray: []
   hasAction: 0
