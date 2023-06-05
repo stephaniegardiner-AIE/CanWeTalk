@@ -21,6 +21,7 @@ public class GameStructure : MonoBehaviour
     public Scenes sceneManager;
     public GameStructure gameStructure;
     public Actions actions;
+    int sceneNumber = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +79,8 @@ public class GameStructure : MonoBehaviour
     {
         spriteManager.ClearCharacters();
 
-        SceneManager.LoadScene(currentDaySO.scene.name);
+        SceneManager.LoadScene("Day " + sceneNumber);
+        sceneNumber++;
         //Debug.Log("load the scene");
        // CallAssignSelfs();
         RunScene();
