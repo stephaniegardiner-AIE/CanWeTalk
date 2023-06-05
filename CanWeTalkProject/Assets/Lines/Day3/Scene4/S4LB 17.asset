@@ -20,18 +20,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1bdab6afd7e6f342b4705fe55ab5fce, type: 2}
   - {fileID: 11400000, guid: 580bbe567eeaef747aacea18ed8c31d5, type: 2}
   endDecisionBlock: {fileID: 0}
-  runActivityBlockNext: 1
+  runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextScene: {fileID: 0}
-  goToNextDayTime: 0
+  goToNextDayTime: 1
   goToNextDay: 0
-  hasConditions: 1
-  conditions: 1
+  hasConditions: 0
+  conditions: 0
   actionCondition: 0
   actionArrayLength: 0
   actionArray: []
-  attitudeCondition: 1
-  attitudes: 3
-  attitudeLevel: 1
+  attitudeCondition: 0
+  attitudes: 0
+  attitudeLevel: 0
   attitudeAmount: 50
   ifFailedContinueTo: {fileID: 11400000, guid: 30616e6dd35b6b447af8554c301706fb, type: 2}
+  ifFailedRunActivity: 0

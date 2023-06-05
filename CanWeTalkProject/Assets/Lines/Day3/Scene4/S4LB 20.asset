@@ -20,10 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a639352421a19d543a30c9f2ce452f5a, type: 2}
   - {fileID: 11400000, guid: 049300cb54167324d98a089eac0e561b, type: 2}
   endDecisionBlock: {fileID: 0}
-  runActivityBlockNext: 1
+  runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
   nextScene: {fileID: 0}
-  goToNextDayTime: 0
+  goToNextDayTime: 1
   goToNextDay: 0
   hasConditions: 0
   conditions: 0
@@ -35,3 +35,4 @@ MonoBehaviour:
   attitudeLevel: 0
   attitudeAmount: 0
   ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0

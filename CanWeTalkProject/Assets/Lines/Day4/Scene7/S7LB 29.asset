@@ -18,10 +18,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46cb831be3ea1b94eb3e37a560ef5b8c, type: 2}
   - {fileID: 11400000, guid: 00e1df84570cd0a4c83e74f10f5c1249, type: 2}
   - {fileID: 11400000, guid: b307884b4bfbc614081fbc14f85e9a41, type: 2}
-  endDecisionBlock: {fileID: 11400000, guid: 4e0a7470ab4dbe84cadce2c2acc626a1, type: 2}
+  endDecisionBlock: {fileID: 11400000, guid: f836f8fc82954cd499f51d95cf2d2dd3, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
+  nextScene: {fileID: 0}
+  goToNextDayTime: 0
+  goToNextDay: 0
   hasConditions: 0
   conditions: 0
   actionCondition: 0
@@ -32,3 +34,4 @@ MonoBehaviour:
   attitudeLevel: 0
   attitudeAmount: 0
   ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0
