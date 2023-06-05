@@ -25,13 +25,19 @@ MonoBehaviour:
   endDecisionBlock: {fileID: 11400000, guid: 49987470533416047a4a046690651771, type: 2}
   runActivityBlockNext: 0
   nextLineBlock: {fileID: 0}
-  nextSceneNumber: 0
+  nextScene: {fileID: 0}
+  goToNextDayTime: 0
+  goToNextDay: 0
   hasConditions: 0
   conditions: 0
-  actionCondition: 0
-  actions: 0
+  actionCondition: 1
+  actionArrayLength: 1
+  actionArray:
+  - actionsCondition: 25
+    trueOrFalse: 0
   attitudeCondition: 0
   attitudes: 0
   attitudeLevel: 0
   attitudeAmount: 0
-  ifFailedContinueTo: {fileID: 0}
+  ifFailedContinueTo: {fileID: 11400000, guid: a6b562d8622b5314faea258a5c34e3b5, type: 2}
+  ifFailedRunActivity: 0

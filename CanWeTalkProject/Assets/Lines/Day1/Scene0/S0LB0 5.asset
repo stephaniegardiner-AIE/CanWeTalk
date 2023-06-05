@@ -35,3 +35,4 @@ MonoBehaviour:
   attitudeLevel: 0
   attitudeAmount: 0
   ifFailedContinueTo: {fileID: 0}
+  ifFailedRunActivity: 0
