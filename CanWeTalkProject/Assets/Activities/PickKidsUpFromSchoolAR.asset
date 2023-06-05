@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: PickKidsUpFromSchoolAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'picked kids up
-
-'
+  dialog: I pick the kids up from school.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 2

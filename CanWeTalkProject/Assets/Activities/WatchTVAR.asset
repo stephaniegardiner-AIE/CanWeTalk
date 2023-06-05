@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WatchTVAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: watched tv
+  dialog: I spend a few hours watching TV.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 2

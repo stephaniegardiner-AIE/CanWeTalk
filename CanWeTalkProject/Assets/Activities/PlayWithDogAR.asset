@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: PlayWithDogAR
   m_EditorClassIdentifier: 
   character: 0
-  dialog: 'Played with DogName
-
-'
+  dialog: I spend a few hours playing with DogName.
   attitudeArrayLength: 2
   attitudeArray:
   - attitudeCharacter: 4
