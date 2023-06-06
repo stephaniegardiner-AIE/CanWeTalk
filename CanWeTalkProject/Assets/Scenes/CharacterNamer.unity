@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.033409797, g: 0.06112439, b: 0.14385006, a: 1}
+  m_IndirectSpecularColor: {r: 0.033410013, g: 0.061124757, b: 0.14385098, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6718,7 +6718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteManager: {fileID: 1496908813}
   audioManager: {fileID: 0}
-  youAttitudeLevel: 100
+  youAttitudeLevel: 90
   wifeAttitudeLevel: 50
   kidsAttitudeLevel: 80
   dogAttitudeLevel: 100
